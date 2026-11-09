@@ -18,6 +18,7 @@ sys.path.insert(0, os.path.join(QUI, 'tools'))
 import luatable as lt  # noqa: E402
 from geo import ll_to_xy, xy_to_ll, dms  # noqa: E402
 import kneeboard_g00  # noqa: E402
+import confini  # noqa: E402
 
 NOME = 'G00_ambientamento'
 FT = 0.3048
@@ -291,6 +292,9 @@ def costruisci():
         2: gruppo_f14(3, 5, 'Dodge 2 (motori accesi)', 2, True, PARCHEGGI[1]),
     }}
     usa['static'] = {'group': statici_ponte()}
+
+    # confini e fazioni sulla mappa (strato Common)
+    confini.aggiungi(m)
 
     # magazzini delle navi (uno per unita')
     modello = w['warehouses'][0]
