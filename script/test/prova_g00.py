@@ -20,6 +20,8 @@ end
 MOCK.range:OnAfterImpact("a", "Impact", "b", { player = "Fabio", name = "Bersaglio B", weapon = "BDU-33", distance = 12.3, radial = 45, quality = "GOOD", attackHdg = 40, attackAlt = 9000, attackVel = 420, clock = "08:01:00" }, {})
 MOCK.avanza(301)
 MOCK.comandi["Informazioni poligono"]()
+for _, h in ipairs(MOCK.handlers) do h:onEvent({ id = world.event.S_EVENT_MARK_CHANGE, idx = 55, text = "Poligono qui", pos = { x = 210000, y = 0, z = -20000 } }) end
+print("distrutti:", MOCK.distrutti, "target A:", MOCK.range.bombingTargets[1].coordinate.x)
 for _, h in ipairs(MOCK.handlers) do h:onEvent({ id = world.event.S_EVENT_MISSION_END }) end
 ''')
 files = L.eval('MOCK.file')
@@ -33,3 +35,11 @@ import luatable
 n, v = luatable.parse(stato); print('parse stato ok:', n, list(v.keys()))
 n, v = luatable.parse(registro); print('parse registro ok:', n, len(v['eventi']), 'eventi')
 print('statici creati:', L.eval('#MOCK.statici'))
+
+pos = files['C:\\SavedGames\\DCS\\Levante1989\\poligono_G00.lua']
+print('FILE POSIZIONE:', pos)
+# secondo avvio: deve usare la posizione salvata
+L.execute('MOCK.statici = {}; MOCK.testi = {}')
+run(os.path.join(qui, '..', 'lua', 'G00_ambientamento.lua'))
+L.execute('MOCK.avanza(30)')
+print('secondo avvio, ultimo messaggio:', list(L.eval('MOCK.testi').values())[-1])

@@ -100,6 +100,7 @@ def pagina_missione(g):
         'F10 > Levante 1989 > Informazioni poligono: coordinate esatte dei bersagli.',
         'F10 > Levante 1989 > Salva lo stato adesso: prova del salvataggio.',
         'A fine volo carica i file da  Saved Games\\DCS\\Levante1989\\',
+        'Poligono tra gli alberi? Segno F10 con scritto POLIGONO: si sposta li\'.',
     ]:
         y = _riga(d, y, [(30, '- ' + t)], fn)
     return img

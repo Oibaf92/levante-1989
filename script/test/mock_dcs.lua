@@ -35,7 +35,7 @@ function MOCK.avanza(sec)
 end
 trigger = { action = {
   outText = function(t) table.insert(MOCK.testi, t); print("TESTO: " .. t) end,
-  smoke = function() end, markToAll = function() end },
+  smoke = function() end, markToAll = function() end, removeMark = function() end },
   smokeColor = { Green = 0, Red = 1, White = 2, Orange = 3, Blue = 4 } }
 missionCommands = { addSubMenu = function(n) return { n } end, addCommand = function(n, m, f) MOCK.comandi = MOCK.comandi or {}; MOCK.comandi[n] = f end }
 country = { id = { USA = 2 } }
@@ -62,3 +62,20 @@ RANGE = { New = function(self, n) local o = {}; setmetatable(o, { __index = RANG
 -- io/lfs simulati
 lfs = { writedir = function() return "C:\\SavedGames\\DCS\\" end, mkdir = function() end }
 io = { open = function(p, m) local buf = {}; return { write = function(_, s) table.insert(buf, s) end, close = function() MOCK.file[p] = table.concat(buf) end } end }
+
+StaticObject = { getByName = function(n) return { destroy = function() MOCK.distrutti = (MOCK.distrutti or 0) + 1 end } end }
+ZONE_RADIUS = { New = function(self, n, v, r) return { n = n, v = v, r = r } end }
+RANGE.bombingTargets = nil
+local _new = RANGE.New
+RANGE.New = function(self, n) local o = _new(self, n); o.bombingTargets = { { name = "Bersaglio A" }, { name = "Bersaglio B" } }; o.rangename = n; o.rangeradius = 6000; return o end
+world.event.S_EVENT_MARK_ADDED = 100; world.event.S_EVENT_MARK_CHANGE = 101
+-- io con lettura dei file scritti
+io.open = function(p, m)
+  if m == "r" then
+    if not MOCK.file[p] then return nil end
+    local c = MOCK.file[p]
+    return { read = function() return c end, close = function() end }
+  end
+  local buf = {}
+  return { write = function(_, s) table.insert(buf, s) end, close = function() MOCK.file[p] = table.concat(buf) end }
+end

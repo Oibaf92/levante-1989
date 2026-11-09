@@ -210,6 +210,7 @@ CARICO
 NOTE
 - Nessuna minaccia: il volo e' di addestramento.
 - Menu F10 > Levante 1989: informazioni sul poligono e salvataggio manuale dello stato.
+- Se il poligono non ti piace (alberi, case, terreno), sulla mappa F10 aggiungi un segno con scritto POLIGONO: i bersagli si spostano li' e la posizione viene ricordata anche nei voli successivi.
 - Questa missione serve anche a provare il salvataggio dello stato: a fine volo carica i file da Saved Games\\DCS\\Levante1989\\.
 """
 
