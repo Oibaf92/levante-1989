@@ -78,3 +78,10 @@ script/     motore della campagna (Lua, MOOSE)
 blu/        🔒 riservato al comandante blu — non aprire
 rosso/      🔒 riservato al comandante rosso — non aprire
 ```
+
+## 🗺️ Mappa e intelligence di partenza
+- **Strato Common** (visibile a tutti): confini e fazioni (`script/tools/confini.py`).
+- **Strato Blue / Red** (ognuno visibile solo alla propria parte): basi permanenti e siti
+  antiaerei fissi noti al 2 ottobre 1989, come li stima ciascuna parte
+  (`script/tools/intel.py`). È la situazione di pace fissata dall'arbitro: i comandanti
+  possono spostare i sistemi mobili, quindi in guerra la mappa può essere superata.

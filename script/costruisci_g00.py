@@ -19,6 +19,7 @@ import luatable as lt  # noqa: E402
 from geo import ll_to_xy, xy_to_ll, dms  # noqa: E402
 import kneeboard_g00  # noqa: E402
 import confini  # noqa: E402
+import intel  # noqa: E402
 
 NOME = 'G00_ambientamento'
 FT = 0.3048
@@ -295,6 +296,8 @@ def costruisci():
 
     # confini e fazioni sulla mappa (strato Common)
     confini.aggiungi(m)
+    # quadro di intelligence di partenza (strati Blue e Red)
+    intel.aggiungi(m)
 
     # magazzini delle navi (uno per unita')
     modello = w['warehouses'][0]
