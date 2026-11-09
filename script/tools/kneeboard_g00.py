@@ -82,7 +82,8 @@ def pagina_missione(g):
             dist, brg = dist_brg(*prec, *p)
             rv = '%03d/%4.1f nm' % (round(brg) % 360, dist / 1852)
         y = _riga(d, y, [(30, wp), (78, nome), (190, dms(*xy_to_ll(*p))), (520, q), (610, rv)], fs)
-    d.text((30, y), 'Rotte vere. La nave si muove: WP5 e\' la sua posizione stimata dopo ~55 min.', font=font(13), fill=GRIGIO)
+    d.text((30, y), 'Rotte vere. La nave si muove: WP5 e\' la sua posizione stimata dopo ~%d min.' % g['minuti_rientro'],
+           font=font(13), fill=GRIGIO)
     y += 26
 
     y = _sezione(d, y + 4, 'CARICO')
@@ -92,7 +93,8 @@ def pagina_missione(g):
     y = _riga(d, y, [(30, 'Gregario: 2 AIM-54A, 3 AIM-7M, 2 AIM-9L (scorta)')], fm)
 
     y = _sezione(d, y + 6, 'CARBURANTE (indicativo)')
-    y = _riga(d, y, [(30, 'JOKER 6.0   BINGO 4.5   (migliaia di lb)')], fm)
+    y = _riga(d, y, [(30, 'JOKER 8.5   BINGO 7.0   (al poligono, migliaia di lb)')], fm)
+    y = _riga(d, y, [(30, 'Rientro ~120 nm. Alla nave almeno 4.0 per l\'appontaggio.')], font(15))
 
     y = _sezione(d, y + 6, 'NOTE')
     fn = font(15)
@@ -177,6 +179,9 @@ def pagina_poligono(g):
     d.text((bx0 + 600, by0 + 104), 'B blu', font=font(14), fill=BLU)
     d.text((bx0 + 600, by0 + 126), 'ogni 5 min', font=font(14), fill=GRIGIO)
 
+    dist, brg = dist_brg(*g['bers_a'], *g['rientro'])
+    d.text((40, 712), 'Rientro: CVN-71 a ~%d nm per %03d dal poligono (stima a %d min)' % (
+        round(dist / 1852), round(brg) % 360, g['minuti_rientro']), font=font(15, True), fill=BLU)
     y = _sezione(d, 980, 'PROFILO SUGGERITO (indicativo)')
     fm = font(16, mono=True)
     for t in [
@@ -248,5 +253,76 @@ def pagina_intel(g):
     return img
 
 
+# coste schematiche (solo per la carta della tavoletta; la mappa F10 ha il terreno vero)
+CIPRO = [(35.10, 32.27), (34.76, 32.41), (34.65, 32.75), (34.57, 32.98), (34.67, 33.04), (34.70, 33.30),
+         (34.90, 33.63), (34.96, 34.08), (35.12, 33.94), (35.30, 34.05), (35.50, 34.40), (35.69, 34.59),
+         (35.55, 34.20), (35.40, 33.95), (35.34, 33.32), (35.40, 32.92), (35.18, 32.98), (35.05, 32.43)]
+TURCHIA = [(36.02, 32.30), (36.02, 32.80), (36.10, 33.00), (36.14, 33.32), (36.32, 33.88), (36.60, 34.30),
+           (36.78, 34.62), (36.80, 34.90), (36.70, 35.05), (36.60, 35.20), (36.56, 35.37), (36.62, 35.60),
+           (36.77, 35.79), (36.59, 36.17), (36.41, 35.89), (36.08, 35.93), (35.92, 35.92), (35.90, 36.06),
+           (36.00, 36.35), (36.22, 36.67), (36.65, 36.80), (36.65, 37.10), (36.83, 38.00), (37.50, 38.00),
+           (37.50, 32.30)]
+
+
+def pagina_carta(g):
+    """Carta d'insieme: aree, simboli intel nelle posizioni esatte, rotta del volo."""
+    import confini
+    import intel
+    from geo import ll_to_xy
+    img = Image.new('RGB', (W, H), CARTA)
+    d0 = ImageDraw.Draw(img)
+    _testata(d0, 'CARTA D\'INSIEME', 'Rotta del volo e stima intel USA  |  simboli: vedi pagina INTEL')
+    lat_s, lat_n, lon_o, lon_e = 32.30, 37.30, 32.35, 37.90
+    xn, _ = ll_to_xy(lat_n, (lon_o + lon_e) / 2)
+    xs, _ = ll_to_xy(lat_s, (lon_o + lon_e) / 2)
+    _, yo = ll_to_xy((lat_s + lat_n) / 2, lon_o)
+    _, ye = ll_to_xy((lat_s + lat_n) / 2, lon_e)
+    aw, ah = W - 40, H - 180
+    sc = min(aw / (ye - yo), ah / (xn - xs))
+    aw, ah = int((ye - yo) * sc), int((xn - xs) * sc)
+    carta = Image.new('RGB', (aw, ah), (200, 222, 236))          # mare
+    d = ImageDraw.Draw(carta, 'RGBA')
+
+    def p(x, y):
+        return ((y - yo) * sc, (xn - x) * sc)
+
+    def pl(lat, lon):
+        return p(*ll_to_xy(lat, lon))
+
+    def col(c, a=None):
+        v = int(c, 16)
+        r = ((v >> 24) & 255, (v >> 16) & 255, (v >> 8) & 255, v & 255)
+        return r if a is None else r[:3] + (a,)
+    for costa in (TURCHIA, CIPRO):
+        d.polygon([pl(*q) for q in costa], fill=(232, 226, 210), outline=(150, 140, 120))
+    oggetti = [o for o in confini.disegni().values() if not o['name'].startswith('Legenda')] + intel.disegni_blu()
+    for o in oggetti:
+        if o['primitiveType'] == 'Polygon':
+            d.polygon([p(o['mapX'] + q['x'], o['mapY'] + q['y']) for q in o['points'].values()],
+                      fill=col(o['fillColorString'], 80))
+    for o in oggetti:
+        if o['primitiveType'] == 'Line':
+            larg = 1 if 'portata' in o['name'] else 2
+            d.line([p(o['mapX'] + q['x'], o['mapY'] + q['y']) for q in o['points'].values()],
+                   fill=col(o['colorString']), width=larg)
+    for lat, lon, nome in ((36.95, 34.0, 'TURCHIA'), (35.05, 33.2, 'CIPRO')):
+        x, y = pl(lat, lon)
+        d.text((x, y), nome, font=font(13, True), fill=(120, 110, 90), anchor='mm')
+    rotta = [g['cvn'], g['costa'], g['ip'], g['bers_a'], g['uscita'], g['rientro']]
+    d.line([p(*q) for q in rotta], fill=(20, 20, 20, 255), width=3)
+    for q, t in zip(rotta, ['CVN', '1', '2', '3', '4', '5']):
+        x, y = p(*q)
+        d.ellipse([x - 5, y - 5, x + 5, y + 5], fill=(20, 20, 20))
+        d.text((x + 7, y - 18), t, font=font(14, True), fill=(20, 20, 20))
+    ox, oy = (W - aw) // 2, 100
+    img.paste(carta, (ox, oy))
+    d0.rectangle([ox, oy, ox + aw, oy + ah], outline=INCH, width=2)
+    yt = oy + ah + 12
+    d0.text((24, yt), 'Nero: rotta del volo (numeri = waypoint).  Rosso: stima forze siro-sovietiche.', font=font(14), fill=INCH)
+    d0.text((24, yt + 22), 'Blu: forze USA.  Posizioni esatte: i simboli possono sovrapporsi.', font=font(14), fill=INCH)
+    d0.text((24, yt + 44), 'Coste schematiche, solo indicative.', font=font(14), fill=GRIGIO)
+    return img
+
+
 def crea(g):
-    return [_png(pagina_missione(g)), _png(pagina_poligono(g)), _png(pagina_intel(g))]
+    return [_png(pagina_missione(g)), _png(pagina_poligono(g)), _png(pagina_intel(g)), _png(pagina_carta(g))]

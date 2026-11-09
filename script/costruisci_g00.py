@@ -49,7 +49,8 @@ ROTTA_ATTACCO = 40
 IP = sposta(*BERS_A, ROTTA_ATTACCO + 180, 15000)
 COSTA = ll_to_xy(36.60, 35.25)
 USCITA = sposta(*BERS_A, 130, 20000)
-RIENTRO = sposta(*CVN, ROTTA_NAVE, VEL_NAVE * 55 * 60)       # dove sara' la nave dopo ~55 min
+MINUTI_RIENTRO = 70
+RIENTRO = sposta(*CVN, ROTTA_NAVE, VEL_NAVE * MINUTI_RIENTRO * 60)   # dove sara' la nave al rientro
 
 TACAN = (71, 'X', 'TR', 1158000000)
 ICLS = 11
@@ -385,7 +386,7 @@ def costruisci():
     os.makedirs(os.path.join(RADICE, 'missioni'), exist_ok=True)
     pagine = kneeboard_g00.crea(dict(
         cvn=CVN, rotta_nave=ROTTA_NAVE, bers_a=BERS_A, bers_b=BERS_B, ip=IP, costa=COSTA, uscita=USCITA,
-        rientro=RIENTRO, tacan=TACAN, icls=ICLS, link4=LINK4, preset=PRESET, rotta_attacco=ROTTA_ATTACCO))
+        rientro=RIENTRO, minuti_rientro=MINUTI_RIENTRO, tacan=TACAN, icls=ICLS, link4=LINK4, preset=PRESET, rotta_attacco=ROTTA_ATTACCO))
 
     out = os.path.join(RADICE, 'missioni', NOME + '.miz')
     with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED) as z:
