@@ -141,18 +141,23 @@ CARICO = {
 }
 
 
+# Partenza ritardata: a missione avviata la Supercarrier non usa piu' i posti 5-8,
+# quindi gli aerei vengono messi piu' indietro sul ponte. Con partenza a t=0 DCS
+# ignora il parcheggio scelto e usa il primo posto libero (il 5).
+RITARDO_PARTENZA = 5
+
 # Gregario di scorta: carico aria-aria classico del 1989
+# (2 AIM-54 sui pallet anteriori, 3 AIM-7, 2 AIM-9)
 CARICO_SCORTA = {
-    1: {'CLSID': '{LAU-7 wtip - AIM-9L}'},
-    2: {'CLSID': '{SHOULDER AIM_54A_Mk60 L}'},
-    3: {'CLSID': '{F14-300gal}'},
-    4: {'CLSID': '{BELLY AIM-7M}'},
-    5: {'CLSID': '{BELLY AIM-7M}'},
-    6: {'CLSID': '{BELLY AIM-7M}'},
-    7: {'CLSID': '{BELLY AIM-7M}'},
-    8: {'CLSID': '{F14-300gal}'},
-    9: {'CLSID': '{SHOULDER AIM_54A_Mk60 R}'},
-    10: {'CLSID': '{LAU-7 wtip - AIM-9L}'},
+    1: {'CLSID': '{LAU-7 wtip - AIM-9L}'},         # stazione 1A
+    2: {'CLSID': '{SHOULDER AIM-7M}'},             # 1B
+    3: {'CLSID': '{F14-300gal}'},                  # 2
+    4: {'CLSID': '{AIM_54A_Mk60}'},                # 3: pallet anteriore sinistro
+    5: {'CLSID': '{BELLY AIM-7M}'},                # 4
+    7: {'CLSID': '{AIM_54A_Mk60}'},                # 6: pallet anteriore destro
+    8: {'CLSID': '{F14-300gal}'},                  # 7
+    9: {'CLSID': '{SHOULDER AIM-7M}'},             # 8B
+    10: {'CLSID': '{LAU-7 wtip - AIM-9L}'},        # 8A
 }
 
 
@@ -161,7 +166,8 @@ def gruppo_f14(gid, uid, nome_gruppo, numero, caldo, parcheggio, uid_gregario, p
     az_dec = 'From Parking Area Hot' if caldo else 'From Parking Area'
     v_cr, v_att = 350 * KT, 420 * KT
     punti = {
-        1: punto(*CVN, 0, 0, tipo=tipo_dec, azione=az_dec, linkUnit=ID_CVN, helipadId=ID_CVN, ETA_locked=True),
+        1: punto(*CVN, 0, 0, tipo=tipo_dec, azione=az_dec, linkUnit=ID_CVN, helipadId=ID_CVN,
+                 ETA=RITARDO_PARTENZA, ETA_locked=True),
         2: punto(*COSTA, 15000 * FT, v_cr, nome='COSTA'),
         3: punto(*IP, 15000 * FT, v_cr, nome='IP'),
         4: punto(*BERS_A, 12000 * FT, v_att, nome='ST'),
@@ -198,14 +204,14 @@ def gruppo_f14(gid, uid, nome_gruppo, numero, caldo, parcheggio, uid_gregario, p
             2: {'x': IP[0], 'y': IP[1], 'index': 2, 'text_comment': 'IP'},
             3: {'x': BERS_A[0], 'y': BERS_A[1], 'index': 3, 'text_comment': 'ST'},
         },
-        'x': CVN[0], 'y': CVN[1], 'name': nome_gruppo, 'communication': True, 'start_time': 0,
+        'x': CVN[0], 'y': CVN[1], 'name': nome_gruppo, 'communication': True, 'start_time': RITARDO_PARTENZA,
         'uncontrollable': False, 'frequency': PRESET[4][0],
         'units': {1: unita, 2: gregario}, 'route': {'points': punti},
     }
 
 
-# Parcheggi sulla portaerei (Supercarrier: 1-4 sono le catapulte).
-# Il giocatore parte dal 10 (secondo elevatore, vicino all'isola) in entrambi gli slot:
+# Parcheggi sulla portaerei (Supercarrier: 1-4 sono le catapulte). Con la partenza a
+# t=0 DCS non li rispetta: vedi RITARDO_PARTENZA. Il giocatore parte dal 10 (secondo elevatore, vicino all'isola) in entrambi gli slot:
 # in giocatore singolo solo lo slot scelto viene creato. I gregari hanno posti propri;
 # lo script G00 elimina all'avvio il gregario dello slot non scelto.
 PARCHEGGIO_GIOCATORE = 10
@@ -273,7 +279,7 @@ ESECUZIONE
 
 CARICO
 Tu: 2 AIM-9L, 2 AIM-7M, 2 serbatoi da 300 gal, 2 Mk-82, 6 BDU-33.
-Gregario (scorta): 2 AIM-54A, 4 AIM-7M, 2 AIM-9L, 2 serbatoi da 300 gal.
+Gregario (scorta): 2 AIM-54A, 3 AIM-7M, 2 AIM-9L, 2 serbatoi da 300 gal.
 
 NOTE
 - Nessuna minaccia: il volo e' di addestramento.

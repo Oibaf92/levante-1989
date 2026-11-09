@@ -334,11 +334,11 @@ local function sistemaGregari()
   return true
 end
 
--- il giocatore puo' entrare nell'aereo qualche istante dopo l'avvio: riprova per 60 s
+-- gli aerei compaiono qualche secondo dopo l'avvio (partenza ritardata): riprova per 120 s
 local tentativi = 0
 timer.scheduleFunction(function(_, t)
   tentativi = tentativi + 1
-  if sistemaGregari() or tentativi >= 60 then return nil end
+  if sistemaGregari() or tentativi >= 120 then return nil end
   return t + 1
 end, nil, timer.getTime() + 1)
 
