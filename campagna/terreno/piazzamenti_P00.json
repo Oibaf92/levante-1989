@@ -1,0 +1,878 @@
+[
+ {
+  "nome": "SA-5 Dumayr",
+  "sistema": "sa5",
+  "lat_lon": [
+   33.73694,
+   36.77129
+  ],
+  "rotta": 255.0,
+  "dettagli": {
+   "visibilita": 0.98,
+   "rilievo_m": 28,
+   "dist_obiettivo_km": 9.7,
+   "pendenza": 5,
+   "strada_m": 170,
+   "vegetazione": 0,
+   "quota": 848,
+   "candidati_validi": 201,
+   "raggio_usato_km": 12.0
+  },
+  "alternative": [
+   [
+    33.60194,
+    36.78554
+   ],
+   [
+    33.58598,
+    36.90446
+   ],
+   [
+    33.71872,
+    36.76097
+   ]
+  ]
+ },
+ {
+  "nome": "SA-5 Homs",
+  "sistema": "sa5",
+  "lat_lon": [
+   34.63583,
+   36.62753
+  ],
+  "rotta": 265.0,
+  "dettagli": {
+   "visibilita": 0.99,
+   "rilievo_m": 38,
+   "dist_obiettivo_km": 11.1,
+   "pendenza": 1,
+   "strada_m": 190,
+   "vegetazione": 0,
+   "quota": 509,
+   "candidati_validi": 235,
+   "raggio_usato_km": 12.0
+  },
+  "alternative": [
+   [
+    34.63988,
+    36.84557
+   ],
+   [
+    34.59483,
+    36.84674
+   ],
+   [
+    34.62869,
+    36.72589
+   ]
+  ]
+ },
+ {
+  "nome": "EWR costa",
+  "sistema": "ewr",
+  "lat_lon": [
+   35.24351,
+   35.98368
+  ],
+  "rotta": 270.0,
+  "dettagli": {
+   "visibilita": 1.0,
+   "rilievo_m": 29,
+   "dist_obiettivo_km": 14.8,
+   "pendenza": 7,
+   "strada_m": 30,
+   "vegetazione": 9,
+   "quota": 152,
+   "candidati_validi": 21,
+   "raggio_usato_km": 15.0
+  },
+  "alternative": [
+   [
+    35.17774,
+    36.24958
+   ],
+   [
+    35.25306,
+    36.0053
+   ],
+   [
+    35.22605,
+    36.00629
+   ]
+  ]
+ },
+ {
+  "nome": "EWR Antilibano",
+  "sistema": "ewr",
+  "lat_lon": [
+   33.61196,
+   36.3758
+  ],
+  "rotta": 250.0,
+  "dettagli": {
+   "visibilita": 0.75,
+   "rilievo_m": 71,
+   "dist_obiettivo_km": 10.1,
+   "pendenza": 15,
+   "strada_m": 620,
+   "vegetazione": 0,
+   "quota": 1014,
+   "candidati_validi": 353,
+   "raggio_usato_km": 15.0
+  },
+  "alternative": [
+   [
+    33.65746,
+    36.39598
+   ],
+   [
+    33.648,
+    36.3747
+   ],
+   [
+    33.60226,
+    36.34377
+   ]
+  ]
+ },
+ {
+  "nome": "SA-2 Damasco nord",
+  "sistema": "sa2",
+  "lat_lon": [
+   33.60085,
+   36.27917
+  ],
+  "rotta": 250.0,
+  "dettagli": {
+   "visibilita": 0.76,
+   "rilievo_m": 26,
+   "dist_obiettivo_km": 3.6,
+   "pendenza": 6,
+   "strada_m": 30,
+   "vegetazione": 0,
+   "quota": 1019,
+   "candidati_validi": 17,
+   "raggio_usato_km": 6.0
+  },
+  "alternative": [
+   [
+    33.55388,
+    36.1945
+   ],
+   [
+    33.60939,
+    36.25735
+   ],
+   [
+    33.58164,
+    36.22592
+   ]
+  ]
+ },
+ {
+  "nome": "SA-2 Damasco sud",
+  "sistema": "sa2",
+  "lat_lon": [
+   33.43198,
+   36.39198
+  ],
+  "rotta": 250.0,
+  "dettagli": {
+   "visibilita": 0.9,
+   "rilievo_m": 5,
+   "dist_obiettivo_km": 3.6,
+   "pendenza": 2,
+   "strada_m": 160,
+   "vegetazione": 0,
+   "quota": 640,
+   "candidati_validi": 45,
+   "raggio_usato_km": 6.0
+  },
+  "alternative": [
+   [
+    33.39683,
+    36.43603
+   ],
+   [
+    33.44054,
+    36.37022
+   ],
+   [
+    33.42431,
+    36.45673
+   ]
+  ]
+ },
+ {
+  "nome": "SA-2 Homs",
+  "sistema": "sa2",
+  "lat_lon": [
+   34.79068,
+   36.71052
+  ],
+  "rotta": 265.0,
+  "dettagli": {
+   "visibilita": 0.92,
+   "rilievo_m": -6,
+   "dist_obiettivo_km": 5.7,
+   "pendenza": 2,
+   "strada_m": 150,
+   "vegetazione": 0,
+   "quota": 458,
+   "candidati_validi": 42,
+   "raggio_usato_km": 6.0
+  },
+  "alternative": [
+   [
+    34.78901,
+    36.62315
+   ],
+   [
+    34.78985,
+    36.66683
+   ],
+   [
+    34.80766,
+    36.6554
+   ]
+  ]
+ },
+ {
+  "nome": "SA-2 Hama",
+  "sistema": "sa2",
+  "lat_lon": [
+   35.19676,
+   36.73212
+  ],
+  "rotta": 280.0,
+  "dettagli": {
+   "visibilita": 1.0,
+   "rilievo_m": 0,
+   "dist_obiettivo_km": 6.0,
+   "pendenza": 2,
+   "strada_m": 20,
+   "vegetazione": 0,
+   "quota": 320,
+   "candidati_validi": 14,
+   "raggio_usato_km": 6.0
+  },
+  "alternative": [
+   [
+    35.12629,
+    36.82186
+   ],
+   [
+    35.16233,
+    36.8209
+   ],
+   [
+    35.14451,
+    36.83235
+   ]
+  ]
+ },
+ {
+  "nome": "SA-2 Aleppo",
+  "sistema": "sa2",
+  "lat_lon": [
+   36.31632,
+   37.09026
+  ],
+  "rotta": 295.0,
+  "dettagli": {
+   "visibilita": 0.92,
+   "rilievo_m": 11,
+   "dist_obiettivo_km": 8.9,
+   "pendenza": 2,
+   "strada_m": 80,
+   "vegetazione": 0,
+   "quota": 460,
+   "candidati_validi": 8,
+   "raggio_usato_km": 9.0
+  },
+  "alternative": [
+   [
+    36.28098,
+    37.13566
+   ],
+   [
+    36.2255,
+    37.04797
+   ],
+   [
+    36.18946,
+    37.04887
+   ]
+  ]
+ },
+ {
+  "nome": "SA-2 Latakia",
+  "sistema": "sa2",
+  "lat_lon": [
+   35.37885,
+   35.98965
+  ],
+  "rotta": 270.0,
+  "dettagli": {
+   "visibilita": 1.0,
+   "rilievo_m": -2,
+   "dist_obiettivo_km": 7.9,
+   "pendenza": 2,
+   "strada_m": 110,
+   "vegetazione": 4,
+   "quota": 70,
+   "candidati_validi": 11,
+   "raggio_usato_km": 9.0
+  },
+  "alternative": [
+   [
+    35.44423,
+    35.89943
+   ],
+   [
+    35.39714,
+    35.99998
+   ],
+   [
+    35.4628,
+    35.92075
+   ]
+  ]
+ },
+ {
+  "nome": "SA-3 Damasco est",
+  "sistema": "sa3",
+  "lat_lon": [
+   33.5142,
+   36.44333
+  ],
+  "rotta": 250.0,
+  "dettagli": {
+   "visibilita": 0.95,
+   "rilievo_m": -1,
+   "dist_obiettivo_km": 5.9,
+   "pendenza": 1,
+   "strada_m": 0,
+   "vegetazione": 2,
+   "quota": 620,
+   "candidati_validi": 15,
+   "raggio_usato_km": 6.0
+  },
+  "alternative": [
+   [
+    33.52276,
+    36.42155
+   ],
+   [
+    33.49573,
+    36.42236
+   ],
+   [
+    33.50429,
+    36.40058
+   ]
+  ]
+ },
+ {
+  "nome": "SA-3 Damasco ovest",
+  "sistema": "sa3",
+  "lat_lon": [
+   33.40852,
+   36.14544
+  ],
+  "rotta": 250.0,
+  "dettagli": {
+   "visibilita": 0.95,
+   "rilievo_m": -1,
+   "dist_obiettivo_km": 5.6,
+   "pendenza": 1,
+   "strada_m": 360,
+   "vegetazione": 0,
+   "quota": 769,
+   "candidati_validi": 22,
+   "raggio_usato_km": 6.0
+  },
+  "alternative": [
+   [
+    33.41802,
+    36.16663
+   ],
+   [
+    33.44602,
+    36.20873
+   ],
+   [
+    33.42752,
+    36.18782
+   ]
+  ]
+ },
+ {
+  "nome": "SA-3 Homs",
+  "sistema": "sa3",
+  "lat_lon": [
+   34.66653,
+   36.82306
+  ],
+  "rotta": 265.0,
+  "dettagli": {
+   "visibilita": 1.0,
+   "rilievo_m": 6,
+   "dist_obiettivo_km": 4.3,
+   "pendenza": 3,
+   "strada_m": 260,
+   "vegetazione": 0,
+   "quota": 651,
+   "candidati_validi": 44,
+   "raggio_usato_km": 6.0
+  },
+  "alternative": [
+   [
+    34.70258,
+    36.82211
+   ],
+   [
+    34.7204,
+    36.81073
+   ],
+   [
+    34.64792,
+    36.79082
+   ]
+  ]
+ },
+ {
+  "nome": "SA-3 Hama",
+  "sistema": "sa3",
+  "lat_lon": [
+   35.10625,
+   36.7127
+  ],
+  "rotta": 280.0,
+  "dettagli": {
+   "visibilita": 1.0,
+   "rilievo_m": 19,
+   "dist_obiettivo_km": 3.1,
+   "pendenza": 2,
+   "strada_m": 140,
+   "vegetazione": 0,
+   "quota": 317,
+   "candidati_validi": 45,
+   "raggio_usato_km": 6.0
+  },
+  "alternative": [
+   [
+    35.05198,
+    36.70325
+   ],
+   [
+    35.07041,
+    36.72466
+   ],
+   [
+    35.05135,
+    36.67038
+   ]
+  ]
+ },
+ {
+  "nome": "SA-3 Aleppo",
+  "sistema": "sa3",
+  "lat_lon": [
+   36.13783,
+   37.20573
+  ],
+  "rotta": 295.0,
+  "dettagli": {
+   "visibilita": 0.97,
+   "rilievo_m": -4,
+   "dist_obiettivo_km": 2.8,
+   "pendenza": 1,
+   "strada_m": 90,
+   "vegetazione": 0,
+   "quota": 399,
+   "candidati_validi": 11,
+   "raggio_usato_km": 6.0
+  },
+  "alternative": [
+   [
+    36.11947,
+    37.18393
+   ],
+   [
+    36.21025,
+    37.22632
+   ],
+   [
+    36.15651,
+    37.24977
+   ]
+  ]
+ },
+ {
+  "nome": "SA-3 Latakia",
+  "sistema": "sa3",
+  "lat_lon": [
+   35.60514,
+   35.84909
+  ],
+  "rotta": 270.0,
+  "dettagli": {
+   "visibilita": 1.0,
+   "rilievo_m": 9,
+   "dist_obiettivo_km": 9.5,
+   "pendenza": 5,
+   "strada_m": 190,
+   "vegetazione": 8,
+   "quota": 125,
+   "candidati_validi": 13,
+   "raggio_usato_km": 12.0
+  },
+  "alternative": [
+   [
+    35.58598,
+    35.80571
+   ],
+   [
+    35.44423,
+    35.89943
+   ],
+   [
+    35.4628,
+    35.92075
+   ]
+  ]
+ },
+ {
+  "nome": "SA-3 Tartus",
+  "sistema": "sa3",
+  "lat_lon": [
+   34.91797,
+   35.94094
+  ],
+  "rotta": 260.0,
+  "dettagli": {
+   "visibilita": 1.0,
+   "rilievo_m": 8,
+   "dist_obiettivo_km": 3.6,
+   "pendenza": 5,
+   "strada_m": 430,
+   "vegetazione": 0,
+   "quota": 152,
+   "candidati_validi": 11,
+   "raggio_usato_km": 9.0
+  },
+  "alternative": [
+   [
+    34.81809,
+    35.91185
+   ],
+   [
+    34.84648,
+    35.96545
+   ],
+   [
+    34.82793,
+    35.94427
+   ]
+  ]
+ },
+ {
+  "nome": "I-Hawk Jounieh",
+  "sistema": "hawk",
+  "lat_lon": [
+   34.02963,
+   35.74586
+  ],
+  "rotta": 90.0,
+  "dettagli": {
+   "visibilita": 0.36,
+   "rilievo_m": 100,
+   "dist_obiettivo_km": 12.0,
+   "pendenza": 2,
+   "strada_m": 130,
+   "vegetazione": 12,
+   "quota": 1348,
+   "candidati_validi": 3,
+   "raggio_usato_km": 16.0
+  },
+  "alternative": [
+   [
+    33.9541,
+    35.61895
+   ]
+  ]
+ },
+ {
+  "nome": "SA-6 Bekaa",
+  "sistema": "sa6",
+  "lat_lon": [
+   33.90218,
+   36.0534
+  ],
+  "rotta": 255.0,
+  "dettagli": {
+   "visibilita": 0.87,
+   "rilievo_m": 16,
+   "dist_obiettivo_km": 8.9,
+   "pendenza": 2,
+   "strada_m": 20,
+   "vegetazione": 3,
+   "quota": 980,
+   "candidati_validi": 91,
+   "raggio_usato_km": 10.0
+  },
+  "alternative": [
+   [
+    33.81928,
+    35.98065
+   ],
+   [
+    33.86666,
+    36.07624
+   ],
+   [
+    33.87464,
+    36.03274
+   ]
+  ]
+ },
+ {
+  "nome": "SA-6 fronte del Golan",
+  "sistema": "sa6",
+  "lat_lon": [
+   33.19206,
+   36.14176
+  ],
+  "rotta": 235.0,
+  "dettagli": {
+   "visibilita": 1.0,
+   "rilievo_m": 6,
+   "dist_obiettivo_km": 9.8,
+   "pendenza": 2,
+   "strada_m": 70,
+   "vegetazione": 0,
+   "quota": 747,
+   "candidati_validi": 259,
+   "raggio_usato_km": 10.0
+  },
+  "alternative": [
+   [
+    33.20858,
+    36.07688
+   ],
+   [
+    33.15627,
+    36.15365
+   ],
+   [
+    33.16304,
+    36.05695
+   ]
+  ]
+ },
+ {
+  "nome": "SA-8 Bekaa",
+  "sistema": "sa8",
+  "lat_lon": [
+   33.75383,
+   35.88582
+  ],
+  "rotta": 255.0,
+  "dettagli": {
+   "visibilita": 1.0,
+   "rilievo_m": -6,
+   "dist_obiettivo_km": 4.3,
+   "pendenza": 1,
+   "strada_m": 10,
+   "vegetazione": 8,
+   "quota": 859,
+   "candidati_validi": 114,
+   "raggio_usato_km": 8.0
+  },
+  "alternative": [
+   [
+    33.73527,
+    35.86492
+   ],
+   [
+    33.80047,
+    35.94892
+   ],
+   [
+    33.76364,
+    35.91785
+   ]
+  ]
+ },
+ {
+  "nome": "SA-8 fronte del Golan",
+  "sistema": "sa8",
+  "lat_lon": [
+   33.20858,
+   36.07688
+  ],
+  "rotta": 235.0,
+  "dettagli": {
+   "visibilita": 1.0,
+   "rilievo_m": 40,
+   "dist_obiettivo_km": 4.2,
+   "pendenza": 6,
+   "strada_m": 50,
+   "vegetazione": 0,
+   "quota": 849,
+   "candidati_validi": 162,
+   "raggio_usato_km": 8.0
+  },
+  "alternative": [
+   [
+    33.26238,
+    36.06436
+   ],
+   [
+    33.26388,
+    36.12869
+   ],
+   [
+    33.20229,
+    36.19505
+   ]
+  ]
+ },
+ {
+  "nome": "SA-8 Damasco",
+  "sistema": "sa8",
+  "lat_lon": [
+   33.45856,
+   36.36967
+  ],
+  "rotta": 250.0,
+  "dettagli": {
+   "visibilita": 0.94,
+   "rilievo_m": -2,
+   "dist_obiettivo_km": 6.9,
+   "pendenza": 1,
+   "strada_m": 10,
+   "vegetazione": 0,
+   "quota": 642,
+   "candidati_validi": 16,
+   "raggio_usato_km": 8.0
+  },
+  "alternative": [
+   [
+    33.50338,
+    36.35756
+   ],
+   [
+    33.43061,
+    36.32751
+   ],
+   [
+    33.49131,
+    36.21804
+   ]
+  ]
+ },
+ {
+  "nome": "AAA Mezzeh",
+  "sistema": "aaa",
+  "lat_lon": [
+   33.49131,
+   36.21804
+  ],
+  "rotta": 250.0,
+  "dettagli": {
+   "visibilita": 0.67,
+   "rilievo_m": 23,
+   "dist_obiettivo_km": 1.6,
+   "pendenza": 6,
+   "strada_m": 490,
+   "vegetazione": 0,
+   "quota": 849,
+   "candidati_validi": 21,
+   "raggio_usato_km": 6.0
+  },
+  "alternative": [
+   [
+    33.49983,
+    36.19625
+   ],
+   [
+    33.44602,
+    36.20873
+   ],
+   [
+    33.45454,
+    36.18695
+   ]
+  ]
+ },
+ {
+  "nome": "AAA Al-Dumayr",
+  "sistema": "aaa",
+  "lat_lon": [
+   33.59215,
+   36.7427
+  ],
+  "rotta": 255.0,
+  "dettagli": {
+   "visibilita": 1.0,
+   "rilievo_m": -11,
+   "dist_obiettivo_km": 2.1,
+   "pendenza": 3,
+   "strada_m": 210,
+   "vegetazione": 0,
+   "quota": 612,
+   "candidati_validi": 17,
+   "raggio_usato_km": 3.0
+  },
+  "alternative": [
+   [
+    33.60978,
+    36.72069
+   ],
+   [
+    33.60155,
+    36.764
+   ],
+   [
+    33.61977,
+    36.77431
+   ]
+  ]
+ },
+ {
+  "nome": "AAA Hama",
+  "sistema": "aaa",
+  "lat_lon": [
+   35.13286,
+   36.69
+  ],
+  "rotta": 280.0,
+  "dettagli": {
+   "visibilita": 1.0,
+   "rilievo_m": 4,
+   "dist_obiettivo_km": 2.6,
+   "pendenza": 2,
+   "strada_m": 70,
+   "vegetazione": 2,
+   "quota": 300,
+   "candidati_validi": 8,
+   "raggio_usato_km": 3.0
+  },
+  "alternative": [
+   [
+    35.12448,
+    36.72316
+   ],
+   [
+    35.11463,
+    36.67955
+   ],
+   [
+    35.10604,
+    36.70173
+   ]
+  ]
+ }
+]

@@ -21,3 +21,14 @@ Campagna dinamica DCS World (mappa Syria), giocatore singolo. Lingua: italiano.
 - `missioni/` un .miz per giornata
 - `script/` motore della campagna (Lua, MOOSE), strumenti di analisi
 - `blu/`, `rosso/` diari e piani riservati
+
+## Piazzamento delle unita' di terra (piazzatore)
+- I comandanti NON danno coordinate esatte: danno un'intenzione per ogni unita'
+  (sistema, nome, centro di ricerca, raggio, settore da coprire, obiettivo da proteggere).
+- L'arbitro la passa a `script/tools/piazzatore.py` (`Intenzione`, `piazza_tutti`), che usa
+  `campagna/terreno/terreno_completo.npz` e restituisce posizione, disposizione dei veicoli e
+  3 alternative. Sistemi: sa2, sa3, sa5, sa6, sa8, aaa, ewr, hawk (vedi `SISTEMI`).
+- Nella missione va incluso `script/lua/levante_piazzatore.lua` con la tabella
+  `LEVANTE_PIAZZAMENTI` (vedi `script/costruisci_p00.py`): verifica ogni veicolo all'avvio e
+  gestisce la segnalazione F10 SPOSTA. Gli spostamenti finiscono in `extra.piazzatore` dello
+  stato salvato: alla giornata successiva vanno riportati nel piazzamento (posizione da evitare).

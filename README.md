@@ -101,3 +101,10 @@ rosso/      🔒 riservato al comandante rosso — non aprire
   interno, senza alberi, non e' rilevato.
 - `terreno_completo.npz`: le due cose unite, usate dal piazzatore delle unita'.
 - Strumenti: `script/tools/rilievo.py`, `foreste.py`, `crea_mappa_foreste.py`, `mappe_rilievo.py`.
+
+## 🎯 Piazzatore delle unita'
+I comandanti esprimono intenzioni ("SA-6 a protezione di Rayak, copertura verso ovest");
+`script/tools/piazzatore.py` sceglie il punto sul terreno rilevato (pendenza, edifici,
+vegetazione, strade, visibilita' radar) e dispone i veicoli secondo lo schema del sistema.
+In gioco `levante_piazzatore.lua` verifica ogni veicolo e, con un segno F10 **SPOSTA**,
+trasferisce una batteria nella posizione alternativa successiva. Prova: missione P00.

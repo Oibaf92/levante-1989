@@ -82,3 +82,17 @@ end
 
 Unit = { getByName = function(n) if n == "Dodge 2-1" then return MOCK.giocatore end return nil end }
 Group = { getByName = function(n) return { isExist = function() return true end, destroy = function() MOCK.gruppiRimossi = (MOCK.gruppiRimossi or "") .. n .. ";" end } end }
+-- gruppi di terra per il piazzatore
+MOCK.gruppi = {}
+Group.Category = { GROUND = 2 }
+function coalition.addGroup(paese, cat, g) MOCK.gruppi[g.name] = g; MOCK.ricreati = (MOCK.ricreati or 0) + 1 end
+Group.getByName = function(n)
+  local g = MOCK.gruppi[n]
+  if not g then return nil end
+  local function unita(u)
+    return { getPoint = function() return { x = u.x, y = 0, z = u.y } end, getTypeName = function() return u.type end }
+  end
+  return { isExist = function() return true end, destroy = function() end,
+    getUnits = function() local t = {} for k, u in ipairs(g.units) do t[k] = unita(u) end return t end,
+    getUnit = function(_, k) return unita(g.units[k]) end }
+end
