@@ -61,7 +61,7 @@ RANGE = { New = function(self, n) local o = {}; setmetatable(o, { __index = RANG
   SetRangeRadius = function(s) return s end, SetMessageTimeDuration = function(s) return s end, Start = function(s) return s end }
 -- io/lfs simulati
 lfs = { writedir = function() return "C:\\SavedGames\\DCS\\" end, mkdir = function() end }
-io = { open = function(p, m) local buf = {}; return { write = function(_, s) table.insert(buf, s) end, close = function() MOCK.file[p] = table.concat(buf) end } end }
+io = { open = function(p, m) local buf = {}; return { write = function(_, s) table.insert(buf, s) end, close = function() MOCK.file[p] = table.concat(buf) end, flush = function() end } end }
 
 StaticObject = { getByName = function(n) return { destroy = function() MOCK.distrutti = (MOCK.distrutti or 0) + 1 end } end }
 ZONE_RADIUS = { New = function(self, n, v, r) return { n = n, v = v, r = r } end }
@@ -77,7 +77,7 @@ io.open = function(p, m)
     return { read = function() return c end, close = function() end }
   end
   local buf = {}
-  return { write = function(_, s) table.insert(buf, s) end, close = function() MOCK.file[p] = table.concat(buf) end }
+  return { write = function(_, s) table.insert(buf, s) end, close = function() MOCK.file[p] = table.concat(buf) end, flush = function() end }
 end
 
 Unit = { getByName = function(n) if n == "Dodge 2-1" then return MOCK.giocatore end return nil end }
