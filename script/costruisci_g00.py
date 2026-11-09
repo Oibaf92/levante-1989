@@ -179,6 +179,44 @@ def gruppo_f14(gid, uid, nome_gruppo, numero, caldo, parcheggio):
     }
 
 
+# Parcheggi dei giocatori sulla portaerei. Sulla Supercarrier i posti 1-4 sono
+# le catapulte: i giocatori partono dal 5 in poi.
+PARCHEGGI = (5, 6)
+
+# Aerei statici sul ponte. Posizioni relative alla nave (m): x verso prua,
+# y verso dritta (lato dell'isola); angolo relativo alla prua (radianti).
+# Disposizione ripresa dalla missione "Siria 1989" del giocatore.
+STATICI_PONTE = [
+    ('A6E', 'va65-502-1991', -12.166, 31.611, 4.688),
+    ('A6E', 'va65-511-1991', -135.927, 25.447, 5.823),
+    ('A6E', 'va65-500-1991', -0.429, 30.808, 4.688),
+    ('F-14A-135-GR-Early', 'vf-84 ghost by reflected', -90.178, 34.577, 4.671),
+    ('F-14A-135-GR-Early', 'vf-41 aj100 1989 by reflected', 10.724, 34.830, 4.671),
+    ('S-3B', 'VS-24 AJ', -116.186, 28.357, 4.636),
+    ('S-3B', 'VS-24 AJ', -125.950, 27.297, 5.404),
+]
+
+
+def statici_ponte():
+    h = math.radians(ROTTA_NAVE)
+    gruppi = {}
+    for i, (tipo, livrea, ox, oy, ang) in enumerate(STATICI_PONTE, 1):
+        x = CVN[0] + ox * math.cos(h) - oy * math.sin(h)
+        y = CVN[1] + ox * math.sin(h) + oy * math.cos(h)
+        hdg = (h + ang) % (2 * math.pi)
+        nome = 'Ponte %d %s' % (i, {'A6E': 'A-6E', 'F-14A-135-GR-Early': 'F-14A', 'S-3B': 'S-3B'}[tipo])
+        gruppi[i] = {
+            'heading': hdg, 'groupId': 10 + i, 'x': x, 'y': y, 'name': nome,
+            'linkOffset': True, 'dead': False,
+            'units': {1: {'tasks': {}, 'livery_id': livrea, 'category': 'Planes',
+                          'offsets': {'x': ox, 'y': oy, 'angle': ang}, 'type': tipo,
+                          'unitId': 10 + i, 'rate': 50, 'x': x, 'y': y, 'name': nome, 'heading': hdg}},
+            'route': {'points': {1: {'alt': 0, 'type': '', 'action': '', 'linkUnit': ID_CVN, 'x': x, 'y': y,
+                                     'formation_template': '', 'name': '', 'speed': 0}}},
+        }
+    return gruppi
+
+
 # ---------------------------------------------------------------------------
 # Testi
 # ---------------------------------------------------------------------------
@@ -249,9 +287,10 @@ def costruisci():
     usa = next(c for c in blu['country'].values() if c['name'] == 'USA')
     usa['ship'] = {'group': {1: gruppo_navale()}}
     usa['plane'] = {'group': {
-        1: gruppo_f14(2, 4, 'Dodge 1 (avvio a freddo)', 1, False, 1),
-        2: gruppo_f14(3, 5, 'Dodge 2 (motori accesi)', 2, True, 2),
+        1: gruppo_f14(2, 4, 'Dodge 1 (avvio a freddo)', 1, False, PARCHEGGI[0]),
+        2: gruppo_f14(3, 5, 'Dodge 2 (motori accesi)', 2, True, PARCHEGGI[1]),
     }}
+    usa['static'] = {'group': statici_ponte()}
 
     # magazzini delle navi (uno per unita')
     modello = w['warehouses'][0]
