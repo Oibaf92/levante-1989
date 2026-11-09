@@ -73,7 +73,7 @@ end
 -- Le foreste NON sono rilevabili dagli script: il giocatore puo' spostare
 -- il poligono con un segno F10 contenente la parola "poligono".
 ------------------------------------------------------------------------
-local FILE_POSIZIONE = "poligono_G00.lua"
+local FILE_POSIZIONE = "poligono_G00_v2.lua"   -- v2: nuova posizione prevista (campo aperto)
 
 local function posizioneSalvata()
   if not LEVANTE.salvataggioAttivo then return nil end

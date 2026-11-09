@@ -36,7 +36,7 @@ n, v = luatable.parse(stato); print('parse stato ok:', n, list(v.keys()))
 n, v = luatable.parse(registro); print('parse registro ok:', n, len(v['eventi']), 'eventi')
 print('statici creati:', L.eval('#MOCK.statici'))
 
-pos = files['C:\\SavedGames\\DCS\\Levante1989\\poligono_G00.lua']
+pos = files['C:\\SavedGames\\DCS\\Levante1989\\poligono_G00_v2.lua']
 print('FILE POSIZIONE:', pos)
 # secondo avvio: deve usare la posizione salvata
 L.execute('MOCK.statici = {}; MOCK.testi = {}')

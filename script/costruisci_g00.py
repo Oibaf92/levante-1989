@@ -41,10 +41,10 @@ VEL_NAVE = 25 * KT
 CVN = ll_to_xy(36.25, 35.35)
 CVN_FINE = sposta(*CVN, ROTTA_NAVE, VEL_NAVE * 3 * 3600)      # 3 ore di navigazione
 
-BERS_A = ll_to_xy(36.88, 35.55)          # poligono di Ceyhan (posizione prevista)
+BERS_A = ll_to_xy(36.7917, 35.3724)      # poligono di Ceyhan: campo aperto scelto dalla mappa del Mission Editor
 BERS_B = sposta(*BERS_A, 90, 900)
 ROTTA_ATTACCO = 40
-IP = sposta(*BERS_A, ROTTA_ATTACCO + 180, 18000)
+IP = sposta(*BERS_A, ROTTA_ATTACCO + 180, 15000)
 COSTA = ll_to_xy(36.60, 35.25)
 USCITA = sposta(*BERS_A, 130, 20000)
 RIENTRO = sposta(*CVN, ROTTA_NAVE, VEL_NAVE * 55 * 60)       # dove sara' la nave dopo ~55 min
@@ -198,7 +198,7 @@ Dodge, decollo dalla Roosevelt, trasferimento sul poligono di Ceyhan, passaggi d
 ESECUZIONE
 1. Decollo: Dodge 1-1 parte a freddo, Dodge 2-1 e' gia' in moto (scegli lo slot).
 2. COSTA (WP1): ingresso a terra a ovest di Karatas, 15.000 ft.
-3. IP (WP2): 18 km a sud-ovest del bersaglio. Corsa d'attacco per 040.
+3. IP (WP2): 15 km a sud-ovest del bersaglio. Corsa d'attacco per 040.
 4. Bersaglio A (WP3, ST): tre carri in disuso, fumo ARANCIONE. Usa le 2 Mk-82.
 5. Bersaglio B: 900 m a est di A, cerchio di fuoristrada, fumo BLU. Usa le 6 BDU-33 da esercitazione.
 6. Il poligono comunica distanza e radiale di ogni impatto. Passaggi quanti ne vuoi, nessuna fretta.
