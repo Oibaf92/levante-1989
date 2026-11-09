@@ -31,6 +31,8 @@ from geo import ll_to_xy, xy_to_ll
 
 QUI = os.path.dirname(os.path.abspath(__file__))
 TERRENO = os.path.join(QUI, '..', '..', 'campagna', 'terreno', 'terreno_completo.npz')
+VEG_FINE = os.path.join(QUI, '..', '..', 'campagna', 'terreno', 'vegetazione_80m.npz')
+VEG_VEICOLO_MAX = 20          # % di vegetazione tollerata nelle celle da 80 m attorno a un veicolo
 
 
 # ---------------------------------------------------------------------------
@@ -44,6 +46,24 @@ class Terreno:
             x0, y0, passo, nx, ny = d[nome + '__meta']
             campi = {k.split('__')[1]: d[k] for k in d.files if k.startswith(nome + '__') and not k.endswith('meta')}
             self.regioni.append({'nome': nome, 'x0': x0, 'y0': y0, 'passo': passo, 'nx': int(nx), 'ny': int(ny), **campi})
+        self.veg = None
+        if os.path.exists(VEG_FINE):
+            v = np.load(VEG_FINE)
+            self.veg = (v['percento'], float(v['x0']), float(v['y0']), float(v['passo']))
+
+    def veicolo_libero(self, x, y, raggio=90.0):
+        """True se nelle celle da 80 m entro 'raggio' non c'e' vegetazione oltre la soglia (255 = ignoto)."""
+        if self.veg is None:
+            return True
+        m, x0, y0, passo = self.veg
+        i = int(round((x - x0) / passo))
+        j = int(round((y - y0) / passo))
+        r = int(math.ceil(raggio / passo))
+        if i + r < 0 or j + r < 0 or i - r >= m.shape[0] or j - r >= m.shape[1]:
+            return True
+        b = m[max(0, i - r):i + r + 1, max(0, j - r):j + r + 1]
+        b = b[b != 255]
+        return b.size == 0 or int(b.max()) <= VEG_VEICOLO_MAX
 
     def _regione(self, x, y):
         for r in self.regioni:
@@ -340,22 +360,42 @@ def _piazza(terreno, intenzione, gia_piazzati, seme, evitare, fattore):
                  - 0.002 * attr['strada'] / 100.0 + 0.15 * rnd)
 
     ordine = np.argsort(-punteggio)
-    scelti = []
+    a_, b_ = intenzione.settore
+    rotta0 = (a_ + ((b_ - a_) % 360 or 360) / 2) % 360
+
+    def sito_pulito(x, y):
+        """Fa scorrere la batteria fino a 400 m finche' nessun veicolo cade nella vegetazione."""
+        for d in (0, 100, 200, 300, 400):
+            for k in range(1 if d == 0 else 8):
+                ang = math.radians(45 * k)
+                px, py = x + d * math.cos(ang), y + d * math.sin(ang)
+                if all(terreno.veicolo_libero(ux, uy) for _, ux, uy, _ in _orienta(cfg['schema'], px, py, rotta0)):
+                    return px, py, d
+        return None
+    scelti = []                                               # (indice, x, y, scorrimento)
+    scartati_veg = 0
     for k in ordine:                                          # migliore + 3 alternative ben separate
-        if all(math.hypot(pts[k, 0] - pts[s, 0], pts[k, 1] - pts[s, 1]) > max(2000, cfg['raggio_area'] * 4) for s in scelti):
-            scelti.append(k)
+        if not all(math.hypot(pts[k, 0] - sx, pts[k, 1] - sy) > max(2000, cfg['raggio_area'] * 4) for _, sx, sy, _ in scelti):
+            continue
+        pulito = sito_pulito(pts[k, 0], pts[k, 1])
+        if pulito is None:
+            scartati_veg += 1
+            continue
+        scelti.append((k, pulito[0], pulito[1], pulito[2]))
         if len(scelti) == 4:
             break
-    a, b = intenzione.settore
-    centro_settore = (a + ((b - a) % 360 or 360) / 2) % 360
-    k = scelti[0]
-    p = Piazzamento(intenzione, float(pts[k, 0]), float(pts[k, 1]), centro_settore, float(punteggio[k]),
+    if not scelti:
+        raise ValueError('%s: tutti i siti hanno vegetazione sotto i veicoli' % intenzione.nome)
+    centro_settore = rotta0
+    k, sx, sy, scorr = scelti[0]
+    p = Piazzamento(intenzione, float(sx), float(sy), centro_settore, float(punteggio[k]),
                     dict(visibilita=round(float(vis[k]), 2), rilievo_m=round(float(rel[k] * 100)),
                          dist_obiettivo_km=round(float(d_obi[k]) / 1000, 1), pendenza=int(attr['pendenza'][k]),
                          strada_m=int(attr['strada'][k]), vegetazione=int(attr['vegetazione'][k]),
-                         quota=int(attr['quota'][k]), candidati_validi=int(len(pts))))
+                         quota=int(attr['quota'][k]), candidati_validi=int(len(pts)),
+                         scorrimento_m=int(scorr), siti_scartati_vegetazione=scartati_veg))
     p.unita = _orienta(cfg['schema'], p.x, p.y, p.rotta)
-    p.alternative = [(float(pts[s, 0]), float(pts[s, 1]), centro_settore) for s in scelti[1:]]
+    p.alternative = [(float(ax), float(ay), centro_settore) for _, ax, ay, _ in scelti[1:]]
     return p
 
 

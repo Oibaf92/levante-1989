@@ -110,12 +110,33 @@ def calibra(punti, marcatori, tolleranza_m=600.0):
 
 
 # ---------------------------------------------------------------------------
-def classifica_sat(rgb):
-    """Bosco dalla vista SAT (satellitare): verde scuro. I centri abitati vengono dal rilievo (edifici)."""
-    r, g, b = (rgb[..., k].astype(int) for k in range(3))
+def _media_locale(a, valido, r):
+    """Media su una finestra quadrata di lato 2r+1, ignorando i pixel non validi."""
+    from numpy.lib.stride_tricks import sliding_window_view  # noqa: F401 (solo per chiarezza)
+    v = np.where(valido, a, 0.0)
+    n = valido.astype(float)
+    # somme cumulative 2D (immagine integrale)
+    def somma(x):
+        c = np.pad(x, ((r + 1, r), (r + 1, r)), mode='edge').cumsum(0).cumsum(1)
+        return c[2 * r + 1:, 2 * r + 1:] - c[:-2 * r - 1, 2 * r + 1:] - c[2 * r + 1:, :-2 * r - 1] + c[:-2 * r - 1, :-2 * r - 1]
+    return somma(v) / np.maximum(somma(n), 1)
+
+
+def classifica_sat(rgb, valido=None):
+    """Vegetazione dalla vista SAT.
+
+    Due criteri: (1) verde/oliva in assoluto (boschi, frutteti fitti); (2) piu' verde dei
+    dintorni (frutteti e filari che nel satellite sono solo macchie appena piu' verdi).
+    I centri abitati vengono dal rilievo (edifici)."""
+    r, g, b = (rgb[..., k].astype(float) for k in range(3))
     lum = (r + g + b) / 3
-    bosco = (lum < 95) & (g >= r - 2) & (g > b + 5)
-    return bosco, np.zeros_like(bosco)
+    if valido is None:
+        valido = np.ones(r.shape, dtype=bool)
+    gr = g - r
+    assoluto = (g >= r - 4) & (g - b > 22) & (lum < 135)
+    relativo = ((gr - _media_locale(gr, valido, 12) > 5) & (g - b > 15) & (lum < 150)
+                & (lum - _media_locale(lum, valido, 12) < 4))
+    return (assoluto | relativo) & valido, np.zeros(r.shape, dtype=bool)
 
 
 def classifica(rgb):
@@ -156,8 +177,8 @@ def elabora(percorso_png, marcatori, ritaglio=None, vista='sat'):
         rgb = sub
     punti = rileva_crocette(rgb)
     s, X0, Y0, n, err = calibra(punti, marcatori)
-    bosco, abitato = classifica_sat(rgb) if vista == 'sat' else classifica(rgb)
     valido = pixel_validi(rgb)
+    bosco, abitato = classifica_sat(rgb, valido) if vista == 'sat' else classifica(rgb)
     return {'s': s, 'X0': X0, 'Y0': Y0, 'crocette': len(punti), 'corrispondenze': n, 'errore_m': err,
             'bosco': bosco, 'abitato': abitato, 'valido': valido, 'forma': rgb.shape[:2]}
 
