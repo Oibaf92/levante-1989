@@ -79,60 +79,37 @@ SAM_BLU_VISTI_DAL_ROSSO = [
 
 
 # ---------------------------------------------------------------------------
-DISTANZA_MINIMA = 7000.0      # m tra due simboli; se piu' vicini, il secondo viene scostato
-
-
-def _posto_libero(x, y, occupati):
-    """Scosta il simbolo verso est (poi altre direzioni) se tocca un simbolo gia' disegnato."""
-    import math
-    for passo in range(0, 6):
-        for ang in (90, 0, 180, 270, 45, 135, 225, 315):
-            d = passo * DISTANZA_MINIMA
-            px, py = x + d * math.cos(math.radians(ang)), y + d * math.sin(math.radians(ang))
-            if all(math.hypot(px - ox, py - oy) >= DISTANZA_MINIMA for ox, oy in occupati):
-                return px, py
-            if passo == 0:
-                break
-    return x, y
-
-
-def _basi(strato, basi, colore, prefisso, occupati):
+def _basi(strato, basi, colore, prefisso):
     ogg = []
     for lat, lon, tipo, nome, _ in basi:
-        x, y = _posto_libero(*ll_to_xy(lat, lon), occupati)
-        occupati.append((x, y))
+        x, y = ll_to_xy(lat, lon)
         ogg += simboli.simbolo(tipo, '%s %s' % (prefisso, nome), strato, x, y, colore)
     return ogg
 
 
-def _sam(strato, siti, linea, tenue, prefisso, occupati):
+def _sam(strato, siti, linea, tenue, prefisso):
     ogg = []
     for lat, lon, r_km, tipo, nome in siti:
         x, y = ll_to_xy(lat, lon)
         col_cerchio = tenue if tipo == 'sam_lungo' else linea
-        # il cerchio di portata resta centrato sul sito vero, il simbolo puo' essere scostato
         ogg.append(simboli.cerchio('%s %s (portata)' % (prefisso, nome), strato, x, y, r_km * 1000, col_cerchio,
                                    2 if tipo == 'sam_lungo' else 3))
-        sx, sy = _posto_libero(x, y, occupati)
-        occupati.append((sx, sy))
-        ogg += simboli.simbolo(tipo, '%s %s' % (prefisso, nome), strato, sx, sy, linea)
+        ogg += simboli.simbolo(tipo, '%s %s' % (prefisso, nome), strato, x, y, linea)
     return ogg
 
 
 def disegni_blu():
-    occ = []
-    return (_basi('Blue', BASI_BLU, B_LINEA, 'Propria', occ)
-            + _basi('Blue', BASI_ROSSE, R_LINEA, 'Intel', occ)
-            + _sam('Blue', SAM_BLU, B_LINEA, B_TENUE, 'Propria', occ)
-            + _sam('Blue', SAM_ROSSI, R_LINEA, R_TENUE, 'Intel', occ))
+    return (_basi('Blue', BASI_BLU, B_LINEA, 'Propria')
+            + _basi('Blue', BASI_ROSSE, R_LINEA, 'Intel')
+            + _sam('Blue', SAM_BLU, B_LINEA, B_TENUE, 'Propria')
+            + _sam('Blue', SAM_ROSSI, R_LINEA, R_TENUE, 'Intel'))
 
 
 def disegni_rossi():
-    occ = []
-    return (_basi('Red', BASI_ROSSE, R_LINEA, 'Propria', occ)
-            + _basi('Red', BASI_BLU_VISTE_DAL_ROSSO, B_LINEA, 'Intel', occ)
-            + _sam('Red', SAM_ROSSI, R_LINEA, R_TENUE, 'Propria', occ)
-            + _sam('Red', SAM_BLU_VISTI_DAL_ROSSO, B_LINEA, B_TENUE, 'Intel', occ))
+    return (_basi('Red', BASI_ROSSE, R_LINEA, 'Propria')
+            + _basi('Red', BASI_BLU_VISTE_DAL_ROSSO, B_LINEA, 'Intel')
+            + _sam('Red', SAM_ROSSI, R_LINEA, R_TENUE, 'Propria')
+            + _sam('Red', SAM_BLU_VISTI_DAL_ROSSO, B_LINEA, B_TENUE, 'Intel'))
 
 
 def aggiungi(mission):
