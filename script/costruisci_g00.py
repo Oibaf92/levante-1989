@@ -40,7 +40,7 @@ def sposta(x, y, rotta, dist):
 # ---------------------------------------------------------------------------
 ROTTA_NAVE = 250            # rotta base della portaerei (BRC)
 VEL_NAVE = 25 * KT
-CVN = ll_to_xy(36.10, 34.30)            # tra Cipro e la Turchia, ~140 km dalla costa siriana
+CVN = ll_to_xy(35.95, 33.70)            # a nord di Cipro, ~200 km dalla costa siriana
 CVN_FINE = sposta(*CVN, ROTTA_NAVE, VEL_NAVE * 3 * 3600)      # 3 ore di navigazione
 
 BERS_A = ll_to_xy(36.7917, 35.3724)      # poligono di Ceyhan: campo aperto scelto dalla mappa del Mission Editor

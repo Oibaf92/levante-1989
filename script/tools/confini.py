@@ -57,9 +57,9 @@ GIORDANIA = [
     (31.75, 35.55), (32.32, 35.57),
 ]
 
-ZONA_NAVALE_USA = [  # area operativa del gruppo portaerei: tra Cipro e la Turchia
-    (35.80, 34.65), (35.75, 33.95), (36.05, 33.75), (36.30, 34.10),
-    (36.40, 34.60), (36.30, 35.00), (36.15, 35.15), (35.90, 35.10),
+ZONA_NAVALE_USA = [  # area operativa del gruppo portaerei: a nord di Cipro
+    (35.65, 34.55), (35.60, 33.10), (35.95, 32.80), (35.98, 33.35),
+    (36.20, 33.90), (36.30, 34.50), (36.15, 34.90), (35.85, 34.90),
 ]
 
 TERRITORI = [
@@ -81,7 +81,7 @@ ETICHETTE = [
     (31.90, 37.20, 'GIORDANIA\nneutrale', GRIGIO, 20),
     (37.15, 35.70, 'TURCHIA (NATO)\nneutrale - attacco VIETATO\nIncirlik a disposizione del blu', VIOLA, 15),
     (35.05, 33.00, 'CIPRO\nneutrale - Akrotiri (UK)\ndirottamento per il blu', GRIGIO, 15),
-    (36.05, 34.45, 'ZONA OPERATIVA\nNAVALE USA', BLU, 14),
+    (35.90, 33.75, 'ZONA OPERATIVA\nNAVALE USA', BLU, 14),
 ]
 
 
