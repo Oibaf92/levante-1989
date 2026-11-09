@@ -85,17 +85,101 @@ ETICHETTE = [
 ]
 
 
-def _poligono(i, nome, punti, colori, spessore):
-    xy = [ll_to_xy(lat, lon) for lat, lon in punti]
+def _area(pts):
+    return sum(x1 * y2 - x2 * y1 for (x1, y1), (x2, y2) in zip(pts, pts[1:] + pts[:1])) / 2
+
+
+def _croce(o, a, b):
+    return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])
+
+
+def _dentro(p, a, b, c):
+    d1, d2, d3 = _croce(a, b, p), _croce(b, c, p), _croce(c, a, p)
+    return not ((d1 < 0 or d2 < 0 or d3 < 0) and (d1 > 0 or d2 > 0 or d3 > 0))
+
+
+def _triangoli(pts):
+    """Ear clipping: scompone un poligono semplice in triangoli (indici)."""
+    idx = list(range(len(pts)))
+    if _area(pts) < 0:
+        idx.reverse()
+    tri = []
+    while len(idx) > 3:
+        for k in range(len(idx)):
+            i0, i1, i2 = idx[k - 1], idx[k], idx[(k + 1) % len(idx)]
+            a, b, c = pts[i0], pts[i1], pts[i2]
+            if _croce(a, b, c) <= 0:
+                continue
+            if any(_dentro(pts[j], a, b, c) for j in idx if j not in (i0, i1, i2)):
+                continue
+            tri.append([i0, i1, i2])
+            idx.pop(k)
+            break
+        else:
+            raise ValueError('poligono non semplice')
+    tri.append(idx)
+    return tri
+
+
+def _convesso(pts, poly):
+    n = len(poly)
+    return all(_croce(pts[poly[k]], pts[poly[(k + 1) % n]], pts[poly[(k + 2) % n]]) >= 0 for k in range(n))
+
+
+def _pezzi_convessi(pts):
+    """Triangoli fusi a coppie finche' il risultato resta convesso (Hertel-Mehlhorn)."""
+    pezzi = _triangoli(pts)
+    fuso = True
+    while fuso:
+        fuso = False
+        for i in range(len(pezzi)):
+            for j in range(i + 1, len(pezzi)):
+                a, b = pezzi[i], pezzi[j]
+                for ka in range(len(a)):
+                    u, v = a[ka], a[(ka + 1) % len(a)]
+                    if v in b and b[(b.index(v) + 1) % len(b)] == u:
+                        kb = b.index(v)
+                        nuovo = a[:ka + 1] + [b[(kb + t) % len(b)] for t in range(2, len(b))] + a[ka + 1:]
+                        if _convesso(pts, nuovo):
+                            pezzi[i] = nuovo
+                            pezzi.pop(j)
+                            fuso = True
+                            break
+                if fuso:
+                    break
+            if fuso:
+                break
+    return pezzi
+
+
+def _punti_relativi(xy):
     x0, y0 = xy[0]
-    return {
-        'visible': True, 'primitiveType': 'Polygon', 'polygonMode': 'free',
-        'mapX': x0, 'mapY': y0, 'angle': 0,
-        'points': {k: {'x': x - x0, 'y': y - y0} for k, (x, y) in enumerate(xy, 1)},
-        'colorString': colori[0], 'fillColorString': colori[1],
-        'thickness': spessore, 'style': 'solid',
+    pts = {k: {'x': x - x0, 'y': y - y0} for k, (x, y) in enumerate(xy, 1)}
+    pts[len(xy) + 1] = {'x': 0.0, 'y': 0.0}      # ripete il primo punto: DCS non chiude da solo
+    return x0, y0, pts
+
+
+def _territorio(nome, punti, colori, spessore):
+    """Bordo (linea chiusa) + riempimento in pezzi convessi senza bordo."""
+    xy = [ll_to_xy(lat, lon) for lat, lon in punti]
+    ogg = []
+    for k, pezzo in enumerate(_pezzi_convessi(xy), 1):
+        x0, y0, pts = _punti_relativi([xy[i] for i in pezzo])
+        ogg.append({
+            'visible': True, 'primitiveType': 'Polygon', 'polygonMode': 'free',
+            'mapX': x0, 'mapY': y0, 'angle': 0, 'points': pts,
+            'colorString': '0x00000000', 'fillColorString': colori[1],
+            'thickness': 0, 'style': 'solid',
+            'name': '%s - area %d' % (nome, k), 'layerName': 'Common',
+        })
+    x0, y0, pts = _punti_relativi(xy)
+    ogg.append({
+        'visible': True, 'primitiveType': 'Line', 'lineMode': 'free', 'closed': True,
+        'mapX': x0, 'mapY': y0, 'points': pts,
+        'colorString': colori[0], 'thickness': spessore, 'style': 'solid',
         'name': nome, 'layerName': 'Common',
-    }
+    })
+    return ogg
 
 
 def _testo(i, lat, lon, testo, colori, dim):
@@ -111,8 +195,8 @@ def _testo(i, lat, lon, testo, colori, dim):
 def disegni():
     """Oggetti da mettere in mission['drawings']['layers'][<Common>]['objects']."""
     ogg = []
-    for i, (nome, punti, colori, spessore) in enumerate(TERRITORI, 1):
-        ogg.append(_poligono(i, nome, punti, colori, spessore))
+    for nome, punti, colori, spessore in TERRITORI:
+        ogg.extend(_territorio(nome, punti, colori, spessore))
     for i, (lat, lon, testo, colori, dim) in enumerate(ETICHETTE, 1):
         ogg.append(_testo(i, lat, lon, testo, colori, dim))
     return {k: o for k, o in enumerate(ogg, 1)}
