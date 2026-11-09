@@ -205,11 +205,22 @@ def _simbolo_pil(d, tipo, x, y, colore, r=9):
     elif tipo == 'terra':
         pts = [(x + r * 1.1 * math.sin(math.radians(72 * i)), y - r * 1.1 * math.cos(math.radians(72 * i))) for i in range(5)]
         d.polygon(pts, outline=colore, width=2)
-    elif tipo in ('sam_lungo', 'sam_medio'):
-        k = 1.4 if tipo == 'sam_lungo' else 1.0
+    elif tipo in ('sa5', 'sa2', 'hawk'):
+        k = 1.4 if tipo == 'sa5' else 1.0
         d.polygon([(x, y - r * k), (x + r * k, y + r * k * 0.8), (x - r * k, y + r * k * 0.8)], outline=colore, width=2)
-    elif tipo == 'sam_mobile':
-        d.ellipse([x - r * 0.7, y - r * 0.7, x + r * 0.7, y + r * 0.7], outline=colore, width=2)
+        if tipo == 'sa5':
+            d.polygon([(x, y - r * 0.5), (x + r * 0.5, y + r * 0.4), (x - r * 0.5, y + r * 0.4)], outline=colore, width=1)
+        if tipo == 'hawk':
+            d.line([x - r * 1.1, y + r * 0.15, x + r * 1.1, y + r * 0.15], fill=colore, width=2)
+    elif tipo == 'sa3':
+        d.polygon([(x, y + r), (x + r, y - r * 0.8), (x - r, y - r * 0.8)], outline=colore, width=2)
+    elif tipo == 'sa6':
+        d.polygon([(x + r * math.sin(math.radians(60 * i + 30)), y - r * math.cos(math.radians(60 * i + 30)))
+                   for i in range(6)], outline=colore, width=2)
+    elif tipo == 'sa8':
+        d.ellipse([x - r * 0.8, y - r * 0.8, x + r * 0.8, y + r * 0.8], outline=colore, width=2)
+        d.line([x - r * 0.8, y, x + r * 0.8, y], fill=colore, width=1)
+        d.line([x, y - r * 0.8, x, y + r * 0.8], fill=colore, width=1)
 
 
 def pagina_intel(g):
@@ -226,7 +237,7 @@ def pagina_intel(g):
         d.text((62, y), nome, font=fb, fill=INCH)
         d.text((250, y), det, font=fn, fill=INCH)
         y += 22
-    y = _sezione(d, y + 8, 'DIFESA AEREA (siti fissi e zone mobili)')
+    y = _sezione(d, y + 8, 'DIFESA AEREA (SA-6/SA-8: ultima posizione osservata)')
     for lat, lon, r_km, tipo, nome in intel.SAM_ROSSI:
         _simbolo_pil(d, tipo, 42, y + 9, ROSSO, 7)
         d.text((62, y), nome, font=fb, fill=INCH)
@@ -244,12 +255,7 @@ def pagina_intel(g):
         d.text((62, y), nome, font=fb, fill=INCH)
         d.text((480, y), 'portata ~%d km' % r_km, font=fn, fill=INCH)
         y += 22
-    y = _sezione(d, y + 8, 'LEGENDA')
-    import simboli
-    for tipo, (descr, _) in simboli.TIPI.items():
-        _simbolo_pil(d, tipo, 42, y + 9, INCH, 7)
-        d.text((62, y), descr, font=fn, fill=INCH)
-        y += 22
+    d.text((62, y + 4), 'Legenda dei simboli: pagina 4 (CARTA).', font=fn, fill=GRIGIO)
     return img
 
 
@@ -271,7 +277,7 @@ def pagina_carta(g):
     from geo import ll_to_xy
     img = Image.new('RGB', (W, H), CARTA)
     d0 = ImageDraw.Draw(img)
-    _testata(d0, 'CARTA D\'INSIEME', 'Rotta del volo e stima intel USA  |  simboli: vedi pagina INTEL')
+    _testata(d0, 'CARTA D\'INSIEME', 'Rotta del volo e stima intel USA  |  legenda in fondo alla pagina')
     lat_s, lat_n, lon_o, lon_e = 32.30, 37.30, 32.35, 37.90
     xn, _ = ll_to_xy(lat_n, (lon_o + lon_e) / 2)
     xs, _ = ll_to_xy(lat_s, (lon_o + lon_e) / 2)
@@ -321,6 +327,17 @@ def pagina_carta(g):
     d0.text((24, yt), 'Nero: rotta del volo (numeri = waypoint).  Rosso: stima forze siro-sovietiche.', font=font(14), fill=INCH)
     d0.text((24, yt + 22), 'Blu: forze USA.  Posizioni esatte: i simboli possono sovrapporsi.', font=font(14), fill=INCH)
     d0.text((24, yt + 44), 'Coste schematiche, solo indicative.', font=font(14), fill=GRIGIO)
+    # legenda dei simboli su due colonne
+    import simboli
+    y0 = yt + 78
+    d0.text((24, y0), 'LEGENDA', font=font(15, True), fill=ROSSO)
+    voci = list(simboli.TIPI.items())
+    meta = (len(voci) + 1) // 2
+    for i, (tipo, (descr, _)) in enumerate(voci):
+        cx = 40 if i < meta else 420
+        cy = y0 + 32 + (i % meta) * 22
+        _simbolo_pil(d0, tipo, cx, cy, INCH, 7)
+        d0.text((cx + 20, cy - 9), descr, font=font(14), fill=INCH)
     return img
 
 

@@ -41,17 +41,28 @@ BASI_ROSSE = [
 ]
 
 # siti SAM: (lat, lon, raggio km, tipo, nome)
+# SA-6 e SA-8 sono mobili: la posizione e' l'ultima osservata.
 SAM_ROSSI = [
-    (33.660, 36.820, 150, 'sam_lungo', 'SA-5 Dumayr'),
-    (34.600, 36.740, 150, 'sam_lungo', 'SA-5 Homs'),
-    (33.510, 36.290, 35, 'sam_medio', 'SA-2/SA-3 Damasco'),
-    (34.730, 36.710, 30, 'sam_medio', 'SA-2/SA-3 Homs'),
-    (35.130, 36.750, 25, 'sam_medio', 'SA-2/SA-3 Hama'),
-    (36.200, 37.160, 30, 'sam_medio', 'SA-2/SA-3 Aleppo'),
-    (35.520, 35.850, 25, 'sam_medio', 'SA-2/SA-3 Latakia'),
-    (34.890, 35.920, 25, 'sam_medio', 'SA-2/SA-3 Tartus'),
-    (33.850, 35.980, 30, 'sam_mobile', 'SA-6 mobili, Bekaa'),
-    (33.150, 36.050, 30, 'sam_mobile', 'SA-6/SA-8 mobili, fronte del Golan'),
+    (33.660, 36.820, 150, 'sa5', 'SA-5 Dumayr'),
+    (34.600, 36.740, 150, 'sa5', 'SA-5 Homs'),
+    (33.580, 36.250, 40, 'sa2', 'SA-2 Damasco nord'),
+    (33.400, 36.400, 40, 'sa2', 'SA-2 Damasco sud'),
+    (33.520, 36.380, 22, 'sa3', 'SA-3 Damasco est'),
+    (33.450, 36.180, 22, 'sa3', 'SA-3 Damasco ovest'),
+    (34.760, 36.660, 40, 'sa2', 'SA-2 Homs'),
+    (34.700, 36.800, 22, 'sa3', 'SA-3 Homs'),
+    (35.160, 36.780, 40, 'sa2', 'SA-2 Hama'),
+    (35.100, 36.680, 22, 'sa3', 'SA-3 Hama'),
+    (36.240, 37.120, 40, 'sa2', 'SA-2 Aleppo'),
+    (36.160, 37.220, 22, 'sa3', 'SA-3 Aleppo'),
+    (35.450, 35.980, 40, 'sa2', 'SA-2 Latakia'),
+    (35.520, 35.850, 22, 'sa3', 'SA-3 Latakia'),
+    (34.890, 35.920, 22, 'sa3', 'SA-3 Tartus'),
+    (33.850, 35.980, 25, 'sa6', 'SA-6 Bekaa'),
+    (33.150, 36.050, 25, 'sa6', 'SA-6 fronte del Golan'),
+    (33.780, 35.920, 10, 'sa8', 'SA-8 Bekaa'),
+    (33.220, 36.120, 10, 'sa8', 'SA-8 fronte del Golan'),
+    (33.480, 36.300, 10, 'sa8', 'SA-8 Damasco'),
 ]
 
 # --- forze USA -----------------------------------------------------------------
@@ -62,7 +73,7 @@ BASI_BLU = [
     (33.980, 35.630, 'terra', 'Jounieh', 'testa di ponte dei Marines'),
 ]
 SAM_BLU = [
-    (33.980, 35.630, 35, 'sam_medio', 'I-Hawk Jounieh'),
+    (33.980, 35.630, 35, 'hawk', 'I-Hawk Jounieh'),
 ]
 
 # cio' che il rosso sa delle forze USA
@@ -74,7 +85,7 @@ BASI_BLU_VISTE_DAL_ROSSO = [
     (35.900, 33.900, 'navale', 'Gruppo portaerei USA', 'posizione stimata, in movimento'),
 ]
 SAM_BLU_VISTI_DAL_ROSSO = [
-    (33.980, 35.630, 35, 'sam_medio', 'Hawk (stimato) Jounieh'),
+    (33.980, 35.630, 35, 'hawk', 'Hawk (stimato) Jounieh'),
 ]
 
 
@@ -91,9 +102,9 @@ def _sam(strato, siti, linea, tenue, prefisso):
     ogg = []
     for lat, lon, r_km, tipo, nome in siti:
         x, y = ll_to_xy(lat, lon)
-        col_cerchio = tenue if tipo == 'sam_lungo' else linea
+        col_cerchio = tenue if tipo == 'sa5' else linea
         ogg.append(simboli.cerchio('%s %s (portata)' % (prefisso, nome), strato, x, y, r_km * 1000, col_cerchio,
-                                   2 if tipo == 'sam_lungo' else 3))
+                                   2 if tipo == 'sa5' else 3))
         ogg += simboli.simbolo(tipo, '%s %s' % (prefisso, nome), strato, x, y, linea)
     return ogg
 

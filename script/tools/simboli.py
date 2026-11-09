@@ -11,10 +11,14 @@ TIPI = {
     'elicotteri': ('Base elicotteri', 4000),
     'navale': ('Base navale / nave', 5000),
     'terra': ('Forze di terra', 4500),
-    'sam_lungo': ('SAM a lungo raggio (SA-5) e portata', 8000),
-    'sam_medio': ('SAM a medio raggio (SA-2/3, Hawk) e portata', 5000),
-    'sam_mobile': ('Zona SAM mobili (SA-6/8) e portata', 3500),
+    'sa5': ('SA-5 (lungo raggio) e portata', 9000),
+    'sa2': ('SA-2 e portata', 5500),
+    'sa3': ('SA-3 e portata', 5500),
+    'sa6': ('SA-6 (mobile) e portata', 5000),
+    'sa8': ('SA-8 (mobile) e portata', 4000),
+    'hawk': ('Hawk (USA) e portata', 5500),
 }
+SAM = ('sa5', 'sa2', 'sa3', 'sa6', 'sa8', 'hawk')
 
 
 def linea(nome, strato, punti, colore, spessore=3, chiusa=True):
@@ -50,9 +54,22 @@ def simbolo(tipo, nome, strato, x, y, colore, scala=1.0):
         return [linea(nome, strato, _poligono_regolare(x, y, h * 1.3, 4, 0), colore)]
     if tipo == 'terra':
         return [linea(nome, strato, _poligono_regolare(x, y, h * 1.1, 5, 0), colore)]
-    if tipo in ('sam_lungo', 'sam_medio'):
-        # triangolo con la punta a nord (x = nord: angolo 0)
+    # SAM: x = nord, quindi l'angolo 0 mette la punta del triangolo a nord
+    if tipo == 'sa5':
+        return [linea(nome, strato, _poligono_regolare(x, y, h * 1.15, 3, 0), colore),
+                linea(nome + ' interno', strato, _poligono_regolare(x, y, h * 0.55, 3, 0), colore)]
+    if tipo == 'sa2':
         return [linea(nome, strato, _poligono_regolare(x, y, h * 1.15, 3, 0), colore)]
-    if tipo == 'sam_mobile':
-        return [cerchio(nome, strato, x, y, h, colore, 3, n=16)]
+    if tipo == 'sa3':
+        return [linea(nome, strato, _poligono_regolare(x, y, h * 1.15, 3, 180), colore)]
+    if tipo == 'sa6':
+        return [linea(nome, strato, _poligono_regolare(x, y, h, 6, 0), colore)]
+    if tipo == 'sa8':
+        return [cerchio(nome, strato, x, y, h, colore, 3, n=20),
+                linea(nome + ' |', strato, [(x - h, y), (x + h, y)], colore, chiusa=False),
+                linea(nome + ' -', strato, [(x, y - h), (x, y + h)], colore, chiusa=False)]
+    if tipo == 'hawk':
+        return [linea(nome, strato, _poligono_regolare(x, y, h * 1.15, 3, 0), colore),
+                linea(nome + ' barra', strato, [(x - h * 0.15, y - h * 1.1), (x - h * 0.15, y + h * 1.1)], colore,
+                      chiusa=False)]
     raise KeyError(tipo)

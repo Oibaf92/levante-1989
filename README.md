@@ -81,8 +81,9 @@ rosso/      🔒 riservato al comandante rosso — non aprire
 
 ## 🗺️ Mappa e intelligence di partenza
 - **Nessuna scritta sulla mappa**: ogni installazione è un simbolo (quadrato = base aerea,
-  quadrato con croce = elicotteri, rombo = navale, pentagono = forze di terra, triangolo =
-  SAM, cerchietto = zona SAM mobili; il colore indica la fazione). La legenda è disegnata
+  quadrato con croce = elicotteri, rombo = navale, pentagono = forze di terra; SAM: doppio
+  triangolo = SA-5, triangolo = SA-2, triangolo rovesciato = SA-3, esagono = SA-6, cerchio con
+  croce = SA-8, triangolo con barra = Hawk; il colore indica la fazione). La legenda è disegnata
   in mare a sud di Cipro; nomi e velivoli sono sulla tavoletta INTEL
   (`script/tools/simboli.py`, `legenda.py`).
 - **Strato Common** (visibile a tutti): confini, fazioni e legenda (`script/tools/confini.py`).
