@@ -22,6 +22,7 @@ LEVANTE.autosave = LEVANTE.autosave or 300
 LEVANTE.registro = {}
 LEVANTE.perdite = {}
 LEVANTE.giocatori = {}
+LEVANTE.ignora = LEVANTE.ignora or {}   -- unita' rimosse dagli script: non sono perdite
 
 local function log(msg)
   env.info("[LEVANTE] " .. msg)
@@ -192,6 +193,7 @@ function gestore:onEvent(e)
       return
     end
     local chi = descriviOggetto(e.initiator)
+    if chi and chi.nome and LEVANTE.ignora[chi.nome] then return end
     local coinvolgeGiocatore = (chi and chi.giocatore) or (e.target and nomeSicuro(e.target, "getPlayerName"))
     if SOLO_GIOCATORE[tipo] and not coinvolgeGiocatore then return end
     -- i lanci AI di proiettili sono troppi: registra solo armi vere o giocatori

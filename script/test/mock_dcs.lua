@@ -79,3 +79,6 @@ io.open = function(p, m)
   local buf = {}
   return { write = function(_, s) table.insert(buf, s) end, close = function() MOCK.file[p] = table.concat(buf) end }
 end
+
+Unit = { getByName = function(n) if n == "Dodge 2-1" then return MOCK.giocatore end return nil end }
+Group = { getByName = function(n) return { isExist = function() return true end, destroy = function() MOCK.gruppiRimossi = (MOCK.gruppiRimossi or "") .. n .. ";" end } end }

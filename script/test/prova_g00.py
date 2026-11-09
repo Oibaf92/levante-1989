@@ -34,6 +34,7 @@ sys.path.insert(0, os.path.join(qui, '..', 'tools'))
 import luatable
 n, v = luatable.parse(stato); print('parse stato ok:', n, list(v.keys()))
 n, v = luatable.parse(registro); print('parse registro ok:', n, len(v['eventi']), 'eventi')
+print('gruppi rimossi:', L.eval('MOCK.gruppiRimossi'))
 print('statici creati:', L.eval('#MOCK.statici'))
 
 pos = files['C:\\SavedGames\\DCS\\Levante1989\\poligono_G00_v2.lua']

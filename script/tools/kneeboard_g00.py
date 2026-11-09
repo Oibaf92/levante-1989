@@ -89,6 +89,7 @@ def pagina_missione(g):
     y = _riga(d, y, [(30, 'ST 1/8  AIM-9L     ST 2/7  AIM-7M     2 serbatoi 300 gal')], fm)
     y = _riga(d, y, [(30, 'ST 3/6  Mk-82 x2 (bersaglio A)')], fm)
     y = _riga(d, y, [(30, 'ST 4/5  BDU-33 x6 (bersaglio B, esercitazione)')], fm)
+    y = _riga(d, y, [(30, 'Gregario: 2 AIM-54A, 4 AIM-7M, 2 AIM-9L (scorta)')], fm)
 
     y = _sezione(d, y + 6, 'CARBURANTE (indicativo)')
     y = _riga(d, y, [(30, 'JOKER 6.0   BINGO 4.5   (migliaia di lb)')], fm)

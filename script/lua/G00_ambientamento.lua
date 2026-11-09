@@ -302,6 +302,46 @@ missionCommands.addCommand("Torna alla posizione prevista del poligono", LEVANTE
   trigger.action.outText("Posizione scelta cancellata: dal prossimo avvio il poligono tornera' nella posizione prevista.", 15)
 end)
 
+------------------------------------------------------------------------
+-- Gregari: resta solo quello dello slot scelto dal giocatore
+------------------------------------------------------------------------
+local SLOT = {
+  { giocatore = "Dodge 1-1", gruppo = "Dodge 1 (avvio a freddo)", gregario = "Dodge 1-2" },
+  { giocatore = "Dodge 2-1", gruppo = "Dodge 2 (motori accesi)", gregario = "Dodge 2-2" },
+}
+
+local function giocatorePresente(nome)
+  local u = Unit.getByName(nome)
+  return u ~= nil and u:isExist() and u:getPlayerName() ~= nil
+end
+
+local function sistemaGregari()
+  local scelto = nil
+  for _, s in ipairs(SLOT) do
+    if giocatorePresente(s.giocatore) then scelto = s end
+  end
+  if not scelto then return false end
+  for _, s in ipairs(SLOT) do
+    if s ~= scelto then
+      LEVANTE.ignora[s.gregario] = true
+      local g = Group.getByName(s.gruppo)
+      if g and g:isExist() then
+        pcall(function() g:destroy() end)
+        log("rimosso il gruppo non usato " .. s.gruppo)
+      end
+    end
+  end
+  return true
+end
+
+-- il giocatore puo' entrare nell'aereo qualche istante dopo l'avvio: riprova per 60 s
+local tentativi = 0
+timer.scheduleFunction(function(_, t)
+  tentativi = tentativi + 1
+  if sistemaGregari() or tentativi >= 60 then return nil end
+  return t + 1
+end, nil, timer.getTime() + 1)
+
 timer.scheduleFunction(function()
   trigger.action.outText("Poligono di Ceyhan attivo (posizione " .. origine .. ").\n" ..
     "Menu F10 > Levante 1989 > Informazioni poligono.\n" ..

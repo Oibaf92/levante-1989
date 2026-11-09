@@ -40,7 +40,7 @@ def sposta(x, y, rotta, dist):
 # ---------------------------------------------------------------------------
 ROTTA_NAVE = 250            # rotta base della portaerei (BRC)
 VEL_NAVE = 25 * KT
-CVN = ll_to_xy(36.25, 35.35)
+CVN = ll_to_xy(36.10, 34.30)            # tra Cipro e la Turchia, ~140 km dalla costa siriana
 CVN_FINE = sposta(*CVN, ROTTA_NAVE, VEL_NAVE * 3 * 3600)      # 3 ore di navigazione
 
 BERS_A = ll_to_xy(36.7917, 35.3724)      # poligono di Ceyhan: campo aperto scelto dalla mappa del Mission Editor
@@ -141,7 +141,22 @@ CARICO = {
 }
 
 
-def gruppo_f14(gid, uid, nome_gruppo, numero, caldo, parcheggio):
+# Gregario di scorta: carico aria-aria classico del 1989
+CARICO_SCORTA = {
+    1: {'CLSID': '{LAU-7 wtip - AIM-9L}'},
+    2: {'CLSID': '{SHOULDER AIM_54A_Mk60 L}'},
+    3: {'CLSID': '{F14-300gal}'},
+    4: {'CLSID': '{BELLY AIM-7M}'},
+    5: {'CLSID': '{BELLY AIM-7M}'},
+    6: {'CLSID': '{BELLY AIM-7M}'},
+    7: {'CLSID': '{BELLY AIM-7M}'},
+    8: {'CLSID': '{F14-300gal}'},
+    9: {'CLSID': '{SHOULDER AIM_54A_Mk60 R}'},
+    10: {'CLSID': '{LAU-7 wtip - AIM-9L}'},
+}
+
+
+def gruppo_f14(gid, uid, nome_gruppo, numero, caldo, parcheggio, uid_gregario, parcheggio_gregario):
     tipo_dec = 'TakeOffParkingHot' if caldo else 'TakeOffParking'
     az_dec = 'From Parking Area Hot' if caldo else 'From Parking Area'
     v_cr, v_att = 350 * KT, 420 * KT
@@ -167,6 +182,14 @@ def gruppo_f14(gid, uid, nome_gruppo, numero, caldo, parcheggio):
         'name': 'Dodge %d-1' % numero, 'callsign': callsign,
         'payload': {'pylons': copy.deepcopy(CARICO), 'fuel': 7348, 'flare': 60, 'ammo_type': 1, 'chaff': 140, 'gun': 100},
     }
+    gregario = copy.deepcopy(unita)
+    gregario.update({
+        'skill': 'High', 'unitId': uid_gregario, 'name': 'Dodge %d-2' % numero,
+        'parking': parcheggio_gregario, 'parking_id': str(parcheggio_gregario),
+        'onboard_num': '2%02d' % (numero + 10),
+        'callsign': {1: 5, 2: numero, 3: 2, 'name': 'Dodge%d2' % numero},
+        'payload': {'pylons': copy.deepcopy(CARICO_SCORTA), 'fuel': 7348, 'flare': 60, 'ammo_type': 1, 'chaff': 140, 'gun': 100},
+    })
     return {
         'dynSpawnTemplate': False, 'modulation': 0, 'tasks': {}, 'DTC': {}, 'radioSet': True, 'task': 'CAP',
         'uncontrolled': False, 'taskSelected': True, 'groupId': gid, 'hidden': False,
@@ -177,13 +200,17 @@ def gruppo_f14(gid, uid, nome_gruppo, numero, caldo, parcheggio):
         },
         'x': CVN[0], 'y': CVN[1], 'name': nome_gruppo, 'communication': True, 'start_time': 0,
         'uncontrollable': False, 'frequency': PRESET[4][0],
-        'units': {1: unita}, 'route': {'points': punti},
+        'units': {1: unita, 2: gregario}, 'route': {'points': punti},
     }
 
 
-# Parcheggi dei giocatori sulla portaerei. Sulla Supercarrier i posti 1-4 sono
-# le catapulte: i giocatori partono dal 5 in poi.
-PARCHEGGI = (5, 6)
+# Parcheggi sulla portaerei (Supercarrier: 1-4 sono le catapulte).
+# Il giocatore parte dal 10 (secondo elevatore, vicino all'isola) in entrambi gli slot:
+# in giocatore singolo solo lo slot scelto viene creato. I gregari hanno posti propri;
+# lo script G00 elimina all'avvio il gregario dello slot non scelto.
+PARCHEGGIO_GIOCATORE = 10
+PARCHEGGIO_GREGARIO_FREDDO = 11
+PARCHEGGIO_GREGARIO_CALDO = 12
 
 # Aerei statici sul ponte. Posizioni relative alla nave (m): x verso prua,
 # y verso dritta (lato dell'isola); angolo relativo alla prua (radianti).
@@ -236,7 +263,7 @@ MISSIONE
 Dodge, decollo dalla Roosevelt, trasferimento sul poligono di Ceyhan, passaggi di bombardamento sui due bersagli, rientro e appontaggio.
 
 ESECUZIONE
-1. Decollo: Dodge 1-1 parte a freddo, Dodge 2-1 e' gia' in moto (scegli lo slot).
+1. Decollo: Dodge 1-1 parte a freddo, Dodge 2-1 e' gia' in moto (scegli lo slot). Il tuo gregario (Dodge x-2) parte come te e ti scorta per tutto il volo: comandi radio F1.
 2. COSTA (WP1): ingresso a terra a ovest di Karatas, 15.000 ft.
 3. IP (WP2): 15 km a sud-ovest del bersaglio. Corsa d'attacco per 040.
 4. Bersaglio A (WP3, ST): tre carri in disuso, fumo ARANCIONE. Usa le 2 Mk-82.
@@ -245,7 +272,8 @@ ESECUZIONE
 7. USCITA (WP4) e RIENTRO (WP5): la nave naviga per 250 a 25 nodi. Appontaggio Case I.
 
 CARICO
-2 AIM-9L, 2 AIM-7M, 2 serbatoi da 300 gal, 2 Mk-82, 6 BDU-33.
+Tu: 2 AIM-9L, 2 AIM-7M, 2 serbatoi da 300 gal, 2 Mk-82, 6 BDU-33.
+Gregario (scorta): 2 AIM-54A, 4 AIM-7M, 2 AIM-9L, 2 serbatoi da 300 gal.
 
 NOTE
 - Nessuna minaccia: il volo e' di addestramento.
@@ -289,8 +317,8 @@ def costruisci():
     usa = next(c for c in blu['country'].values() if c['name'] == 'USA')
     usa['ship'] = {'group': {1: gruppo_navale()}}
     usa['plane'] = {'group': {
-        1: gruppo_f14(2, 4, 'Dodge 1 (avvio a freddo)', 1, False, PARCHEGGI[0]),
-        2: gruppo_f14(3, 5, 'Dodge 2 (motori accesi)', 2, True, PARCHEGGI[1]),
+        1: gruppo_f14(2, 4, 'Dodge 1 (avvio a freddo)', 1, False, PARCHEGGIO_GIOCATORE, 6, PARCHEGGIO_GREGARIO_FREDDO),
+        2: gruppo_f14(3, 5, 'Dodge 2 (motori accesi)', 2, True, PARCHEGGIO_GIOCATORE, 7, PARCHEGGIO_GREGARIO_CALDO),
     }}
     usa['static'] = {'group': statici_ponte()}
 
