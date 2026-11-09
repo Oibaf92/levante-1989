@@ -1,4 +1,6 @@
-"""Mappa dei boschi di DCS dagli screenshot del Mission Editor (vista ALT, missione R01).
+"""Mappa dei boschi di DCS dagli screenshot del Mission Editor (vista SAT, missione R01).
+
+La vista ALT non va bene: in montagna le tinte del rilievo si confondono con i boschi.
 
 1. rileva le crocette magenta nello screenshot;
 2. le riconosce confrontandole con le posizioni note (marcatori_foreste.json) e
@@ -102,15 +104,23 @@ def calibra(punti, marcatori, tolleranza_m=600.0):
 
 
 # ---------------------------------------------------------------------------
+def classifica_sat(rgb):
+    """Bosco dalla vista SAT (satellitare): verde scuro. I centri abitati vengono dal rilievo (edifici)."""
+    r, g, b = (rgb[..., k].astype(int) for k in range(3))
+    lum = (r + g + b) / 3
+    bosco = (lum < 95) & (g >= r - 2) & (g > b + 5)
+    return bosco, np.zeros_like(bosco)
+
+
 def classifica(rgb):
-    """Maschere di bosco e centro abitato dai colori della vista ALT."""
+    """Maschere di bosco e centro abitato dai colori della vista ALT (inaffidabile in montagna)."""
     r, g, b = (rgb[..., k].astype(int) for k in range(3))
     bosco = (g < 195) & (r < 195) & (np.abs(r - g) < 45) & (b < 130) & (g > 60) & (g >= b + 25)
     abitato = (r - g > 25) & (r > 160) & (b < 155) & (r < 245)
     return bosco, abitato
 
 
-def elabora(percorso_png, marcatori, ritaglio=None):
+def elabora(percorso_png, marcatori, ritaglio=None, vista='sat'):
     """Restituisce dict con calibrazione e maschere, coordinate DCS per pixel."""
     img = Image.open(percorso_png).convert('RGB')
     rgb = np.array(img)
@@ -121,7 +131,7 @@ def elabora(percorso_png, marcatori, ritaglio=None):
         rgb = sub
     punti = rileva_crocette(rgb)
     s, X0, Y0, n, err = calibra(punti, marcatori)
-    bosco, abitato = classifica(rgb)
+    bosco, abitato = classifica_sat(rgb) if vista == 'sat' else classifica(rgb)
     return {'s': s, 'X0': X0, 'Y0': Y0, 'crocette': len(punti), 'corrispondenze': n, 'errore_m': err,
             'bosco': bosco, 'abitato': abitato, 'forma': rgb.shape[:2]}
 

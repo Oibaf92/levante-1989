@@ -1,7 +1,7 @@
 """Costruisce missioni/R01_mappa_foreste.miz
 
 Missione di riferimento per mappare i boschi di DCS dagli screenshot del Mission
-Editor (vista ALT). Contiene solo disegni:
+Editor (vista SAT). Contiene solo disegni:
   - crocette magenta a coordinate note, su una griglia di ~12 km con uno scarto
     pseudo-casuale fisso: ogni gruppo di crocette e' riconoscibile e permette di
     ricavare posizione e scala di ogni screenshot;
@@ -93,12 +93,13 @@ BRIEFING = """LEVANTE 1989 - R01: MAPPA DEI BOSCHI
 
 Missione da aprire solo nel Mission Editor, non da volare.
 
-1. Apri la missione nel Mission Editor e scegli la vista ALT (in basso).
-2. Per ogni riquadro azzurro T01, T02, ... inquadralo in modo che stia tutto nello schermo e
+1. Apri la missione nel Mission Editor.
+2. Scegli la vista SAT (satellitare), non ALT.
+3. Per ogni riquadro azzurro T01, T02, ... inquadralo in modo che stia tutto nello schermo e
    lo riempia il piu' possibile, poi fai uno screenshot.
-3. Le crocette magenta servono a me per calibrare le immagini: devono vedersi bene.
-4. Chiudi i pannelli laterali, se puoi, per avere piu' mappa visibile.
-5. Manda gli screenshot chiamandoli col nome del riquadro (T01.png, T02.png, ...).
+4. Le crocette magenta servono a me per calibrare le immagini: devono vedersi bene.
+5. Chiudi i pannelli laterali, se puoi, per avere piu' mappa visibile.
+6. Manda gli screenshot chiamandoli col nome del riquadro (T01.png, T02.png, ...).
 """
 
 
