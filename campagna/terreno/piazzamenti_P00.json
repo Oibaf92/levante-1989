@@ -18,6 +18,7 @@
    "candidati_validi": 183,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 12.0
   },
   "alternative": [
@@ -39,8 +40,8 @@
   "nome": "SA-5 Homs",
   "sistema": "sa5",
   "lat_lon": [
-   34.63493,
-   36.62755
+   34.63583,
+   36.62753
   ],
   "rotta": 265.0,
   "dettagli": {
@@ -52,8 +53,26 @@
    "vegetazione": 2,
    "quota": 509,
    "candidati_validi": 90,
-   "scorrimento_m": 100,
+   "scorrimento_m": 0,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [
+    [
+     "P14_SR",
+     10
+    ],
+    [
+     "S-200_Launcher",
+     5
+    ],
+    [
+     "S-200_Launcher",
+     5
+    ],
+    [
+     "S-200_Launcher",
+     30
+    ]
+   ],
    "raggio_usato_km": 12.0
   },
   "alternative": [
@@ -90,6 +109,7 @@
    "candidati_validi": 14,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 15.0
   },
   "alternative": [
@@ -126,6 +146,7 @@
    "candidati_validi": 352,
    "scorrimento_m": 100,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 15.0
   },
   "alternative": [
@@ -162,6 +183,7 @@
    "candidati_validi": 17,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 6.0
   },
   "alternative": [
@@ -198,6 +220,7 @@
    "candidati_validi": 36,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 6.0
   },
   "alternative": [
@@ -234,6 +257,7 @@
    "candidati_validi": 28,
    "scorrimento_m": 300,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 6.0
   },
   "alternative": [
@@ -270,6 +294,7 @@
    "candidati_validi": 10,
    "scorrimento_m": 100,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 6.0
   },
   "alternative": [
@@ -306,6 +331,7 @@
    "candidati_validi": 23,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 12.0
   },
   "alternative": [
@@ -342,6 +368,7 @@
    "candidati_validi": 8,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 1,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 9.0
   },
   "alternative": [
@@ -378,6 +405,7 @@
    "candidati_validi": 10,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 9.0
   },
   "alternative": [
@@ -414,6 +442,7 @@
    "candidati_validi": 16,
    "scorrimento_m": 200,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 6.0
   },
   "alternative": [
@@ -450,6 +479,7 @@
    "candidati_validi": 24,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 6.0
   },
   "alternative": [
@@ -486,6 +516,7 @@
    "candidati_validi": 43,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 6.0
   },
   "alternative": [
@@ -522,6 +553,7 @@
    "candidati_validi": 10,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 6.0
   },
   "alternative": [
@@ -558,6 +590,7 @@
    "candidati_validi": 11,
    "scorrimento_m": 100,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 12.0
   },
   "alternative": [
@@ -594,6 +627,7 @@
    "candidati_validi": 12,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 12.0
   },
   "alternative": [
@@ -630,6 +664,7 @@
    "candidati_validi": 3,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 16.0
   },
   "alternative": [
@@ -658,6 +693,7 @@
    "candidati_validi": 66,
    "scorrimento_m": 300,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 10.0
   },
   "alternative": [
@@ -694,6 +730,7 @@
    "candidati_validi": 197,
    "scorrimento_m": 300,
    "siti_scartati_vegetazione": 2,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 10.0
   },
   "alternative": [
@@ -730,6 +767,7 @@
    "candidati_validi": 92,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 1,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 8.0
   },
   "alternative": [
@@ -766,6 +804,7 @@
    "candidati_validi": 146,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 8.0
   },
   "alternative": [
@@ -802,6 +841,7 @@
    "candidati_validi": 15,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 1,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 8.0
   },
   "alternative": [
@@ -838,6 +878,7 @@
    "candidati_validi": 21,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 6.0
   },
   "alternative": [
@@ -874,6 +915,7 @@
    "candidati_validi": 17,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 3.0
   },
   "alternative": [
@@ -910,6 +952,7 @@
    "candidati_validi": 8,
    "scorrimento_m": 0,
    "siti_scartati_vegetazione": 0,
+   "veicoli_spostati_alberi": [],
    "raggio_usato_km": 3.0
   },
   "alternative": [

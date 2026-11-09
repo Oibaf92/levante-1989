@@ -46,13 +46,19 @@ class Terreno:
             x0, y0, passo, nx, ny = d[nome + '__meta']
             campi = {k.split('__')[1]: d[k] for k in d.files if k.startswith(nome + '__') and not k.endswith('meta')}
             self.regioni.append({'nome': nome, 'x0': x0, 'y0': y0, 'passo': passo, 'nx': int(nx), 'ny': int(ny), **campi})
+        import alberi_noti
+        self.alberi = alberi_noti.AlberiNoti()
         self.veg = None
         if os.path.exists(VEG_FINE):
             v = np.load(VEG_FINE)
             self.veg = (v['percento'], float(v['x0']), float(v['y0']), float(v['passo']))
 
     def veicolo_libero(self, x, y, raggio=90.0):
-        """True se nelle celle da 80 m entro 'raggio' non c'e' vegetazione oltre la soglia (255 = ignoto)."""
+        """True se nelle celle da 80 m entro 'raggio' non c'e' vegetazione oltre la soglia (255 = ignoto)
+        e, dove la zona e' stata verificata da vicino, se non ci sono alberi a ridosso del veicolo."""
+        if self.alberi.libero(x, y) is False:
+            # zona verificata: va bene se il veicolo si puo' spostare di poco fuori dagli alberi
+            return self.alberi.punto_libero_vicino(x, y, massimo=40.0) is not None
         if self.veg is None:
             return True
         m, x0, y0, passo = self.veg
@@ -395,6 +401,16 @@ def _piazza(terreno, intenzione, gia_piazzati, seme, evitare, fattore):
                          quota=int(attr['quota'][k]), candidati_validi=int(len(pts)),
                          scorrimento_m=int(scorr), siti_scartati_vegetazione=scartati_veg))
     p.unita = _orienta(cfg['schema'], p.x, p.y, p.rotta)
+    # rifinitura veicolo per veicolo sugli alberi rilevati da vicino (se la zona e' verificata)
+    rifiniti, nuove = [], []
+    for tipo, ux, uy, ur in p.unita:
+        libero = terreno.alberi.punto_libero_vicino(ux, uy)
+        if libero and libero[2] > 0:
+            rifiniti.append((tipo, round(libero[2])))
+            ux, uy = libero[0], libero[1]
+        nuove.append((tipo, ux, uy, ur))
+    p.unita = nuove
+    p.dettagli['veicoli_spostati_alberi'] = rifiniti
     p.alternative = [(float(ax), float(ay), centro_settore) for _, ax, ay, _ in scelti[1:]]
     return p
 

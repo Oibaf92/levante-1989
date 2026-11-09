@@ -8,8 +8,11 @@
     - nessun edificio a pochi metri;
   se un veicolo non va bene lo sposta nel punto valido piu' vicino (entro 150 m) e
   ricrea il gruppo. Gli alberi non sono rilevabili: per quelli c'e' la segnalazione
-  F10: un segno con scritto SPOSTA vicino a una batteria la trasferisce nella
-  posizione alternativa successiva. Tutto viene annotato nello stato salvato.
+  F10:
+    - SPOSTA vicino a una batteria (entro 5 km): prima piccoli spostamenti (300 m - 1,5 km)
+      lontano dal segno, dal terzo SPOSTA la posizione alternativa successiva;
+    - BOSCO: registra una zona con alberi (raggio 300 m) da evitare nelle missioni future.
+  Tutto viene annotato nello stato salvato (extra.piazzatore).
 
   Dati in LEVANTE_PIAZZAMENTI[nome_gruppo] = {
       paese = <id>, abilita = "Good",
@@ -25,7 +28,7 @@ local RAGGIO_EDIFICI = 25        -- m
 local RICERCA_MAX = 150          -- m
 
 LEVANTE.extra = LEVANTE.extra or {}
-LEVANTE.extra.piazzatore = LEVANTE.extra.piazzatore or { verifiche = {}, spostamenti = {} }
+LEVANTE.extra.piazzatore = LEVANTE.extra.piazzatore or { verifiche = {}, spostamenti = {}, boschi = {} }
 local REG = LEVANTE.extra.piazzatore
 
 local function log(msg) env.info("[LEVANTE PIAZZATORE] " .. msg) end
@@ -134,21 +137,73 @@ end
 ------------------------------------------------------------------------
 -- Segnalazione F10 "SPOSTA"
 ------------------------------------------------------------------------
-local function spostaGruppo(nome, dati, motivo)
+local function centroAttuale(nome)
+  local g = Group.getByName(nome)
+  if not g or not g:isExist() then return nil end
+  local sx, sz, n = 0, 0, 0
+  for _, u in ipairs(g:getUnits() or {}) do
+    local p = u:getPoint()
+    sx, sz, n = sx + p.x, sz + p.z, n + 1
+  end
+  if n == 0 then return nil end
+  return sx / n, sz / n
+end
+
+local function registraBosco(x, z, raggio, testo)
+  REG.boschi[#REG.boschi + 1] = { x = x, y = z, raggio = raggio, testo = testo,
+                                  ora = LEVANTE.orologio and LEVANTE.orologio() or "" }
+end
+
+-- primo e secondo SPOSTA: piccolo spostamento lontano dal segno; dal terzo: alternativa successiva
+local function spostaGruppo(nome, dati, motivo, mx, mz)
+  dati.richieste = (dati.richieste or 0) + 1
+  local cx, cz = centroAttuale(nome)
   local da = dati.posizioni[dati.attuale or 1]
+  registraBosco(mx, mz, 300, motivo)
+  if cx and dati.richieste < 3 then
+    -- direzione: dal segno verso la batteria (ci si allontana dagli alberi segnalati)
+    local base = math.atan2(cz - mz, cx - mx)
+    for _, d in ipairs({ 300, 600, 1000, 1500 }) do
+      for _, delta in ipairs({ 0, 0.6, -0.6, 1.2, -1.2, 2.0, -2.0, math.pi }) do
+        local a = base + delta
+        local pos = { x = da.x + (cx - da.x) + d * math.cos(a), y = da.y + (cz - da.y) + d * math.sin(a), rotta = da.rotta }
+        local unita = posizioniUnita(dati, pos)
+        local tutte = true
+        for _, u in ipairs(unita) do
+          if not puntoValido(u.x, u.y) then tutte = false break end
+        end
+        if tutte then
+          dati.posizioni[dati.attuale or 1] = pos
+          ricreaGruppo(nome, dati, unita)
+          REG.spostamenti[#REG.spostamenti + 1] = {
+            gruppo = nome, motivo = motivo, ora = LEVANTE.orologio and LEVANTE.orologio() or "",
+            da = { x = cx, y = cz }, a = { x = pos.x, y = pos.y }, tipo = "locale", metri = d,
+          }
+          LEVANTE.annota("piazzamento_spostato", { gruppo = nome, metri = d })
+          if LEVANTE.salva then LEVANTE.salva("piazzamento_spostato") end
+          trigger.action.outText(string.format("%s spostato di %d m. %s", nome, d,
+            dati.richieste == 2 and "Un altro SPOSTA lo portera' nella posizione alternativa."
+              or "Un altro SPOSTA lo spostera' ancora di poco."), 15)
+          return
+        end
+      end
+    end
+  end
+  -- posizione alternativa successiva
   local prossimo = (dati.attuale or 1) + 1
   if not dati.posizioni[prossimo] then
     trigger.action.outText("SPOSTA: nessuna posizione alternativa rimasta per " .. nome, 15)
     return
   end
   dati.attuale = prossimo
+  dati.richieste = 0
   local unita = posizioniUnita(dati, dati.posizioni[prossimo])
   local corrette = correggi(unita)
   ricreaGruppo(nome, dati, corrette)
   REG.spostamenti[#REG.spostamenti + 1] = {
     gruppo = nome, motivo = motivo, ora = LEVANTE.orologio and LEVANTE.orologio() or "",
-    da = { x = da.x, y = da.y }, a = { x = dati.posizioni[prossimo].x, y = dati.posizioni[prossimo].y },
-    alternativa = prossimo,
+    da = { x = cx or da.x, y = cz or da.y }, a = { x = dati.posizioni[prossimo].x, y = dati.posizioni[prossimo].y },
+    tipo = "alternativa", alternativa = prossimo,
   }
   LEVANTE.annota("piazzamento_spostato", { gruppo = nome, alternativa = prossimo })
   if LEVANTE.salva then LEVANTE.salva("piazzamento_spostato") end
@@ -158,28 +213,33 @@ end
 local gestore = {}
 function gestore:onEvent(e)
   if e.id ~= world.event.S_EVENT_MARK_ADDED and e.id ~= world.event.S_EVENT_MARK_CHANGE then return end
-  if type(e.text) ~= "string" or not string.find(string.lower(e.text), "sposta", 1, true) then return end
+  if type(e.text) ~= "string" then return end
+  local t = string.lower(e.text)
   local ok, err = pcall(function()
+    if string.find(t, "bosco", 1, true) then
+      registraBosco(e.pos.x, e.pos.z, 300, e.text)
+      LEVANTE.annota("bosco_segnalato", { x = e.pos.x, y = e.pos.z })
+      if LEVANTE.salva then LEVANTE.salva("bosco_segnalato") end
+      trigger.action.outText("Zona con alberi registrata: il piazzatore la evitera' nelle prossime missioni.", 12)
+      return
+    end
+    if not string.find(t, "sposta", 1, true) then return end
     local migliore, dmin = nil, 5000
-    for nome, dati in pairs(PIAZ) do
-      local g = Group.getByName(nome)
-      if g and g:isExist() then
-        local u = g:getUnit(1)
-        if u then
-          local p = u:getPoint()
-          local d = math.sqrt((p.x - e.pos.x) ^ 2 + (p.z - e.pos.z) ^ 2)
-          if d < dmin then migliore, dmin = nome, d end
-        end
+    for nome, _ in pairs(PIAZ) do
+      local cx, cz = centroAttuale(nome)
+      if cx then
+        local d = math.sqrt((cx - e.pos.x) ^ 2 + (cz - e.pos.z) ^ 2)
+        if d < dmin then migliore, dmin = nome, d end
       end
     end
     if migliore then
-      spostaGruppo(migliore, PIAZ[migliore], e.text)
+      spostaGruppo(migliore, PIAZ[migliore], e.text, e.pos.x, e.pos.z)
     else
       trigger.action.outText("SPOSTA: nessuna batteria piazzata entro 5 km dal segno.", 15)
     end
   end)
-  if not ok then log("errore SPOSTA: " .. tostring(err)) end
-  pcall(trigger.action.removeMark, e.idx)
+  if not ok then log("errore segnalazione: " .. tostring(err)) end
+  if string.find(t, "sposta", 1, true) or string.find(t, "bosco", 1, true) then pcall(trigger.action.removeMark, e.idx) end
 end
 world.addEventHandler(gestore)
 

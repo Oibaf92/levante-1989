@@ -32,3 +32,10 @@ Campagna dinamica DCS World (mappa Syria), giocatore singolo. Lingua: italiano.
   `LEVANTE_PIAZZAMENTI` (vedi `script/costruisci_p00.py`): verifica ogni veicolo all'avvio e
   gestisce la segnalazione F10 SPOSTA. Gli spostamenti finiscono in `extra.piazzatore` dello
   stato salvato: alla giornata successiva vanno riportati nel piazzamento (posizione da evitare).
+- Alberi: la vegetazione da satellite (80 m) non vede frutteti e filari piccoli. Per ogni
+  batteria in zona agricola o costiera chiedere al giocatore uno screenshot ravvicinato
+  (Mission Editor, vista SAT, zoom massimo, scala ~200 ft) e acquisirlo con
+  `script/tools/aggiungi_verifiche.py <missione.miz> <screenshot...>`: riconosce la batteria,
+  aggiunge gli alberi a `campagna/terreno/alberi_noti.npz`, e il piazzatore sposta i veicoli
+  di pochi metri fuori dai filari. Dopo ogni volo, `script/tools/importa_stato.py <stato>`
+  importa i segni BOSCO/SPOSTA come zone da evitare.
