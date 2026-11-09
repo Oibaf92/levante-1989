@@ -1,7 +1,7 @@
 """Unisce gli screenshot SAT della missione R01 in una griglia di vegetazione da 250 m.
 
 Uso: python3 crea_mappa_foreste.py
-Legge campagna/terreno/screenshot_foreste/*.png, scrive:
+Legge campagna/terreno/screenshot_foreste/*.webp (senza perdita), scrive:
   campagna/terreno/vegetazione_250m.npz   (frazione di vegetazione per cella, NaN = non coperta)
   campagna/terreno/mappa_vegetazione.png  (controllo visivo, nord in alto)
 """
@@ -22,7 +22,7 @@ def main():
     xs = [t['x_sud'] for t in dati['tessere']] + [t['x_nord'] for t in dati['tessere']]
     ys = [t['y_ovest'] for t in dati['tessere']] + [t['y_est'] for t in dati['tessere']]
     mo = foreste.Mosaico(min(xs), max(xs), min(ys), max(ys), 250)
-    for f in sorted(glob.glob(os.path.join(TER, 'screenshot_foreste', '*.png'))):
+    for f in sorted(glob.glob(os.path.join(TER, 'screenshot_foreste', '*.webp'))):
         r = foreste.elabora(f, dati['marcatori'], ritaglio=RITAGLIO)
         mo.aggiungi(r, RITAGLIO)
         print('%-14s scala %.1f m/px, corrispondenze %d/%d, errore %.0f m'

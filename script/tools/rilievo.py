@@ -84,3 +84,45 @@ class Terreno:
                          % (r.nome, r.nx, r.ny, r.passo, r.righe_lette, r.nx, terra, acqua))
         righe.append('rilievo completo' if self.completo else 'rilievo INCOMPLETO')
         return '\n'.join(righe)
+
+
+# ---------------------------------------------------------------------------
+# Vegetazione (dagli screenshot SAT della missione R01, griglia da 250 m)
+# ---------------------------------------------------------------------------
+class Vegetazione:
+    def __init__(self, percorso_npz):
+        d = np.load(percorso_npz)
+        self.f = d['frazione']
+        self.x0, self.y0, self.passo = float(d['x0']), float(d['y0']), float(d['passo'])
+
+    def frazione(self, x, y, raggio=500.0):
+        """Frazione media di vegetazione entro 'raggio' metri (None se l'area non e' coperta)."""
+        r = int(round(raggio / self.passo))
+        i = int(round((x - self.x0) / self.passo))
+        j = int(round((y - self.y0) / self.passo))
+        if i < -r or j < -r or i > self.f.shape[0] + r or j > self.f.shape[1] + r:
+            return None
+        blocco = self.f[max(0, i - r):i + r + 1, max(0, j - r):j + r + 1]
+        if blocco.size == 0 or np.all(np.isnan(blocco)):
+            return None
+        return float(np.nanmean(blocco))
+
+    def su_regione(self, reg, raggio=500.0):
+        """Matrice (percentuale 0-100, -1 = non coperta) per ogni punto di una regione del rilievo."""
+        out = np.full((reg.nx, reg.ny), -1, dtype=np.int32)
+        for i in range(reg.nx):
+            x = reg.x0 + i * reg.passo
+            for j in range(reg.ny):
+                v = self.frazione(x, reg.y0 + j * reg.passo, raggio)
+                if v is not None:
+                    out[i, j] = int(round(v * 100))
+        return out
+
+
+def carica_tutto(percorso_rilievo, percorso_vegetazione=None):
+    """Terreno con il campo aggiuntivo 'vegetazione' (% entro 500 m, -1 = sconosciuta)."""
+    t = Terreno.carica(percorso_rilievo)
+    veg = Vegetazione(percorso_vegetazione) if percorso_vegetazione else None
+    for reg in t.regioni:
+        reg.dati['vegetazione'] = veg.su_regione(reg) if veg else np.full((reg.nx, reg.ny), -1, dtype=np.int32)
+    return t

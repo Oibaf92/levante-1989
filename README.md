@@ -91,3 +91,13 @@ rosso/      🔒 riservato al comandante rosso — non aprire
   antiaerei fissi noti al 2 ottobre 1989, come li stima ciascuna parte
   (`script/tools/intel.py`). È la situazione di pace fissata dall'arbitro: i comandanti
   possono spostare i sistemi mobili, quindi in guerra la mappa può essere superata.
+
+## 🌍 Banca dati del terreno (`campagna/terreno/`)
+- `rilievo_terreno.txt`: rilievo fatto in DCS (missione R00): quota, pendenza, superficie,
+  edifici entro 400 m, distanza dalla strada; griglia da 2 km su tutta l'area e da 1 km su
+  Libano, Golan e Siria occidentale.
+- `vegetazione_250m.npz`: vegetazione ricavata dagli screenshot SAT del Mission Editor
+  (missione R01, crocette di calibrazione), copre la fascia costiera e montuosa; il deserto
+  interno, senza alberi, non e' rilevato.
+- `terreno_completo.npz`: le due cose unite, usate dal piazzatore delle unita'.
+- Strumenti: `script/tools/rilievo.py`, `foreste.py`, `crea_mappa_foreste.py`, `mappe_rilievo.py`.
