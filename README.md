@@ -80,7 +80,12 @@ rosso/      🔒 riservato al comandante rosso — non aprire
 ```
 
 ## 🗺️ Mappa e intelligence di partenza
-- **Strato Common** (visibile a tutti): confini e fazioni (`script/tools/confini.py`).
+- **Nessuna scritta sulla mappa**: ogni installazione è un simbolo (quadrato = base aerea,
+  quadrato con croce = elicotteri, rombo = navale, pentagono = forze di terra, triangolo =
+  SAM, cerchietto = zona SAM mobili; il colore indica la fazione). La legenda è disegnata
+  in mare a sud di Cipro; nomi e velivoli sono sulla tavoletta INTEL
+  (`script/tools/simboli.py`, `legenda.py`).
+- **Strato Common** (visibile a tutti): confini, fazioni e legenda (`script/tools/confini.py`).
 - **Strato Blue / Red** (ognuno visibile solo alla propria parte): basi permanenti e siti
   antiaerei fissi noti al 2 ottobre 1989, come li stima ciascuna parte
   (`script/tools/intel.py`). È la situazione di pace fissata dall'arbitro: i comandanti

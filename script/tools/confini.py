@@ -197,8 +197,9 @@ def disegni():
     ogg = []
     for nome, punti, colori, spessore in TERRITORI:
         ogg.extend(_territorio(nome, punti, colori, spessore))
-    for i, (lat, lon, testo, colori, dim) in enumerate(ETICHETTE, 1):
-        ogg.append(_testo(i, lat, lon, testo, colori, dim))
+    # nessuna etichetta sulla mappa: i significati sono nella legenda (legenda.py)
+    import legenda
+    ogg.extend(legenda.disegni())
     return {k: o for k, o in enumerate(ogg, 1)}
 
 

@@ -1,8 +1,10 @@
-"""Anteprima degli strati di disegno alla scala di riferimento (intel.M_PER_PX)."""
+"""Anteprima degli strati di disegno alla scala di riferimento (M_PER_PX)."""
 import sys
 from PIL import Image, ImageDraw, ImageFont
 import confini
 import intel
+
+M_PER_PX = 150.0   # scala di riferimento (m per pixel)
 import geo
 
 
@@ -17,7 +19,7 @@ def disegna(oggetti, uscita, lat0=32.6, lat1=36.5, lon0=34.6, lon1=38.6):
     _, y0 = geo.ll_to_xy((lat0 + lat1) / 2, lon0)
     x1, _ = geo.ll_to_xy(lat0, (lon0 + lon1) / 2)
     _, y1 = geo.ll_to_xy((lat0 + lat1) / 2, lon1)
-    s = intel.M_PER_PX
+    s = M_PER_PX
     W, H = int((y1 - y0) / s), int((x0 - x1) / s)
     img = Image.new('RGB', (W, H), (236, 232, 220))
     d = ImageDraw.Draw(img, 'RGBA')

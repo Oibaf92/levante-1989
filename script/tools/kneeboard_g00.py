@@ -189,5 +189,64 @@ def pagina_poligono(g):
     return img
 
 
+def _simbolo_pil(d, tipo, x, y, colore, r=9):
+    if tipo in ('aerea', 'elicotteri'):
+        d.rectangle([x - r, y - r, x + r, y + r], outline=colore, width=2)
+        if tipo == 'elicotteri':
+            d.line([x - r, y - r, x + r, y + r], fill=colore, width=2)
+            d.line([x - r, y + r, x + r, y - r], fill=colore, width=2)
+    elif tipo == 'navale':
+        d.polygon([(x, y - r * 1.3), (x + r * 1.3, y), (x, y + r * 1.3), (x - r * 1.3, y)], outline=colore, width=2)
+    elif tipo == 'terra':
+        pts = [(x + r * 1.1 * math.sin(math.radians(72 * i)), y - r * 1.1 * math.cos(math.radians(72 * i))) for i in range(5)]
+        d.polygon(pts, outline=colore, width=2)
+    elif tipo in ('sam_lungo', 'sam_medio'):
+        k = 1.4 if tipo == 'sam_lungo' else 1.0
+        d.polygon([(x, y - r * k), (x + r * k, y + r * k * 0.8), (x - r * k, y + r * k * 0.8)], outline=colore, width=2)
+    elif tipo == 'sam_mobile':
+        d.ellipse([x - r * 0.7, y - r * 0.7, x + r * 0.7, y + r * 0.7], outline=colore, width=2)
+
+
+def pagina_intel(g):
+    """Dettaglio della mappa intel del blu: nomi e velivoli dietro ai simboli."""
+    import intel
+    img = Image.new('RGB', (W, H), CARTA)
+    d = ImageDraw.Draw(img)
+    _testata(d, 'INTEL - SITUAZIONE DI PACE', 'Stima USA al 2 ottobre 1989  |  i sistemi mobili possono essersi spostati')
+    fn = font(14)
+    fb = font(14, True)
+    y = _sezione(d, 100, 'SIRIA E CONTINGENTE SOVIETICO - BASI')
+    for lat, lon, tipo, nome, det in intel.BASI_ROSSE:
+        _simbolo_pil(d, tipo, 42, y + 9, ROSSO, 7)
+        d.text((62, y), nome, font=fb, fill=INCH)
+        d.text((250, y), det, font=fn, fill=INCH)
+        y += 22
+    y = _sezione(d, y + 8, 'DIFESA AEREA (siti fissi e zone mobili)')
+    for lat, lon, r_km, tipo, nome in intel.SAM_ROSSI:
+        _simbolo_pil(d, tipo, 42, y + 9, ROSSO, 7)
+        d.text((62, y), nome, font=fb, fill=INCH)
+        d.text((480, y), 'portata ~%d km' % r_km, font=fn, fill=INCH)
+        y += 22
+    d.text((62, y + 2), 'Contingente aereo sovietico: basi non confermate.', font=fn, fill=ROSSO)
+    y = _sezione(d, y + 34, 'FORZE USA')
+    for lat, lon, tipo, nome, det in intel.BASI_BLU:
+        _simbolo_pil(d, tipo, 42, y + 9, BLU, 7)
+        d.text((62, y), nome, font=fb, fill=INCH)
+        d.text((250, y), det, font=fn, fill=INCH)
+        y += 22
+    for lat, lon, r_km, tipo, nome in intel.SAM_BLU:
+        _simbolo_pil(d, tipo, 42, y + 9, BLU, 7)
+        d.text((62, y), nome, font=fb, fill=INCH)
+        d.text((480, y), 'portata ~%d km' % r_km, font=fn, fill=INCH)
+        y += 22
+    y = _sezione(d, y + 8, 'LEGENDA')
+    import simboli
+    for tipo, (descr, _) in simboli.TIPI.items():
+        _simbolo_pil(d, tipo, 42, y + 9, INCH, 7)
+        d.text((62, y), descr, font=fn, fill=INCH)
+        y += 22
+    return img
+
+
 def crea(g):
-    return [_png(pagina_missione(g)), _png(pagina_poligono(g))]
+    return [_png(pagina_missione(g)), _png(pagina_poligono(g)), _png(pagina_intel(g))]
