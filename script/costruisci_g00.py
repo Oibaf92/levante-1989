@@ -283,11 +283,10 @@ def costruisci():
         'ResKey_Action_3': 'G00_ambientamento.lua',
         'ResKey_ImageBriefing_1': 'briefing_g00.png',
     }
-    diz['DictKey_ActionText_6'] = init
-    m['maxDictId'] = 6
+    risorse['ResKey_Action_4'] = 'levante_init.lua'
     azioni = [
-        ('INIT', 'a_do_script(getValueDictByKey("DictKey_ActionText_6"));',
-         {'predicate': 'a_do_script', 'text': 'DictKey_ActionText_6'}),
+        ('INIT', 'a_do_script_file(getValueResourceByKey("ResKey_Action_4"));',
+         {'predicate': 'a_do_script_file', 'file': 'ResKey_Action_4'}),
         ('MOOSE', 'a_do_script_file(getValueResourceByKey("ResKey_Action_1"));', {'predicate': 'a_do_script_file', 'file': 'ResKey_Action_1'}),
         ('NUCLEO', 'a_do_script_file(getValueResourceByKey("ResKey_Action_2"));', {'predicate': 'a_do_script_file', 'file': 'ResKey_Action_2'}),
         ('G00', 'a_do_script_file(getValueResourceByKey("ResKey_Action_3"));', {'predicate': 'a_do_script_file', 'file': 'ResKey_Action_3'}),
@@ -318,6 +317,7 @@ def costruisci():
         z.write(os.path.join(QUI, 'lib', 'Moose.lua'), 'l10n/DEFAULT/Moose.lua')
         z.write(os.path.join(QUI, 'lua', 'levante_core.lua'), 'l10n/DEFAULT/levante_core.lua')
         z.write(os.path.join(QUI, 'lua', 'G00_ambientamento.lua'), 'l10n/DEFAULT/G00_ambientamento.lua')
+        z.writestr('l10n/DEFAULT/levante_init.lua', init + '\n')
         z.writestr('l10n/DEFAULT/briefing_g00.png', pagine[0])
         for i, png in enumerate(pagine, 1):
             z.writestr('KNEEBOARD/IMAGES/G00_%02d.png' % i, png)
