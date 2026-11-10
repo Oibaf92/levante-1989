@@ -74,10 +74,28 @@ LOGORAMENTO_ABILITA = ((0.20, 'High'), (0.40, 'Good'), (9.99, 'Average'))
 RADIO_BLU = {'guardia': 243.0, 'pacchetto': 251.0, 'cvn': 258.0, 'lha': 256.0, 'incirlik': 360.1,
              'awacs': 264.0, 'cisterna': 270.0, 'interno': 301.0}
 RADIO_RIEMPI = 225.0            # canali liberi: 225 + numero del canale
-# Modelli delle radio dei moduli: {radio: (numero di canali, tabella 'modulations' presente)}.
-# Solo strutture viste in missioni salvate dal Mission Editor (G00 per l'F-14).
-RADIO_MODELLI = {'F-14A-135-GR-Early': {1: (20, False), 2: (30, True)},
-                 'F-14B': {1: (20, False), 2: (30, True)}}
+# Modelli delle radio dei moduli (canali di default, banda, modulazioni), ricavati da missioni
+# salvate dal Mission Editor del giocatore: script/dati/radio_modelli.json.
+RADIO_MODELLI = {k: v for k, v in json.load(open(os.path.join(QUI, 'dati', 'radio_modelli.json'), encoding='utf-8')).items()
+                 if not k.startswith('_')}
+
+# Livree scelte dal giocatore (C00 salvata dal suo Mission Editor). Per tipo e paese: lista di
+# squadriglie, assegnate a rotazione volo per volo (stesso volo = stessa squadriglia).
+# CVW-8 sulla Roosevelt nel 1989: F-14A di VF-84 e VF-41.
+LIVREE = {
+    (USA, 'F-14A-135-GR-Early'): [('vf-84 ghost by reflected', 200), ('vf-41 aj100 1989 by reflected', 100),
+                                  ('vf-84 jaws by reflected', 200), ('vf-41 aj105 1989 by reflected', 100)],
+    (USA, 'FA-18C_hornet'): [('vfa-37', 300), ('vfa-87', 400)],
+    (USA, 'F-4E-45MC'): [('rs68-381_e1_526tfs', None)],
+    (USA, 'AH-64D_BLK_II'): [('12th combat aviation brigade griffins', None)],
+    (USA, 'CH-47Fbl1'): [('us army dark green', None)],
+    (RUSSIA, 'Su-25'): [('field camo scheme #1 (native)', None)],
+    (RUSSIA, 'MiG-29 Fulcrum'): [('rf standard grey', None), ('rf splintered scheme', None)],
+    (SIRIA, 'Mi-24P'): [('iriaf', None)],
+    (RUSSIA, 'Mi-24P'): [('af 440 ovp', None)],
+    (SIRIA, 'Mi-8MT'): [('Russia_VVS_Standard', None)],
+    (RUSSIA, 'Mi-8MT'): [('Russia_VVS_Standard', None)],
+}
 
 # tipi di partenza del giocatore -> (tipo, azione) del primo punto di rotta
 PARTENZE = {'freddo': ('TakeOffParking', 'From Parking Area'), 'caldo': ('TakeOffParkingHot', 'From Parking Area Hot'),
@@ -186,6 +204,7 @@ class Costruttore:
         self.terreno = pz.Terreno()
         self.gruppi_aerei = {}            # nome missione -> (lato, gruppo)
         self.decolli_nave = {}
+        self.conta_livree = {}
         self.piano_radio = []             # (MHz, nome volo, ruolo)
         self.conta_speciali = {}          # AWACS/TANKER -> ultimo nome usato
         self.numeri_chiamata = {}         # (paese, nome) -> ultimo numero di gruppo (1-9)
@@ -487,6 +506,12 @@ class Costruttore:
         carb = carichi.PILONI.get(tipo, {}).get('carburante') or 3000
         unita = {}
         paese_id = USA if lato == 'blue' else (RUSSIA if tipo in ('Su-25', 'Tu-22M3', 'A-50') else SIRIA)
+        scelte = LIVREE.get((paese_id, tipo))
+        livrea = None
+        if scelte:
+            n_liv = self.conta_livree.get((paese_id, tipo), 0)
+            self.conta_livree[(paese_id, tipo)] = n_liv + 1
+            livrea = scelte[n_liv % len(scelte)]
         speciali = NOMI_CHIAMATA_SPECIALI.get(mis)
         if speciali:
             self.conta_speciali[mis] = self.conta_speciali.get(mis, 0) % len(speciali) + 1
@@ -507,6 +532,10 @@ class Costruttore:
             else:
                 u['callsign'] = {1: nome_ch, 2: num_ch, 3: k + 1, 'name': '%s%d%d' % (testo_ch, num_ch, k + 1)}
             u['onboard_num'] = '%03d' % (100 + idx * 10 + k) if lato == 'blue' else '%02d' % (10 + idx * 2 + k)
+            if livrea:
+                u['livery_id'] = livrea[0]
+                if livrea[1] is not None:              # numero di bordo della squadriglia (es. VF-41 1xx)
+                    u['onboard_num'] = '%03d' % (livrea[1] + (idx * 2 + k) % 100)
             unita[k + 1] = u
         g = {'name': o['nome'], 'groupId': gid, 'task': COMPITO_DCS.get(mis, 'CAP'), 'taskSelected': True,
              'x': p0['x'], 'y': p0['y'], 'start_time': decollo, 'hidden': lato == 'red', 'uncontrolled': False,
@@ -590,6 +619,17 @@ class Costruttore:
         lista.append((RADIO_BLU['guardia'], 'Guardia'))
         return [(k, f, d) for k, (f, d) in enumerate(lista, 1)]
 
+    def canali_volo(self, volo, n):
+        """Canali per una radio con n canali. Se la lista comune non ci sta, si tolgono nell'ordine:
+        interni degli altri voli, Incirlik, cisterne; il proprio interno e la guardia restano."""
+        lista = [(f, d) for _, f, d in self.canali()]
+        for scarta in (lambda d: d.startswith('Interno') and d != 'Interno %s' % volo,
+                       lambda d: d.startswith('Incirlik'), lambda d: d.startswith('Cisterna')):
+            while len(lista) > n and any(scarta(d) for _, d in lista):
+                idx = max(i for i, (_, d) in enumerate(lista) if scarta(d))
+                lista.pop(idx)
+        return [(k, f, d) for k, (f, d) in enumerate(lista[:n], 1)]
+
     def preimposta_radio(self):
         """Canali preimpostati nei velivoli del giocatore (giocatore e gregario), secondo il modello
         della radio del modulo (struttura ricavata da missioni salvate dal Mission Editor)."""
@@ -603,12 +643,13 @@ class Costruttore:
                 self.avvisi.append('RADIO: %s (%s): canali non preimpostati, manca il modello della radio del modulo' % (nome, tipo))
                 continue
             radio = {}
-            for r, (n_canali, modulazioni) in modello.items():
-                ch = {i: RADIO_RIEMPI + i for i in range(1, n_canali + 1)}
-                for k, f, _ in canali:
-                    if k <= n_canali:
-                        ch[k] = f
-                radio[r] = {'channels': ch, 'modulations': {i: 0 for i in ch} if modulazioni else {}, 'channelsNames': {}}
+            for r, dati in modello.items():
+                ch = {int(k): f for k, f in dati['channels'].items()}
+                if dati['banda'] == 'UHF':          # il piano blu e' in UHF; VHF e FM restano di default
+                    for pos, f, _ in self.canali_volo(nome, len(ch)):
+                        ch[pos] = f
+                radio[int(r)] = {'channels': ch, 'modulations': {int(k): v for k, v in dati['modulations'].items()},
+                                 'channelsNames': {}}
             for u in g['units'].values():
                 u['Radio'] = copy.deepcopy(radio)
 

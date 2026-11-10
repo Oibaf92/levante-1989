@@ -12,6 +12,7 @@ from PIL import Image, ImageDraw  # noqa: E402
 from geo import ll_to_xy, xy_to_ll, dms, dist_brg  # noqa: E402
 import kneeboard_g00 as kb  # noqa: E402
 import intel  # noqa: E402
+import costruisci_giornata as cg  # noqa: E402
 
 NOMI_VELIVOLO = {'F-14A-135-GR-Early': 'F-14A', 'FA-18C_hornet': 'F/A-18C', 'F-4E-45MC': 'F-4E', 'AH-64D_BLK_II': 'AH-64D',
                  'CH-47Fbl1': 'CH-47F', 'A6E': 'A-6E', 'E-2C': 'E-2C', 'S-3B Tanker': 'S-3B', 'KC135MPRS': 'KC-135',
@@ -146,6 +147,19 @@ def _pagina_volo(c, o):
               'La rotta e\' una traccia: la nave naviga contro vento (prua %03d circa).' % round(c.prua_contro_vento(9)) if o['base'] == 'CVN-71' else '']:
         if t:
             y = kb._riga(d, y, [(30, t)], fn)
+    y = kb._sezione(d, y + 8, 'RADIO')
+    modello = cg.RADIO_MODELLI.get(o['velivolo'], {})
+    uhf = [len(r['channels']) for r in modello.values() if r['banda'] == 'UHF']
+    if not uhf:
+        y = kb._riga(d, y, [(30, 'Canali non preimpostati su questo velivolo: usa le frequenze della pagina ordini.')], fn)
+    elif min(uhf) >= len(c.canali()):
+        y = kb._riga(d, y, [(30, 'Canali come nella pagina ordini. Interno del volo: %.3f.'
+                             % next(f for _, f, dd in c.canali() if dd == 'Interno %s' % o['nome']))], fn)
+    else:
+        fm = kb.font(14, mono=True)
+        y = kb._riga(d, y, [(30, 'Radio UHF con %d canali: preimpostazione ridotta' % min(uhf))], fn)
+        for k, f, dd in c.canali_volo(o['nome'], min(uhf)):
+            y = kb._riga(d, y, [(30, 'CH %2d' % k), (110, '%.3f' % f), (210, dd)], fm)
     return img
 
 

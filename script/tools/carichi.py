@@ -138,7 +138,18 @@ def _tabella(tipo, carichi):
 
 CARICHI = {
     # ------------------------------------------------------------------ rosso
-    'MiG-29 Fulcrum': {'aria-aria': {1: '{MISSILE_R-60M_APU-60}', 2: '{MISSILE_R-60M_APU-60}', 3: '{MISSILE_R-27R_APU-470}',
+    # MiG-29: CLSID del modulo del giocatore (C00 salvata dal suo Mission Editor)
+    'MiG-29 Fulcrum': {
+        'cap sovietico R-73': {1: '{MISSILE_R-73_APU-73}', 2: '{MISSILE_R-73_APU-73}', 3: '{MISSILE_R-27R_APU-470}',
+                               4: '{PTB_1500_MIG29A}', 5: '{MISSILE_R-27R_APU-470}', 6: '{MISSILE_R-73_APU-73}',
+                               7: '{MISSILE_R-73_APU-73}'},
+        'attacco FAB-500': {1: '{MISSILE_R-60M_APU-60}', 2: '{AB_FAB-500_BDZ-UMK2-B}', 3: '{AB_FAB-500_BDZ-UMK2-B}',
+                            4: '{PTB_1500_MIG29A}', 5: '{AB_FAB-500_BDZ-UMK2-B}', 6: '{AB_FAB-500_BDZ-UMK2-B}',
+                            7: '{MISSILE_R-60M_APU-60}'},
+        'cap siriano R-60M': {1: '{MISSILE_R-60M_APU-60}', 2: '{MISSILE_R-60M_APU-60}', 3: '{MISSILE_R-27R_APU-470}',
+                              4: '{PTB_1500_MIG29A}', 5: '{MISSILE_R-27R_APU-470}', 6: '{MISSILE_R-60M_APU-60}',
+                              7: '{MISSILE_R-60M_APU-60}'},
+        'aria-aria': {1: '{MISSILE_R-60M_APU-60}', 2: '{MISSILE_R-60M_APU-60}', 3: '{MISSILE_R-27R_APU-470}',
                                      4: '{PTB_1500_MIG29A}', 5: '{MISSILE_R-27R_APU-470}', 6: '{MISSILE_R-60M_APU-60}',
                                      7: '{MISSILE_R-60M_APU-60}'}},
     'MiG-23MLD': {'aria-aria': {2: '{CCF898C9-5BC7-49A4-9D1E-C3ED3D5166A1}', 3: '{B0DBC591-0F52-4F7D-AD7B-51E67725FB81}',
@@ -159,7 +170,6 @@ CARICHI = {
     # ------------------------------------------------------------------ blu
     # F-14: carichi CAP tipici indicati dal giocatore (AIM-54 - AIM-7 - AIM-9), piloni fissati a mano.
     'F-14A-135-GR-Early': _tabella('F-14A-135-GR-Early', {**F14_CARICHI, **F14_AT}),
-    'F-14B': _tabella('F-14B', {**F14_CARICHI, **F14_AT}),
     'FA-18C_hornet': {
         **_tabella('FA-18C_hornet', {'cap 2-4 serbatoi ali': FA18_CAP_4, 'cap 2-6 serbatoio centrale': FA18_CAP_6,
                                      'aria-aria': FA18_CAP_4, **FA18}),

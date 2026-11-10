@@ -29,10 +29,10 @@ NOME = 'C00_prova_carichi'
 USA, RUSSIA = 2, 0
 STORICI = {'aria-aria', 'scorta', 'attacco'}       # alias di altri carichi
 MODULI = {   # tipo -> (lato, elicottero, nome breve)
-    'F-14A-135-GR-Early': ('blue', False, 'F-14A'), 'F-14B': ('blue', False, 'F-14B'),
+    'F-14A-135-GR-Early': ('blue', False, 'F-14A'),
     'FA-18C_hornet': ('blue', False, 'F-18C'), 'F-4E-45MC': ('blue', False, 'F-4E'),
     'AH-64D_BLK_II': ('blue', True, 'AH-64D'), 'CH-47Fbl1': ('blue', True, 'CH-47F'),
-    'Su-25': ('red', False, 'Su-25'), 'Mi-24P': ('red', True, 'Mi-24P'), 'Mi-8MT': ('red', True, 'Mi-8'),
+    'Su-25': ('red', False, 'Su-25'), 'MiG-29 Fulcrum': ('red', False, 'MiG-29'), 'Mi-24P': ('red', True, 'Mi-24P'), 'Mi-8MT': ('red', True, 'Mi-8'),
 }
 ORIGINE = {'blue': (34.25, 33.30), 'red': (34.25, 34.10)}   # mare a sud di Cipro
 PASSO = 3000                                              # m tra i gruppi
