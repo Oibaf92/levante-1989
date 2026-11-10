@@ -31,6 +31,7 @@ local P_AWACS = 0.7              -- probabilita' che una traccia AWACS venga pas
 local ATTIVAZIONE = 0.85         -- frazione della portata entro cui la batteria si accende
 local TENUTA = 45                -- s di radar acceso dopo l'ultimo bersaglio in portata
 local P_HARM, P_HARM_VICINE = 0.65, 0.3
+local GUIDA = { sa5 = 180, sa2 = 90, sa3 = 60, sa6 = 60, sa8 = 30, hawk = 60 }   -- s di guida dopo il lancio
 local SPENTO_HARM = { 60, 120 }  -- s di silenzio dopo un antiradar
 local RICERCA_OGNI, RICERCA_DURATA = 300, 30   -- batteria cieca: ricerca autonoma
 local ANTIRADAR = { "AGM_88", "AGM_45", "AGM_122", "Kh-58", "Kh-25MP", "X_58", "X_25MP", "AGM-88", "AGM-45" }
@@ -160,7 +161,8 @@ local function ciclo(coal, ora)
       if inPortata then
         b.ultimoBersaglio = ora
         if not b.acceso then radar(nome, true); b.acceso = true; dbg(nome .. ": radar ACCESO (bersaglio segnalato dalla rete)") end
-      elseif b.acceso and ora - (b.ultimoBersaglio or 0) > TENUTA and ora >= (b.ricercaFino or 0) then
+      elseif b.acceso and ora - (b.ultimoBersaglio or 0) > TENUTA and ora >= (b.ricercaFino or 0)
+             and ora >= (b.guidaFino or 0) then
         radar(nome, false); b.acceso = false
         dbg(nome .. ": radar spento (nessun bersaglio in portata)")
       elseif not b.acceso and st.sensoriVivi == 0 and ora - (b.ultimaRicerca or -1e9) > RICERCA_OGNI then
@@ -252,6 +254,11 @@ function gestore:onEvent(e)
     local nome = g:getName()
     for _, st in pairs(S) do
       local b = st.batterie[nome]
+      if b then
+        -- missile in volo: il radar di tiro deve restare acceso per guidarlo
+        b.guidaFino = math.max(b.guidaFino or 0, timer.getTime() + (GUIDA[b.tipo] or 60))
+        b.ultimoBersaglio = timer.getTime()
+      end
       if b and b.mobile and not b.spostamentoPrevisto then
         b.spostamentoPrevisto = true
         timer.scheduleFunction(function() b.spostamentoPrevisto = false; spostaDopoTiro(nome, b) end,
@@ -270,7 +277,7 @@ for coal, d in pairs(DATI) do
   S[coal] = { batterie = {}, tracce = {}, sensoriVivi = 0 }
   local n = 0
   for nome, cfg in pairs(d.sam or {}) do
-    S[coal].batterie[nome] = { portata = cfg.portata, mobile = cfg.mobile, riserva = cfg.riserva, acceso = false }
+    S[coal].batterie[nome] = { tipo = cfg.tipo, portata = cfg.portata, mobile = cfg.mobile, riserva = cfg.riserva, acceso = false }
     pcall(radar, nome, false)
     n = n + 1
   end

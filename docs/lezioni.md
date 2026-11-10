@@ -236,6 +236,21 @@ tolleranza piu' alta; SA-5 da non sottovalutare (riducono l'area operativa e cos
 SAM con missione `riserva` (o nome che contiene "riserva"): `levante_iads.lua` le tiene spente e
 nascoste finche' la rete non perde una batteria (richiesta emersa dagli ordini rossi del G16).
 
+## Prova G16 blocco 1 (osservatore, 10/11/2026)
+
+- Script caricati senza errori; la rete IADS accende e spegne gli SA-5 secondo i rilevamenti della
+  rete, l'Hawk idem; navi contro vento; verifica del piazzatore: 73 veicoli corretti di pochi metri,
+  Stinger Baabda senza posto valido (zona urbana: da rivedere).
+- **Errore trovato**: la rete poteva spegnere il radar con un missile ancora in volo (guida persa).
+  Corretto: dopo un lancio il radar resta acceso per il tempo di guida (`GUIDA`: SA-5 180 s, SA-2 90 s...).
+- **Navi con regole d'ingaggio libere**: la fregata della Tarawa ha aperto il fuoco con gli Harpoon su
+  Tartus e lo Slava ha risposto con 16 P-500 sulla portaerei, senza ordini. Da decidere col giocatore
+  (proposta: navi difensive, attacchi navali solo se ordinati).
+- SA-5 e SA-N-6 dello Slava hanno abbattuto la barriera F-14 e una CAP alte sopra il mare: il
+  comandante blu ha messo orbite alte dentro portate note (proposta: controllo delle rotte).
+- Con l'accelerazione del tempo DCS va in "ANTIFREEZE" (simulazione in ritardo): le prestazioni vanno
+  valutate a velocita' normale.
+
 ## Missione da osservare
 
 `python3 script/costruisci_giornata.py <giorno> <blocco> --osservatore` -> `..._OSSERVATORE.miz`: tutti i
