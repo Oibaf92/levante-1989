@@ -23,6 +23,15 @@ FREQ = [('251.000', 'Pacchetto / interno di volo'), ('258.000', 'CVN-71 torre / 
         ('270.000', 'Tanker'), ('243.000', 'Guardia')]
 
 
+MESI = ('gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre',
+        'novembre', 'dicembre')
+
+
+def data_it(c):
+    a, m, g = (int(v) for v in c.par['data'].split('-'))
+    return '%d %s %d' % (g, MESI[m - 1], a)
+
+
 def nominativo(c, volo):
     """Nominativo radio del capo-formazione, es. 'Chevy 1-1' (il nome del volo e' solo il nome di missione)."""
     g = c.gruppi_aerei.get(volo, (None, None))[1]
@@ -48,15 +57,14 @@ def _testo_volo(o):
 
 def prepara(c):
     ob = c.ordini['blue']
-    voli = ob['missioni_aeree']
+    voli = [o for o in ob['missioni_aeree'] if c.nel_blocco(o)]
     giocatore = [o for o in voli if o.get('giocatore')]
     altri = [o for o in voli if not o.get('giocatore')]
     sit = open(os.path.join(c.cartella, 'situazione_pubblica.md'), encoding='utf-8').read()
     fronte = sit.split('## La linea del fronte')[1].split('## Perdite')[0].strip()
-    testo = ('FUOCO SUL LEVANTE - GIORNO %d (17 ottobre 1989)\n\n' % c.giorno
-             + 'SITUAZIONE\nQuindici giorni di guerra. La testa di ponte dei Marines e dell\'esercito di Aoun avanza '
-               'lentamente sotto il fuoco continuo dell\'artiglieria siriana; la difesa aerea siro-sovietica e\' ancora '
-               'temibile e i siriani contendono la superiorita\' aerea sopra il Libano.\n\n'
+    sintesi = sit.split('## Sintesi')[1].split('\n## ')[0].strip() if '## Sintesi' in sit else ''
+    testo = ('FUOCO SUL LEVANTE - GIORNO %d (%s)%s\n\n' % (c.giorno, data_it(c), (' - ' + c.nome_blocco.upper()) if c.blocco else '')
+             + 'SITUAZIONE\n' + sintesi + '\n\n'
              + 'METEO\n' + c.meteo() + '\n\n'
              + 'LINEA DEL FRONTE\n' + fronte.replace('**', '') + '\n\n'
              + 'INTENTO DEL COMANDANTE\n' + ob.get('intento_generale', '') + '\n\n'
@@ -78,8 +86,9 @@ def prepara(c):
     compito = 'Scegli uno dei voli: ' + ', '.join('%s (%s)' % (o['nome'], NOMI_VELIVOLO.get(o['velivolo'], o['velivolo']))
                                                 for o in giocatore) + '. Canali radio: ' + ', '.join('%d %.3f %s' % k for k in c.canali())
     rosso = 'Missione della giornata %d preparata per il giocatore blu.' % c.giorno
-    tav = [_png(_pagina_ordini(c, giocatore, altri))] + [_png(_pagina_volo(c, o)) for o in giocatore] + [_png(_pagina_intel())]
-    return {'titolo': '17 ottobre 1989', 'testo': testo, 'compito': compito}, rosso, tav
+    tav = [_png(_pagina_ordini(c, giocatore, altri))] + [_png(_pagina_volo(c, o)) for o in giocatore] + [_png(_pagina_intel(c))]
+    titolo = data_it(c) + ((' - ' + c.nome_blocco) if c.blocco else '')
+    return {'titolo': titolo, 'testo': testo, 'compito': compito}, rosso, tav
 
 
 def _png(img):
@@ -91,7 +100,8 @@ def _png(img):
 def _pagina_ordini(c, giocatore, altri):
     img = Image.new('RGB', (kb.W, kb.H), kb.CARTA)
     d = ImageDraw.Draw(img)
-    kb._testata(d, 'GIORNO %d - ORDINI' % c.giorno, '17 ottobre 1989  |  06:30-09:30  |  testa di ponte Jounieh - Beirut Est')
+    kb._testata(d, 'GIORNO %d - ORDINI' % c.giorno + (' - %s' % c.nome_blocco.upper() if c.blocco else ''),
+                '%s  |  %s-%s  |  testa di ponte Jounieh - Beirut Est' % (data_it(c), c.inizio, c.fine))
     y = kb._sezione(d, 104, 'COMUNICAZIONI (canali preimpostati)')
     fm = kb.font(15, mono=True)
     for k, f, n in c.canali():
@@ -176,10 +186,10 @@ def _pagina_volo(c, o):
     return img
 
 
-def _pagina_intel():
+def _pagina_intel(c):
     img = Image.new('RGB', (kb.W, kb.H), kb.CARTA)
     d = ImageDraw.Draw(img)
-    kb._testata(d, 'INTEL - GIORNO 15', 'Stima USA aggiornata a ieri sera  |  i sistemi mobili possono essersi spostati')
+    kb._testata(d, 'INTEL - GIORNO %d' % c.giorno, 'Stima USA piu\' recente  |  i sistemi mobili possono essersi spostati')
     y = kb._sezione(d, 104, 'DIFESA AEREA')
     fn = kb.font(14)
     fb = kb.font(14, True)

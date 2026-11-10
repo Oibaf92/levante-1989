@@ -11,6 +11,7 @@ carichi, basi, tipi di unità, limiti) sono in `campagna/G15/parametri.json`.
   "missioni_aeree": [
     {
       "nome": "nome del volo in inglese, breve e univoco, es. 'Hammer', 'Viper', 'Sledge'",
+      "blocco": "numero del blocco della giornata (1 alba, 2 mezzogiorno, 3 pomeriggio; vedi parametri.json)",
       "tipo": "CAP | GCI | SCORTA | STRIKE | CAS | SEAD | ANTINAVE | AWACS | TANKER | TRASPORTO",
       "velivolo": "tipo DCS dalla lista della tua parte",
       "numero": 2,
@@ -57,3 +58,10 @@ Significato dei campi:
   `fuoco` (solo artiglieria/lanciarazzi) = bombarda `bersaglio_fuoco`.
 - Puoi riusare i siti fissi già esistenti (SA-5, SA-2, SA-3) indicandone il centro: se il centro
   coincide con un sito noto, resta lì.
+
+
+## Correzioni tra un blocco e l'altro
+Dopo ogni blocco il comandante riceve il proprio rapporto intel e puo' scrivere
+`<parte>/ordini_GNN_Bk.json` per il blocco k: `missioni_aeree` sostituisce i voli di quel blocco,
+`unita_terra` aggiunge o sostituisce (per nome) unita' di terra, che vengono ripiazzate.
+Le unita' di terra non nominate restano dove sono, con le perdite e i danni del blocco precedente.

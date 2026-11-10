@@ -2,6 +2,9 @@
 
 *Documento dell'arbitro, noto a entrambe le parti.*
 
+## Sintesi
+Quindici giorni di guerra. La testa di ponte dei Marines e dell'esercito di Aoun avanza lentamente sotto il fuoco continuo dell'artiglieria siriana; la difesa aerea siro-sovietica e' ancora temibile e i siriani contendono la superiorita' aerea sopra il Libano.
+
 ## Cronologia essenziale
 - **2 ottobre**: la CVN-71 Roosevelt arriva nel Mediterraneo orientale.
 - **3 ottobre (G1)**: dopo l'incidente nel Golfo di Sidra e l'ultimatum siriano all'enclave di Aoun,

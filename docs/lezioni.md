@@ -182,6 +182,21 @@ tolleranza piu' alta; SA-5 da non sottovalutare (riducono l'area operativa e cos
   questi moduli.
 - Esito del controllo dei carichi in C00 (l'editor ha salvato senza modificarne nessuno).
 
+## Ciclo a blocchi (costruttore)
+
+1. `python3 script/costruisci_giornata.py <giorno> <blocco>` -> `missioni/GNN_Bk_<data>.miz`,
+   `campagna/GNN/costruzione_Bk.json` (unita' messe in missione) e `terra_Bk.json` (forze di terra
+   della giornata all'inizio del blocco, compresi i fermi).
+2. Il giocatore vola e manda lo stato; `python3 script/tools/importa_stato.py <stato>` scrive
+   `campagna/GNN/esiti_Bk.json` (distrutti, fuori servizio, posizioni finali, perdite aeree).
+3. Blocco k+1: si riparte da `terra_Bk.json` + `esiti_Bk.json`; i gruppi distrutti non si ricreano
+   dagli ordini (lista `eliminati`); le navi ripartono da dove erano. Correzioni dei comandanti in
+   `<parte>/ordini_GNN_Bk.json`. I voli vanno nel blocco indicato (`"blocco"`), o in quello in cui
+   cade l'orario di decollo. Test: `script/test/prova_blocchi.py`.
+- Danni (README, Perdite): vita < 70% -> fermo il blocco dopo; < 30% -> anche quello successivo.
+- JSON trasforma le chiavi intere delle tabelle della missione in stringhe: ricaricarle con
+  `chiavi_int` prima di rimetterle in una missione.
+
 ## Diagnosi dei problemi in DCS
 
 - Chiedere `Saved Games\DCS\Logs\dcs.log` **prima di riavviare DCS** (al riavvio diventa `dcs.log.old`).

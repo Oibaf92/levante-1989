@@ -1269,6 +1269,2283 @@
   "PRESTAZIONI: 67 aerei in volo contemporaneamente (stima), oltre il limite di 28",
   "PRESTAZIONI: 158 unita' di terra entro 30 km dagli obiettivi del giocatore, oltre il limite di 120"
  ],
+ "unita": [
+  {
+   "nome": "Cedro 1-1",
+   "gruppo": "Cedro 1",
+   "tipo": "F-14A-135-GR-Early",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Cedro 1-2",
+   "gruppo": "Cedro 1",
+   "tipo": "F-14A-135-GR-Early",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Martello-1",
+   "gruppo": "Martello",
+   "tipo": "FA-18C_hornet",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Martello-2",
+   "gruppo": "Martello",
+   "tipo": "FA-18C_hornet",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Fantasma-1",
+   "gruppo": "Fantasma",
+   "tipo": "F-4E-45MC",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Fantasma-2",
+   "gruppo": "Fantasma",
+   "tipo": "F-4E-45MC",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Occhio Falco-1",
+   "gruppo": "Occhio Falco",
+   "tipo": "E-2C",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Texaco Mare-1",
+   "gruppo": "Texaco Mare",
+   "tipo": "S-3B Tanker",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Texaco Mare-2",
+   "gruppo": "Texaco Mare",
+   "tipo": "S-3B Tanker",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Texaco Incirlik-1",
+   "gruppo": "Texaco Incirlik",
+   "tipo": "KC135MPRS",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Scudo Flotta-1",
+   "gruppo": "Scudo Flotta",
+   "tipo": "F-14A-135-GR-Early",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Scudo Flotta-2",
+   "gruppo": "Scudo Flotta",
+   "tipo": "F-14A-135-GR-Early",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Scudo Flotta-3",
+   "gruppo": "Scudo Flotta",
+   "tipo": "F-14A-135-GR-Early",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Scudo Flotta-4",
+   "gruppo": "Scudo Flotta",
+   "tipo": "F-14A-135-GR-Early",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Cedro 2-1",
+   "gruppo": "Cedro 2",
+   "tipo": "FA-18C_hornet",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Cedro 2-2",
+   "gruppo": "Cedro 2",
+   "tipo": "FA-18C_hornet",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Tuono-1",
+   "gruppo": "Tuono",
+   "tipo": "A6E",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Tuono-2",
+   "gruppo": "Tuono",
+   "tipo": "A6E",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Tuono-3",
+   "gruppo": "Tuono",
+   "tipo": "A6E",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Tuono-4",
+   "gruppo": "Tuono",
+   "tipo": "A6E",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Guardia Tuono-1",
+   "gruppo": "Guardia Tuono",
+   "tipo": "FA-18C_hornet",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Guardia Tuono-2",
+   "gruppo": "Guardia Tuono",
+   "tipo": "FA-18C_hornet",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Lama-1",
+   "gruppo": "Lama",
+   "tipo": "AH-64D_BLK_II",
+   "lato": "blue",
+   "categoria": "helicopter"
+  },
+  {
+   "nome": "Lama-2",
+   "gruppo": "Lama",
+   "tipo": "AH-64D_BLK_II",
+   "lato": "blue",
+   "categoria": "helicopter"
+  },
+  {
+   "nome": "Mulo-1",
+   "gruppo": "Mulo",
+   "tipo": "CH-47Fbl1",
+   "lato": "blue",
+   "categoria": "helicopter"
+  },
+  {
+   "nome": "Mulo-2",
+   "gruppo": "Mulo",
+   "tipo": "CH-47Fbl1",
+   "lato": "blue",
+   "categoria": "helicopter"
+  },
+  {
+   "nome": "Hawk Jounieh-1",
+   "gruppo": "Hawk Jounieh",
+   "tipo": "Hawk pcp",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Hawk Jounieh-2",
+   "gruppo": "Hawk Jounieh",
+   "tipo": "Hawk sr",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Hawk Jounieh-3",
+   "gruppo": "Hawk Jounieh",
+   "tipo": "Hawk tr",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Hawk Jounieh-4",
+   "gruppo": "Hawk Jounieh",
+   "tipo": "Hawk ln",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Hawk Jounieh-5",
+   "gruppo": "Hawk Jounieh",
+   "tipo": "Hawk ln",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Hawk Jounieh-6",
+   "gruppo": "Hawk Jounieh",
+   "tipo": "Hawk ln",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Batteria M109-1",
+   "gruppo": "Batteria M109",
+   "tipo": "M-109",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Batteria M109-2",
+   "gruppo": "Batteria M109",
+   "tipo": "M-109",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Batteria M109-3",
+   "gruppo": "Batteria M109",
+   "tipo": "M-109",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Batteria M109-4",
+   "gruppo": "Batteria M109",
+   "tipo": "M-109",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Batteria M109-5",
+   "gruppo": "Batteria M109",
+   "tipo": "M 818",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Batteria M109-6",
+   "gruppo": "Batteria M109",
+   "tipo": "M 818",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Mtein-1",
+   "gruppo": "Carri Mtein",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Mtein-2",
+   "gruppo": "Carri Mtein",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Mtein-3",
+   "gruppo": "Carri Mtein",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Mtein-4",
+   "gruppo": "Carri Mtein",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Mtein-5",
+   "gruppo": "Carri Mtein",
+   "tipo": "M-113",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Mtein-6",
+   "gruppo": "Carri Mtein",
+   "tipo": "M-113",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-1",
+   "gruppo": "Marines Mtein",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-2",
+   "gruppo": "Marines Mtein",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-3",
+   "gruppo": "Marines Mtein",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-4",
+   "gruppo": "Marines Mtein",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-5",
+   "gruppo": "Marines Mtein",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-6",
+   "gruppo": "Marines Mtein",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-7",
+   "gruppo": "Marines Mtein",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-8",
+   "gruppo": "Marines Mtein",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-9",
+   "gruppo": "Marines Mtein",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-10",
+   "gruppo": "Marines Mtein",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun (USA)-1",
+   "gruppo": "Carri Bhamdoun (USA)",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun (USA)-2",
+   "gruppo": "Carri Bhamdoun (USA)",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun (USA)-3",
+   "gruppo": "Carri Bhamdoun (USA)",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun (USA)-4",
+   "gruppo": "Carri Bhamdoun (USA)",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun (USA)-5",
+   "gruppo": "Carri Bhamdoun (USA)",
+   "tipo": "M-113",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun (USA)-6",
+   "gruppo": "Carri Bhamdoun (USA)",
+   "tipo": "M-113",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-1",
+   "gruppo": "Marines Aley",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-2",
+   "gruppo": "Marines Aley",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-3",
+   "gruppo": "Marines Aley",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-4",
+   "gruppo": "Marines Aley",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-5",
+   "gruppo": "Marines Aley",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-6",
+   "gruppo": "Marines Aley",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-7",
+   "gruppo": "Marines Aley",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-8",
+   "gruppo": "Marines Aley",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-9",
+   "gruppo": "Marines Aley",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-10",
+   "gruppo": "Marines Aley",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-1",
+   "gruppo": "Marines Baabda",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-2",
+   "gruppo": "Marines Baabda",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-3",
+   "gruppo": "Marines Baabda",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-4",
+   "gruppo": "Marines Baabda",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-5",
+   "gruppo": "Marines Baabda",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-6",
+   "gruppo": "Marines Baabda",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-7",
+   "gruppo": "Marines Baabda",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-8",
+   "gruppo": "Marines Baabda",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-9",
+   "gruppo": "Marines Baabda",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-10",
+   "gruppo": "Marines Baabda",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-1",
+   "gruppo": "Aoun Porto",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-2",
+   "gruppo": "Aoun Porto",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-3",
+   "gruppo": "Aoun Porto",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-4",
+   "gruppo": "Aoun Porto",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-5",
+   "gruppo": "Aoun Porto",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-6",
+   "gruppo": "Aoun Porto",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-7",
+   "gruppo": "Aoun Porto",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-8",
+   "gruppo": "Aoun Porto",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-9",
+   "gruppo": "Aoun Porto",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-10",
+   "gruppo": "Aoun Porto",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-1",
+   "gruppo": "Aoun Faraya",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-2",
+   "gruppo": "Aoun Faraya",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-3",
+   "gruppo": "Aoun Faraya",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-4",
+   "gruppo": "Aoun Faraya",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-5",
+   "gruppo": "Aoun Faraya",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-6",
+   "gruppo": "Aoun Faraya",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-7",
+   "gruppo": "Aoun Faraya",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-8",
+   "gruppo": "Aoun Faraya",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-9",
+   "gruppo": "Aoun Faraya",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-10",
+   "gruppo": "Aoun Faraya",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Baabda-1",
+   "gruppo": "Stinger Baabda",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Baabda-2",
+   "gruppo": "Stinger Baabda",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Baabda-3",
+   "gruppo": "Stinger Baabda",
+   "tipo": "Stinger comm",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Artiglieria-1",
+   "gruppo": "Stinger Artiglieria",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Artiglieria-2",
+   "gruppo": "Stinger Artiglieria",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Artiglieria-3",
+   "gruppo": "Stinger Artiglieria",
+   "tipo": "Stinger comm",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Mtein-1",
+   "gruppo": "Stinger Mtein",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Mtein-2",
+   "gruppo": "Stinger Mtein",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Mtein-3",
+   "gruppo": "Stinger Mtein",
+   "tipo": "Stinger comm",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "CVN-71 Theodore Roosevelt",
+   "gruppo": "CVN-71 Roosevelt",
+   "tipo": "CVN_71",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "CG-56 San Jacinto",
+   "gruppo": "CVN-71 Roosevelt",
+   "tipo": "TICONDEROG",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "CG-60 Normandy",
+   "gruppo": "CVN-71 Roosevelt",
+   "tipo": "TICONDEROG",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "FFG-49 Robert G. Bradley",
+   "gruppo": "CVN-71 Roosevelt",
+   "tipo": "PERRY",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "LHA-1 Tarawa",
+   "gruppo": "LHA-1 Tarawa",
+   "tipo": "LHA_Tarawa",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "FFG-36 Underwood",
+   "gruppo": "LHA-1 Tarawa",
+   "tipo": "PERRY",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "AWACS Shmel-1",
+   "gruppo": "AWACS Shmel",
+   "tipo": "A-50",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "CAS Bhamdoun-1",
+   "gruppo": "CAS Bhamdoun",
+   "tipo": "Su-25",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "CAS Bhamdoun-2",
+   "gruppo": "CAS Bhamdoun",
+   "tipo": "Su-25",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "CAS Bhamdoun-3",
+   "gruppo": "CAS Bhamdoun",
+   "tipo": "Su-25",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "CAS Bhamdoun-4",
+   "gruppo": "CAS Bhamdoun",
+   "tipo": "Su-25",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Antinave Ovest-1",
+   "gruppo": "Antinave Ovest",
+   "tipo": "Tu-22M3",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Antinave Ovest-2",
+   "gruppo": "Antinave Ovest",
+   "tipo": "Tu-22M3",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Antinave Ovest-3",
+   "gruppo": "Antinave Ovest",
+   "tipo": "Tu-22M3",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Antinave Ovest-4",
+   "gruppo": "Antinave Ovest",
+   "tipo": "Tu-22M3",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Slava (Tartus)",
+   "gruppo": "Squadra sovietica Tartus",
+   "tipo": "MOSCOW",
+   "lato": "red",
+   "categoria": "ship"
+  },
+  {
+   "nome": "Krivak II (Tartus)",
+   "gruppo": "Squadra sovietica Tartus",
+   "tipo": "REZKY",
+   "lato": "red",
+   "categoria": "ship"
+  },
+  {
+   "nome": "Molniya (Tartus)",
+   "gruppo": "Squadra sovietica Tartus",
+   "tipo": "MOLNIYA",
+   "lato": "red",
+   "categoria": "ship"
+  },
+  {
+   "nome": "CAP Bekaa 1-1",
+   "gruppo": "CAP Bekaa 1",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "CAP Bekaa 1-2",
+   "gruppo": "CAP Bekaa 1",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "CAP Bekaa 1-3",
+   "gruppo": "CAP Bekaa 1",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "CAP Bekaa 1-4",
+   "gruppo": "CAP Bekaa 1",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "CAP Bekaa 2-1",
+   "gruppo": "CAP Bekaa 2",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "CAP Bekaa 2-2",
+   "gruppo": "CAP Bekaa 2",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "CAP Bekaa 2-3",
+   "gruppo": "CAP Bekaa 2",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "CAP Bekaa 2-4",
+   "gruppo": "CAP Bekaa 2",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "GCI Libano Nord-1",
+   "gruppo": "GCI Libano Nord",
+   "tipo": "MiG-23MLD",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "GCI Libano Nord-2",
+   "gruppo": "GCI Libano Nord",
+   "tipo": "MiG-23MLD",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "GCI Libano Nord-3",
+   "gruppo": "GCI Libano Nord",
+   "tipo": "MiG-23MLD",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "GCI Libano Nord-4",
+   "gruppo": "GCI Libano Nord",
+   "tipo": "MiG-23MLD",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "GCI Damasco-1",
+   "gruppo": "GCI Damasco",
+   "tipo": "MiG-25PD",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "GCI Damasco-2",
+   "gruppo": "GCI Damasco",
+   "tipo": "MiG-25PD",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "SEAD Hawk-1",
+   "gruppo": "SEAD Hawk",
+   "tipo": "Su-24M",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "SEAD Hawk-2",
+   "gruppo": "SEAD Hawk",
+   "tipo": "Su-24M",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Strike Ghazir-1",
+   "gruppo": "Strike Ghazir",
+   "tipo": "Su-24M",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Strike Ghazir-2",
+   "gruppo": "Strike Ghazir",
+   "tipo": "Su-24M",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Strike Baabda-1",
+   "gruppo": "Strike Baabda",
+   "tipo": "Su-17M4",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Strike Baabda-2",
+   "gruppo": "Strike Baabda",
+   "tipo": "Su-17M4",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Strike Baabda-3",
+   "gruppo": "Strike Baabda",
+   "tipo": "Su-17M4",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Strike Baabda-4",
+   "gruppo": "Strike Baabda",
+   "tipo": "Su-17M4",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Scorta Baabda-1",
+   "gruppo": "Scorta Baabda",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Scorta Baabda-2",
+   "gruppo": "Scorta Baabda",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Scorta Baabda-3",
+   "gruppo": "Scorta Baabda",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Scorta Baabda-4",
+   "gruppo": "Scorta Baabda",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Razzi Mtein-1",
+   "gruppo": "Razzi Mtein",
+   "tipo": "Su-17M4",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Razzi Mtein-2",
+   "gruppo": "Razzi Mtein",
+   "tipo": "Su-17M4",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Scorta Antinave-1",
+   "gruppo": "Scorta Antinave",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Scorta Antinave-2",
+   "gruppo": "Scorta Antinave",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Diversione Costa-1",
+   "gruppo": "Diversione Costa",
+   "tipo": "MiG-23MLD",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Diversione Costa-2",
+   "gruppo": "Diversione Costa",
+   "tipo": "MiG-23MLD",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Diversione Costa-3",
+   "gruppo": "Diversione Costa",
+   "tipo": "MiG-23MLD",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Diversione Costa-4",
+   "gruppo": "Diversione Costa",
+   "tipo": "MiG-23MLD",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "SA-5 Dumayr-1",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "RPC_5N62V",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Dumayr-2",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "RLS_19J6",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Dumayr-3",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "P14_SR",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Dumayr-4",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Dumayr-5",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Dumayr-6",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Dumayr-7",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Dumayr-8",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Dumayr-9",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-1",
+   "gruppo": "SA-5 Homs",
+   "tipo": "RPC_5N62V",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-2",
+   "gruppo": "SA-5 Homs",
+   "tipo": "RLS_19J6",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-3",
+   "gruppo": "SA-5 Homs",
+   "tipo": "P14_SR",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-4",
+   "gruppo": "SA-5 Homs",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-5",
+   "gruppo": "SA-5 Homs",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-6",
+   "gruppo": "SA-5 Homs",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-7",
+   "gruppo": "SA-5 Homs",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-8",
+   "gruppo": "SA-5 Homs",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-9",
+   "gruppo": "SA-5 Homs",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-1",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "SNR_75V",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-2",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "p-19 s-125 sr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-3",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75_ZIL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-4",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-5",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-6",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-7",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-8",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-9",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Homs-1",
+   "gruppo": "SA-2 Homs",
+   "tipo": "SNR_75V",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Homs-2",
+   "gruppo": "SA-2 Homs",
+   "tipo": "p-19 s-125 sr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Homs-3",
+   "gruppo": "SA-2 Homs",
+   "tipo": "S_75_ZIL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Homs-4",
+   "gruppo": "SA-2 Homs",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Homs-5",
+   "gruppo": "SA-2 Homs",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Homs-6",
+   "gruppo": "SA-2 Homs",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Homs-7",
+   "gruppo": "SA-2 Homs",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Homs-8",
+   "gruppo": "SA-2 Homs",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Homs-9",
+   "gruppo": "SA-2 Homs",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Hama-1",
+   "gruppo": "SA-2 Hama",
+   "tipo": "SNR_75V",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Hama-2",
+   "gruppo": "SA-2 Hama",
+   "tipo": "p-19 s-125 sr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Hama-3",
+   "gruppo": "SA-2 Hama",
+   "tipo": "S_75_ZIL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Hama-4",
+   "gruppo": "SA-2 Hama",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Hama-5",
+   "gruppo": "SA-2 Hama",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Hama-6",
+   "gruppo": "SA-2 Hama",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Hama-7",
+   "gruppo": "SA-2 Hama",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Hama-8",
+   "gruppo": "SA-2 Hama",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Hama-9",
+   "gruppo": "SA-2 Hama",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Aleppo-1",
+   "gruppo": "SA-2 Aleppo",
+   "tipo": "SNR_75V",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Aleppo-2",
+   "gruppo": "SA-2 Aleppo",
+   "tipo": "p-19 s-125 sr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Aleppo-3",
+   "gruppo": "SA-2 Aleppo",
+   "tipo": "S_75_ZIL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Aleppo-4",
+   "gruppo": "SA-2 Aleppo",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Aleppo-5",
+   "gruppo": "SA-2 Aleppo",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Aleppo-6",
+   "gruppo": "SA-2 Aleppo",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Aleppo-7",
+   "gruppo": "SA-2 Aleppo",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Aleppo-8",
+   "gruppo": "SA-2 Aleppo",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Aleppo-9",
+   "gruppo": "SA-2 Aleppo",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Damasco est-1",
+   "gruppo": "SA-3 Damasco est",
+   "tipo": "snr s-125 tr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Damasco est-2",
+   "gruppo": "SA-3 Damasco est",
+   "tipo": "p-19 s-125 sr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Damasco est-3",
+   "gruppo": "SA-3 Damasco est",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Damasco est-4",
+   "gruppo": "SA-3 Damasco est",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Damasco est-5",
+   "gruppo": "SA-3 Damasco est",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Damasco est-6",
+   "gruppo": "SA-3 Damasco est",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Homs-1",
+   "gruppo": "SA-3 Homs",
+   "tipo": "snr s-125 tr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Homs-2",
+   "gruppo": "SA-3 Homs",
+   "tipo": "p-19 s-125 sr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Homs-3",
+   "gruppo": "SA-3 Homs",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Homs-4",
+   "gruppo": "SA-3 Homs",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Homs-5",
+   "gruppo": "SA-3 Homs",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Homs-6",
+   "gruppo": "SA-3 Homs",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Hama-1",
+   "gruppo": "SA-3 Hama",
+   "tipo": "snr s-125 tr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Hama-2",
+   "gruppo": "SA-3 Hama",
+   "tipo": "p-19 s-125 sr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Hama-3",
+   "gruppo": "SA-3 Hama",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Hama-4",
+   "gruppo": "SA-3 Hama",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Hama-5",
+   "gruppo": "SA-3 Hama",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Hama-6",
+   "gruppo": "SA-3 Hama",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Aleppo-1",
+   "gruppo": "SA-3 Aleppo",
+   "tipo": "snr s-125 tr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Aleppo-2",
+   "gruppo": "SA-3 Aleppo",
+   "tipo": "p-19 s-125 sr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Aleppo-3",
+   "gruppo": "SA-3 Aleppo",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Aleppo-4",
+   "gruppo": "SA-3 Aleppo",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Aleppo-5",
+   "gruppo": "SA-3 Aleppo",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Aleppo-6",
+   "gruppo": "SA-3 Aleppo",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Latakia-1",
+   "gruppo": "SA-3 Latakia",
+   "tipo": "snr s-125 tr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Latakia-2",
+   "gruppo": "SA-3 Latakia",
+   "tipo": "p-19 s-125 sr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Latakia-3",
+   "gruppo": "SA-3 Latakia",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Latakia-4",
+   "gruppo": "SA-3 Latakia",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Latakia-5",
+   "gruppo": "SA-3 Latakia",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Latakia-6",
+   "gruppo": "SA-3 Latakia",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Chouf-1",
+   "gruppo": "SA-6 Chouf",
+   "tipo": "Kub 1S91 str",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Chouf-2",
+   "gruppo": "SA-6 Chouf",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Chouf-3",
+   "gruppo": "SA-6 Chouf",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Chouf-4",
+   "gruppo": "SA-6 Chouf",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Chouf-5",
+   "gruppo": "SA-6 Chouf",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Dahr el-Baidar-1",
+   "gruppo": "SA-6 Dahr el-Baidar",
+   "tipo": "Kub 1S91 str",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Dahr el-Baidar-2",
+   "gruppo": "SA-6 Dahr el-Baidar",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Dahr el-Baidar-3",
+   "gruppo": "SA-6 Dahr el-Baidar",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Dahr el-Baidar-4",
+   "gruppo": "SA-6 Dahr el-Baidar",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Dahr el-Baidar-5",
+   "gruppo": "SA-6 Dahr el-Baidar",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Zahle-1",
+   "gruppo": "SA-6 Zahle",
+   "tipo": "Kub 1S91 str",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Zahle-2",
+   "gruppo": "SA-6 Zahle",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Zahle-3",
+   "gruppo": "SA-6 Zahle",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Zahle-4",
+   "gruppo": "SA-6 Zahle",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Zahle-5",
+   "gruppo": "SA-6 Zahle",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Bekaa Nord-1",
+   "gruppo": "SA-6 Bekaa Nord",
+   "tipo": "Kub 1S91 str",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Bekaa Nord-2",
+   "gruppo": "SA-6 Bekaa Nord",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Bekaa Nord-3",
+   "gruppo": "SA-6 Bekaa Nord",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Bekaa Nord-4",
+   "gruppo": "SA-6 Bekaa Nord",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Bekaa Nord-5",
+   "gruppo": "SA-6 Bekaa Nord",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-8 Aley-1",
+   "gruppo": "SA-8 Aley",
+   "tipo": "Osa 9A33 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-8 Aley-2",
+   "gruppo": "SA-8 Aley",
+   "tipo": "Osa 9A33 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-8 Sofar-1",
+   "gruppo": "SA-8 Sofar",
+   "tipo": "Osa 9A33 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-8 Sofar-2",
+   "gruppo": "SA-8 Sofar",
+   "tipo": "Osa 9A33 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Aley-1",
+   "gruppo": "Artiglieria Aley",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Aley-2",
+   "gruppo": "Artiglieria Aley",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Aley-3",
+   "gruppo": "Artiglieria Aley",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Aley-4",
+   "gruppo": "Artiglieria Aley",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Aley-5",
+   "gruppo": "Artiglieria Aley",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Aley-6",
+   "gruppo": "Artiglieria Aley",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Souk el-Gharb-1",
+   "gruppo": "Artiglieria Souk el-Gharb",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Souk el-Gharb-2",
+   "gruppo": "Artiglieria Souk el-Gharb",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Souk el-Gharb-3",
+   "gruppo": "Artiglieria Souk el-Gharb",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Souk el-Gharb-4",
+   "gruppo": "Artiglieria Souk el-Gharb",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Souk el-Gharb-5",
+   "gruppo": "Artiglieria Souk el-Gharb",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Souk el-Gharb-6",
+   "gruppo": "Artiglieria Souk el-Gharb",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Dahr el-Baidar-1",
+   "gruppo": "Artiglieria Dahr el-Baidar",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Dahr el-Baidar-2",
+   "gruppo": "Artiglieria Dahr el-Baidar",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Dahr el-Baidar-3",
+   "gruppo": "Artiglieria Dahr el-Baidar",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Dahr el-Baidar-4",
+   "gruppo": "Artiglieria Dahr el-Baidar",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Dahr el-Baidar-5",
+   "gruppo": "Artiglieria Dahr el-Baidar",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Dahr el-Baidar-6",
+   "gruppo": "Artiglieria Dahr el-Baidar",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Sofar-1",
+   "gruppo": "Grad Sofar",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Sofar-2",
+   "gruppo": "Grad Sofar",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Sofar-3",
+   "gruppo": "Grad Sofar",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Sofar-4",
+   "gruppo": "Grad Sofar",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Sofar-5",
+   "gruppo": "Grad Sofar",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Faraya-1",
+   "gruppo": "Grad Faraya",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Faraya-2",
+   "gruppo": "Grad Faraya",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Faraya-3",
+   "gruppo": "Grad Faraya",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Faraya-4",
+   "gruppo": "Grad Faraya",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Faraya-5",
+   "gruppo": "Grad Faraya",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun (SY)-1",
+   "gruppo": "Carri Bhamdoun (SY)",
+   "tipo": "T-72B",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun (SY)-2",
+   "gruppo": "Carri Bhamdoun (SY)",
+   "tipo": "T-72B",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun (SY)-3",
+   "gruppo": "Carri Bhamdoun (SY)",
+   "tipo": "T-72B",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun (SY)-4",
+   "gruppo": "Carri Bhamdoun (SY)",
+   "tipo": "T-72B",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun (SY)-5",
+   "gruppo": "Carri Bhamdoun (SY)",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun (SY)-6",
+   "gruppo": "Carri Bhamdoun (SY)",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Passo-1",
+   "gruppo": "Carri Passo",
+   "tipo": "T-72B",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Passo-2",
+   "gruppo": "Carri Passo",
+   "tipo": "T-72B",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Passo-3",
+   "gruppo": "Carri Passo",
+   "tipo": "T-72B",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Passo-4",
+   "gruppo": "Carri Passo",
+   "tipo": "T-72B",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Passo-5",
+   "gruppo": "Carri Passo",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Passo-6",
+   "gruppo": "Carri Passo",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-1",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-2",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-3",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-4",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-5",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "BTR-70",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-6",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "BTR-70",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-7",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "Infantry AK",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-8",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "Infantry AK",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-9",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "Infantry AK",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-10",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "Infantry AK",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Contraerea Colonna Bhamdoun-1",
+   "gruppo": "Contraerea Colonna Bhamdoun",
+   "tipo": "ZSU-23-4 Shilka",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Contraerea Colonna Bhamdoun-2",
+   "gruppo": "Contraerea Colonna Bhamdoun",
+   "tipo": "ZSU-23-4 Shilka",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Contraerea Colonna Bhamdoun-3",
+   "gruppo": "Contraerea Colonna Bhamdoun",
+   "tipo": "Strela-1 9P31",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Contraerea Grad Faraya-1",
+   "gruppo": "Contraerea Grad Faraya",
+   "tipo": "ZSU-23-4 Shilka",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Contraerea Grad Faraya-2",
+   "gruppo": "Contraerea Grad Faraya",
+   "tipo": "ZSU-23-4 Shilka",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Contraerea Grad Faraya-3",
+   "gruppo": "Contraerea Grad Faraya",
+   "tipo": "Strela-1 9P31",
+   "lato": "red",
+   "categoria": "vehicle"
+  }
+ ],
  "prestazioni": {
   "plane": 65,
   "helicopter": 4,

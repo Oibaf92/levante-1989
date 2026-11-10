@@ -13,6 +13,7 @@ La missione e' pensata per il giocatore BLU: solo il blu ha posti pilotabili, br
 tavolette; le unita' rosse non compaiono sulla mappa F10 del giocatore (solo alleati).
 """
 import copy
+import types
 import json
 import math
 import os
@@ -138,6 +139,15 @@ class Contatori:
         return self.unita - 1
 
 
+def chiavi_int(v):
+    """JSON trasforma le chiavi intere in stringhe: le riporta interi (servono per le tabelle della missione)."""
+    if isinstance(v, dict):
+        return {(int(k) if isinstance(k, str) and k.isdigit() else k): chiavi_int(x) for k, x in v.items()}
+    if isinstance(v, list):
+        return [chiavi_int(x) for x in v]
+    return v
+
+
 def hm(s):
     h, m = s.split(':')
     return int(h) * 3600 + int(m) * 60
@@ -191,16 +201,27 @@ def t_azione(ident, params):
 
 # ---------------------------------------------------------------------------
 class Costruttore:
-    def __init__(self, giorno):
+    def __init__(self, giorno, blocco=None):
         self.giorno = giorno
+        self.blocco = blocco
         self.cartella = os.path.join(RADICE, 'campagna', 'G%02d' % giorno)
         self.par = json.load(open(os.path.join(self.cartella, 'parametri.json'), encoding='utf-8'))
         self.ordini = {lato: json.load(open(os.path.join(RADICE, d, 'ordini_G%02d.json' % giorno), encoding='utf-8'))
                        for lato, d in (('blue', 'blu'), ('red', 'rosso'))}
         self.cnt = Contatori()
         self.avvisi = []
-        self.resoconto = {'piazzamenti': [], 'voli': [], 'avvisi': self.avvisi}
-        self.t0 = hm(self.par['inizio'])
+        self.resoconto = {'piazzamenti': [], 'voli': [], 'avvisi': self.avvisi, 'unita': []}
+        if blocco:
+            b = self.par['blocchi'][blocco - 1]
+            self.inizio, self.fine, self.nome_blocco = b['inizio'], b['fine'], b.get('nome', 'blocco %d' % blocco)
+            self.nome = 'G%02d_B%d_%s' % (giorno, blocco, self.par['data'])
+            self._ordini_del_blocco()
+            self.esiti_prec = self._carica_json('esiti_B%d.json' % (blocco - 1)) if blocco > 1 else {}
+        else:
+            self.inizio, self.fine, self.nome_blocco = self.par['inizio'], self.par.get('fine', self.par['inizio']), ''
+            self.nome = 'G%02d_%s' % (giorno, self.par['data'])
+            self.esiti_prec = {}
+        self.t0 = hm(self.inizio)
         carica = lambda n: lt.parse(open(os.path.join(QUI, 'base', n), encoding='utf-8').read())[1]  # noqa: E731
         self.m, self.w, self.o = carica('mission'), carica('warehouses'), carica('options')
         self.terreno = pz.Terreno()
@@ -212,6 +233,37 @@ class Costruttore:
         self.numeri_chiamata = {}         # (paese, nome) -> ultimo numero di gruppo (1-9)
         self._rinomina_doppi()
         self.navi = {}
+
+    def _carica_json(self, nome):
+        """Carica un JSON della giornata; le chiavi numeriche (tabelle Lua salvate in JSON) tornano interi."""
+        p = os.path.join(self.cartella, nome)
+        return chiavi_int(json.load(open(p, encoding='utf-8'))) if os.path.exists(p) else {}
+
+    def _ordini_del_blocco(self):
+        """Correzioni dei comandanti tra un blocco e l'altro: <parte>/ordini_GNN_Bk.json sostituisce i voli
+        di quel blocco e aggiunge o sostituisce (per nome) unita' di terra."""
+        for lato, d in (('blue', 'blu'), ('red', 'rosso')):
+            p = os.path.join(RADICE, d, 'ordini_G%02d_B%d.json' % (self.giorno, self.blocco))
+            if not os.path.exists(p):
+                continue
+            agg = json.load(open(p, encoding='utf-8'))
+            base = self.ordini[lato]
+            if 'missioni_aeree' in agg:
+                base['missioni_aeree'] = [o for o in base.get('missioni_aeree', []) if not self.nel_blocco(o)] + \
+                    [dict(o, blocco=self.blocco) for o in agg['missioni_aeree']]
+            nuove = {u['nome']: u for u in agg.get('unita_terra', [])}
+            base['unita_terra'] = [u for u in base.get('unita_terra', []) if u['nome'] not in nuove] + list(nuove.values())
+            self.terra_cambiata = getattr(self, 'terra_cambiata', set()) | set(nuove)
+            if agg.get('intento_generale'):
+                base['intento_generale'] = agg['intento_generale']
+
+    def nel_blocco(self, o):
+        """Un volo appartiene al blocco se lo dice ('blocco') o, se non lo dice, se decolla nella sua finestra."""
+        if not self.blocco:
+            return True
+        if o.get('blocco'):
+            return int(o['blocco']) == self.blocco
+        return hm(self.inizio) <= hm(o.get('decollo', self.inizio)) < hm(self.fine)
 
     def _rinomina_doppi(self):
         """Nomi uguali tra le due parti (DCS vuole nomi unici): aggiunge una sigla di parte."""
@@ -251,10 +303,15 @@ class Costruttore:
         verso = self.m['weather']['wind']['atGround']['dir']
         return (verso + 180 + scarto) % 360
 
+    def _pos_nave(self, nome, predefinita):
+        """Posizione di partenza di una nave: dove era alla fine del blocco precedente, se nota."""
+        p = (self.esiti_prec or {}).get('posizioni', {}).get(nome)
+        return (p[0], p[1]) if p else ll_to_xy(*predefinita)
+
     def navi_blu(self):
         self.navi_vento = {}
         hdg = math.radians(self.prua_contro_vento(CVN_SCARTO))
-        cx, cy = ll_to_xy(*CVN_POS)
+        cx, cy = self._pos_nave('CVN-71 Theodore Roosevelt', CVN_POS)
         fine = (cx + 20 * KT * 4 * 3600 * math.cos(hdg), cy + 20 * KT * 4 * 3600 * math.sin(hdg))
         ids = [self.cnt.u() for _ in range(4)]
         tacan = t_azione('ActivateBeacon', {'type': 4, 'AA': False, 'callsign': 'TR', 'modeChannel': 'X', 'channel': 71,
@@ -279,7 +336,7 @@ class Costruttore:
         self.aggiungi_gruppo('blue', 'ship', USA, 'USA', g)
         self.navi['CVN-71'] = (ids[0], cx, cy)
         # LHA
-        lx, ly = ll_to_xy(*LHA_POS)
+        lx, ly = self._pos_nave('LHA-1 Tarawa', LHA_POS)
         lid = [self.cnt.u(), self.cnt.u()]
         hl = math.radians(self.prua_contro_vento())
         fl = (lx + 15 * KT * 4 * 3600 * math.cos(hl), ly + 15 * KT * 4 * 3600 * math.sin(hl))
@@ -342,55 +399,140 @@ class Costruttore:
                 out.append((it, {'missione': 'difesa'}))
         return out
 
+    ORDINE_PIAZZAMENTO = {'sa5': 0, 'ewr': 1, 'sa2': 2, 'sa3': 3, 'hawk': 3, 'sa6': 4, 'sa8': 5, 'aaa': 6,
+                          'artiglieria': 7, 'lanciarazzi': 7, 'carri': 8, 'meccanizzata': 8, 'contraerea_mobile': 9}
+
     def forze_terra(self):
+        """Unita' di terra. Primo blocco (o missione intera): tutte piazzate dal piazzatore. Blocchi
+        successivi: si riparte dallo stato del blocco precedente (campagna/GNN/terra_B<k-1>.json + esiti):
+        unita' distrutte tolte, danneggiate fuori servizio, posizioni aggiornate; si piazzano solo le
+        unita' nuove o cambiate negli ordini del blocco."""
+        self.piazzamenti_lua = {}
         voci = self.intenzioni_terra()
+        cache = self._carica_json('terra_B%d.json' % (self.blocco - 1)) if self.blocco and self.blocco > 1 else {}
+        cambiate = getattr(self, 'terra_cambiata', set())
+        tenute, gia = [], []
+        eliminati = set(cache.get('eliminati', [])) - cambiate     # gruppi distrutti: non si ricreano dagli ordini
+        for voce in cache.get('gruppi', []):
+            if voce['nome'] in cambiate:
+                continue
+            g_cache, g = self._gruppo_dagli_esiti(voce)
+            if g_cache:
+                voce = dict(voce, gruppo=g_cache)       # i fermi restano nella giornata, fuori dalla missione
+            if not g_cache:
+                eliminati.add(voce['nome'])
+            if g:
+                tenute.append((voce, g))
+            elif g_cache:
+                nuova_cache_fermi = getattr(self, '_fermi', [])
+                nuova_cache_fermi.append(voce)
+                self._fermi = nuova_cache_fermi
+                gia.append(types.SimpleNamespace(
+                    x=g['x'], y=g['y'], intenzione=types.SimpleNamespace(sistema=voce['sistema']),
+                    unita=[(u['type'], u['x'], u['y'], 0) for u in g['units'].values()]))
+        nomi_tenuti = ({v['nome'] for v in cache.get('gruppi', [])} - cambiate) | eliminati
+        da_piazzare = [(it, o) for it, o in voci if it.nome not in nomi_tenuti]
         piazzati = []
-        ordine = {'sa5': 0, 'ewr': 1, 'sa2': 2, 'sa3': 3, 'hawk': 3, 'sa6': 4, 'sa8': 5, 'aaa': 6,
-                  'artiglieria': 7, 'lanciarazzi': 7, 'carri': 8, 'meccanizzata': 8, 'contraerea_mobile': 9}
-        for it in sorted([it for it, _ in voci], key=lambda i: ordine.get(i.sistema, 9)):
+        for it in sorted([it for it, _ in da_piazzare], key=lambda i: self.ORDINE_PIAZZAMENTO.get(i.sistema, 9)):
             try:
-                piazzati.append(pz.piazza(self.terreno, it, piazzati))
+                piazzati.append(pz.piazza(self.terreno, it, gia + piazzati))
             except ValueError as e:
                 self.avvisi.append('%s: non piazzata (%s)' % (it.nome, e))
-        per_nome = {u_it.nome: ordine for u_it, ordine in voci}
-        self.piazzamenti_lua = {}
+        per_nome = {u_it.nome: ordine for u_it, ordine in da_piazzare}
+        nuova_cache = []
+        for voce, g in tenute:
+            self._aggiungi_terra(voce, g)
+            nuova_cache.append(voce)
+        nuova_cache += getattr(self, '_fermi', [])
         for p in piazzati:
-            ordine = per_nome[p.intenzione.nome]
-            lato = p.intenzione.coalizione
-            g = pz.gruppo_me(p, self.cnt.g(), self.cnt.unita, self.terreno)
-            self.cnt.unita += len(p.unita)
-            g['hidden'] = False
-            punti = g['route']['points']
-            missione = ordine.get('missione', 'difesa')
-            if missione == 'attacco' and ordine.get('avanza_verso'):
-                ax, ay = ll_to_xy(*ordine['avanza_verso'])
-                punti[2] = wpt(ax, ay, float(self.terreno.quota(ax, ay)[0]), 5.5, azione='Off Road')
-                punti[1]['speed'] = 5.5
-                punti[1]['ETA_locked'] = True
-            if missione == 'fuoco' and ordine.get('bersaglio_fuoco'):
-                bx, by = ll_to_xy(*ordine['bersaglio_fuoco'])
-                d = math.hypot(bx - p.x, by - p.y)
-                portata = pz.SISTEMI[p.intenzione.sistema]['portata_km'] * 1000
-                if d > portata:
-                    self.avvisi.append('%s: bersaglio a %.1f km, oltre la portata (%.0f km): sparera\' solo se si avvicina'
-                                       % (p.intenzione.nome, d / 1000, portata / 1000))
-                fuoco = {'id': 'FireAtPoint', 'params': {'x': bx, 'y': by, 'zoneRadius': 400, 'expendQty': 60,
-                                                         'expendQtyEnabled': True, 'weaponType': 1073741822,
-                                                         'alt_type': 0, 'counterbattaryRadius': 0}}
-                punti[1]['task']['params']['tasks'] = compiti_combo([fuoco])
-            paese_id = USA if lato == 'blue' else SIRIA
-            self.aggiungi_gruppo(lato, 'vehicle', paese_id, 'USA' if lato == 'blue' else 'Syria', g)
-            cfg = pz.SISTEMI[p.intenzione.sistema]
-            self.piazzamenti_lua[p.intenzione.nome] = {
-                'paese': paese_id, 'abilita': p.intenzione.abilita, 'attuale': 1,
-                'unita': {k: {'tipo': t, 'avanti': float(a), 'destra': float(dx), 'rotta': float(r)}
-                          for k, (t, a, dx, r) in enumerate(pz.schema(cfg, lato), 1)},
-                'posizioni': {k: {'x': x, 'y': y, 'rotta': float(rt)}
-                              for k, (x, y, rt) in enumerate([(p.x, p.y, p.rotta)] + p.alternative, 1)},
-            }
-            self.resoconto['piazzamenti'].append({'lato': lato, 'nome': p.intenzione.nome, 'sistema': p.intenzione.sistema,
-                                                  'missione': missione, 'lat_lon': [round(v, 5) for v in xy_to_ll(p.x, p.y)],
-                                                  'dettagli': p.dettagli})
+            voce, g = self._gruppo_da_piazzamento(p, per_nome[p.intenzione.nome])
+            self._aggiungi_terra(voce, g)
+            nuova_cache.append(dict(voce, gruppo=g))
+        if self.blocco:
+            json.dump({'blocco': self.blocco, 'gruppi': nuova_cache, 'eliminati': sorted(eliminati)},
+                      open(os.path.join(self.cartella, 'terra_B%d.json' % self.blocco), 'w'),
+                      indent=1, ensure_ascii=False)
+
+    def _aggiungi_terra(self, voce, g):
+        paese_id = USA if voce['lato'] == 'blue' else SIRIA
+        self.aggiungi_gruppo(voce['lato'], 'vehicle', paese_id, 'USA' if voce['lato'] == 'blue' else 'Syria', g)
+        self.piazzamenti_lua[voce['nome']] = voce['lua']
+        self.resoconto['piazzamenti'].append(voce['resoconto'])
+
+    def _gruppo_dagli_esiti(self, voce):
+        """Applica gli esiti del blocco precedente a un gruppo della giornata.
+        Restituisce (gruppo per la giornata, gruppo per la missione): il primo senza i distrutti, il
+        secondo anche senza i fuori servizio (None se non resta nessun veicolo in servizio)."""
+        es = self.esiti_prec or {}
+        distrutti = set(es.get('distrutti', []))
+        fermi = {n for n, fino in (voce.get('fermi') or {}).items() if int(fino) >= self.blocco}
+        fermi |= {n for n, fino in (es.get('fuori_servizio') or {}).items() if int(fino) >= self.blocco}
+        voce['fermi'] = {n: f for n, f in {**(voce.get('fermi') or {}), **(es.get('fuori_servizio') or {})}.items()
+                         if int(f) >= self.blocco}
+        pos = es.get('posizioni', {})
+        g_cache = copy.deepcopy(voce['gruppo'])
+        rimaste = {}
+        for u in g_cache['units'].values():
+            if u['name'] in distrutti:
+                continue
+            if u['name'] in pos:
+                u['x'], u['y'] = pos[u['name']]
+            rimaste[len(rimaste) + 1] = u
+        if not rimaste:
+            return None, None
+        g_cache['units'] = rimaste
+        g = copy.deepcopy(g_cache)
+        unita = {}
+        for u in g['units'].values():
+            if u['name'] in fermi:
+                continue
+            u['unitId'] = self.cnt.unita
+            self.cnt.unita += 1
+            unita[len(unita) + 1] = u
+        if not unita:
+            return g_cache, None
+        g['units'] = unita
+        g['groupId'] = self.cnt.g()
+        g['x'], g['y'] = unita[1]['x'], unita[1]['y']
+        punti = g['route']['points']
+        punti[1]['x'], punti[1]['y'] = g['x'], g['y']
+        return g_cache, g
+
+    def _gruppo_da_piazzamento(self, p, ordine):
+        lato = p.intenzione.coalizione
+        g = pz.gruppo_me(p, self.cnt.g(), self.cnt.unita, self.terreno)
+        self.cnt.unita += len(p.unita)
+        g['hidden'] = False
+        punti = g['route']['points']
+        missione = ordine.get('missione', 'difesa')
+        if missione == 'attacco' and ordine.get('avanza_verso'):
+            ax, ay = ll_to_xy(*ordine['avanza_verso'])
+            punti[2] = wpt(ax, ay, float(self.terreno.quota(ax, ay)[0]), 5.5, azione='Off Road')
+            punti[1]['speed'] = 5.5
+            punti[1]['ETA_locked'] = True
+        if missione == 'fuoco' and ordine.get('bersaglio_fuoco'):
+            bx, by = ll_to_xy(*ordine['bersaglio_fuoco'])
+            d = math.hypot(bx - p.x, by - p.y)
+            portata = pz.SISTEMI[p.intenzione.sistema]['portata_km'] * 1000
+            if d > portata:
+                self.avvisi.append('%s: bersaglio a %.1f km, oltre la portata (%.0f km): sparera\' solo se si avvicina'
+                                   % (p.intenzione.nome, d / 1000, portata / 1000))
+            fuoco = {'id': 'FireAtPoint', 'params': {'x': bx, 'y': by, 'zoneRadius': 400, 'expendQty': 60,
+                                                     'expendQtyEnabled': True, 'weaponType': 1073741822,
+                                                     'alt_type': 0, 'counterbattaryRadius': 0}}
+            punti[1]['task']['params']['tasks'] = compiti_combo([fuoco])
+        paese_id = USA if lato == 'blue' else SIRIA
+        cfg = pz.SISTEMI[p.intenzione.sistema]
+        lua = {
+            'paese': paese_id, 'abilita': p.intenzione.abilita, 'attuale': 1,
+            'unita': {k: {'tipo': t, 'avanti': float(a), 'destra': float(dx), 'rotta': float(r)}
+                      for k, (t, a, dx, r) in enumerate(pz.schema(cfg, lato), 1)},
+            'posizioni': {k: {'x': x, 'y': y, 'rotta': float(rt)}
+                          for k, (x, y, rt) in enumerate([(p.x, p.y, p.rotta)] + p.alternative, 1)},
+        }
+        res = {'lato': lato, 'nome': p.intenzione.nome, 'sistema': p.intenzione.sistema, 'missione': missione,
+               'lat_lon': [round(v, 5) for v in xy_to_ll(p.x, p.y)], 'dettagli': p.dettagli}
+        return {'lato': lato, 'nome': p.intenzione.nome, 'sistema': p.intenzione.sistema, 'lua': lua, 'resoconto': res}, g
 
     # ----------------------------------------------------------------- aria
     def base(self, nome, lato):
@@ -421,7 +563,7 @@ class Costruttore:
         ox, oy = ll_to_xy(*o['obiettivo']) if o.get('obiettivo') else (dati_base[-2], dati_base[-1])
         r_zona = float(o.get('raggio_km', 20)) * 1000
         durata = int(o.get('durata_min', 40)) * 60
-        decollo = max(0, hm(o.get('decollo', self.par['inizio'])) - self.t0)
+        decollo = max(0, hm(o.get('decollo', self.inizio)) - self.t0)
         if o.get('giocatore') and lato == 'blue':
             decollo = 0          # il giocatore entra subito in cabina; l'orario resta nel briefing come previsto
         if o['base'] in self.navi:
@@ -573,7 +715,7 @@ class Costruttore:
 
     def tutti_i_voli(self):
         for lato in ('blue', 'red'):
-            voli = list(enumerate(self.ordini[lato].get('missioni_aeree', []), 1))
+            voli = [(k, o) for k, o in enumerate(self.ordini[lato].get('missioni_aeree', []), 1) if self.nel_blocco(o)]
             voli.sort(key=lambda kv: not kv[1].get('giocatore'))      # prima i voli del giocatore (ponte libero)
             for k, o in voli:
                 try:
@@ -764,11 +906,11 @@ class Costruttore:
         parametri.json -> "notte": true."""
         if self.par.get('notte'):
             return
-        inizio, fine = hm(self.par['inizio']), hm(self.par.get('fine', self.par['inizio']))
+        inizio, fine = hm(self.inizio), hm(self.fine)
         # Levante, ora locale: alba ~05:30-06:30, tramonto ~16:45-19:45 secondo la stagione; margine prudente
         if inizio < 5 * 3600 or fine > 19 * 3600 + 30 * 60:
             self.avvisi.append('ORARIO: missione %s-%s fuori dal giorno, ma il giocatore non ha chiesto la notte'
-                               % (self.par['inizio'], self.par.get('fine', '?')))
+                               % (self.inizio, self.fine))
 
     def verifica_prestazioni(self):
         """Controlla il bilancio delle unita' (docs/lezioni.md, PC del giocatore: i7-7700K 4 core)."""
@@ -785,7 +927,9 @@ class Costruttore:
         finestre = []
         for ordini in self.ordini.values():
             for a in ordini.get('missioni_aeree', []):
-                t = hm(a.get('decollo', self.par['inizio']))
+                if not self.nel_blocco(a):
+                    continue
+                t = hm(a.get('decollo', self.inizio))
                 finestre.append((t, t + (int(a.get('durata_min', 60)) + 40) * 60, max(1, min(4, int(a.get('numero', 2))))))
         picco = max([sum(n for s, e, n in finestre if s <= t < e) for t, _, _ in finestre] or [0])
         # unita' di terra vicino agli obiettivi del giocatore
@@ -806,7 +950,7 @@ class Costruttore:
                 self.avvisi.append('PRESTAZIONI: %d %s, oltre il limite di %d' % (valore, cosa, limite))
 
     def scrivi(self, briefing_blu, briefing_rosso, tavolette):
-        nome = 'G%02d_%s' % (self.giorno, self.par['data'])
+        nome = self.nome
         diz = {'DictKey_descriptionText_1': briefing_blu['testo'], 'DictKey_descriptionRedTask_2': briefing_rosso,
                'DictKey_descriptionBlueTask_3': briefing_blu['compito'], 'DictKey_descriptionNeutralsTask_4': '',
                'DictKey_sortie_5': 'G%d - %s' % (self.giorno, briefing_blu['titolo'])}
@@ -843,14 +987,23 @@ class Costruttore:
             z.write(os.path.join(QUI, 'lua', 'levante_navi.lua'), 'l10n/DEFAULT/levante_navi.lua')
             for k, png in enumerate(tavolette, 1):
                 z.writestr('KNEEBOARD/IMAGES/G%02d_%02d.png' % (self.giorno, k), png)
-        json.dump(self.resoconto, open(os.path.join(self.cartella, 'costruzione.json'), 'w'), indent=1, ensure_ascii=False)
+        for lato, co in self.m['coalition'].items():
+            for c in co['country'].values():
+                for cat in ('plane', 'helicopter', 'vehicle', 'ship'):
+                    for g in c.get(cat, {}).get('group', {}).values():
+                        for u in g['units'].values():
+                            self.resoconto['unita'].append({'nome': u['name'], 'gruppo': g['name'], 'tipo': u['type'],
+                                                            'lato': lato, 'categoria': cat})
+        nome_c = 'costruzione_B%d.json' % self.blocco if self.blocco else 'costruzione.json'
+        json.dump(self.resoconto, open(os.path.join(self.cartella, nome_c), 'w'), indent=1, ensure_ascii=False)
         return out
 
 
 if __name__ == '__main__':
     import briefing_giornata
     giorno = int(sys.argv[1])
-    c = Costruttore(giorno).costruisci()
+    blocco = int(sys.argv[2]) if len(sys.argv) > 2 else None
+    c = Costruttore(giorno, blocco).costruisci()
     bb, br, tav = briefing_giornata.prepara(c)
     out = c.scrivi(bb, br, tav)
     print('scritto', out)
