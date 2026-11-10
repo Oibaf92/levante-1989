@@ -1,0 +1,2623 @@
+{
+ "piazzamenti": [
+  {
+   "lato": "red",
+   "nome": "SA-5 Dumayr",
+   "sistema": "sa5",
+   "missione": "difesa",
+   "lat_lon": [
+    33.72773,
+    36.76074
+   ],
+   "dettagli": {
+    "visibilita": 0.97,
+    "rilievo_m": 46,
+    "dist_obiettivo_km": 9.3,
+    "pendenza": 4,
+    "strada_m": 1090,
+    "vegetazione": 0,
+    "quota": 863,
+    "candidati_validi": 183,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 12.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-5 Homs",
+   "sistema": "sa5",
+   "missione": "difesa",
+   "lat_lon": [
+    34.63521,
+    36.62832
+   ],
+   "dettagli": {
+    "visibilita": 0.99,
+    "rilievo_m": 38,
+    "dist_obiettivo_km": 11.1,
+    "pendenza": 1,
+    "strada_m": 190,
+    "vegetazione": 2,
+    "quota": 509,
+    "candidati_validi": 90,
+    "scorrimento_m": 100,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [
+     [
+      "RPC_5N62V",
+      25
+     ],
+     [
+      "P14_SR",
+      30
+     ],
+     [
+      "S-200_Launcher",
+      10
+     ],
+     [
+      "S-200_Launcher",
+      15
+     ],
+     [
+      "S-200_Launcher",
+      40
+     ]
+    ],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 12.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "EWR Antilibano",
+   "sistema": "ewr",
+   "missione": "difesa",
+   "lat_lon": [
+    33.69678,
+    36.13593
+   ],
+   "dettagli": {
+    "visibilita": 0.62,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 35.5,
+    "pendenza": 12,
+    "strada_m": 370,
+    "vegetazione": 0,
+    "quota": 1849,
+    "candidati_validi": 23,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "EWR Costa",
+   "sistema": "ewr",
+   "missione": "difesa",
+   "lat_lon": [
+    34.98294,
+    36.01627
+   ],
+   "dettagli": {
+    "visibilita": 1.0,
+    "rilievo_m": 80,
+    "dist_obiettivo_km": 52.8,
+    "pendenza": 9,
+    "strada_m": 60,
+    "vegetazione": 15,
+    "quota": 434,
+    "candidati_validi": 9,
+    "scorrimento_m": 100,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 12.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-2 Damasco sud",
+   "sistema": "sa2",
+   "missione": "difesa",
+   "lat_lon": [
+    33.42474,
+    36.44672
+   ],
+   "dettagli": {
+    "visibilita": 0.9,
+    "rilievo_m": -1,
+    "dist_obiettivo_km": 5.0,
+    "pendenza": 0,
+    "strada_m": 0,
+    "vegetazione": 10,
+    "quota": 614,
+    "candidati_validi": 36,
+    "scorrimento_m": 100,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Hawk Ajaltoun",
+   "sistema": "hawk",
+   "missione": "difesa",
+   "lat_lon": [
+    33.95542,
+    35.62043
+   ],
+   "dettagli": {
+    "visibilita": 0.43,
+    "rilievo_m": 47,
+    "dist_obiettivo_km": 3.2,
+    "pendenza": 3,
+    "strada_m": 180,
+    "vegetazione": 4,
+    "quota": 205,
+    "candidati_validi": 1,
+    "scorrimento_m": 200,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 8.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-6 Chouf",
+   "sistema": "sa6",
+   "missione": "difesa",
+   "lat_lon": [
+    33.66571,
+    35.55484
+   ],
+   "dettagli": {
+    "visibilita": 0.37,
+    "rilievo_m": 42,
+    "dist_obiettivo_km": 11.3,
+    "pendenza": 4,
+    "strada_m": 780,
+    "vegetazione": 11,
+    "quota": 831,
+    "candidati_validi": 3,
+    "scorrimento_m": 200,
+    "siti_scartati_vegetazione": 1,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 10.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-6 Passo",
+   "sistema": "sa6",
+   "missione": "difesa",
+   "lat_lon": [
+    33.74733,
+    35.90993
+   ],
+   "dettagli": {
+    "visibilita": 0.77,
+    "rilievo_m": -5,
+    "dist_obiettivo_km": 14.6,
+    "pendenza": 1,
+    "strada_m": 110,
+    "vegetazione": 18,
+    "quota": 866,
+    "candidati_validi": 50,
+    "scorrimento_m": 300,
+    "siti_scartati_vegetazione": 1,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 5.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-6 Zahle",
+   "sistema": "sa6",
+   "missione": "difesa",
+   "lat_lon": [
+    33.94538,
+    35.9762
+   ],
+   "dettagli": {
+    "visibilita": 0.4,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 12.7,
+    "pendenza": 4,
+    "strada_m": 230,
+    "vegetazione": 2,
+    "quota": 1636,
+    "candidati_validi": 13,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 1,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-6 Bekaa Nord",
+   "sistema": "sa6",
+   "missione": "difesa",
+   "lat_lon": [
+    34.03872,
+    36.10932
+   ],
+   "dettagli": {
+    "visibilita": 0.77,
+    "rilievo_m": -1,
+    "dist_obiettivo_km": 16.2,
+    "pendenza": 1,
+    "strada_m": 240,
+    "vegetazione": 17,
+    "quota": 998,
+    "candidati_validi": 49,
+    "scorrimento_m": 400,
+    "siti_scartati_vegetazione": 1,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 7.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-6 Riserva",
+   "sistema": "sa6",
+   "missione": "difesa",
+   "lat_lon": [
+    33.65588,
+    35.79235
+   ],
+   "dettagli": {
+    "visibilita": 0.5,
+    "rilievo_m": -11,
+    "dist_obiettivo_km": 15.7,
+    "pendenza": 4,
+    "strada_m": 60,
+    "vegetazione": 6,
+    "quota": 858,
+    "candidati_validi": 31,
+    "scorrimento_m": 400,
+    "siti_scartati_vegetazione": 1,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-8 Aley",
+   "sistema": "sa8",
+   "missione": "difesa",
+   "lat_lon": [
+    33.69211,
+    35.59691
+   ],
+   "dettagli": {
+    "visibilita": 0.42,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 7.5,
+    "pendenza": 10,
+    "strada_m": 730,
+    "vegetazione": 4,
+    "quota": 1008,
+    "candidati_validi": 1,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-8 Sofar",
+   "sistema": "sa8",
+   "missione": "difesa",
+   "lat_lon": [
+    33.81319,
+    35.76565
+   ],
+   "dettagli": {
+    "visibilita": 0.06,
+    "rilievo_m": 60,
+    "dist_obiettivo_km": 2.8,
+    "pendenza": 10,
+    "strada_m": 280,
+    "vegetazione": 16,
+    "quota": 1574,
+    "candidati_validi": 1,
+    "scorrimento_m": 100,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-8 Faraya",
+   "sistema": "sa8",
+   "missione": "difesa",
+   "lat_lon": [
+    34.05345,
+    35.97237
+   ],
+   "dettagli": {
+    "visibilita": 0.58,
+    "rilievo_m": 80,
+    "dist_obiettivo_km": 4.8,
+    "pendenza": 1,
+    "strada_m": 10,
+    "vegetazione": 0,
+    "quota": 1854,
+    "candidati_validi": 14,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 4.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Batteria M109",
+   "sistema": "artiglieria",
+   "missione": "fuoco",
+   "lat_lon": [
+    33.87274,
+    35.61028
+   ],
+   "dettagli": {
+    "visibilita": 0.33,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 8.8,
+    "pendenza": 11,
+    "strada_m": 10,
+    "vegetazione": 18,
+    "quota": 689,
+    "candidati_validi": 4,
+    "scorrimento_m": 100,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 2,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Artiglieria Aley",
+   "sistema": "artiglieria",
+   "missione": "fuoco",
+   "lat_lon": [
+    33.78125,
+    35.561
+   ],
+   "dettagli": {
+    "visibilita": 0.56,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 5.4,
+    "pendenza": 13,
+    "strada_m": 10,
+    "vegetazione": 3,
+    "quota": 788,
+    "candidati_validi": 1,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 1,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Artiglieria Chouf",
+   "sistema": "artiglieria",
+   "missione": "fuoco",
+   "lat_lon": [
+    33.70497,
+    35.67189
+   ],
+   "dettagli": {
+    "visibilita": 0.0,
+    "rilievo_m": -66,
+    "dist_obiettivo_km": 14.4,
+    "pendenza": 5,
+    "strada_m": 150,
+    "vegetazione": 34,
+    "quota": 1034,
+    "candidati_validi": 4,
+    "scorrimento_m": 200,
+    "siti_scartati_vegetazione": 2,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 2,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Artiglieria Passo",
+   "sistema": "artiglieria",
+   "missione": "fuoco",
+   "lat_lon": [
+    33.76393,
+    35.82844
+   ],
+   "dettagli": {
+    "visibilita": 0.5,
+    "rilievo_m": -9,
+    "dist_obiettivo_km": 14.7,
+    "pendenza": 3,
+    "strada_m": 50,
+    "vegetazione": 12,
+    "quota": 859,
+    "candidati_validi": 18,
+    "scorrimento_m": 400,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 4.5
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Grad Sofar",
+   "sistema": "lanciarazzi",
+   "missione": "fuoco",
+   "lat_lon": [
+    33.7353,
+    35.79168
+   ],
+   "dettagli": {
+    "visibilita": 0.25,
+    "rilievo_m": -100,
+    "dist_obiettivo_km": 26.1,
+    "pendenza": 0,
+    "strada_m": 30,
+    "vegetazione": 13,
+    "quota": 861,
+    "candidati_validi": 3,
+    "scorrimento_m": 300,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 8.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Grad Faraya",
+   "sistema": "lanciarazzi",
+   "missione": "fuoco",
+   "lat_lon": [
+    34.01689,
+    35.95202
+   ],
+   "dettagli": {
+    "visibilita": 0.06,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 18.7,
+    "pendenza": 10,
+    "strada_m": 510,
+    "vegetazione": 12,
+    "quota": 2063,
+    "candidati_validi": 19,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 1,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 4.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Riserva Carri",
+   "sistema": "carri",
+   "missione": "difesa",
+   "lat_lon": [
+    33.91868,
+    35.64197
+   ],
+   "dettagli": {
+    "visibilita": 0.75,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 11.1,
+    "pendenza": 8,
+    "strada_m": 160,
+    "vegetazione": 12,
+    "quota": 661,
+    "candidati_validi": 1,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Marines Mtein",
+   "sistema": "meccanizzata",
+   "missione": "difesa",
+   "lat_lon": [
+    33.90447,
+    35.76068
+   ],
+   "dettagli": {
+    "visibilita": 0.67,
+    "rilievo_m": 53,
+    "dist_obiettivo_km": 5.0,
+    "pendenza": 17,
+    "strada_m": 650,
+    "vegetazione": 22,
+    "quota": 1290,
+    "candidati_validi": 5,
+    "scorrimento_m": 100,
+    "siti_scartati_vegetazione": 1,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 1,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Carri Bhamdoun",
+   "sistema": "carri",
+   "missione": "difesa",
+   "lat_lon": [
+    33.81075,
+    35.65052
+   ],
+   "dettagli": {
+    "visibilita": 0.58,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 1.3,
+    "pendenza": 4,
+    "strada_m": 230,
+    "vegetazione": 27,
+    "quota": 1074,
+    "candidati_validi": 1,
+    "scorrimento_m": 400,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 2,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Marines Aley",
+   "sistema": "meccanizzata",
+   "missione": "difesa",
+   "lat_lon": [
+    33.87014,
+    35.60841
+   ],
+   "dettagli": {
+    "visibilita": 0.42,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 7.0,
+    "pendenza": 11,
+    "strada_m": 10,
+    "vegetazione": 18,
+    "quota": 689,
+    "candidati_validi": 1,
+    "scorrimento_m": 400,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 1,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Marines Baabda",
+   "sistema": "meccanizzata",
+   "missione": "difesa",
+   "lat_lon": [
+    33.86137,
+    35.55779
+   ],
+   "dettagli": {
+    "visibilita": 0.75,
+    "rilievo_m": 5,
+    "dist_obiettivo_km": 3.7,
+    "pendenza": 10,
+    "strada_m": 70,
+    "vegetazione": 37,
+    "quota": 144,
+    "candidati_validi": 1,
+    "scorrimento_m": 100,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Aoun Porto",
+   "sistema": "meccanizzata",
+   "missione": "difesa",
+   "lat_lon": [
+    33.88837,
+    35.52429
+   ],
+   "dettagli": {
+    "visibilita": 1.0,
+    "rilievo_m": 63,
+    "dist_obiettivo_km": 2.4,
+    "pendenza": 10,
+    "strada_m": 60,
+    "vegetazione": 0,
+    "quota": 90,
+    "candidati_validi": 11,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 3,
+    "raggio_usato_km": 2.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Aoun Faraya",
+   "sistema": "meccanizzata",
+   "missione": "difesa",
+   "lat_lon": [
+    33.99643,
+    35.85535
+   ],
+   "dettagli": {
+    "visibilita": 0.92,
+    "rilievo_m": 13,
+    "dist_obiettivo_km": 2.3,
+    "pendenza": 5,
+    "strada_m": 100,
+    "vegetazione": 4,
+    "quota": 2020,
+    "candidati_validi": 8,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Carri Passo",
+   "sistema": "carri",
+   "missione": "difesa",
+   "lat_lon": [
+    33.77941,
+    35.82877
+   ],
+   "dettagli": {
+    "visibilita": 1.0,
+    "rilievo_m": -31,
+    "dist_obiettivo_km": 8.2,
+    "pendenza": 1,
+    "strada_m": 0,
+    "vegetazione": 21,
+    "quota": 872,
+    "candidati_validi": 10,
+    "scorrimento_m": 200,
+    "siti_scartati_vegetazione": 2,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Meccanizzata Mtein Sud",
+   "sistema": "meccanizzata",
+   "missione": "difesa",
+   "lat_lon": [
+    33.81352,
+    35.82738
+   ],
+   "dettagli": {
+    "visibilita": 1.0,
+    "rilievo_m": -93,
+    "dist_obiettivo_km": 7.4,
+    "pendenza": 6,
+    "strada_m": 40,
+    "vegetazione": 19,
+    "quota": 1021,
+    "candidati_validi": 12,
+    "scorrimento_m": 300,
+    "siti_scartati_vegetazione": 1,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Stinger Baabda",
+   "sistema": "contraerea_mobile",
+   "missione": "difesa",
+   "lat_lon": [
+    33.86043,
+    35.56012
+   ],
+   "dettagli": {
+    "visibilita": 0.83,
+    "rilievo_m": 5,
+    "dist_obiettivo_km": 2.6,
+    "pendenza": 10,
+    "strada_m": 70,
+    "vegetazione": 37,
+    "quota": 144,
+    "candidati_validi": 1,
+    "scorrimento_m": 300,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Stinger Hawk",
+   "sistema": "contraerea_mobile",
+   "missione": "difesa",
+   "lat_lon": [
+    33.95469,
+    35.64056
+   ],
+   "dettagli": {
+    "visibilita": 1.0,
+    "rilievo_m": 34,
+    "dist_obiettivo_km": 1.6,
+    "pendenza": 12,
+    "strada_m": 40,
+    "vegetazione": 20,
+    "quota": 354,
+    "candidati_validi": 7,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Stinger Mtein",
+   "sistema": "contraerea_mobile",
+   "missione": "difesa",
+   "lat_lon": [
+    33.90414,
+    35.77226
+   ],
+   "dettagli": {
+    "visibilita": 0.17,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 4.3,
+    "pendenza": 17,
+    "strada_m": 140,
+    "vegetazione": 7,
+    "quota": 1465,
+    "candidati_validi": 4,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 1,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 1,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Contraerea Chouf",
+   "sistema": "contraerea_mobile",
+   "missione": "difesa",
+   "lat_lon": [
+    33.77611,
+    35.67917
+   ],
+   "dettagli": {
+    "visibilita": 0.92,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 6.2,
+    "pendenza": 20,
+    "strada_m": 0,
+    "vegetazione": 42,
+    "quota": 1188,
+    "candidati_validi": 7,
+    "scorrimento_m": 100,
+    "siti_scartati_vegetazione": 4,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 2,
+    "raggio_usato_km": 6.0
+   }
+  }
+ ],
+ "voli": [
+  {
+   "lato": "blue",
+   "nome": "Hawkeye",
+   "tipo": "AWACS",
+   "velivolo": "E-2C",
+   "numero": 1,
+   "base": "CVN-71",
+   "decollo": "05:50",
+   "giocatore": false
+  },
+  {
+   "lato": "blue",
+   "nome": "Arco",
+   "tipo": "TANKER",
+   "velivolo": "S-3B Tanker",
+   "numero": 1,
+   "base": "CVN-71",
+   "decollo": "06:00",
+   "giocatore": false
+  },
+  {
+   "lato": "blue",
+   "nome": "Wall",
+   "tipo": "CAP",
+   "velivolo": "F-14A-135-GR-Early",
+   "numero": 2,
+   "base": "CVN-71",
+   "decollo": "05:50",
+   "giocatore": false
+  },
+  {
+   "lato": "blue",
+   "nome": "Cedar",
+   "tipo": "CAP",
+   "velivolo": "FA-18C_hornet",
+   "numero": 2,
+   "base": "CVN-71",
+   "decollo": "06:00",
+   "giocatore": false
+  },
+  {
+   "lato": "blue",
+   "nome": "Viper",
+   "tipo": "SEAD",
+   "velivolo": "FA-18C_hornet",
+   "numero": 2,
+   "base": "CVN-71",
+   "decollo": "06:25",
+   "giocatore": false
+  },
+  {
+   "lato": "blue",
+   "nome": "Lens",
+   "tipo": "SCORTA",
+   "velivolo": "F-14A-135-GR-Early",
+   "numero": 2,
+   "base": "CVN-71",
+   "decollo": "06:30",
+   "giocatore": false
+  },
+  {
+   "lato": "red",
+   "nome": "Sentinel",
+   "tipo": "AWACS",
+   "velivolo": "A-50",
+   "numero": 1,
+   "base": "aria (solo Tu-22M3 e A-50: arrivano da est in volo)",
+   "decollo": "05:50",
+   "giocatore": false
+  },
+  {
+   "lato": "red",
+   "nome": "Hunter",
+   "tipo": "CAP",
+   "velivolo": "MiG-29 Fulcrum",
+   "numero": 4,
+   "base": "Sayqal",
+   "decollo": "06:00",
+   "giocatore": false
+  },
+  {
+   "lato": "red",
+   "nome": "Needle",
+   "tipo": "SEAD",
+   "velivolo": "Su-24M",
+   "numero": 2,
+   "base": "Tiyas",
+   "decollo": "06:15",
+   "giocatore": false
+  },
+  {
+   "lato": "red",
+   "nome": "Anvil",
+   "tipo": "STRIKE",
+   "velivolo": "Su-24M",
+   "numero": 2,
+   "base": "Tiyas",
+   "decollo": "06:20",
+   "giocatore": false
+  },
+  {
+   "lato": "red",
+   "nome": "Hammer (SY)",
+   "tipo": "STRIKE",
+   "velivolo": "Su-17M4",
+   "numero": 4,
+   "base": "Shayrat",
+   "decollo": "06:20",
+   "giocatore": false
+  },
+  {
+   "lato": "red",
+   "nome": "Falcon",
+   "tipo": "CAP",
+   "velivolo": "MiG-29 Fulcrum",
+   "numero": 4,
+   "base": "Al Qusayr",
+   "decollo": "07:55",
+   "giocatore": false
+  },
+  {
+   "lato": "red",
+   "nome": "Rook",
+   "tipo": "CAS",
+   "velivolo": "Su-25",
+   "numero": 4,
+   "base": "Marj Ruhayyil",
+   "decollo": "07:58",
+   "giocatore": false
+  }
+ ],
+ "avvisi": [
+  "nome 'Spear' usato da entrambe le parti: diventa 'Spear (USA)'",
+  "nome 'Hammer' usato da entrambe le parti: diventa 'Hammer (USA)'",
+  "nome 'Guard' usato da entrambe le parti: diventa 'Guard (USA)'",
+  "nome 'Hammer' usato da entrambe le parti: diventa 'Hammer (SY)'",
+  "nome 'Guard' usato da entrambe le parti: diventa 'Guard (SY)'",
+  "nome 'Spear' usato da entrambe le parti: diventa 'Spear (SY)'",
+  "Grad Sofar: bersaglio a 26.2 km, oltre la portata (20 km): sparera' solo se si avvicina"
+ ],
+ "unita": [
+  {
+   "nome": "Hawkeye-1",
+   "gruppo": "Hawkeye",
+   "tipo": "E-2C",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Arco-1",
+   "gruppo": "Arco",
+   "tipo": "S-3B Tanker",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Wall-1",
+   "gruppo": "Wall",
+   "tipo": "F-14A-135-GR-Early",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Wall-2",
+   "gruppo": "Wall",
+   "tipo": "F-14A-135-GR-Early",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Cedar-1",
+   "gruppo": "Cedar",
+   "tipo": "FA-18C_hornet",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Cedar-2",
+   "gruppo": "Cedar",
+   "tipo": "FA-18C_hornet",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Viper-1",
+   "gruppo": "Viper",
+   "tipo": "FA-18C_hornet",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Viper-2",
+   "gruppo": "Viper",
+   "tipo": "FA-18C_hornet",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Lens-1",
+   "gruppo": "Lens",
+   "tipo": "F-14A-135-GR-Early",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Lens-2",
+   "gruppo": "Lens",
+   "tipo": "F-14A-135-GR-Early",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Hawk Ajaltoun-1",
+   "gruppo": "Hawk Ajaltoun",
+   "tipo": "Hawk pcp",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Hawk Ajaltoun-2",
+   "gruppo": "Hawk Ajaltoun",
+   "tipo": "Hawk sr",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Hawk Ajaltoun-3",
+   "gruppo": "Hawk Ajaltoun",
+   "tipo": "Hawk tr",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Hawk Ajaltoun-4",
+   "gruppo": "Hawk Ajaltoun",
+   "tipo": "Hawk ln",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Hawk Ajaltoun-5",
+   "gruppo": "Hawk Ajaltoun",
+   "tipo": "Hawk ln",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Hawk Ajaltoun-6",
+   "gruppo": "Hawk Ajaltoun",
+   "tipo": "Hawk ln",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Batteria M109-1",
+   "gruppo": "Batteria M109",
+   "tipo": "M-109",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Batteria M109-2",
+   "gruppo": "Batteria M109",
+   "tipo": "M-109",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Batteria M109-3",
+   "gruppo": "Batteria M109",
+   "tipo": "M-109",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Batteria M109-4",
+   "gruppo": "Batteria M109",
+   "tipo": "M-109",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Batteria M109-5",
+   "gruppo": "Batteria M109",
+   "tipo": "M 818",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Batteria M109-6",
+   "gruppo": "Batteria M109",
+   "tipo": "M 818",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Riserva Carri-1",
+   "gruppo": "Riserva Carri",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Riserva Carri-2",
+   "gruppo": "Riserva Carri",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Riserva Carri-3",
+   "gruppo": "Riserva Carri",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Riserva Carri-4",
+   "gruppo": "Riserva Carri",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Riserva Carri-5",
+   "gruppo": "Riserva Carri",
+   "tipo": "M-113",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Riserva Carri-6",
+   "gruppo": "Riserva Carri",
+   "tipo": "M-113",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-1",
+   "gruppo": "Marines Mtein",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-2",
+   "gruppo": "Marines Mtein",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-3",
+   "gruppo": "Marines Mtein",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-4",
+   "gruppo": "Marines Mtein",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-5",
+   "gruppo": "Marines Mtein",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-6",
+   "gruppo": "Marines Mtein",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-7",
+   "gruppo": "Marines Mtein",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-8",
+   "gruppo": "Marines Mtein",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-9",
+   "gruppo": "Marines Mtein",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Mtein-10",
+   "gruppo": "Marines Mtein",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun-1",
+   "gruppo": "Carri Bhamdoun",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun-2",
+   "gruppo": "Carri Bhamdoun",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun-3",
+   "gruppo": "Carri Bhamdoun",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun-4",
+   "gruppo": "Carri Bhamdoun",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun-5",
+   "gruppo": "Carri Bhamdoun",
+   "tipo": "M-113",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Bhamdoun-6",
+   "gruppo": "Carri Bhamdoun",
+   "tipo": "M-113",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-1",
+   "gruppo": "Marines Aley",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-2",
+   "gruppo": "Marines Aley",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-3",
+   "gruppo": "Marines Aley",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-4",
+   "gruppo": "Marines Aley",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-5",
+   "gruppo": "Marines Aley",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-6",
+   "gruppo": "Marines Aley",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-7",
+   "gruppo": "Marines Aley",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-8",
+   "gruppo": "Marines Aley",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-9",
+   "gruppo": "Marines Aley",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Aley-10",
+   "gruppo": "Marines Aley",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-1",
+   "gruppo": "Marines Baabda",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-2",
+   "gruppo": "Marines Baabda",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-3",
+   "gruppo": "Marines Baabda",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-4",
+   "gruppo": "Marines Baabda",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-5",
+   "gruppo": "Marines Baabda",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-6",
+   "gruppo": "Marines Baabda",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-7",
+   "gruppo": "Marines Baabda",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-8",
+   "gruppo": "Marines Baabda",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-9",
+   "gruppo": "Marines Baabda",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Marines Baabda-10",
+   "gruppo": "Marines Baabda",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-1",
+   "gruppo": "Aoun Porto",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-2",
+   "gruppo": "Aoun Porto",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-3",
+   "gruppo": "Aoun Porto",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-4",
+   "gruppo": "Aoun Porto",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-5",
+   "gruppo": "Aoun Porto",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-6",
+   "gruppo": "Aoun Porto",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-7",
+   "gruppo": "Aoun Porto",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-8",
+   "gruppo": "Aoun Porto",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-9",
+   "gruppo": "Aoun Porto",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Porto-10",
+   "gruppo": "Aoun Porto",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-1",
+   "gruppo": "Aoun Faraya",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-2",
+   "gruppo": "Aoun Faraya",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-3",
+   "gruppo": "Aoun Faraya",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-4",
+   "gruppo": "Aoun Faraya",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-5",
+   "gruppo": "Aoun Faraya",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-6",
+   "gruppo": "Aoun Faraya",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-7",
+   "gruppo": "Aoun Faraya",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-8",
+   "gruppo": "Aoun Faraya",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-9",
+   "gruppo": "Aoun Faraya",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Aoun Faraya-10",
+   "gruppo": "Aoun Faraya",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Baabda-1",
+   "gruppo": "Stinger Baabda",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Baabda-2",
+   "gruppo": "Stinger Baabda",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Baabda-3",
+   "gruppo": "Stinger Baabda",
+   "tipo": "Stinger comm",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Hawk-1",
+   "gruppo": "Stinger Hawk",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Hawk-2",
+   "gruppo": "Stinger Hawk",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Hawk-3",
+   "gruppo": "Stinger Hawk",
+   "tipo": "Stinger comm",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Mtein-1",
+   "gruppo": "Stinger Mtein",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Mtein-2",
+   "gruppo": "Stinger Mtein",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger Mtein-3",
+   "gruppo": "Stinger Mtein",
+   "tipo": "Stinger comm",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "CVN-71 Theodore Roosevelt",
+   "gruppo": "CVN-71 Roosevelt",
+   "tipo": "CVN_71",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "CG-56 San Jacinto",
+   "gruppo": "CVN-71 Roosevelt",
+   "tipo": "TICONDEROG",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "CG-60 Normandy",
+   "gruppo": "CVN-71 Roosevelt",
+   "tipo": "TICONDEROG",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "FFG-49 Robert G. Bradley",
+   "gruppo": "CVN-71 Roosevelt",
+   "tipo": "PERRY",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "LHA-1 Tarawa",
+   "gruppo": "LHA-1 Tarawa",
+   "tipo": "LHA_Tarawa",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "FFG-36 Underwood",
+   "gruppo": "LHA-1 Tarawa",
+   "tipo": "PERRY",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "Sentinel-1",
+   "gruppo": "Sentinel",
+   "tipo": "A-50",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Rook-1",
+   "gruppo": "Rook",
+   "tipo": "Su-25",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Rook-2",
+   "gruppo": "Rook",
+   "tipo": "Su-25",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Rook-3",
+   "gruppo": "Rook",
+   "tipo": "Su-25",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Rook-4",
+   "gruppo": "Rook",
+   "tipo": "Su-25",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Slava (Tartus)",
+   "gruppo": "Squadra sovietica Tartus",
+   "tipo": "MOSCOW",
+   "lato": "red",
+   "categoria": "ship"
+  },
+  {
+   "nome": "Krivak II (Tartus)",
+   "gruppo": "Squadra sovietica Tartus",
+   "tipo": "REZKY",
+   "lato": "red",
+   "categoria": "ship"
+  },
+  {
+   "nome": "Molniya (Tartus)",
+   "gruppo": "Squadra sovietica Tartus",
+   "tipo": "MOLNIYA",
+   "lato": "red",
+   "categoria": "ship"
+  },
+  {
+   "nome": "Hunter-1",
+   "gruppo": "Hunter",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Hunter-2",
+   "gruppo": "Hunter",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Hunter-3",
+   "gruppo": "Hunter",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Hunter-4",
+   "gruppo": "Hunter",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Needle-1",
+   "gruppo": "Needle",
+   "tipo": "Su-24M",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Needle-2",
+   "gruppo": "Needle",
+   "tipo": "Su-24M",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Anvil-1",
+   "gruppo": "Anvil",
+   "tipo": "Su-24M",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Anvil-2",
+   "gruppo": "Anvil",
+   "tipo": "Su-24M",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Hammer (SY)-1",
+   "gruppo": "Hammer (SY)",
+   "tipo": "Su-17M4",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Hammer (SY)-2",
+   "gruppo": "Hammer (SY)",
+   "tipo": "Su-17M4",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Hammer (SY)-3",
+   "gruppo": "Hammer (SY)",
+   "tipo": "Su-17M4",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Hammer (SY)-4",
+   "gruppo": "Hammer (SY)",
+   "tipo": "Su-17M4",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Falcon-1",
+   "gruppo": "Falcon",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Falcon-2",
+   "gruppo": "Falcon",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Falcon-3",
+   "gruppo": "Falcon",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Falcon-4",
+   "gruppo": "Falcon",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "SA-5 Dumayr-1",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "RPC_5N62V",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Dumayr-2",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "RLS_19J6",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Dumayr-3",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "P14_SR",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Dumayr-4",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Dumayr-5",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Dumayr-6",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Dumayr-7",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Dumayr-8",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Dumayr-9",
+   "gruppo": "SA-5 Dumayr",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-1",
+   "gruppo": "SA-5 Homs",
+   "tipo": "RPC_5N62V",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-2",
+   "gruppo": "SA-5 Homs",
+   "tipo": "RLS_19J6",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-3",
+   "gruppo": "SA-5 Homs",
+   "tipo": "P14_SR",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-4",
+   "gruppo": "SA-5 Homs",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-5",
+   "gruppo": "SA-5 Homs",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-6",
+   "gruppo": "SA-5 Homs",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-7",
+   "gruppo": "SA-5 Homs",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-8",
+   "gruppo": "SA-5 Homs",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-5 Homs-9",
+   "gruppo": "SA-5 Homs",
+   "tipo": "S-200_Launcher",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "EWR Antilibano-1",
+   "gruppo": "EWR Antilibano",
+   "tipo": "55G6 EWR",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "EWR Costa-1",
+   "gruppo": "EWR Costa",
+   "tipo": "55G6 EWR",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-1",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "SNR_75V",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-2",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "p-19 s-125 sr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-3",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75_ZIL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-4",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-5",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-6",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-7",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-8",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-9",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Chouf-1",
+   "gruppo": "SA-6 Chouf",
+   "tipo": "Kub 1S91 str",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Chouf-2",
+   "gruppo": "SA-6 Chouf",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Chouf-3",
+   "gruppo": "SA-6 Chouf",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Chouf-4",
+   "gruppo": "SA-6 Chouf",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Chouf-5",
+   "gruppo": "SA-6 Chouf",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Passo-1",
+   "gruppo": "SA-6 Passo",
+   "tipo": "Kub 1S91 str",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Passo-2",
+   "gruppo": "SA-6 Passo",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Passo-3",
+   "gruppo": "SA-6 Passo",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Passo-4",
+   "gruppo": "SA-6 Passo",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Passo-5",
+   "gruppo": "SA-6 Passo",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Zahle-1",
+   "gruppo": "SA-6 Zahle",
+   "tipo": "Kub 1S91 str",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Zahle-2",
+   "gruppo": "SA-6 Zahle",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Zahle-3",
+   "gruppo": "SA-6 Zahle",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Zahle-4",
+   "gruppo": "SA-6 Zahle",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Zahle-5",
+   "gruppo": "SA-6 Zahle",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Bekaa Nord-1",
+   "gruppo": "SA-6 Bekaa Nord",
+   "tipo": "Kub 1S91 str",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Bekaa Nord-2",
+   "gruppo": "SA-6 Bekaa Nord",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Bekaa Nord-3",
+   "gruppo": "SA-6 Bekaa Nord",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Bekaa Nord-4",
+   "gruppo": "SA-6 Bekaa Nord",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Bekaa Nord-5",
+   "gruppo": "SA-6 Bekaa Nord",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Riserva-1",
+   "gruppo": "SA-6 Riserva",
+   "tipo": "Kub 1S91 str",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Riserva-2",
+   "gruppo": "SA-6 Riserva",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Riserva-3",
+   "gruppo": "SA-6 Riserva",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Riserva-4",
+   "gruppo": "SA-6 Riserva",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-6 Riserva-5",
+   "gruppo": "SA-6 Riserva",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-8 Aley-1",
+   "gruppo": "SA-8 Aley",
+   "tipo": "Osa 9A33 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-8 Aley-2",
+   "gruppo": "SA-8 Aley",
+   "tipo": "Osa 9A33 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-8 Sofar-1",
+   "gruppo": "SA-8 Sofar",
+   "tipo": "Osa 9A33 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-8 Sofar-2",
+   "gruppo": "SA-8 Sofar",
+   "tipo": "Osa 9A33 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-8 Faraya-1",
+   "gruppo": "SA-8 Faraya",
+   "tipo": "Osa 9A33 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-8 Faraya-2",
+   "gruppo": "SA-8 Faraya",
+   "tipo": "Osa 9A33 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Aley-1",
+   "gruppo": "Artiglieria Aley",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Aley-2",
+   "gruppo": "Artiglieria Aley",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Aley-3",
+   "gruppo": "Artiglieria Aley",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Aley-4",
+   "gruppo": "Artiglieria Aley",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Aley-5",
+   "gruppo": "Artiglieria Aley",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Aley-6",
+   "gruppo": "Artiglieria Aley",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Chouf-1",
+   "gruppo": "Artiglieria Chouf",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Chouf-2",
+   "gruppo": "Artiglieria Chouf",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Chouf-3",
+   "gruppo": "Artiglieria Chouf",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Chouf-4",
+   "gruppo": "Artiglieria Chouf",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Chouf-5",
+   "gruppo": "Artiglieria Chouf",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Chouf-6",
+   "gruppo": "Artiglieria Chouf",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Passo-1",
+   "gruppo": "Artiglieria Passo",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Passo-2",
+   "gruppo": "Artiglieria Passo",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Passo-3",
+   "gruppo": "Artiglieria Passo",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Passo-4",
+   "gruppo": "Artiglieria Passo",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Passo-5",
+   "gruppo": "Artiglieria Passo",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Artiglieria Passo-6",
+   "gruppo": "Artiglieria Passo",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Sofar-1",
+   "gruppo": "Grad Sofar",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Sofar-2",
+   "gruppo": "Grad Sofar",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Sofar-3",
+   "gruppo": "Grad Sofar",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Sofar-4",
+   "gruppo": "Grad Sofar",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Sofar-5",
+   "gruppo": "Grad Sofar",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Faraya-1",
+   "gruppo": "Grad Faraya",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Faraya-2",
+   "gruppo": "Grad Faraya",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Faraya-3",
+   "gruppo": "Grad Faraya",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Faraya-4",
+   "gruppo": "Grad Faraya",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad Faraya-5",
+   "gruppo": "Grad Faraya",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Passo-1",
+   "gruppo": "Carri Passo",
+   "tipo": "T-72B",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Passo-2",
+   "gruppo": "Carri Passo",
+   "tipo": "T-72B",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Passo-3",
+   "gruppo": "Carri Passo",
+   "tipo": "T-72B",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Passo-4",
+   "gruppo": "Carri Passo",
+   "tipo": "T-72B",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Passo-5",
+   "gruppo": "Carri Passo",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Carri Passo-6",
+   "gruppo": "Carri Passo",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-1",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-2",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-3",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-4",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-5",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "BTR-70",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-6",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "BTR-70",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-7",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "Infantry AK",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-8",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "Infantry AK",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-9",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "Infantry AK",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Meccanizzata Mtein Sud-10",
+   "gruppo": "Meccanizzata Mtein Sud",
+   "tipo": "Infantry AK",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Contraerea Chouf-1",
+   "gruppo": "Contraerea Chouf",
+   "tipo": "ZSU-23-4 Shilka",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Contraerea Chouf-2",
+   "gruppo": "Contraerea Chouf",
+   "tipo": "ZSU-23-4 Shilka",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Contraerea Chouf-3",
+   "gruppo": "Contraerea Chouf",
+   "tipo": "Strela-1 9P31",
+   "lato": "red",
+   "categoria": "vehicle"
+  }
+ ],
+ "fuori_missione": [
+  "SA-3 Damasco est",
+  "SA-2 Homs",
+  "SA-3 Homs",
+  "SA-2 Hama",
+  "SA-3 Hama",
+  "SA-2 Aleppo",
+  "SA-3 Aleppo",
+  "SA-3 Latakia"
+ ],
+ "prestazioni": {
+  "plane": 31,
+  "helicopter": 0,
+  "vehicle": 190,
+  "ship": 9,
+  "static": 0,
+  "totale": 230,
+  "aerei_in_volo_picco": 23,
+  "terra_vicino_giocatore": 0
+ }
+}

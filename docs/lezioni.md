@@ -232,6 +232,10 @@ tolleranza piu' alta; SA-5 da non sottovalutare (riducono l'area operativa e cos
 - Da verificare in DCS: che le basi delle nubi scelte stiano nei limiti dei preset (l'editor potrebbe
   correggerle).
 
+## Batterie di riserva
+SAM con missione `riserva` (o nome che contiene "riserva"): `levante_iads.lua` le tiene spente e
+nascoste finche' la rete non perde una batteria (richiesta emersa dagli ordini rossi del G16).
+
 ## Missione da osservare
 
 `python3 script/costruisci_giornata.py <giorno> <blocco> --osservatore` -> `..._OSSERVATORE.miz`: tutti i
