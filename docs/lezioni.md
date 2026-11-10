@@ -144,8 +144,23 @@ tolleranza piu' alta; SA-5 da non sottovalutare (riducono l'area operativa e cos
 
 ## Lavori sul motore e regole proposte (da fare)
 
-- **Script dei radar SAM**: accensione e spegnimento dei radar di tiro (radar spenti finche' il
-  bersaglio non e' vicino, reazione ai lanci di HARM, spostamento dopo il tiro). Approvato dal giocatore.
+- **Script dei radar SAM** (approvato dal giocatore, con questo progetto):
+  - radar di tiro spenti finche' il bersaglio non e' vicino; spostamento dopo il tiro;
+  - **niente onniscienza**: la rete reagisce solo a cio' che i suoi sensori rilevano davvero
+    (`getDetectedTargets` di radar di sorveglianza P-19/P-14, A-50, SAM gia' accesi, osservatori a
+    terra a vista); DCS gestisce orizzonte radar e rilievo, quindi chi vola basso dietro le montagne
+    non viene visto;
+  - **rete accecabile**: distrutti i radar di sorveglianza, le batterie non ricevono l'allarme e devono
+    accendersi per cercare (esponendosi agli HARM);
+  - **ritardi**: qualche secondo dalla rete alla batteria; piu' lunghi o assenti se cade un posto comando;
+  - **reazione agli HARM incerta**: spegnimento solo se il missile e' rilevato, con probabilita'
+    ~60-70% e qualche secondo di ritardo;
+  - batteria in agguato: radar acceso pochi secondi, solo con il bersaglio gia' segnalato in portata;
+  - A-50 sovietico: condivisione parziale con la rete siriana, con piu' ritardo;
+  - prestazioni: controllo ogni 5-10 s interrogando solo i sensori della rete, HARM come eventi.
+- **Script leggeri** (regole): niente controlli a ogni fotogramma (periodici >= 5 s), niente ricerche
+  di oggetti in volo (solo all'avvio), file di stato piccoli e scritti di rado, log solo per eventi
+  importanti. Il peso vero e' il numero di unita' IA.
 - **Regole approvate dal giocatore** (scritte nel README, sezione "Risorse e intelligence speciali"),
   da implementare:
   - **AIM-54 contati**: scorta iniziale 48 sulla CVN-71, -1 per ogni lancio (evento `lancio` del
