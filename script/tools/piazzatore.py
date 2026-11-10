@@ -212,6 +212,56 @@ SISTEMI = {
 }
 
 
+# --- unita' di terra: stessi vincoli per le due parti, mezzi diversi -------------
+def _riga(tipo, n, passo, avanti=0.0, rotta=0.0):
+    return [(tipo, avanti, (k - (n - 1) / 2) * passo, rotta) for k in range(n)]
+
+
+TERRA = {
+    'carri': dict(
+        descrizione='Compagnia carri',
+        raggio_area=250, pendenza_max=15, edifici_max=12, vegetazione_max=40, strada_max=1500,
+        portata_km=3, quota_bersaglio=3, peso_radar=0.6, dist_obiettivo=(0, 6000), spaziatura=1500,
+        schema={'red': _riga('T-72B', 4, 70, 60) + _riga('BMP-1', 2, 120, -60),
+                'blue': _riga('M-60', 4, 70, 60) + _riga('M-113', 2, 120, -60)},
+    ),
+    'meccanizzata': dict(
+        descrizione='Compagnia di fanteria meccanizzata',
+        raggio_area=250, pendenza_max=15, edifici_max=20, vegetazione_max=40, strada_max=1500,
+        portata_km=2, quota_bersaglio=3, peso_radar=0.5, dist_obiettivo=(0, 6000), spaziatura=1200,
+        schema={'red': _riga('BMP-1', 4, 70, 40) + _riga('BTR-70', 2, 100, -50) + _riga('Infantry AK', 4, 15, 70),
+                'blue': _riga('LAV-25', 3, 80, 40) + _riga('AAV7', 3, 80, -40) + _riga('Soldier M4', 4, 15, 70)},
+    ),
+    'artiglieria': dict(
+        descrizione='Batteria di artiglieria semovente',
+        raggio_area=250, pendenza_max=10, edifici_max=4, vegetazione_max=30, strada_max=1500,
+        portata_km=15, quota_bersaglio=0, peso_radar=0.0, dist_obiettivo=(5000, 15000), spaziatura=3000,
+        schema={'red': _riga('SAU Gvozdika', 4, 60) + _riga('Ural-375', 2, 80, -120),
+                'blue': _riga('M-109', 4, 60) + _riga('M 818', 2, 80, -120)},
+    ),
+    'lanciarazzi': dict(
+        descrizione='Batteria lanciarazzi',
+        raggio_area=200, pendenza_max=10, edifici_max=4, vegetazione_max=30, strada_max=1000,
+        portata_km=20, quota_bersaglio=0, peso_radar=0.0, dist_obiettivo=(8000, 18000), spaziatura=4000,
+        schema={'red': _riga('Grad-URAL', 4, 70) + _riga('Ural-375', 1, 0, -120),
+                'blue': _riga('M-109', 2, 60)},
+    ),
+    'contraerea_mobile': dict(
+        descrizione='Contraerea al seguito (cannoni e missili a corto raggio)',
+        raggio_area=150, pendenza_max=15, edifici_max=12, vegetazione_max=40, strada_max=1500,
+        portata_km=5, quota_bersaglio=50, peso_radar=0.6, dist_obiettivo=(500, 5000), spaziatura=2000,
+        schema={'red': _riga('ZSU-23-4 Shilka', 2, 150) + _riga('Strela-1 9P31', 1, 0, -80),
+                'blue': _riga('Soldier stinger', 2, 60) + _riga('Stinger comm', 1, 0, -30)},
+    ),
+}
+SISTEMI.update(TERRA)
+
+
+def schema(cfg, coalizione):
+    sch = cfg['schema']
+    return sch[coalizione] if isinstance(sch, dict) else sch
+
+
 @dataclass
 class Intenzione:
     sistema: str
@@ -375,7 +425,7 @@ def _piazza(terreno, intenzione, gia_piazzati, seme, evitare, fattore):
             for k in range(1 if d == 0 else 8):
                 ang = math.radians(45 * k)
                 px, py = x + d * math.cos(ang), y + d * math.sin(ang)
-                if all(terreno.veicolo_libero(ux, uy) for _, ux, uy, _ in _orienta(cfg['schema'], px, py, rotta0)):
+                if all(terreno.veicolo_libero(ux, uy) for _, ux, uy, _ in _orienta(schema(cfg, intenzione.coalizione), px, py, rotta0)):
                     return px, py, d
         return None
     scelti = []                                               # (indice, x, y, scorrimento)
@@ -400,7 +450,7 @@ def _piazza(terreno, intenzione, gia_piazzati, seme, evitare, fattore):
                          strada_m=int(attr['strada'][k]), vegetazione=int(attr['vegetazione'][k]),
                          quota=int(attr['quota'][k]), candidati_validi=int(len(pts)),
                          scorrimento_m=int(scorr), siti_scartati_vegetazione=scartati_veg))
-    p.unita = _orienta(cfg['schema'], p.x, p.y, p.rotta)
+    p.unita = _orienta(schema(cfg, intenzione.coalizione), p.x, p.y, p.rotta)
     # rifinitura veicolo per veicolo sugli alberi rilevati da vicino (se la zona e' verificata)
     rifiniti, nuove = [], []
     for tipo, ux, uy, ur in p.unita:
@@ -418,7 +468,8 @@ def _piazza(terreno, intenzione, gia_piazzati, seme, evitare, fattore):
 def piazza_tutti(terreno, intenzioni, seme=1989):
     fatti = []
     # prima i sistemi con piu' vincoli (fissi, grandi), poi i mobili
-    ordine = {'sa5': 0, 'ewr': 1, 'sa2': 2, 'sa3': 3, 'hawk': 3, 'sa6': 4, 'sa8': 5, 'aaa': 6}
+    ordine = {'sa5': 0, 'ewr': 1, 'sa2': 2, 'sa3': 3, 'hawk': 3, 'sa6': 4, 'sa8': 5, 'aaa': 6,
+              'artiglieria': 7, 'lanciarazzi': 7, 'carri': 8, 'meccanizzata': 8, 'contraerea_mobile': 9}
     for it in sorted(intenzioni, key=lambda i: ordine.get(i.sistema, 9)):
         fatti.append(piazza(terreno, it, fatti, seme))
     return fatti

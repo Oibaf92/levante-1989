@@ -1,0 +1,170 @@
+{
+ "data": "1989-10-17",
+ "inizio": "06:30",
+ "fine": "09:30",
+ "limiti": {
+  "blu": {
+   "voli_max": 12,
+   "gruppi_terra_max": 12,
+   "voli_giocatore_max": 4
+  },
+  "rosso": {
+   "voli_max": 14,
+   "gruppi_terra_max": 16
+  }
+ },
+ "tipi_missione_aerea": [
+  "CAP",
+  "GCI",
+  "SCORTA",
+  "STRIKE",
+  "CAS",
+  "SEAD",
+  "ANTINAVE",
+  "AWACS",
+  "TANKER",
+  "TRASPORTO"
+ ],
+ "tipi_terra": [
+  "carri",
+  "meccanizzata",
+  "artiglieria",
+  "lanciarazzi",
+  "contraerea_mobile",
+  "sa2",
+  "sa3",
+  "sa5",
+  "sa6",
+  "sa8",
+  "aaa",
+  "ewr",
+  "hawk"
+ ],
+ "missioni_terra": [
+  "difesa",
+  "attacco",
+  "fuoco"
+ ],
+ "velivoli_blu": {
+  "F-14A-135-GR-Early": [
+   "aria-aria",
+   "scorta"
+  ],
+  "FA-18C_hornet": [
+   "aria-aria",
+   "sead",
+   "attacco"
+  ],
+  "A6E": [
+   "attacco"
+  ],
+  "F-4E-45MC": [
+   "attacco"
+  ],
+  "AV8BNA": [
+   "appoggio"
+  ],
+  "E-2C": [
+   "nessuno"
+  ],
+  "S-3B Tanker": [
+   "nessuno"
+  ],
+  "KC135MPRS": [
+   "nessuno"
+  ],
+  "E-3A": [
+   "nessuno"
+  ],
+  "AH-64D_BLK_II": [
+   "appoggio"
+  ],
+  "CH-47Fbl1": [
+   "nessuno"
+  ]
+ },
+ "velivoli_giocatore_blu": [
+  "F-14A-135-GR-Early",
+  "FA-18C_hornet",
+  "F-4E-45MC",
+  "AH-64D_BLK_II",
+  "CH-47Fbl1"
+ ],
+ "basi_blu": {
+  "CVN-71": [
+   "F-14A-135-GR-Early",
+   "FA-18C_hornet",
+   "A6E",
+   "E-2C",
+   "S-3B Tanker"
+  ],
+  "LHA-1": [
+   "AV8BNA",
+   "AH-64D_BLK_II",
+   "CH-47Fbl1"
+  ],
+  "Incirlik": [
+   "F-4E-45MC",
+   "KC135MPRS",
+   "E-3A"
+  ]
+ },
+ "velivoli_rossi": {
+  "MiG-29 Fulcrum": [
+   "aria-aria"
+  ],
+  "MiG-23MLD": [
+   "aria-aria"
+  ],
+  "MiG-21Bis": [
+   "aria-aria",
+   "attacco"
+  ],
+  "MiG-25PD": [
+   "aria-aria"
+  ],
+  "Su-17M4": [
+   "bombe",
+   "razzi"
+  ],
+  "Su-24M": [
+   "bombe",
+   "antiradar"
+  ],
+  "Su-25": [
+   "appoggio"
+  ],
+  "Tu-22M3": [
+   "antinave",
+   "bombe"
+  ],
+  "A-50": [
+   "nessuno"
+  ],
+  "Mi-24V": [
+   "appoggio"
+  ],
+  "Mi-8MT": [
+   "nessuno"
+  ]
+ },
+ "basi_rosse": [
+  "Al-Dumayr",
+  "Sayqal",
+  "Shayrat",
+  "Tiyas",
+  "Hama",
+  "Bassel Al-Assad",
+  "Mezzeh",
+  "Marj Ruhayyil",
+  "Khalkhalah",
+  "Al Qusayr",
+  "Palmyra",
+  "Damascus",
+  "Rayak",
+  "Abu al-Duhur",
+  "Kuweires",
+  "An Nasiriyah",
+  "aria (solo Tu-22M3 e A-50: arrivano da est in volo)"
+ ]
+}

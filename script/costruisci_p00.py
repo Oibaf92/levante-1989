@@ -98,7 +98,7 @@ def costruisci():
         tabella_lua[p.intenzione.nome] = {
             'paese': p.intenzione.paese, 'abilita': p.intenzione.abilita, 'attuale': 1,
             'unita': {k: {'tipo': t, 'avanti': float(a), 'destra': float(dx), 'rotta': float(r)}
-                      for k, (t, a, dx, r) in enumerate(cfg['schema'], 1)},
+                      for k, (t, a, dx, r) in enumerate(pz.schema(cfg, p.intenzione.coalizione), 1)},
             'posizioni': {k: {'x': x, 'y': y, 'rotta': float(rt)}
                           for k, (x, y, rt) in enumerate([(p.x, p.y, p.rotta)] + p.alternative, 1)},
         }
