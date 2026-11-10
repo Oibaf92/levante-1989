@@ -49,6 +49,8 @@ Campagna dinamica DCS World (mappa Syria), giocatore singolo. Lingua: italiano.
   diverse solo se le chiede il giocatore.
 - IA High che cala con il logoramento; media intensita' (max 3 SAM sull'obiettivo del giocatore);
   era 1989: niente GPS ne' AIM-120, eccezione AH-64D e CH-47F.
+- Radio del giocatore preimpostate (piano in `RADIO_BLU`, canali in `Costruttore.canali()`); coordinate
+  in gradi e minuti decimali, NM/ft/kt, QNH inHg (hPa).
 - Missili: AIM-54C Mk47, AIM-7MH (F-4E: AIM-7M), AIM-9M; siriani R-60M, sovietici R-73. Catalogo carichi in
   `docs/lezioni.md`, definizione in `script/tools/carichi.py` (piloni fissati per nome).
 - Nominativi radio: numerici solo per i paesi orientali (Russia...); Siria e occidentali nome+numeri,

@@ -1,5 +1,6 @@
 """Briefing e tavolette di una giornata (solo per la parte BLU, quella del giocatore)."""
 import io
+import textwrap
 import os
 import sys
 
@@ -44,6 +45,7 @@ def prepara(c):
              + 'SITUAZIONE\nQuindici giorni di guerra. La testa di ponte dei Marines e dell\'esercito di Aoun avanza '
                'lentamente sotto il fuoco continuo dell\'artiglieria siriana; la difesa aerea siro-sovietica e\' ancora '
                'temibile e i siriani contendono la superiorita\' aerea sopra il Libano.\n\n'
+             + 'METEO\n' + c.meteo() + '\n\n'
              + 'LINEA DEL FRONTE\n' + fronte.replace('**', '') + '\n\n'
              + 'INTENTO DEL COMANDANTE\n' + ob.get('intento_generale', '') + '\n\n'
              + 'I TUOI VOLI (scegli lo slot)\n' + '\n\n'.join(_testo_volo(o) for o in giocatore) + '\n\n'
@@ -61,7 +63,7 @@ def prepara(c):
              + '- Spazio aereo israeliano e territorio turco: vietati.\n'
              + '- Lo stato si salva da solo: a fine volo manda stato e registro da Saved Games\\DCS\\Levante1989\\.')
     compito = 'Scegli uno dei voli: ' + ', '.join('%s (%s)' % (o['nome'], NOMI_VELIVOLO.get(o['velivolo'], o['velivolo']))
-                                                for o in giocatore) + '. Frequenze: ' + ', '.join('%s %s' % f for f in FREQ)
+                                                for o in giocatore) + '. Canali radio: ' + ', '.join('%d %.3f %s' % k for k in c.canali())
     rosso = 'Missione della giornata %d preparata per il giocatore blu.' % c.giorno
     tav = [_png(_pagina_ordini(c, giocatore, altri))] + [_png(_pagina_volo(c, o)) for o in giocatore] + [_png(_pagina_intel())]
     return {'titolo': '17 ottobre 1989', 'testo': testo, 'compito': compito}, rosso, tav
@@ -77,11 +79,14 @@ def _pagina_ordini(c, giocatore, altri):
     img = Image.new('RGB', (kb.W, kb.H), kb.CARTA)
     d = ImageDraw.Draw(img)
     kb._testata(d, 'GIORNO %d - ORDINI' % c.giorno, '17 ottobre 1989  |  06:30-09:30  |  testa di ponte Jounieh - Beirut Est')
-    y = kb._sezione(d, 104, 'COMUNICAZIONI')
-    fm = kb.font(16, mono=True)
-    for f, n in FREQ:
-        y = kb._riga(d, y, [(30, f), (140, n)], fm)
+    y = kb._sezione(d, 104, 'COMUNICAZIONI (canali preimpostati)')
+    fm = kb.font(15, mono=True)
+    for k, f, n in c.canali():
+        y = kb._riga(d, y, [(30, 'CH %2d' % k), (110, '%.3f' % f), (210, n)], fm)
     y = kb._riga(d, y, [(30, 'CVN-71: TACAN 71X "TR", ICLS 11   LHA-1: TACAN 64X "TAR"')], kb.font(15, mono=True))
+    y = kb._sezione(d, y + 6, 'METEO')
+    for riga in textwrap.wrap(c.meteo(), 95):
+        y = kb._riga(d, y, [(30, riga)], kb.font(14))
     y = kb._sezione(d, y + 6, 'I TUOI VOLI')
     fb = kb.font(15, True)
     fn = kb.font(14)

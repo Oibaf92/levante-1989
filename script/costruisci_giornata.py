@@ -69,6 +69,15 @@ MAX_SAM_SU_OBIETTIVO = 3
 # livello dell'IA in base al logoramento (frazione persa): sotto la soglia -> livello
 LOGORAMENTO_ABILITA = ((0.20, 'High'), (0.40, 'Good'), (9.99, 'Average'))
 
+# Piano radio blu (MHz, UHF AM). I canali preimpostati del giocatore sono in Costruttore.canali().
+RADIO_BLU = {'guardia': 243.0, 'pacchetto': 251.0, 'cvn': 258.0, 'lha': 256.0, 'incirlik': 360.1,
+             'awacs': 264.0, 'cisterna': 270.0, 'interno': 301.0}
+RADIO_RIEMPI = 225.0            # canali liberi: 225 + numero del canale
+# Modelli delle radio dei moduli: {radio: (numero di canali, tabella 'modulations' presente)}.
+# Solo strutture viste in missioni salvate dal Mission Editor (G00 per l'F-14).
+RADIO_MODELLI = {'F-14A-135-GR-Early': {1: (20, False), 2: (30, True)},
+                 'F-14B': {1: (20, False), 2: (30, True)}}
+
 # tipi di partenza del giocatore -> (tipo, azione) del primo punto di rotta
 PARTENZE = {'freddo': ('TakeOffParking', 'From Parking Area'), 'caldo': ('TakeOffParkingHot', 'From Parking Area Hot'),
             'pista': ('TakeOff', 'From Runway')}
@@ -176,6 +185,7 @@ class Costruttore:
         self.terreno = pz.Terreno()
         self.gruppi_aerei = {}            # nome missione -> (lato, gruppo)
         self.decolli_nave = {}
+        self.piano_radio = []             # (MHz, nome volo, ruolo)
         self.conta_speciali = {}          # AWACS/TANKER -> ultimo nome usato
         self.numeri_chiamata = {}         # (paese, nome) -> ultimo numero di gruppo (1-9)
         self._rinomina_doppi()
@@ -256,7 +266,7 @@ class Costruttore:
         g2 = {'visible': False, 'tasks': {}, 'uncontrollable': False, 'groupId': self.cnt.g(), 'hidden': False,
               'name': 'LHA-1 Tarawa', 'x': lx, 'y': ly, 'start_time': 0,
               'units': {1: {'type': 'LHA_Tarawa', 'name': 'LHA-1 Tarawa', 'unitId': lid[0], 'x': lx, 'y': ly,
-                            'heading': hl, 'skill': 'Excellent', 'modulation': 0, 'frequency': 127500000},
+                            'heading': hl, 'skill': 'Excellent', 'modulation': 0, 'frequency': int(RADIO_BLU['lha'] * 1e6)},
                         2: {'type': 'PERRY', 'name': 'FFG-36 Underwood', 'unitId': lid[1], 'x': lx + 1500, 'y': ly - 1500,
                             'heading': hl, 'skill': 'Excellent', 'modulation': 0, 'frequency': 127500000}},
               'route': {'points': {1: wpt(lx, ly, 0, 15 * KT, compiti=compiti_combo([tacan2]), ETA_locked=True),
@@ -499,7 +509,7 @@ class Costruttore:
             unita[k + 1] = u
         g = {'name': o['nome'], 'groupId': gid, 'task': COMPITO_DCS.get(mis, 'CAP'), 'taskSelected': True,
              'x': p0['x'], 'y': p0['y'], 'start_time': decollo, 'hidden': lato == 'red', 'uncontrolled': False,
-             'uncontrollable': False, 'communication': True, 'frequency': 251 if lato == 'blue' else 124,
+             'uncontrollable': False, 'communication': True, 'frequency': self.frequenza_volo(lato, o, giocatore),
              'modulation': 0, 'radioSet': False, 'tasks': {}, 'units': unita,
              'route': {'points': {k + 1: p for k, p in enumerate(punti)}}}
         self.gruppi_aerei[o['nome']] = (lato, g, o)
@@ -537,6 +547,69 @@ class Costruttore:
                 except Exception as e:  # noqa: BLE001
                     self.avvisi.append('%s (%s): volo scartato: %s' % (o.get('nome'), lato, e))
         self.scorte()
+        self.preimposta_radio()
+
+    # ----------------------------------------------------------------- radio
+    def frequenza_volo(self, lato, o, giocatore):
+        """Frequenza del gruppo e piano radio blu (canali preimpostati del giocatore)."""
+        if lato != 'blue':
+            return 124
+        tipo = o['tipo']
+        if tipo == 'AWACS':
+            f = RADIO_BLU['awacs'] + 0.5 * sum(1 for v in self.piano_radio if v[2] == 'AWACS')
+        elif tipo == 'TANKER':
+            f = RADIO_BLU['cisterna'] + sum(1 for v in self.piano_radio if v[2] == 'TANKER')
+        elif giocatore:
+            f = RADIO_BLU['interno'] + sum(1 for v in self.piano_radio if v[2] == 'GIOCATORE')
+        else:
+            return RADIO_BLU['pacchetto']
+        self.piano_radio.append((f, o['nome'], 'GIOCATORE' if giocatore else tipo))
+        return f
+
+    def meteo(self):
+        """Riga meteo per briefing e tavolette (unita' USA: nodi, piedi, inHg; anche hPa)."""
+        w = self.m['weather']
+        verso = w['wind']['atGround']['dir']
+        kt = w['wind']['atGround']['speed'] / KT
+        mmhg = w.get('qnh', 760)
+        return ('Vento al suolo da %03d/%d kt (2000 m: da %03d/%d kt). QNH %.2f inHg (%d hPa). Nubi %d/10, base %d ft. '
+                'Visibilita\' %d km.' % ((verso + 180) % 360, round(kt), (w['wind']['at2000']['dir'] + 180) % 360,
+                                         round(w['wind']['at2000']['speed'] / KT), mmhg / 25.4, round(mmhg * 1.33322),
+                                         w['clouds'].get('density', 0), round(w['clouds'].get('base', 0) / FT, -2),
+                                         w['visibility']['distance'] // 1000))
+
+    def canali(self):
+        """Canali preimpostati uguali per tutti i velivoli del giocatore: [(canale, MHz, descrizione)]."""
+        lista = [(RADIO_BLU['pacchetto'], 'Pacchetto (comune ai voli d\'attacco)')]
+        lista += [(f, 'AWACS "%s"' % n) for f, n, t in self.piano_radio if t == 'AWACS']
+        lista += [(f, 'Cisterna "%s"' % n) for f, n, t in self.piano_radio if t == 'TANKER']
+        lista += [(RADIO_BLU['cvn'], 'CVN-71 torre / CATCC'), (RADIO_BLU['lha'], 'LHA-1 Tarawa torre'),
+                  (RADIO_BLU['incirlik'], 'Incirlik torre')]
+        lista += [(f, 'Interno %s' % n) for f, n, t in self.piano_radio if t == 'GIOCATORE']
+        lista.append((RADIO_BLU['guardia'], 'Guardia'))
+        return [(k, f, d) for k, (f, d) in enumerate(lista, 1)]
+
+    def preimposta_radio(self):
+        """Canali preimpostati nei velivoli del giocatore (giocatore e gregario), secondo il modello
+        della radio del modulo (struttura ricavata da missioni salvate dal Mission Editor)."""
+        canali = self.canali()
+        for nome, (lato, g, o) in self.gruppi_aerei.items():
+            if lato != 'blue' or not o.get('giocatore'):
+                continue
+            tipo = g['units'][1]['type']
+            modello = RADIO_MODELLI.get(tipo)
+            if not modello:
+                self.avvisi.append('RADIO: %s (%s): canali non preimpostati, manca il modello della radio del modulo' % (nome, tipo))
+                continue
+            radio = {}
+            for r, (n_canali, modulazioni) in modello.items():
+                ch = {i: RADIO_RIEMPI + i for i in range(1, n_canali + 1)}
+                for k, f, _ in canali:
+                    if k <= n_canali:
+                        ch[k] = f
+                radio[r] = {'channels': ch, 'modulations': {i: 0 for i in ch} if modulazioni else {}, 'channelsNames': {}}
+            for u in g['units'].values():
+                u['Radio'] = copy.deepcopy(radio)
 
     # ----------------------------------------------------------------- mappa
     def disegni(self):

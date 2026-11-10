@@ -23,6 +23,9 @@ costruire o modificare una missione. Le regole piu' importanti sono riassunte in
 | Mappa F10 | Confini con poligoni chiusi; niente scritte sulla mappa ma una **legenda** con forme diverse; simboli nella posizione **esatta** anche se si sovrappongono; simboli diversi per SA-2, SA-3, SA-5, SA-6, SA-8. Le tavolette vanno aggiornate insieme alla mappa. | G00 |
 | Piazzamento | Niente unita' in boschi, frutteti, edifici o pendii; poligono di tiro fuori dalle foreste; per le batterie in zona agricola/costiera chiedere lo screenshot ravvicinato. | G00, P00 |
 | Informazioni | Campagna: separazione rigida (CLAUDE.md). **Missione di test**: se il giocatore lo chiede, versione a carte scoperte con `script/tools/apri_test.py <giorno>` (mappa F10 completa, briefing di entrambe le parti, dossier, mappa). | G15 |
+| Radio | **Canali preimpostati** nei velivoli del giocatore (lui e il gregario), uguali per tutti i suoi voli: CH1 pacchetto 251, poi AWACS (264), cisterne (270, 271...), CVN 258, LHA 256, Incirlik 360.1, gli interni dei voli del giocatore (301, 302...), guardia 243. I gruppi IA ascoltano la loro frequenza (AWACS, cisterne). Tabella dei canali nella prima tavoletta e nel briefing. I canali si scrivono solo per i moduli di cui conosciamo la struttura della radio (`RADIO_MODELLI`, ricavata da missioni salvate dal Mission Editor): per gli altri il costruttore avvisa con `RADIO:`. Da verificare in volo: frequenza della torre di Incirlik. | punto 4 |
+| Coordinate e unita' (deciso dall'arbitro) | Coordinate in gradi e minuti decimali (`N 33°48.000'`), che vanno bene per F-14, F/A-18, F-4E e AH-64; miglia nautiche, piedi, nodi; QNH in inHg con hPa tra parentesi; vento "da" (direzione di provenienza). Meteo nella prima tavoletta. | punto 4 |
+| Tavolette | Vanno bene cosi' (ordini, una pagina per volo, intel). | punto 4 |
 | Livello dell'IA | Nemici **High** all'inizio; il livello **cala con le perdite**: logoramento (frazione persa dell'ordine di battaglia, `parametri.json` -> `logoramento`) oltre 20% -> Good, oltre 40% -> Average (`LOGORAMENTO_ABILITA`). Stessa regola per l'IA blu. | punto 3 |
 | Intensita' | Conflitto di **media intensita'** (anche per le prestazioni); missioni del giocatore **abbastanza sopravvivibili**: l'obiettivo di un suo volo non deve essere coperto da piu' di 3 batterie SAM nemiche (SA-2/3/6/8/Hawk; SA-5 escluso, i SEAD esclusi). Il costruttore avvisa con `INTENSITA:`. | punto 3 |
 | Era 1989 | **Niente GPS, niente AIM-120** (ne' AIM-9X, R-77, JSOW, SLAM, pod di puntamento moderni). `carichi.py` rifiuta i carichi fuori era (`ERA_VIETATE`). **Eccezioni**: AH-64D e CH-47F con il loro armamento. Nel menu di riarmo in gioco il rispetto dell'era e' affidato al giocatore. | punto 3 |
@@ -115,6 +118,13 @@ contro `script/dati/piloni.json`; "(AR)" = autonomia ridotta (avviso `AUTONOMIA:
 | Giocatore in attesa del proprio orario di decollo | fino a un'ora di attesa | Voli del giocatore sempre a decollo immediato. |
 | `zipfile.writestr(ZipInfo)` riusato | CRC errato alla rilettura | Scrivere per nome o rileggere tutto prima. |
 | Bersaglio d'artiglieria oltre la portata | il pezzo non spara | Il costruttore lo segnala come AVVISO (va riferito al comandante interessato, non all'altro). |
+
+## In attesa dal giocatore
+
+- **Una missione salvata dal Mission Editor con un aereo di ogni modulo** (F-14B, F/A-18C, F-4E,
+  AH-64D, CH-47F, MiG-29, Su-25, Mi-24P, Mi-8MT) messo come slot Client. Da li' si ricavano: la
+  struttura delle radio (`RADIO_MODELLI`, per preimpostare i canali), gli `AddPropAircraft` di
+  default, e, se il MiG-29 ha i carichi R-73 e d'attacco, i loro CLSID.
 
 ## Diagnosi dei problemi in DCS
 
