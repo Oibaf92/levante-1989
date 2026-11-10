@@ -2,7 +2,7 @@
 import os, sys, zipfile, glob
 from lupa import lua51
 qui = os.path.dirname(os.path.abspath(__file__))
-miz = sorted(f for f in glob.glob(os.path.join(qui, '..', '..', 'missioni', 'G15_*.miz')) if not f.endswith('_TEST.miz'))[0]
+miz = sorted(f for f in glob.glob(os.path.join(qui, '..', '..', 'missioni', 'G1[0-9]_*.miz')) if not f.endswith('_TEST.miz'))[0]
 z = zipfile.ZipFile(miz)
 L = lua51.LuaRuntime()
 L.execute(open(os.path.join(qui, 'mock_dcs.lua'), encoding='utf-8').read())
