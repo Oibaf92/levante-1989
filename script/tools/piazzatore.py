@@ -273,6 +273,8 @@ class Intenzione:
     coalizione: str = 'red'
     paese: int = 47               # 47 = Siria
     abilita: str = 'Good'
+    dentro: list = None           # poligono [(lat, lon), ...] in cui l'unita' deve stare
+    fuori: list = None            # poligono in cui l'unita' NON deve stare
 
 
 @dataclass
@@ -367,22 +369,54 @@ def _orienta(schema, x, y, rotta):
     return out
 
 
+ALLENTAMENTI = [
+    {},                                                                     # vincoli normali
+    {'edifici_max': 4, 'vegetazione_max': 35, 'pendenza_max': 1.3},         # terreno difficile
+    {'edifici_max': 12, 'vegetazione_max': 50, 'pendenza_max': 1.6},        # montagna abitata (Libano)
+    {'edifici_max': 99, 'vegetazione_max': 80, 'pendenza_max': 2.0},        # ultimo ricorso: centro urbano
+]
+
+
+def _nel_poligono(xs, ys, poligono_ll):
+    """Vettoriale: True per i punti (x, y) dentro il poligono (ray casting sulla griglia DCS)."""
+    poli = [ll_to_xy(*q) for q in poligono_ll]
+    dentro = np.zeros(len(xs), dtype=bool)
+    n = len(poli)
+    for k in range(n):
+        x1, y1 = poli[k]
+        x2, y2 = poli[(k + 1) % n]
+        attraversa = ((y1 > ys) != (y2 > ys)) & (xs < (x2 - x1) * (ys - y1) / ((y2 - y1) or 1e-9) + x1)
+        dentro ^= attraversa
+    return dentro
+
+
 def piazza(terreno, intenzione, gia_piazzati=(), seme=1989, evitare=()):
-    """Piazza un'intenzione; se i candidati validi sono pochi allarga la ricerca (fino al doppio del raggio)."""
+    """Piazza un'intenzione. Se i candidati validi sono pochi allarga la ricerca (fino al doppio
+    del raggio); se non ce ne sono affatto allenta i vincoli per gradi (annotato nei dettagli)."""
+    cfg_orig = SISTEMI[intenzione.sistema]
     ultimo = None
-    for fattore in (1.0, 1.5, 2.0):
+    for livello, allenta in enumerate(ALLENTAMENTI):
+        cfg = dict(cfg_orig)
+        for k, v in allenta.items():
+            cfg[k] = cfg_orig[k] * v if k == 'pendenza_max' else max(cfg_orig[k], v)
+        SISTEMI[intenzione.sistema] = cfg
         try:
-            p = _piazza(terreno, intenzione, gia_piazzati, seme, evitare, fattore)
-        except ValueError as e:
-            if not isinstance(ultimo, Piazzamento):
-                ultimo = e
-            continue
-        if p.dettagli['candidati_validi'] >= 8 or fattore == 2.0:
-            p.dettagli['raggio_usato_km'] = round(intenzione.raggio_km * fattore, 1)
-            return p
-        ultimo = p
-    if isinstance(ultimo, Piazzamento):
-        return ultimo
+            for fattore in (1.0, 1.5, 2.0):
+                try:
+                    p = _piazza(terreno, intenzione, gia_piazzati, seme, evitare, fattore)
+                except ValueError as e:
+                    if not isinstance(ultimo, Piazzamento):
+                        ultimo = e
+                    continue
+                p.dettagli['vincoli_allentati'] = livello
+                if p.dettagli['candidati_validi'] >= 8 or fattore == 2.0:
+                    p.dettagli['raggio_usato_km'] = round(intenzione.raggio_km * fattore, 1)
+                    return p
+                ultimo = p
+            if isinstance(ultimo, Piazzamento):
+                return ultimo
+        finally:
+            SISTEMI[intenzione.sistema] = cfg_orig
     raise ultimo
 
 
@@ -394,6 +428,10 @@ def _piazza(terreno, intenzione, gia_piazzati, seme, evitare, fattore):
     if not len(pts):
         raise ValueError('%s: nessun dato del terreno attorno al centro' % intenzione.nome)
     ok = _filtro_area(terreno, pts, attr, passo, cfg)
+    if intenzione.dentro:
+        ok &= _nel_poligono(pts[:, 0], pts[:, 1], intenzione.dentro)
+    if intenzione.fuori:
+        ok &= ~_nel_poligono(pts[:, 0], pts[:, 1], intenzione.fuori)
     for ex, ey in evitare:                                    # punti segnalati con SPOSTA
         ok &= np.hypot(pts[:, 0] - ex, pts[:, 1] - ey) > 1500
     if ok.sum() == 0:
@@ -425,6 +463,10 @@ def _piazza(terreno, intenzione, gia_piazzati, seme, evitare, fattore):
             for k in range(1 if d == 0 else 8):
                 ang = math.radians(45 * k)
                 px, py = x + d * math.cos(ang), y + d * math.sin(ang)
+                if intenzione.dentro and not _nel_poligono(np.array([px]), np.array([py]), intenzione.dentro)[0]:
+                    continue
+                if intenzione.fuori and _nel_poligono(np.array([px]), np.array([py]), intenzione.fuori)[0]:
+                    continue
                 if all(terreno.veicolo_libero(ux, uy) for _, ux, uy, _ in _orienta(schema(cfg, intenzione.coalizione), px, py, rotta0)):
                     return px, py, d
         return None

@@ -46,6 +46,7 @@ CARICHI = {
     },
     'A6E': {'attacco': {1: '{HB_A6E_MK82_MER_6x}', 2: '{HB_A6E_AERO1D}', 4: '{HB_A6E_AERO1D}', 5: '{HB_A6E_MK82_MER_6x}'}},
     'F-4E-45MC': {'attacco': [(r'^6x Mk-82 - 500lb GP Bomb LD \(MER\)', 2), (r'AIM-7E', 4), (r'AIM-9J', 2)]},
+    'AH-64D_BLK_II': {'appoggio': [(r'^M299 - 4 x AGM-114K Hellfire', 2), (r'^M261 - 19 x UnGd Rkts, 70 mm Hydra 70 M151 HE$', 2)]},
     'AV8BNA': {'appoggio': [(r'AIM-9M|AIM-9L', 2), (r'^Mk-82 - 500lb GP Bomb LD', 4)]},
 }
 
