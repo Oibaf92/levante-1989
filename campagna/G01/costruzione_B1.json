@@ -1,0 +1,2787 @@
+{
+ "piazzamenti": [
+  {
+   "lato": "red",
+   "nome": "Barouk",
+   "sistema": "ewr",
+   "missione": "difesa",
+   "lat_lon": [
+    33.72234,
+    35.71437
+   ],
+   "dettagli": {
+    "visibilita": 0.92,
+    "rilievo_m": -100,
+    "dist_obiettivo_km": 4.7,
+    "pendenza": 14,
+    "strada_m": 10,
+    "vegetazione": 11,
+    "quota": 1317,
+    "candidati_validi": 16,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 5.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "EWR Slunfeh",
+   "sistema": "ewr",
+   "missione": "difesa",
+   "lat_lon": [
+    35.64833,
+    36.13448
+   ],
+   "dettagli": {
+    "visibilita": 0.97,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 8.6,
+    "pendenza": 13,
+    "strada_m": 420,
+    "vegetazione": 26,
+    "quota": 869,
+    "candidati_validi": 22,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 15.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "EWR Qurnat as Sawda",
+   "sistema": "ewr",
+   "missione": "difesa",
+   "lat_lon": [
+    34.20068,
+    36.02135
+   ],
+   "dettagli": {
+    "visibilita": 0.81,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 13.7,
+    "pendenza": 15,
+    "strada_m": 130,
+    "vegetazione": 18,
+    "quota": 2500,
+    "candidati_validi": 90,
+    "scorrimento_m": 200,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 15.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "EWR Hermon",
+   "sistema": "ewr",
+   "missione": "difesa",
+   "lat_lon": [
+    33.48034,
+    36.13233
+   ],
+   "dettagli": {
+    "visibilita": 0.7,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 8.0,
+    "pendenza": 3,
+    "strada_m": 640,
+    "vegetazione": 21,
+    "quota": 1137,
+    "candidati_validi": 86,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 8.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-2 Baalbek",
+   "sistema": "sa2",
+   "missione": "difesa",
+   "lat_lon": [
+    34.02379,
+    36.24408
+   ],
+   "dettagli": {
+    "visibilita": 0.88,
+    "rilievo_m": 2,
+    "dist_obiettivo_km": 3.5,
+    "pendenza": 5,
+    "strada_m": 50,
+    "vegetazione": 4,
+    "quota": 1318,
+    "candidati_validi": 12,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-2 Damasco nord",
+   "sistema": "sa2",
+   "missione": "difesa",
+   "lat_lon": [
+    33.59184,
+    36.27945
+   ],
+   "dettagli": {
+    "visibilita": 0.76,
+    "rilievo_m": 35,
+    "dist_obiettivo_km": 3.0,
+    "pendenza": 2,
+    "strada_m": 300,
+    "vegetazione": 0,
+    "quota": 992,
+    "candidati_validi": 17,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-2 Damasco sud",
+   "sistema": "sa2",
+   "missione": "difesa",
+   "lat_lon": [
+    33.42474,
+    36.44672
+   ],
+   "dettagli": {
+    "visibilita": 0.9,
+    "rilievo_m": -1,
+    "dist_obiettivo_km": 5.0,
+    "pendenza": 0,
+    "strada_m": 0,
+    "vegetazione": 10,
+    "quota": 614,
+    "candidati_validi": 36,
+    "scorrimento_m": 100,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Hawk",
+   "sistema": "hawk",
+   "missione": "difesa",
+   "lat_lon": [
+    33.95416,
+    35.62111
+   ],
+   "dettagli": {
+    "visibilita": 0.35,
+    "rilievo_m": 47,
+    "dist_obiettivo_km": 3.6,
+    "pendenza": 3,
+    "strada_m": 180,
+    "vegetazione": 4,
+    "quota": 205,
+    "candidati_validi": 1,
+    "scorrimento_m": 200,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-3 Damasco ovest",
+   "sistema": "sa3",
+   "missione": "difesa",
+   "lat_lon": [
+    33.39975,
+    36.15647
+   ],
+   "dettagli": {
+    "visibilita": 0.93,
+    "rilievo_m": 0,
+    "dist_obiettivo_km": 6.0,
+    "pendenza": 1,
+    "strada_m": 130,
+    "vegetazione": 0,
+    "quota": 759,
+    "candidati_validi": 16,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Crest6",
+   "sistema": "sa6",
+   "missione": "difesa",
+   "lat_lon": [
+    33.7512,
+    35.85355
+   ],
+   "dettagli": {
+    "visibilita": 0.52,
+    "rilievo_m": 0,
+    "dist_obiettivo_km": 5.8,
+    "pendenza": 1,
+    "strada_m": 90,
+    "vegetazione": 7,
+    "quota": 860,
+    "candidati_validi": 22,
+    "scorrimento_m": 200,
+    "siti_scartati_vegetazione": 1,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Chouf6",
+   "sistema": "sa6",
+   "missione": "difesa",
+   "lat_lon": [
+    33.65385,
+    35.77936
+   ],
+   "dettagli": {
+    "visibilita": 0.43,
+    "rilievo_m": -13,
+    "dist_obiettivo_km": 8.7,
+    "pendenza": 1,
+    "strada_m": 0,
+    "vegetazione": 9,
+    "quota": 857,
+    "candidati_validi": 22,
+    "scorrimento_m": 300,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 9.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "North6",
+   "sistema": "sa6",
+   "missione": "difesa",
+   "lat_lon": [
+    34.08164,
+    35.9822
+   ],
+   "dettagli": {
+    "visibilita": 0.47,
+    "rilievo_m": 78,
+    "dist_obiettivo_km": 4.1,
+    "pendenza": 10,
+    "strada_m": 20,
+    "vegetazione": 1,
+    "quota": 1882,
+    "candidati_validi": 22,
+    "scorrimento_m": 100,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Crest8",
+   "sistema": "sa8",
+   "missione": "difesa",
+   "lat_lon": [
+    33.78903,
+    35.85216
+   ],
+   "dettagli": {
+    "visibilita": 0.67,
+    "rilievo_m": -11,
+    "dist_obiettivo_km": 7.7,
+    "pendenza": 1,
+    "strada_m": 50,
+    "vegetazione": 13,
+    "quota": 867,
+    "candidati_validi": 22,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 1,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 8.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Chouf8",
+   "sistema": "sa8",
+   "missione": "difesa",
+   "lat_lon": [
+    33.69211,
+    35.59691
+   ],
+   "dettagli": {
+    "visibilita": 0.28,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 6.5,
+    "pendenza": 10,
+    "strada_m": 730,
+    "vegetazione": 4,
+    "quota": 1008,
+    "candidati_validi": 2,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 8.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "North8",
+   "sistema": "sa8",
+   "missione": "difesa",
+   "lat_lon": [
+    34.00576,
+    35.94389
+   ],
+   "dettagli": {
+    "visibilita": 0.58,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 4.0,
+    "pendenza": 11,
+    "strada_m": 580,
+    "vegetazione": 21,
+    "quota": 2107,
+    "candidati_validi": 20,
+    "scorrimento_m": 300,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 4.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "FarayaAA",
+   "sistema": "aaa",
+   "missione": "difesa",
+   "lat_lon": [
+    34.01689,
+    35.95202
+   ],
+   "dettagli": {
+    "visibilita": 0.71,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 2.5,
+    "pendenza": 10,
+    "strada_m": 510,
+    "vegetazione": 12,
+    "quota": 2063,
+    "candidati_validi": 14,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 3.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Guns",
+   "sistema": "artiglieria",
+   "missione": "fuoco",
+   "lat_lon": [
+    33.89949,
+    35.59949
+   ],
+   "dettagli": {
+    "visibilita": 0.04,
+    "rilievo_m": 19,
+    "dist_obiettivo_km": 12.2,
+    "pendenza": 11,
+    "strada_m": 40,
+    "vegetazione": 5,
+    "quota": 289,
+    "candidati_validi": 2,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 2,
+    "raggio_usato_km": 4.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Gun1",
+   "sistema": "artiglieria",
+   "missione": "fuoco",
+   "lat_lon": [
+    33.78125,
+    35.561
+   ],
+   "dettagli": {
+    "visibilita": 0.75,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 6.5,
+    "pendenza": 13,
+    "strada_m": 10,
+    "vegetazione": 3,
+    "quota": 788,
+    "candidati_validi": 1,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 1,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Gun2",
+   "sistema": "artiglieria",
+   "missione": "fuoco",
+   "lat_lon": [
+    33.81381,
+    35.76486
+   ],
+   "dettagli": {
+    "visibilita": 0.04,
+    "rilievo_m": 60,
+    "dist_obiettivo_km": 15.3,
+    "pendenza": 10,
+    "strada_m": 280,
+    "vegetazione": 16,
+    "quota": 1574,
+    "candidati_validi": 1,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Gun3",
+   "sistema": "artiglieria",
+   "missione": "fuoco",
+   "lat_lon": [
+    34.04418,
+    35.96187
+   ],
+   "dettagli": {
+    "visibilita": 0.06,
+    "rilievo_m": 65,
+    "dist_obiettivo_km": 10.6,
+    "pendenza": 6,
+    "strada_m": 120,
+    "vegetazione": 0,
+    "quota": 1906,
+    "candidati_validi": 11,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 3.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Grad1",
+   "sistema": "lanciarazzi",
+   "missione": "fuoco",
+   "lat_lon": [
+    33.78305,
+    35.56093
+   ],
+   "dettagli": {
+    "visibilita": 0.6,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 12.7,
+    "pendenza": 13,
+    "strada_m": 10,
+    "vegetazione": 3,
+    "quota": 788,
+    "candidati_validi": 1,
+    "scorrimento_m": 200,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 1,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Grad2",
+   "sistema": "lanciarazzi",
+   "missione": "fuoco",
+   "lat_lon": [
+    33.82505,
+    35.85084
+   ],
+   "dettagli": {
+    "visibilita": 0.25,
+    "rilievo_m": -64,
+    "dist_obiettivo_km": 22.5,
+    "pendenza": 6,
+    "strada_m": 40,
+    "vegetazione": 6,
+    "quota": 955,
+    "candidati_validi": 7,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Mech1",
+   "sistema": "meccanizzata",
+   "missione": "difesa",
+   "lat_lon": [
+    33.86137,
+    35.55779
+   ],
+   "dettagli": {
+    "visibilita": 0.5,
+    "rilievo_m": 5,
+    "dist_obiettivo_km": 2.0,
+    "pendenza": 10,
+    "strada_m": 70,
+    "vegetazione": 37,
+    "quota": 144,
+    "candidati_validi": 1,
+    "scorrimento_m": 100,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 4.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Mech2",
+   "sistema": "meccanizzata",
+   "missione": "difesa",
+   "lat_lon": [
+    33.81066,
+    35.64729
+   ],
+   "dettagli": {
+    "visibilita": 1.0,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 2.9,
+    "pendenza": 4,
+    "strada_m": 230,
+    "vegetazione": 27,
+    "quota": 1074,
+    "candidati_validi": 1,
+    "scorrimento_m": 100,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 2,
+    "raggio_usato_km": 3.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Mech3",
+   "sistema": "meccanizzata",
+   "missione": "difesa",
+   "lat_lon": [
+    33.90717,
+    35.75053
+   ],
+   "dettagli": {
+    "visibilita": 0.0,
+    "rilievo_m": -27,
+    "dist_obiettivo_km": 3.9,
+    "pendenza": 18,
+    "strada_m": 140,
+    "vegetazione": 14,
+    "quota": 1104,
+    "candidati_validi": 1,
+    "scorrimento_m": 400,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 1,
+    "raggio_usato_km": 4.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Armor1",
+   "sistema": "carri",
+   "missione": "difesa",
+   "lat_lon": [
+    33.91868,
+    35.64197
+   ],
+   "dettagli": {
+    "visibilita": 0.67,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 5.3,
+    "pendenza": 8,
+    "strada_m": 160,
+    "vegetazione": 12,
+    "quota": 661,
+    "candidati_validi": 3,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 1,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Armor2",
+   "sistema": "carri",
+   "missione": "difesa",
+   "lat_lon": [
+    33.89825,
+    35.60107
+   ],
+   "dettagli": {
+    "visibilita": 0.5,
+    "rilievo_m": 19,
+    "dist_obiettivo_km": 3.7,
+    "pendenza": 11,
+    "strada_m": 40,
+    "vegetazione": 5,
+    "quota": 289,
+    "candidati_validi": 2,
+    "scorrimento_m": 200,
+    "siti_scartati_vegetazione": 1,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 4.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Cedar1",
+   "sistema": "meccanizzata",
+   "missione": "difesa",
+   "lat_lon": [
+    34.04056,
+    35.81907
+   ],
+   "dettagli": {
+    "visibilita": 0.58,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 2.0,
+    "pendenza": 13,
+    "strada_m": 530,
+    "vegetazione": 3,
+    "quota": 1792,
+    "candidati_validi": 2,
+    "scorrimento_m": 200,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 4.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Cedar2",
+   "sistema": "meccanizzata",
+   "missione": "difesa",
+   "lat_lon": [
+    33.88837,
+    35.52429
+   ],
+   "dettagli": {
+    "visibilita": 1.0,
+    "rilievo_m": 63,
+    "dist_obiettivo_km": 0.4,
+    "pendenza": 10,
+    "strada_m": 60,
+    "vegetazione": 0,
+    "quota": 90,
+    "candidati_validi": 14,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 3,
+    "raggio_usato_km": 2.2
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Wall (SY)",
+   "sistema": "carri",
+   "missione": "difesa",
+   "lat_lon": [
+    33.79434,
+    35.71054
+   ],
+   "dettagli": {
+    "visibilita": 0.0,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 4.0,
+    "pendenza": 7,
+    "strada_m": 580,
+    "vegetazione": 10,
+    "quota": 1368,
+    "candidati_validi": 4,
+    "scorrimento_m": 100,
+    "siti_scartati_vegetazione": 1,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Line",
+   "sistema": "meccanizzata",
+   "missione": "difesa",
+   "lat_lon": [
+    33.79304,
+    35.66201
+   ],
+   "dettagli": {
+    "visibilita": 0.75,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 1.7,
+    "pendenza": 23,
+    "strada_m": 180,
+    "vegetazione": 33,
+    "quota": 1182,
+    "candidati_validi": 10,
+    "scorrimento_m": 400,
+    "siti_scartati_vegetazione": 4,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 2,
+    "raggio_usato_km": 4.5
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Spear",
+   "sistema": "meccanizzata",
+   "missione": "attacco",
+   "lat_lon": [
+    34.01512,
+    35.93196
+   ],
+   "dettagli": {
+    "visibilita": 1.0,
+    "rilievo_m": 38,
+    "dist_obiettivo_km": 5.0,
+    "pendenza": 14,
+    "strada_m": 20,
+    "vegetazione": 30,
+    "quota": 2079,
+    "candidati_validi": 18,
+    "scorrimento_m": 200,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 3.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Stinger1",
+   "sistema": "contraerea_mobile",
+   "missione": "difesa",
+   "lat_lon": [
+    33.82716,
+    35.59156
+   ],
+   "dettagli": {
+    "visibilita": 1.0,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 2.8,
+    "pendenza": 18,
+    "strada_m": 130,
+    "vegetazione": 9,
+    "quota": 618,
+    "candidati_validi": 7,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 2,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 3,
+    "raggio_usato_km": 3.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Stinger2",
+   "sistema": "contraerea_mobile",
+   "missione": "difesa",
+   "lat_lon": [
+    33.90554,
+    35.75288
+   ],
+   "dettagli": {
+    "visibilita": 0.0,
+    "rilievo_m": -27,
+    "dist_obiettivo_km": 3.5,
+    "pendenza": 18,
+    "strada_m": 140,
+    "vegetazione": 14,
+    "quota": 1104,
+    "candidati_validi": 1,
+    "scorrimento_m": 300,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 1,
+    "raggio_usato_km": 4.0
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Stinger3",
+   "sistema": "contraerea_mobile",
+   "missione": "difesa",
+   "lat_lon": [
+    33.9535,
+    35.59734
+   ],
+   "dettagli": {
+    "visibilita": 0.83,
+    "rilievo_m": 17,
+    "dist_obiettivo_km": 2.8,
+    "pendenza": 15,
+    "strada_m": 250,
+    "vegetazione": 0,
+    "quota": 80,
+    "candidati_validi": 5,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 4.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "AleyAA",
+   "sistema": "contraerea_mobile",
+   "missione": "difesa",
+   "lat_lon": [
+    33.78131,
+    35.56316
+   ],
+   "dettagli": {
+    "visibilita": 0.0,
+    "rilievo_m": 100,
+    "dist_obiettivo_km": 5.6,
+    "pendenza": 13,
+    "strada_m": 10,
+    "vegetazione": 3,
+    "quota": 788,
+    "candidati_validi": 1,
+    "scorrimento_m": 200,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SofarAA",
+   "sistema": "contraerea_mobile",
+   "missione": "difesa",
+   "lat_lon": [
+    33.79729,
+    35.72535
+   ],
+   "dettagli": {
+    "visibilita": 0.0,
+    "rilievo_m": -39,
+    "dist_obiettivo_km": 1.7,
+    "pendenza": 7,
+    "strada_m": 30,
+    "vegetazione": 22,
+    "quota": 1238,
+    "candidati_validi": 4,
+    "scorrimento_m": 400,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
+   }
+  }
+ ],
+ "voli": [
+  {
+   "lato": "blue",
+   "nome": "Saber",
+   "tipo": "CAS",
+   "velivolo": "AH-64D_BLK_II",
+   "numero": 2,
+   "base": "LHA-1",
+   "decollo": "07:00",
+   "giocatore": true
+  },
+  {
+   "lato": "blue",
+   "nome": "Lantern",
+   "tipo": "AWACS",
+   "velivolo": "E-2C",
+   "numero": 1,
+   "base": "CVN-71",
+   "decollo": "05:50",
+   "giocatore": false
+  },
+  {
+   "lato": "blue",
+   "nome": "Picket",
+   "tipo": "CAP",
+   "velivolo": "F-14A-135-GR-Early",
+   "numero": 2,
+   "base": "CVN-71",
+   "decollo": "05:55",
+   "giocatore": false
+  },
+  {
+   "lato": "blue",
+   "nome": "Colt",
+   "tipo": "CAP",
+   "velivolo": "FA-18C_hornet",
+   "numero": 2,
+   "base": "CVN-71",
+   "decollo": "06:00",
+   "giocatore": false
+  },
+  {
+   "lato": "blue",
+   "nome": "Weasel",
+   "tipo": "SEAD",
+   "velivolo": "FA-18C_hornet",
+   "numero": 2,
+   "base": "CVN-71",
+   "decollo": "06:40",
+   "giocatore": false
+  },
+  {
+   "lato": "blue",
+   "nome": "Shutter",
+   "tipo": "STRIKE",
+   "velivolo": "F-14A-135-GR-Early",
+   "numero": 2,
+   "base": "CVN-71",
+   "decollo": "06:45",
+   "giocatore": false
+  },
+  {
+   "lato": "red",
+   "nome": "Sword",
+   "tipo": "SEAD",
+   "velivolo": "Su-24M",
+   "numero": 2,
+   "base": "Shayrat",
+   "decollo": "06:15",
+   "giocatore": false
+  },
+  {
+   "lato": "red",
+   "nome": "Hammer (SY)",
+   "tipo": "STRIKE",
+   "velivolo": "Su-25",
+   "numero": 4,
+   "base": "Rayak",
+   "decollo": "06:35",
+   "giocatore": false
+  },
+  {
+   "lato": "red",
+   "nome": "Anvil (SY)",
+   "tipo": "STRIKE",
+   "velivolo": "Su-17M4",
+   "numero": 2,
+   "base": "Al Qusayr",
+   "decollo": "06:35",
+   "giocatore": false
+  },
+  {
+   "lato": "red",
+   "nome": "Shield",
+   "tipo": "SCORTA",
+   "velivolo": "MiG-29 Fulcrum",
+   "numero": 4,
+   "base": "Al Qusayr",
+   "decollo": "06:30",
+   "giocatore": false
+  },
+  {
+   "lato": "red",
+   "nome": "Watch",
+   "tipo": "GCI",
+   "velivolo": "MiG-23MLD",
+   "numero": 2,
+   "base": "Al-Dumayr",
+   "decollo": "06:20",
+   "giocatore": false
+  }
+ ],
+ "avvisi": [
+  "nome 'Wall' usato da entrambe le parti: diventa 'Wall (USA)'",
+  "nome 'Hammer' usato da entrambe le parti: diventa 'Hammer (USA)'",
+  "nome 'Anvil' usato da entrambe le parti: diventa 'Anvil (USA)'",
+  "nome 'Hammer' usato da entrambe le parti: diventa 'Hammer (SY)'",
+  "nome 'Anvil' usato da entrambe le parti: diventa 'Anvil (SY)'",
+  "nome 'Wall' usato da entrambe le parti: diventa 'Wall (SY)'",
+  "Gun2: bersaglio a 15.3 km, oltre la portata (15 km): sparera' solo se si avvicina",
+  "Grad2: bersaglio a 22.5 km, oltre la portata (20 km): sparera' solo se si avvicina",
+  "PRESTAZIONI: 132 unita' di terra entro 30 km dagli obiettivi del giocatore, oltre il limite di 120"
+ ],
+ "unita": [
+  {
+   "nome": "Lantern-1",
+   "gruppo": "Lantern",
+   "tipo": "E-2C",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Picket-1",
+   "gruppo": "Picket",
+   "tipo": "F-14A-135-GR-Early",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Picket-2",
+   "gruppo": "Picket",
+   "tipo": "F-14A-135-GR-Early",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Colt-1",
+   "gruppo": "Colt",
+   "tipo": "FA-18C_hornet",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Colt-2",
+   "gruppo": "Colt",
+   "tipo": "FA-18C_hornet",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Weasel-1",
+   "gruppo": "Weasel",
+   "tipo": "FA-18C_hornet",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Weasel-2",
+   "gruppo": "Weasel",
+   "tipo": "FA-18C_hornet",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Shutter-1",
+   "gruppo": "Shutter",
+   "tipo": "F-14A-135-GR-Early",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Shutter-2",
+   "gruppo": "Shutter",
+   "tipo": "F-14A-135-GR-Early",
+   "lato": "blue",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Saber-1",
+   "gruppo": "Saber",
+   "tipo": "AH-64D_BLK_II",
+   "lato": "blue",
+   "categoria": "helicopter"
+  },
+  {
+   "nome": "Saber-2",
+   "gruppo": "Saber",
+   "tipo": "AH-64D_BLK_II",
+   "lato": "blue",
+   "categoria": "helicopter"
+  },
+  {
+   "nome": "Hawk-1",
+   "gruppo": "Hawk",
+   "tipo": "Hawk pcp",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Hawk-2",
+   "gruppo": "Hawk",
+   "tipo": "Hawk sr",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Hawk-3",
+   "gruppo": "Hawk",
+   "tipo": "Hawk tr",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Hawk-4",
+   "gruppo": "Hawk",
+   "tipo": "Hawk ln",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Hawk-5",
+   "gruppo": "Hawk",
+   "tipo": "Hawk ln",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Hawk-6",
+   "gruppo": "Hawk",
+   "tipo": "Hawk ln",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Guns-1",
+   "gruppo": "Guns",
+   "tipo": "M-109",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Guns-2",
+   "gruppo": "Guns",
+   "tipo": "M-109",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Guns-3",
+   "gruppo": "Guns",
+   "tipo": "M-109",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Guns-4",
+   "gruppo": "Guns",
+   "tipo": "M-109",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Guns-5",
+   "gruppo": "Guns",
+   "tipo": "M 818",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Guns-6",
+   "gruppo": "Guns",
+   "tipo": "M 818",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech1-1",
+   "gruppo": "Mech1",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech1-2",
+   "gruppo": "Mech1",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech1-3",
+   "gruppo": "Mech1",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech1-4",
+   "gruppo": "Mech1",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech1-5",
+   "gruppo": "Mech1",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech1-6",
+   "gruppo": "Mech1",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech1-7",
+   "gruppo": "Mech1",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech1-8",
+   "gruppo": "Mech1",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech1-9",
+   "gruppo": "Mech1",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech1-10",
+   "gruppo": "Mech1",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech2-1",
+   "gruppo": "Mech2",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech2-2",
+   "gruppo": "Mech2",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech2-3",
+   "gruppo": "Mech2",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech2-4",
+   "gruppo": "Mech2",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech2-5",
+   "gruppo": "Mech2",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech2-6",
+   "gruppo": "Mech2",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech2-7",
+   "gruppo": "Mech2",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech2-8",
+   "gruppo": "Mech2",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech2-9",
+   "gruppo": "Mech2",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech2-10",
+   "gruppo": "Mech2",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech3-1",
+   "gruppo": "Mech3",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech3-2",
+   "gruppo": "Mech3",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech3-3",
+   "gruppo": "Mech3",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech3-4",
+   "gruppo": "Mech3",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech3-5",
+   "gruppo": "Mech3",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech3-6",
+   "gruppo": "Mech3",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech3-7",
+   "gruppo": "Mech3",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech3-8",
+   "gruppo": "Mech3",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech3-9",
+   "gruppo": "Mech3",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Mech3-10",
+   "gruppo": "Mech3",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Armor1-1",
+   "gruppo": "Armor1",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Armor1-2",
+   "gruppo": "Armor1",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Armor1-3",
+   "gruppo": "Armor1",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Armor1-4",
+   "gruppo": "Armor1",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Armor1-5",
+   "gruppo": "Armor1",
+   "tipo": "M-113",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Armor1-6",
+   "gruppo": "Armor1",
+   "tipo": "M-113",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Armor2-1",
+   "gruppo": "Armor2",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Armor2-2",
+   "gruppo": "Armor2",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Armor2-3",
+   "gruppo": "Armor2",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Armor2-4",
+   "gruppo": "Armor2",
+   "tipo": "M-60",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Armor2-5",
+   "gruppo": "Armor2",
+   "tipo": "M-113",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Armor2-6",
+   "gruppo": "Armor2",
+   "tipo": "M-113",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar1-1",
+   "gruppo": "Cedar1",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar1-2",
+   "gruppo": "Cedar1",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar1-3",
+   "gruppo": "Cedar1",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar1-4",
+   "gruppo": "Cedar1",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar1-5",
+   "gruppo": "Cedar1",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar1-6",
+   "gruppo": "Cedar1",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar1-7",
+   "gruppo": "Cedar1",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar1-8",
+   "gruppo": "Cedar1",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar1-9",
+   "gruppo": "Cedar1",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar1-10",
+   "gruppo": "Cedar1",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar2-1",
+   "gruppo": "Cedar2",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar2-2",
+   "gruppo": "Cedar2",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar2-3",
+   "gruppo": "Cedar2",
+   "tipo": "LAV-25",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar2-4",
+   "gruppo": "Cedar2",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar2-5",
+   "gruppo": "Cedar2",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar2-6",
+   "gruppo": "Cedar2",
+   "tipo": "AAV7",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar2-7",
+   "gruppo": "Cedar2",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar2-8",
+   "gruppo": "Cedar2",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar2-9",
+   "gruppo": "Cedar2",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Cedar2-10",
+   "gruppo": "Cedar2",
+   "tipo": "Soldier M4",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger1-1",
+   "gruppo": "Stinger1",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger1-2",
+   "gruppo": "Stinger1",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger1-3",
+   "gruppo": "Stinger1",
+   "tipo": "Stinger comm",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger2-1",
+   "gruppo": "Stinger2",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger2-2",
+   "gruppo": "Stinger2",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger2-3",
+   "gruppo": "Stinger2",
+   "tipo": "Stinger comm",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger3-1",
+   "gruppo": "Stinger3",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger3-2",
+   "gruppo": "Stinger3",
+   "tipo": "Soldier stinger",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Stinger3-3",
+   "gruppo": "Stinger3",
+   "tipo": "Stinger comm",
+   "lato": "blue",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "CVN-71 Theodore Roosevelt",
+   "gruppo": "CVN-71 Roosevelt",
+   "tipo": "CVN_71",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "CG-56 San Jacinto",
+   "gruppo": "CVN-71 Roosevelt",
+   "tipo": "TICONDEROG",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "CG-60 Normandy",
+   "gruppo": "CVN-71 Roosevelt",
+   "tipo": "TICONDEROG",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "FFG-49 Robert G. Bradley",
+   "gruppo": "CVN-71 Roosevelt",
+   "tipo": "PERRY",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "LHA-1 Tarawa",
+   "gruppo": "LHA-1 Tarawa",
+   "tipo": "LHA_Tarawa",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "FFG-36 Underwood",
+   "gruppo": "LHA-1 Tarawa",
+   "tipo": "PERRY",
+   "lato": "blue",
+   "categoria": "ship"
+  },
+  {
+   "nome": "Hammer (SY)-1",
+   "gruppo": "Hammer (SY)",
+   "tipo": "Su-25",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Hammer (SY)-2",
+   "gruppo": "Hammer (SY)",
+   "tipo": "Su-25",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Hammer (SY)-3",
+   "gruppo": "Hammer (SY)",
+   "tipo": "Su-25",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Hammer (SY)-4",
+   "gruppo": "Hammer (SY)",
+   "tipo": "Su-25",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Krivak II (Tartus)",
+   "gruppo": "Squadra sovietica Tartus",
+   "tipo": "REZKY",
+   "lato": "red",
+   "categoria": "ship"
+  },
+  {
+   "nome": "Molniya-1 (Tartus)",
+   "gruppo": "Squadra sovietica Tartus",
+   "tipo": "MOLNIYA",
+   "lato": "red",
+   "categoria": "ship"
+  },
+  {
+   "nome": "Molniya-2 (Tartus)",
+   "gruppo": "Squadra sovietica Tartus",
+   "tipo": "MOLNIYA",
+   "lato": "red",
+   "categoria": "ship"
+  },
+  {
+   "nome": "Molniya-3 (Tartus)",
+   "gruppo": "Squadra sovietica Tartus",
+   "tipo": "MOLNIYA",
+   "lato": "red",
+   "categoria": "ship"
+  },
+  {
+   "nome": "Grisha-1 (Tartus)",
+   "gruppo": "Squadra sovietica Tartus",
+   "tipo": "ALBATROS",
+   "lato": "red",
+   "categoria": "ship"
+  },
+  {
+   "nome": "Grisha-2 (Tartus)",
+   "gruppo": "Squadra sovietica Tartus",
+   "tipo": "ALBATROS",
+   "lato": "red",
+   "categoria": "ship"
+  },
+  {
+   "nome": "Sword-1",
+   "gruppo": "Sword",
+   "tipo": "Su-24M",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Sword-2",
+   "gruppo": "Sword",
+   "tipo": "Su-24M",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Anvil (SY)-1",
+   "gruppo": "Anvil (SY)",
+   "tipo": "Su-17M4",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Anvil (SY)-2",
+   "gruppo": "Anvil (SY)",
+   "tipo": "Su-17M4",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Shield-1",
+   "gruppo": "Shield",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Shield-2",
+   "gruppo": "Shield",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Shield-3",
+   "gruppo": "Shield",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Shield-4",
+   "gruppo": "Shield",
+   "tipo": "MiG-29 Fulcrum",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Watch-1",
+   "gruppo": "Watch",
+   "tipo": "MiG-23MLD",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Watch-2",
+   "gruppo": "Watch",
+   "tipo": "MiG-23MLD",
+   "lato": "red",
+   "categoria": "plane"
+  },
+  {
+   "nome": "Barouk-1",
+   "gruppo": "Barouk",
+   "tipo": "55G6 EWR",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "EWR Slunfeh-1",
+   "gruppo": "EWR Slunfeh",
+   "tipo": "55G6 EWR",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "EWR Qurnat as Sawda-1",
+   "gruppo": "EWR Qurnat as Sawda",
+   "tipo": "55G6 EWR",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "EWR Hermon-1",
+   "gruppo": "EWR Hermon",
+   "tipo": "55G6 EWR",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-1",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "SNR_75V",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-2",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "p-19 s-125 sr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-3",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "S_75_ZIL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-4",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-5",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-6",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-7",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-8",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-9",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco nord-1",
+   "gruppo": "SA-2 Damasco nord",
+   "tipo": "SNR_75V",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco nord-2",
+   "gruppo": "SA-2 Damasco nord",
+   "tipo": "p-19 s-125 sr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco nord-3",
+   "gruppo": "SA-2 Damasco nord",
+   "tipo": "S_75_ZIL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco nord-4",
+   "gruppo": "SA-2 Damasco nord",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco nord-5",
+   "gruppo": "SA-2 Damasco nord",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco nord-6",
+   "gruppo": "SA-2 Damasco nord",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco nord-7",
+   "gruppo": "SA-2 Damasco nord",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco nord-8",
+   "gruppo": "SA-2 Damasco nord",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco nord-9",
+   "gruppo": "SA-2 Damasco nord",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-1",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "SNR_75V",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-2",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "p-19 s-125 sr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-3",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75_ZIL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-4",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-5",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-6",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-7",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-8",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Damasco sud-9",
+   "gruppo": "SA-2 Damasco sud",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Damasco ovest-1",
+   "gruppo": "SA-3 Damasco ovest",
+   "tipo": "snr s-125 tr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Damasco ovest-2",
+   "gruppo": "SA-3 Damasco ovest",
+   "tipo": "p-19 s-125 sr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Damasco ovest-3",
+   "gruppo": "SA-3 Damasco ovest",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Damasco ovest-4",
+   "gruppo": "SA-3 Damasco ovest",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Damasco ovest-5",
+   "gruppo": "SA-3 Damasco ovest",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-3 Damasco ovest-6",
+   "gruppo": "SA-3 Damasco ovest",
+   "tipo": "5p73 s-125 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Crest6-1",
+   "gruppo": "Crest6",
+   "tipo": "Kub 1S91 str",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Crest6-2",
+   "gruppo": "Crest6",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Crest6-3",
+   "gruppo": "Crest6",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Crest6-4",
+   "gruppo": "Crest6",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Crest6-5",
+   "gruppo": "Crest6",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Chouf6-1",
+   "gruppo": "Chouf6",
+   "tipo": "Kub 1S91 str",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Chouf6-2",
+   "gruppo": "Chouf6",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Chouf6-3",
+   "gruppo": "Chouf6",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Chouf6-4",
+   "gruppo": "Chouf6",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Chouf6-5",
+   "gruppo": "Chouf6",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "North6-1",
+   "gruppo": "North6",
+   "tipo": "Kub 1S91 str",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "North6-2",
+   "gruppo": "North6",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "North6-3",
+   "gruppo": "North6",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "North6-4",
+   "gruppo": "North6",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "North6-5",
+   "gruppo": "North6",
+   "tipo": "Kub 2P25 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Crest8-1",
+   "gruppo": "Crest8",
+   "tipo": "Osa 9A33 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Crest8-2",
+   "gruppo": "Crest8",
+   "tipo": "Osa 9A33 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Chouf8-1",
+   "gruppo": "Chouf8",
+   "tipo": "Osa 9A33 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Chouf8-2",
+   "gruppo": "Chouf8",
+   "tipo": "Osa 9A33 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "North8-1",
+   "gruppo": "North8",
+   "tipo": "Osa 9A33 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "North8-2",
+   "gruppo": "North8",
+   "tipo": "Osa 9A33 ln",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "FarayaAA-1",
+   "gruppo": "FarayaAA",
+   "tipo": "SON_9",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "FarayaAA-2",
+   "gruppo": "FarayaAA",
+   "tipo": "S-60_Type59_Artillery",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "FarayaAA-3",
+   "gruppo": "FarayaAA",
+   "tipo": "S-60_Type59_Artillery",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "FarayaAA-4",
+   "gruppo": "FarayaAA",
+   "tipo": "S-60_Type59_Artillery",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "FarayaAA-5",
+   "gruppo": "FarayaAA",
+   "tipo": "S-60_Type59_Artillery",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "FarayaAA-6",
+   "gruppo": "FarayaAA",
+   "tipo": "ZSU-23-4 Shilka",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun1-1",
+   "gruppo": "Gun1",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun1-2",
+   "gruppo": "Gun1",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun1-3",
+   "gruppo": "Gun1",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun1-4",
+   "gruppo": "Gun1",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun1-5",
+   "gruppo": "Gun1",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun1-6",
+   "gruppo": "Gun1",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun2-1",
+   "gruppo": "Gun2",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun2-2",
+   "gruppo": "Gun2",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun2-3",
+   "gruppo": "Gun2",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun2-4",
+   "gruppo": "Gun2",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun2-5",
+   "gruppo": "Gun2",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun2-6",
+   "gruppo": "Gun2",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun3-1",
+   "gruppo": "Gun3",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun3-2",
+   "gruppo": "Gun3",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun3-3",
+   "gruppo": "Gun3",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun3-4",
+   "gruppo": "Gun3",
+   "tipo": "SAU Gvozdika",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun3-5",
+   "gruppo": "Gun3",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Gun3-6",
+   "gruppo": "Gun3",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad1-1",
+   "gruppo": "Grad1",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad1-2",
+   "gruppo": "Grad1",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad1-3",
+   "gruppo": "Grad1",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad1-4",
+   "gruppo": "Grad1",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad1-5",
+   "gruppo": "Grad1",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad2-1",
+   "gruppo": "Grad2",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad2-2",
+   "gruppo": "Grad2",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad2-3",
+   "gruppo": "Grad2",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad2-4",
+   "gruppo": "Grad2",
+   "tipo": "Grad-URAL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Grad2-5",
+   "gruppo": "Grad2",
+   "tipo": "Ural-375",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Wall (SY)-1",
+   "gruppo": "Wall (SY)",
+   "tipo": "T-72B",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Wall (SY)-2",
+   "gruppo": "Wall (SY)",
+   "tipo": "T-72B",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Wall (SY)-3",
+   "gruppo": "Wall (SY)",
+   "tipo": "T-72B",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Wall (SY)-4",
+   "gruppo": "Wall (SY)",
+   "tipo": "T-72B",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Wall (SY)-5",
+   "gruppo": "Wall (SY)",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Wall (SY)-6",
+   "gruppo": "Wall (SY)",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Line-1",
+   "gruppo": "Line",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Line-2",
+   "gruppo": "Line",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Line-3",
+   "gruppo": "Line",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Line-4",
+   "gruppo": "Line",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Line-5",
+   "gruppo": "Line",
+   "tipo": "BTR-70",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Line-6",
+   "gruppo": "Line",
+   "tipo": "BTR-70",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Line-7",
+   "gruppo": "Line",
+   "tipo": "Infantry AK",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Line-8",
+   "gruppo": "Line",
+   "tipo": "Infantry AK",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Line-9",
+   "gruppo": "Line",
+   "tipo": "Infantry AK",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Line-10",
+   "gruppo": "Line",
+   "tipo": "Infantry AK",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Spear-1",
+   "gruppo": "Spear",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Spear-2",
+   "gruppo": "Spear",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Spear-3",
+   "gruppo": "Spear",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Spear-4",
+   "gruppo": "Spear",
+   "tipo": "BMP-1",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Spear-5",
+   "gruppo": "Spear",
+   "tipo": "BTR-70",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Spear-6",
+   "gruppo": "Spear",
+   "tipo": "BTR-70",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Spear-7",
+   "gruppo": "Spear",
+   "tipo": "Infantry AK",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Spear-8",
+   "gruppo": "Spear",
+   "tipo": "Infantry AK",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Spear-9",
+   "gruppo": "Spear",
+   "tipo": "Infantry AK",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "Spear-10",
+   "gruppo": "Spear",
+   "tipo": "Infantry AK",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "AleyAA-1",
+   "gruppo": "AleyAA",
+   "tipo": "ZSU-23-4 Shilka",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "AleyAA-2",
+   "gruppo": "AleyAA",
+   "tipo": "ZSU-23-4 Shilka",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "AleyAA-3",
+   "gruppo": "AleyAA",
+   "tipo": "Strela-1 9P31",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SofarAA-1",
+   "gruppo": "SofarAA",
+   "tipo": "ZSU-23-4 Shilka",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SofarAA-2",
+   "gruppo": "SofarAA",
+   "tipo": "ZSU-23-4 Shilka",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SofarAA-3",
+   "gruppo": "SofarAA",
+   "tipo": "Strela-1 9P31",
+   "lato": "red",
+   "categoria": "vehicle"
+  }
+ ],
+ "fuori_missione": [
+  "SA-2 Dumayr",
+  "SA-2 Al Qusayr",
+  "SA-2 Tartus",
+  "SA-3 Damasco est",
+  "SA-2 Homs",
+  "SA-3 Homs",
+  "SA-2 Hama",
+  "SA-3 Hama",
+  "SA-2 Aleppo",
+  "SA-3 Aleppo",
+  "SA-2 Latakia",
+  "SA-3 Latakia",
+  "SA-3 Tartus"
+ ],
+ "prestazioni": {
+  "plane": 23,
+  "helicopter": 2,
+  "vehicle": 207,
+  "ship": 12,
+  "static": 0,
+  "totale": 244,
+  "aerei_in_volo_picco": 25,
+  "terra_vicino_giocatore": 132
+ }
+}

@@ -14,14 +14,17 @@ spiegando nel diario perche'.
 
 ## 1. Priorita' assolute: la portaerei e la squadra navale russa
 - La portaerei e' la sola sconfitta possibile in un giorno solo e la base di quasi tutta l'aviazione:
-  **va tenuta a distanza di sicurezza** (a ovest/nord di Cipro, cambiando posizione), protetta da una
-  barriera continua di F-14 sull'asse Latakia-Tartus e da un E-2C sempre in volo con orbita verso
-  nord-est.
-- **La squadra navale russa di Tartus e' priorita' assoluta**: non basta tenerla sotto controllo, va
-  neutralizzata (attacco antinave con Harpoon, F/A-18 e A-6E) appena possibile, accettando il peso
-  politico. Finche' esiste e' una minaccia permanente alla flotta.
+  **va tenuta a distanza di sicurezza**: opera tra Cipro e il Libano (partenza N33.35 E33.30), sempre
+  ad **almeno 150 nm da Tartus**, cambiando posizione; se il vento la spingerebbe verso Tartus, tratta
+  di riposizionamento senza voli. Protetta da una barriera continua di F-14 tra la flotta e l'asse
+  Latakia-Tartus e da un E-2C sempre in volo con orbita verso nord-est.
+- **La squadra navale russa di Tartus** (niente Slava: Krivak II, Tarantul III con missili antinave a
+  corto-medio raggio, Grisha, un Kilo) e' una minaccia minore con la portaerei a 150 nm: si tiene
+  sotto sorveglianza (E-2C, barriera) e si attacca con Harpoon (F/A-18, A-6E) se esce dal porto verso
+  la flotta o la Tarawa, o quando conviene; non e' piu' il primo obiettivo della campagna.
 - Minacce antinave da sorvegliare: Tu-22M3 con Kh-22 (da est, in quota, lancio da lontano), Su-24M
-  bassi dalla costa, sottomarino Kilo.
+  bassi dalla costa, Tarantul in uscita da Tartus, sottomarino Kilo. La Tarawa, vicina alla costa, e'
+  la nave piu' esposta.
 
 ## 2. AIM-54: risorsa preziosa
 - Gli AIM-54 sono pochi e sono il **deterrente contro i bombardieri antinave**: si usano con
@@ -36,9 +39,13 @@ spiegando nel diario perche'.
   **SA-2** (portata circa 40 km, alta quota): attorno alle citta' e in una fascia vicina al Libano
   (Al Qusayr, Baalbek nella Bekaa, Tartus sulla costa, Dumayr). Gli SA-2 della fascia vicina
   limitano la media e alta quota sopra la Bekaa, il nord del Libano e la costa di Tartus: barriere,
-  CAP, AWACS e cisterne vanno tenuti **fuori dalle portate note** (SA-2 e difesa dello Slava a Tartus).
+  CAP, AWACS e cisterne vanno tenuti **fuori dalle portate note** (SA-2/SA-3 di Tartus e di Latakia).
+- **Niente A-50 nemico**: la scoperta rossa si affida ai radar a terra, con tre siti fissi sulle
+  alture (Jabal Ansariya, Libano nord, Hermon). Sotto il loro orizzonte radar (bassa quota dal mare,
+  valli, rilievo) i nostri voli arrivano non visti.
 - Ordine di priorita':
-  1. radar di sorveglianza della costa e dell'Antilibano (P-19/P-14): accecare la rete;
+  1. i tre siti radar di scoperta fissi sulle alture (Jabal Ansariya, Libano nord, Hermon): senza A-50
+     sono gli occhi della rete; HARM e strike appena localizzati (Hermon: rotte lontane da Israele);
   2. **SA-2 della fascia vicina al Libano** che chiudono l'area operativa (Baalbek, Al Qusayr):
      siti fissi e noti, radar di tiro unico; pacchetto con TALD, HARM e strike sul radar;
   3. SA-6 sull'asse dell'avanzata (Chouf, Sofar, Dahr el-Baidar);
@@ -55,7 +62,7 @@ spiegando nel diario perche'.
 - HARM limitati: lanciati dove c'e' un bersaglio probabile.
 
 ## 4. Strategia d'attacco
-- Fasi: difesa della flotta e Tartus -> accecare la rete -> SA-2 della fascia vicina -> SAM del fronte -> interdizione e
+- Fasi: difesa della flotta (sorveglianza di Tartus) -> accecare la rete -> SA-2 della fascia vicina -> SAM del fronte -> interdizione e
   appoggio all'avanzata.
 - **Pacchetti coordinati, mai voli isolati**: esche (TALD), SEAD 2-4 minuti prima dello strike, scorta,
   strike con un solo passaggio. Se il pacchetto perde la SEAD o la scorta, lo strike rientra.

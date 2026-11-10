@@ -1,0 +1,6858 @@
+{
+ "blocco": 1,
+ "gruppi": [
+  {
+   "lato": "red",
+   "nome": "Barouk",
+   "sistema": "ewr",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "55G6 EWR",
+      "avanti": 0.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -143646.40000000002,
+      "y": -21668.100000000006,
+      "rotta": 280.0
+     },
+     "2": {
+      "x": -147646.40000000002,
+      "y": -21568.100000000006,
+      "rotta": 280.0
+     },
+     "3": {
+      "x": -151646.40000000002,
+      "y": -17668.100000000006,
+      "rotta": 280.0
+     },
+     "4": {
+      "x": -149787.82135623734,
+      "y": -16809.521356237314,
+      "rotta": 280.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "Barouk",
+    "sistema": "ewr",
+    "missione": "difesa",
+    "lat_lon": [
+     33.72234,
+     35.71437
+    ],
+    "dettagli": {
+     "visibilita": 0.92,
+     "rilievo_m": -100,
+     "dist_obiettivo_km": 4.7,
+     "pendenza": 14,
+     "strada_m": 10,
+     "vegetazione": 11,
+     "quota": 1317,
+     "candidati_validi": 16,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 5.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 4,
+    "name": "Barouk",
+    "x": -143646.40000000002,
+    "y": -21668.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "55G6 EWR",
+      "x": -143646.40000000002,
+      "y": -21668.100000000006,
+      "name": "Barouk-1",
+      "heading": 4.886921905584122,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 13
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 1317.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -143646.40000000002,
+       "y": -21668.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "EWR Slunfeh",
+   "sistema": "ewr",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "55G6 EWR",
+      "avanti": 0.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": 68860.70000000001,
+      "y": 23361.5,
+      "rotta": 270.0
+     },
+     "2": {
+      "x": 74860.70000000001,
+      "y": 27361.5,
+      "rotta": 270.0
+     },
+     "3": {
+      "x": 58860.70000000001,
+      "y": 41361.5,
+      "rotta": 270.0
+     },
+     "4": {
+      "x": 52931.410678118664,
+      "y": 39432.21067811865,
+      "rotta": 270.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "EWR Slunfeh",
+    "sistema": "ewr",
+    "missione": "difesa",
+    "lat_lon": [
+     35.64833,
+     36.13448
+    ],
+    "dettagli": {
+     "visibilita": 0.97,
+     "rilievo_m": 100,
+     "dist_obiettivo_km": 8.6,
+     "pendenza": 13,
+     "strada_m": 420,
+     "vegetazione": 26,
+     "quota": 869,
+     "candidati_validi": 22,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 15.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 5,
+    "name": "EWR Slunfeh",
+    "x": 68860.70000000001,
+    "y": 23361.5,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "55G6 EWR",
+      "x": 68860.70000000001,
+      "y": 23361.5,
+      "name": "EWR Slunfeh-1",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 14
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 869.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": 68860.70000000001,
+       "y": 23361.5,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "EWR Qurnat as Sawda",
+   "sistema": "ewr",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "55G6 EWR",
+      "avanti": 0.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -91446.40000000002,
+      "y": 8331.899999999994,
+      "rotta": 255.0
+     },
+     "2": {
+      "x": -81646.40000000002,
+      "y": 9331.899999999994,
+      "rotta": 255.0
+     },
+     "3": {
+      "x": -75646.40000000002,
+      "y": 6331.899999999994,
+      "rotta": 255.0
+     },
+     "4": {
+      "x": -74646.40000000002,
+      "y": 17331.899999999994,
+      "rotta": 255.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "EWR Qurnat as Sawda",
+    "sistema": "ewr",
+    "missione": "difesa",
+    "lat_lon": [
+     34.20068,
+     36.02135
+    ],
+    "dettagli": {
+     "visibilita": 0.81,
+     "rilievo_m": 100,
+     "dist_obiettivo_km": 13.7,
+     "pendenza": 15,
+     "strada_m": 130,
+     "vegetazione": 18,
+     "quota": 2500,
+     "candidati_validi": 90,
+     "scorrimento_m": 200,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 15.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 6,
+    "name": "EWR Qurnat as Sawda",
+    "x": -91446.40000000002,
+    "y": 8331.899999999994,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "55G6 EWR",
+      "x": -91446.40000000002,
+      "y": 8331.899999999994,
+      "name": "EWR Qurnat as Sawda-1",
+      "heading": 4.4505895925855405,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 15
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 2504.7999999999997,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -91446.40000000002,
+       "y": 8331.899999999994,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "EWR Hermon",
+   "sistema": "ewr",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "55G6 EWR",
+      "avanti": 0.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -171646.40000000002,
+      "y": 16331.899999999994,
+      "rotta": 245.0
+     },
+     "2": {
+      "x": -173646.40000000002,
+      "y": 14431.899999999994,
+      "rotta": 245.0
+     },
+     "3": {
+      "x": -171575.68932188136,
+      "y": 10402.610678118648,
+      "rotta": 245.0
+     },
+     "4": {
+      "x": -170646.40000000002,
+      "y": 12331.899999999994,
+      "rotta": 245.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "EWR Hermon",
+    "sistema": "ewr",
+    "missione": "difesa",
+    "lat_lon": [
+     33.48034,
+     36.13233
+    ],
+    "dettagli": {
+     "visibilita": 0.7,
+     "rilievo_m": 100,
+     "dist_obiettivo_km": 8.0,
+     "pendenza": 3,
+     "strada_m": 640,
+     "vegetazione": 21,
+     "quota": 1137,
+     "candidati_validi": 86,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 8.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 7,
+    "name": "EWR Hermon",
+    "x": -171646.40000000002,
+    "y": 16331.899999999994,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "55G6 EWR",
+      "x": -171646.40000000002,
+      "y": 16331.899999999994,
+      "name": "EWR Hermon-1",
+      "heading": 4.276056667386108,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 16
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 1137.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -171646.40000000002,
+       "y": 16331.899999999994,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-2 Baalbek",
+   "sistema": "sa2",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "SNR_75V",
+      "avanti": 0.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "p-19 s-125 sr",
+      "avanti": -160.0,
+      "destra": 20.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "S_75_ZIL",
+      "avanti": -220.0,
+      "destra": -60.0,
+      "rotta": 90.0
+     },
+     "4": {
+      "tipo": "S_75M_Volhov",
+      "avanti": 73.6121593216773,
+      "destra": 42.49999999999999,
+      "rotta": 29.999999999999996
+     },
+     "5": {
+      "tipo": "S_75M_Volhov",
+      "avanti": 5.204748896376251e-15,
+      "destra": 85.0,
+      "rotta": 90.0
+     },
+     "6": {
+      "tipo": "S_75M_Volhov",
+      "avanti": -73.6121593216773,
+      "destra": 42.49999999999999,
+      "rotta": 150.0
+     },
+     "7": {
+      "tipo": "S_75M_Volhov",
+      "avanti": -73.61215932167728,
+      "destra": -42.50000000000001,
+      "rotta": 210.00000000000003
+     },
+     "8": {
+      "tipo": "S_75M_Volhov",
+      "avanti": -1.5614246689128753e-14,
+      "destra": -85.0,
+      "rotta": 270.0
+     },
+     "9": {
+      "tipo": "S_75M_Volhov",
+      "avanti": 73.61215932167727,
+      "destra": -42.500000000000036,
+      "rotta": 330.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -111646.40000000002,
+      "y": 28331.899999999994,
+      "rotta": 255.0
+     },
+     "2": {
+      "x": -108646.40000000002,
+      "y": 24331.899999999994,
+      "rotta": 255.0
+     },
+     "3": {
+      "x": -109646.40000000002,
+      "y": 20331.899999999994,
+      "rotta": 255.0
+     },
+     "4": {
+      "x": -118646.40000000002,
+      "y": 23331.899999999994,
+      "rotta": 255.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "SA-2 Baalbek",
+    "sistema": "sa2",
+    "missione": "difesa",
+    "lat_lon": [
+     34.02379,
+     36.24408
+    ],
+    "dettagli": {
+     "visibilita": 0.88,
+     "rilievo_m": 2,
+     "dist_obiettivo_km": 3.5,
+     "pendenza": 5,
+     "strada_m": 50,
+     "vegetazione": 4,
+     "quota": 1318,
+     "candidati_validi": 12,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 6.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 8,
+    "name": "SA-2 Baalbek",
+    "x": -111646.40000000002,
+    "y": 28331.899999999994,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "SNR_75V",
+      "x": -111646.40000000002,
+      "y": 28331.899999999994,
+      "name": "SA-2 Baalbek-1",
+      "heading": 4.4505895925855405,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 17
+     },
+     "2": {
+      "type": "p-19 s-125 sr",
+      "x": -111585.67043625785,
+      "y": 28481.271751304193,
+      "name": "SA-2 Baalbek-2",
+      "heading": 4.4505895925855405,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 18
+     },
+     "3": {
+      "type": "S_75_ZIL",
+      "x": -111647.41535965481,
+      "y": 28559.93282448974,
+      "name": "SA-2 Baalbek-3",
+      "heading": 6.021385919380437,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 19
+     },
+     "4": {
+      "type": "S_75M_Volhov",
+      "x": -111624.40038116631,
+      "y": 28249.796304765423,
+      "name": "SA-2 Baalbek-4",
+      "heading": 4.974188368183839,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 20
+     },
+     "5": {
+      "type": "S_75M_Volhov",
+      "x": -111564.29630476545,
+      "y": 28309.90038116628,
+      "name": "SA-2 Baalbek-5",
+      "heading": 6.021385919380437,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 21
+     },
+     "6": {
+      "type": "S_75M_Volhov",
+      "x": -111586.29592359916,
+      "y": 28392.004076400848,
+      "name": "SA-2 Baalbek-6",
+      "heading": 0.7853981633974483,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 22
+     },
+     "7": {
+      "type": "S_75M_Volhov",
+      "x": -111668.39961883373,
+      "y": 28414.003695234565,
+      "name": "SA-2 Baalbek-7",
+      "heading": 1.8325957145940461,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 23
+     },
+     "8": {
+      "type": "S_75M_Volhov",
+      "x": -111728.5036952346,
+      "y": 28353.899618833708,
+      "name": "SA-2 Baalbek-8",
+      "heading": 2.8797932657906435,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 24
+     },
+     "9": {
+      "type": "S_75M_Volhov",
+      "x": -111706.50407640089,
+      "y": 28271.79592359914,
+      "name": "SA-2 Baalbek-9",
+      "heading": 3.9269908169872414,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 25
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 1318.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -111646.40000000002,
+       "y": 28331.899999999994,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-2 Damasco nord",
+   "sistema": "sa2",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "SNR_75V",
+      "avanti": 0.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "p-19 s-125 sr",
+      "avanti": -160.0,
+      "destra": 20.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "S_75_ZIL",
+      "avanti": -220.0,
+      "destra": -60.0,
+      "rotta": 90.0
+     },
+     "4": {
+      "tipo": "S_75M_Volhov",
+      "avanti": 73.6121593216773,
+      "destra": 42.49999999999999,
+      "rotta": 29.999999999999996
+     },
+     "5": {
+      "tipo": "S_75M_Volhov",
+      "avanti": 5.204748896376251e-15,
+      "destra": 85.0,
+      "rotta": 90.0
+     },
+     "6": {
+      "tipo": "S_75M_Volhov",
+      "avanti": -73.6121593216773,
+      "destra": 42.49999999999999,
+      "rotta": 150.0
+     },
+     "7": {
+      "tipo": "S_75M_Volhov",
+      "avanti": -73.61215932167728,
+      "destra": -42.50000000000001,
+      "rotta": 210.00000000000003
+     },
+     "8": {
+      "tipo": "S_75M_Volhov",
+      "avanti": -1.5614246689128753e-14,
+      "destra": -85.0,
+      "rotta": 270.0
+     },
+     "9": {
+      "tipo": "S_75M_Volhov",
+      "avanti": 73.61215932167727,
+      "destra": -42.500000000000036,
+      "rotta": 330.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -159646.40000000002,
+      "y": 30331.899999999994,
+      "rotta": 255.0
+     },
+     "2": {
+      "x": -157646.40000000002,
+      "y": 29331.899999999994,
+      "rotta": 255.0
+     },
+     "3": {
+      "x": -163646.40000000002,
+      "y": 22331.899999999994,
+      "rotta": 255.0
+     },
+     "4": {
+      "x": -158646.40000000002,
+      "y": 27331.899999999994,
+      "rotta": 255.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "SA-2 Damasco nord",
+    "sistema": "sa2",
+    "missione": "difesa",
+    "lat_lon": [
+     33.59184,
+     36.27945
+    ],
+    "dettagli": {
+     "visibilita": 0.76,
+     "rilievo_m": 35,
+     "dist_obiettivo_km": 3.0,
+     "pendenza": 2,
+     "strada_m": 300,
+     "vegetazione": 0,
+     "quota": 992,
+     "candidati_validi": 17,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 6.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 9,
+    "name": "SA-2 Damasco nord",
+    "x": -159646.40000000002,
+    "y": 30331.899999999994,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "SNR_75V",
+      "x": -159646.40000000002,
+      "y": 30331.899999999994,
+      "name": "SA-2 Damasco nord-1",
+      "heading": 4.4505895925855405,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 26
+     },
+     "2": {
+      "type": "p-19 s-125 sr",
+      "x": -159585.67043625782,
+      "y": 30481.271751304193,
+      "name": "SA-2 Damasco nord-2",
+      "heading": 4.4505895925855405,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 27
+     },
+     "3": {
+      "type": "S_75_ZIL",
+      "x": -159647.4153596548,
+      "y": 30559.93282448974,
+      "name": "SA-2 Damasco nord-3",
+      "heading": 6.021385919380437,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 28
+     },
+     "4": {
+      "type": "S_75M_Volhov",
+      "x": -159624.4003811663,
+      "y": 30249.796304765423,
+      "name": "SA-2 Damasco nord-4",
+      "heading": 4.974188368183839,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 29
+     },
+     "5": {
+      "type": "S_75M_Volhov",
+      "x": -159564.29630476545,
+      "y": 30309.90038116628,
+      "name": "SA-2 Damasco nord-5",
+      "heading": 6.021385919380437,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 30
+     },
+     "6": {
+      "type": "S_75M_Volhov",
+      "x": -159586.29592359916,
+      "y": 30392.004076400848,
+      "name": "SA-2 Damasco nord-6",
+      "heading": 0.7853981633974483,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 31
+     },
+     "7": {
+      "type": "S_75M_Volhov",
+      "x": -159668.39961883373,
+      "y": 30414.003695234565,
+      "name": "SA-2 Damasco nord-7",
+      "heading": 1.8325957145940461,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 32
+     },
+     "8": {
+      "type": "S_75M_Volhov",
+      "x": -159728.5036952346,
+      "y": 30353.899618833708,
+      "name": "SA-2 Damasco nord-8",
+      "heading": 2.8797932657906435,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 33
+     },
+     "9": {
+      "type": "S_75M_Volhov",
+      "x": -159706.5040764009,
+      "y": 30271.79592359914,
+      "name": "SA-2 Damasco nord-9",
+      "heading": 3.9269908169872414,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 34
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 992.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -159646.40000000002,
+       "y": 30331.899999999994,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-2 Damasco sud",
+   "sistema": "sa2",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "SNR_75V",
+      "avanti": 0.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "p-19 s-125 sr",
+      "avanti": -160.0,
+      "destra": 20.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "S_75_ZIL",
+      "avanti": -220.0,
+      "destra": -60.0,
+      "rotta": 90.0
+     },
+     "4": {
+      "tipo": "S_75M_Volhov",
+      "avanti": 73.6121593216773,
+      "destra": 42.49999999999999,
+      "rotta": 29.999999999999996
+     },
+     "5": {
+      "tipo": "S_75M_Volhov",
+      "avanti": 5.204748896376251e-15,
+      "destra": 85.0,
+      "rotta": 90.0
+     },
+     "6": {
+      "tipo": "S_75M_Volhov",
+      "avanti": -73.6121593216773,
+      "destra": 42.49999999999999,
+      "rotta": 150.0
+     },
+     "7": {
+      "tipo": "S_75M_Volhov",
+      "avanti": -73.61215932167728,
+      "destra": -42.50000000000001,
+      "rotta": 210.00000000000003
+     },
+     "8": {
+      "tipo": "S_75M_Volhov",
+      "avanti": -1.5614246689128753e-14,
+      "destra": -85.0,
+      "rotta": 270.0
+     },
+     "9": {
+      "tipo": "S_75M_Volhov",
+      "avanti": 73.61215932167727,
+      "destra": -42.500000000000036,
+      "rotta": 330.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -178575.68932188136,
+      "y": 45402.610678118646,
+      "rotta": 255.0
+     },
+     "2": {
+      "x": -177646.40000000002,
+      "y": 40331.899999999994,
+      "rotta": 255.0
+     },
+     "3": {
+      "x": -181646.40000000002,
+      "y": 44331.899999999994,
+      "rotta": 255.0
+     },
+     "4": {
+      "x": -183646.40000000002,
+      "y": 46331.899999999994,
+      "rotta": 255.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "SA-2 Damasco sud",
+    "sistema": "sa2",
+    "missione": "difesa",
+    "lat_lon": [
+     33.42474,
+     36.44672
+    ],
+    "dettagli": {
+     "visibilita": 0.9,
+     "rilievo_m": -1,
+     "dist_obiettivo_km": 5.0,
+     "pendenza": 0,
+     "strada_m": 0,
+     "vegetazione": 10,
+     "quota": 614,
+     "candidati_validi": 36,
+     "scorrimento_m": 100,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 6.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 10,
+    "name": "SA-2 Damasco sud",
+    "x": -178575.68932188136,
+    "y": 45402.610678118646,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "SNR_75V",
+      "x": -178575.68932188136,
+      "y": 45402.610678118646,
+      "name": "SA-2 Damasco sud-1",
+      "heading": 4.4505895925855405,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 35
+     },
+     "2": {
+      "type": "p-19 s-125 sr",
+      "x": -178514.95975813916,
+      "y": 45551.982429422846,
+      "name": "SA-2 Damasco sud-2",
+      "heading": 4.4505895925855405,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 36
+     },
+     "3": {
+      "type": "S_75_ZIL",
+      "x": -178576.70468153615,
+      "y": 45630.64350260839,
+      "name": "SA-2 Damasco sud-3",
+      "heading": 6.021385919380437,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 37
+     },
+     "4": {
+      "type": "S_75M_Volhov",
+      "x": -178553.68970304765,
+      "y": 45320.50698288408,
+      "name": "SA-2 Damasco sud-4",
+      "heading": 4.974188368183839,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 38
+     },
+     "5": {
+      "type": "S_75M_Volhov",
+      "x": -178493.5856266468,
+      "y": 45380.61105928493,
+      "name": "SA-2 Damasco sud-5",
+      "heading": 6.021385919380437,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 39
+     },
+     "6": {
+      "type": "S_75M_Volhov",
+      "x": -178515.5852454805,
+      "y": 45462.714754519504,
+      "name": "SA-2 Damasco sud-6",
+      "heading": 0.7853981633974483,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 40
+     },
+     "7": {
+      "type": "S_75M_Volhov",
+      "x": -178597.68894071507,
+      "y": 45484.714373353214,
+      "name": "SA-2 Damasco sud-7",
+      "heading": 1.8325957145940461,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 41
+     },
+     "8": {
+      "type": "S_75M_Volhov",
+      "x": -178657.79301711594,
+      "y": 45424.61029695236,
+      "name": "SA-2 Damasco sud-8",
+      "heading": 2.8797932657906435,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 42
+     },
+     "9": {
+      "type": "S_75M_Volhov",
+      "x": -178635.79339828223,
+      "y": 45342.50660171779,
+      "name": "SA-2 Damasco sud-9",
+      "heading": 3.9269908169872414,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 43
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 613.7878679656438,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -178575.68932188136,
+       "y": 45402.610678118646,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Hawk",
+   "sistema": "hawk",
+   "lua": {
+    "paese": 2,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "Hawk pcp",
+      "avanti": 0.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "Hawk sr",
+      "avanti": -120.0,
+      "destra": -40.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "Hawk tr",
+      "avanti": 40.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "Hawk ln",
+      "avanti": 120.0,
+      "destra": -110.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "Hawk ln",
+      "avanti": 150.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "6": {
+      "tipo": "Hawk ln",
+      "avanti": 120.0,
+      "destra": 110.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -117646.40000000002,
+      "y": -29468.100000000006,
+      "rotta": 130.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "blue",
+    "nome": "Hawk",
+    "sistema": "hawk",
+    "missione": "difesa",
+    "lat_lon": [
+     33.95416,
+     35.62111
+    ],
+    "dettagli": {
+     "visibilita": 0.35,
+     "rilievo_m": 47,
+     "dist_obiettivo_km": 3.6,
+     "pendenza": 3,
+     "strada_m": 180,
+     "vegetazione": 4,
+     "quota": 205,
+     "candidati_validi": 1,
+     "scorrimento_m": 200,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 6.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 11,
+    "name": "Hawk",
+    "x": -117646.40000000002,
+    "y": -29468.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "Hawk pcp",
+      "x": -117646.40000000002,
+      "y": -29468.100000000006,
+      "name": "Hawk-1",
+      "heading": 2.2689280275926285,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 44
+     },
+     "2": {
+      "type": "Hawk sr",
+      "x": -117538.62370911289,
+      "y": -29534.31382878682,
+      "name": "Hawk-2",
+      "heading": 2.2689280275926285,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 45
+     },
+     "3": {
+      "type": "Hawk tr",
+      "x": -117672.11150438749,
+      "y": -29437.458222275247,
+      "name": "Hawk-3",
+      "heading": 2.2689280275926285,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 46
+     },
+     "4": {
+      "type": "Hawk ln",
+      "x": -117639.26962441932,
+      "y": -29305.46802976021,
+      "name": "Hawk-4",
+      "heading": 2.2689280275926285,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 47
+     },
+     "5": {
+      "type": "Hawk ln",
+      "x": -117742.818141453,
+      "y": -29353.19333353216,
+      "name": "Hawk-5",
+      "heading": 2.2689280275926285,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 48
+     },
+     "6": {
+      "type": "Hawk ln",
+      "x": -117807.79940190549,
+      "y": -29446.88130389125,
+      "name": "Hawk-6",
+      "heading": 2.2689280275926285,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 49
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 224.6000000000003,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -117646.40000000002,
+       "y": -29468.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-3 Damasco ovest",
+   "sistema": "sa3",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "snr s-125 tr",
+      "avanti": 0.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "p-19 s-125 sr",
+      "avanti": -130.0,
+      "destra": -20.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "5p73 s-125 ln",
+      "avanti": 45.96194077712559,
+      "destra": 45.961940777125584,
+      "rotta": 45.0
+     },
+     "4": {
+      "tipo": "5p73 s-125 ln",
+      "avanti": -45.961940777125584,
+      "destra": 45.96194077712559,
+      "rotta": 135.0
+     },
+     "5": {
+      "tipo": "5p73 s-125 ln",
+      "avanti": -45.9619407771256,
+      "destra": -45.961940777125584,
+      "rotta": 225.0
+     },
+     "6": {
+      "tipo": "5p73 s-125 ln",
+      "avanti": 45.96194077712558,
+      "destra": -45.9619407771256,
+      "rotta": 315.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -180646.40000000002,
+      "y": 18331.899999999994,
+      "rotta": 255.0
+     },
+     "2": {
+      "x": -176546.40000000002,
+      "y": 24331.899999999994,
+      "rotta": 255.0
+     },
+     "3": {
+      "x": -178646.40000000002,
+      "y": 19331.899999999994,
+      "rotta": 255.0
+     },
+     "4": {
+      "x": -176646.40000000002,
+      "y": 21331.899999999994,
+      "rotta": 255.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "SA-3 Damasco ovest",
+    "sistema": "sa3",
+    "missione": "difesa",
+    "lat_lon": [
+     33.39975,
+     36.15647
+    ],
+    "dettagli": {
+     "visibilita": 0.93,
+     "rilievo_m": 0,
+     "dist_obiettivo_km": 6.0,
+     "pendenza": 1,
+     "strada_m": 130,
+     "vegetazione": 0,
+     "quota": 759,
+     "candidati_validi": 16,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 6.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 12,
+    "name": "SA-3 Damasco ovest",
+    "x": -180646.40000000002,
+    "y": 18331.899999999994,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "snr s-125 tr",
+      "x": -180646.40000000002,
+      "y": 18331.899999999994,
+      "name": "SA-3 Damasco ovest-1",
+      "heading": 4.4505895925855405,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 50
+     },
+     "2": {
+      "type": "p-19 s-125 sr",
+      "x": -180632.0720406625,
+      "y": 18462.646738319625,
+      "name": "SA-3 Damasco ovest-2",
+      "heading": 4.4505895925855405,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 51
+     },
+     "3": {
+      "type": "5p73 s-125 ln",
+      "x": -180613.90000000002,
+      "y": 18275.60834875401,
+      "name": "SA-3 Damasco ovest-3",
+      "heading": 5.235987755982989,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 52
+     },
+     "4": {
+      "type": "5p73 s-125 ln",
+      "x": -180590.10834875406,
+      "y": 18364.399999999994,
+      "name": "SA-3 Damasco ovest-4",
+      "heading": 0.5235987755982988,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 53
+     },
+     "5": {
+      "type": "5p73 s-125 ln",
+      "x": -180678.90000000002,
+      "y": 18388.19165124598,
+      "name": "SA-3 Damasco ovest-5",
+      "heading": 2.0943951023931953,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 54
+     },
+     "6": {
+      "type": "5p73 s-125 ln",
+      "x": -180702.691651246,
+      "y": 18299.399999999994,
+      "name": "SA-3 Damasco ovest-6",
+      "heading": 3.6651914291880923,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 55
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 759.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -180646.40000000002,
+       "y": 18331.899999999994,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Crest6",
+   "sistema": "sa6",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "Kub 1S91 str",
+      "avanti": 0.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "Kub 2P25 ln",
+      "avanti": 180.0,
+      "destra": -150.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "Kub 2P25 ln",
+      "avanti": 200.0,
+      "destra": 160.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "Kub 2P25 ln",
+      "avanti": -150.0,
+      "destra": -220.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "Kub 2P25 ln",
+      "avanti": -170.0,
+      "destra": 200.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -140846.40000000002,
+      "y": -8668.100000000006,
+      "rotta": 295.0
+     },
+     "2": {
+      "x": -138646.40000000002,
+      "y": -7868.100000000006,
+      "rotta": 295.0
+     },
+     "3": {
+      "x": -139363.55728752541,
+      "y": -10950.942712474625,
+      "rotta": 295.0
+     },
+     "4": {
+      "x": -141646.40000000002,
+      "y": -10668.100000000006,
+      "rotta": 295.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "Crest6",
+    "sistema": "sa6",
+    "missione": "difesa",
+    "lat_lon": [
+     33.7512,
+     35.85355
+    ],
+    "dettagli": {
+     "visibilita": 0.52,
+     "rilievo_m": 0,
+     "dist_obiettivo_km": 5.8,
+     "pendenza": 1,
+     "strada_m": 90,
+     "vegetazione": 7,
+     "quota": 860,
+     "candidati_validi": 22,
+     "scorrimento_m": 200,
+     "siti_scartati_vegetazione": 1,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 6.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 13,
+    "name": "Crest6",
+    "x": -140846.40000000002,
+    "y": -8668.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "Kub 1S91 str",
+      "x": -140846.40000000002,
+      "y": -8668.100000000006,
+      "name": "Crest6-1",
+      "heading": 5.1487212933832724,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 56
+     },
+     "2": {
+      "type": "Kub 2P25 ln",
+      "x": -140906.2748809422,
+      "y": -8894.628140927709,
+      "name": "Crest6-2",
+      "heading": 5.1487212933832724,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 57
+     },
+     "3": {
+      "type": "Kub 2P25 ln",
+      "x": -140616.867101726,
+      "y": -8781.742635528824,
+      "name": "Crest6-3",
+      "heading": 5.1487212933832724,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 58
+     },
+     "4": {
+      "type": "Kub 2P25 ln",
+      "x": -141109.18045240917,
+      "y": -8625.129849527462,
+      "name": "Crest6-4",
+      "heading": 5.1487212933832724,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 59
+     },
+     "5": {
+      "type": "Kub 2P25 ln",
+      "x": -140736.9835470886,
+      "y": -8429.504023855636,
+      "name": "Crest6-5",
+      "heading": 5.1487212933832724,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 60
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 860.2,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -140846.40000000002,
+       "y": -8668.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Chouf6",
+   "sistema": "sa6",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "Kub 1S91 str",
+      "avanti": 0.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "Kub 2P25 ln",
+      "avanti": 180.0,
+      "destra": -150.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "Kub 2P25 ln",
+      "avanti": 200.0,
+      "destra": 160.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "Kub 2P25 ln",
+      "avanti": -150.0,
+      "destra": -220.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "Kub 2P25 ln",
+      "avanti": -170.0,
+      "destra": 200.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -151434.26796564405,
+      "y": -15880.23203435597,
+      "rotta": 305.0
+     },
+     "2": {
+      "x": -154717.11067811868,
+      "y": -19597.38932188135,
+      "rotta": 305.0
+     },
+     "3": {
+      "x": -149646.40000000002,
+      "y": -14668.100000000006,
+      "rotta": 305.0
+     },
+     "4": {
+      "x": -153746.40000000002,
+      "y": -17668.100000000006,
+      "rotta": 305.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "Chouf6",
+    "sistema": "sa6",
+    "missione": "difesa",
+    "lat_lon": [
+     33.65385,
+     35.77936
+    ],
+    "dettagli": {
+     "visibilita": 0.43,
+     "rilievo_m": -13,
+     "dist_obiettivo_km": 8.7,
+     "pendenza": 1,
+     "strada_m": 0,
+     "vegetazione": 9,
+     "quota": 857,
+     "candidati_validi": 22,
+     "scorrimento_m": 300,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 9.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 14,
+    "name": "Chouf6",
+    "x": -151434.26796564405,
+    "y": -15880.23203435597,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "Kub 1S91 str",
+      "x": -151434.26796564405,
+      "y": -15880.23203435597,
+      "name": "Chouf6-1",
+      "heading": 5.323254218582705,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 61
+     },
+     "2": {
+      "type": "Kub 2P25 ln",
+      "x": -151453.8970137442,
+      "y": -16113.715867780644,
+      "name": "Chouf6-2",
+      "heading": 5.323254218582705,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 62
+     },
+     "3": {
+      "type": "Kub 2P25 ln",
+      "x": -151188.4883512876,
+      "y": -15952.2902133976,
+      "name": "Chouf6-3",
+      "heading": 5.323254218582705,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 63
+     },
+     "4": {
+      "type": "Kub 2P25 ln",
+      "x": -151700.51788084029,
+      "y": -15883.546043709852,
+      "name": "Chouf6-4",
+      "heading": 5.323254218582705,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 64
+     },
+     "5": {
+      "type": "Kub 2P25 ln",
+      "x": -151367.94555096593,
+      "y": -15626.260899556632,
+      "name": "Chouf6-5",
+      "heading": 5.323254218582705,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 65
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 860.6062445840515,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -151434.26796564405,
+       "y": -15880.23203435597,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "North6",
+   "sistema": "sa6",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "Kub 1S91 str",
+      "avanti": 0.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "Kub 2P25 ln",
+      "avanti": 180.0,
+      "destra": -150.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "Kub 2P25 ln",
+      "avanti": 200.0,
+      "destra": 160.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "Kub 2P25 ln",
+      "avanti": -150.0,
+      "destra": -220.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "Kub 2P25 ln",
+      "avanti": -170.0,
+      "destra": 200.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -104546.40000000002,
+      "y": 4331.899999999994,
+      "rotta": 270.0
+     },
+     "2": {
+      "x": -101646.40000000002,
+      "y": 3331.899999999994,
+      "rotta": 270.0
+     },
+     "3": {
+      "x": -100646.40000000002,
+      "y": 5331.899999999994,
+      "rotta": 270.0
+     },
+     "4": {
+      "x": -104946.40000000002,
+      "y": 13331.899999999994,
+      "rotta": 270.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "North6",
+    "sistema": "sa6",
+    "missione": "difesa",
+    "lat_lon": [
+     34.08164,
+     35.9822
+    ],
+    "dettagli": {
+     "visibilita": 0.47,
+     "rilievo_m": 78,
+     "dist_obiettivo_km": 4.1,
+     "pendenza": 10,
+     "strada_m": 20,
+     "vegetazione": 1,
+     "quota": 1882,
+     "candidati_validi": 22,
+     "scorrimento_m": 100,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 6.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 15,
+    "name": "North6",
+    "x": -104546.40000000002,
+    "y": 4331.899999999994,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "Kub 1S91 str",
+      "x": -104546.40000000002,
+      "y": 4331.899999999994,
+      "name": "North6-1",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 66
+     },
+     "2": {
+      "type": "Kub 2P25 ln",
+      "x": -104696.40000000002,
+      "y": 4151.899999999994,
+      "name": "North6-2",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 67
+     },
+     "3": {
+      "type": "Kub 2P25 ln",
+      "x": -104386.40000000002,
+      "y": 4131.899999999994,
+      "name": "North6-3",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 68
+     },
+     "4": {
+      "type": "Kub 2P25 ln",
+      "x": -104766.40000000002,
+      "y": 4481.899999999994,
+      "name": "North6-4",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 69
+     },
+     "5": {
+      "type": "Kub 2P25 ln",
+      "x": -104346.40000000002,
+      "y": 4501.899999999994,
+      "name": "North6-5",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 70
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 1885.1999999999998,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -104546.40000000002,
+       "y": 4331.899999999994,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Crest8",
+   "sistema": "sa8",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "Osa 9A33 ln",
+      "avanti": 0.0,
+      "destra": -150.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "Osa 9A33 ln",
+      "avanti": 60.0,
+      "destra": 160.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -136646.40000000002,
+      "y": -8668.100000000006,
+      "rotta": 295.0
+     },
+     "2": {
+      "x": -138546.40000000002,
+      "y": -10668.100000000006,
+      "rotta": 295.0
+     },
+     "3": {
+      "x": -141646.40000000002,
+      "y": -12668.100000000006,
+      "rotta": 295.0
+     },
+     "4": {
+      "x": -140504.9786437627,
+      "y": -10526.678643762696,
+      "rotta": 295.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "Crest8",
+    "sistema": "sa8",
+    "missione": "difesa",
+    "lat_lon": [
+     33.78903,
+     35.85216
+    ],
+    "dettagli": {
+     "visibilita": 0.67,
+     "rilievo_m": -11,
+     "dist_obiettivo_km": 7.7,
+     "pendenza": 1,
+     "strada_m": 50,
+     "vegetazione": 13,
+     "quota": 867,
+     "candidati_validi": 22,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 1,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 8.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 16,
+    "name": "Crest8",
+    "x": -136646.40000000002,
+    "y": -8668.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "Osa 9A33 ln",
+      "x": -136782.34616805552,
+      "y": -8731.492739261112,
+      "name": "Crest8-1",
+      "heading": 5.1487212933832724,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 71
+     },
+     "2": {
+      "type": "Osa 9A33 ln",
+      "x": -136476.0336583697,
+      "y": -8654.859545343694,
+      "name": "Crest8-2",
+      "heading": 5.1487212933832724,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 72
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 867.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -136646.40000000002,
+       "y": -8668.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Chouf8",
+   "sistema": "sa8",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "Osa 9A33 ln",
+      "avanti": 0.0,
+      "destra": -150.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "Osa 9A33 ln",
+      "avanti": 60.0,
+      "destra": 160.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -146646.40000000002,
+      "y": -32668.100000000006,
+      "rotta": 315.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "Chouf8",
+    "sistema": "sa8",
+    "missione": "difesa",
+    "lat_lon": [
+     33.69211,
+     35.59691
+    ],
+    "dettagli": {
+     "visibilita": 0.28,
+     "rilievo_m": 100,
+     "dist_obiettivo_km": 6.5,
+     "pendenza": 10,
+     "strada_m": 730,
+     "vegetazione": 4,
+     "quota": 1008,
+     "candidati_validi": 2,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 8.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 17,
+    "name": "Chouf8",
+    "x": -146646.40000000002,
+    "y": -32668.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "Osa 9A33 ln",
+      "x": -146752.466017178,
+      "y": -32774.16601717799,
+      "name": "Chouf8-1",
+      "heading": 5.497787143782138,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 73
+     },
+     "2": {
+      "type": "Osa 9A33 ln",
+      "x": -146490.83650813898,
+      "y": -32597.38932188135,
+      "name": "Chouf8-2",
+      "heading": 5.497787143782138,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 74
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 1008.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -146646.40000000002,
+       "y": -32668.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "North8",
+   "sistema": "sa8",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "Osa 9A33 ln",
+      "avanti": 0.0,
+      "destra": -150.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "Osa 9A33 ln",
+      "avanti": 60.0,
+      "destra": 160.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -112858.53203435599,
+      "y": 544.0320343559584,
+      "rotta": 270.0
+     },
+     "2": {
+      "x": -107646.40000000002,
+      "y": 3331.899999999994,
+      "rotta": 270.0
+     },
+     "3": {
+      "x": -110787.82135623733,
+      "y": 473.3213562373037,
+      "rotta": 270.0
+     },
+     "4": {
+      "x": -106646.40000000002,
+      "y": -668.1000000000058,
+      "rotta": 270.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "North8",
+    "sistema": "sa8",
+    "missione": "difesa",
+    "lat_lon": [
+     34.00576,
+     35.94389
+    ],
+    "dettagli": {
+     "visibilita": 0.58,
+     "rilievo_m": 100,
+     "dist_obiettivo_km": 4.0,
+     "pendenza": 11,
+     "strada_m": 580,
+     "vegetazione": 21,
+     "quota": 2107,
+     "candidati_validi": 20,
+     "scorrimento_m": 300,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 4.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 18,
+    "name": "North8",
+    "x": -112858.53203435599,
+    "y": 544.0320343559584,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "Osa 9A33 ln",
+      "x": -113008.53203435599,
+      "y": 544.0320343559584,
+      "name": "North8-1",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 75
+     },
+     "2": {
+      "type": "Osa 9A33 ln",
+      "x": -112698.53203435599,
+      "y": 484.0320343559584,
+      "name": "North8-2",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 76
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 2085.008625560727,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -112858.53203435599,
+       "y": 544.0320343559584,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "FarayaAA",
+   "sistema": "aaa",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "SON_9",
+      "avanti": 0.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "S-60_Type59_Artillery",
+      "avanti": 50.0,
+      "destra": -50.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "S-60_Type59_Artillery",
+      "avanti": 50.0,
+      "destra": 50.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "S-60_Type59_Artillery",
+      "avanti": -50.0,
+      "destra": -50.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "S-60_Type59_Artillery",
+      "avanti": -50.0,
+      "destra": 50.0,
+      "rotta": 0.0
+     },
+     "6": {
+      "tipo": "ZSU-23-4 Shilka",
+      "avanti": 120.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -111646.40000000002,
+      "y": 1331.8999999999942,
+      "rotta": 285.0
+     },
+     "2": {
+      "x": -111646.40000000002,
+      "y": -2668.100000000006,
+      "rotta": 285.0
+     },
+     "3": {
+      "x": -109646.40000000002,
+      "y": 331.8999999999942,
+      "rotta": 285.0
+     },
+     "4": {
+      "x": -112646.40000000002,
+      "y": -668.1000000000058,
+      "rotta": 285.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "FarayaAA",
+    "sistema": "aaa",
+    "missione": "difesa",
+    "lat_lon": [
+     34.01689,
+     35.95202
+    ],
+    "dettagli": {
+     "visibilita": 0.71,
+     "rilievo_m": 100,
+     "dist_obiettivo_km": 2.5,
+     "pendenza": 10,
+     "strada_m": 510,
+     "vegetazione": 12,
+     "quota": 2063,
+     "candidati_validi": 14,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 3.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 19,
+    "name": "FarayaAA",
+    "x": -111646.40000000002,
+    "y": 1331.8999999999942,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "SON_9",
+      "x": -111646.40000000002,
+      "y": 1331.8999999999942,
+      "name": "FarayaAA-1",
+      "heading": 4.974188368183839,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 77
+     },
+     "2": {
+      "type": "S-60_Type59_Artillery",
+      "x": -111681.75533905935,
+      "y": 1270.662756430415,
+      "name": "FarayaAA-2",
+      "heading": 4.974188368183839,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 78
+     },
+     "3": {
+      "type": "S-60_Type59_Artillery",
+      "x": -111585.16275643044,
+      "y": 1296.5446609406667,
+      "name": "FarayaAA-3",
+      "heading": 4.974188368183839,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 79
+     },
+     "4": {
+      "type": "S-60_Type59_Artillery",
+      "x": -111707.63724356961,
+      "y": 1367.2553390593216,
+      "name": "FarayaAA-4",
+      "heading": 4.974188368183839,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 80
+     },
+     "5": {
+      "type": "S-60_Type59_Artillery",
+      "x": -111611.0446609407,
+      "y": 1393.1372435695735,
+      "name": "FarayaAA-5",
+      "heading": 4.974188368183839,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 81
+     },
+     "6": {
+      "type": "ZSU-23-4 Shilka",
+      "x": -111615.34171458772,
+      "y": 1215.988900845306,
+      "name": "FarayaAA-6",
+      "heading": 4.974188368183839,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 82
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 2063.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -111646.40000000002,
+       "y": 1331.8999999999942,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Guns",
+   "sistema": "artiglieria",
+   "lua": {
+    "paese": 2,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "M-109",
+      "avanti": 0.0,
+      "destra": -90.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "M-109",
+      "avanti": 0.0,
+      "destra": -30.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "M-109",
+      "avanti": 0.0,
+      "destra": 30.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "M-109",
+      "avanti": 0.0,
+      "destra": 90.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "M 818",
+      "avanti": -120.0,
+      "destra": -40.0,
+      "rotta": 0.0
+     },
+     "6": {
+      "tipo": "M 818",
+      "avanti": -120.0,
+      "destra": 40.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -123646.40000000002,
+      "y": -31668.100000000006,
+      "rotta": 175.0
+     },
+     "2": {
+      "x": -127846.40000000002,
+      "y": -35668.100000000006,
+      "rotta": 175.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "blue",
+    "nome": "Guns",
+    "sistema": "artiglieria",
+    "missione": "fuoco",
+    "lat_lon": [
+     33.89949,
+     35.59949
+    ],
+    "dettagli": {
+     "visibilita": 0.04,
+     "rilievo_m": 19,
+     "dist_obiettivo_km": 12.2,
+     "pendenza": 11,
+     "strada_m": 40,
+     "vegetazione": 5,
+     "quota": 289,
+     "candidati_validi": 2,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 2,
+     "raggio_usato_km": 4.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 20,
+    "name": "Guns",
+    "x": -123646.40000000002,
+    "y": -31668.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "M-109",
+      "x": -123638.55598315274,
+      "y": -31578.44247717175,
+      "name": "Guns-1",
+      "heading": 3.0543261909900767,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 83
+     },
+     "2": {
+      "type": "M-109",
+      "x": -123643.78532771759,
+      "y": -31638.214159057254,
+      "name": "Guns-2",
+      "heading": 3.0543261909900767,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 84
+     },
+     "3": {
+      "type": "M-109",
+      "x": -123649.01467228246,
+      "y": -31697.985840942758,
+      "name": "Guns-3",
+      "heading": 3.0543261909900767,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 85
+     },
+     "4": {
+      "type": "M-109",
+      "x": -123654.24401684731,
+      "y": -31757.757522828262,
+      "name": "Guns-4",
+      "heading": 3.0543261909900767,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 86
+     },
+     "5": {
+      "type": "M 818",
+      "x": -123523.37040651911,
+      "y": -31638.710901206054,
+      "name": "Guns-5",
+      "heading": 3.0543261909900767,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 87
+     },
+     "6": {
+      "type": "M 818",
+      "x": -123530.34286593892,
+      "y": -31718.406477053395,
+      "name": "Guns-6",
+      "heading": 3.0543261909900767,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 88
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 289.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -123646.40000000002,
+       "y": -31668.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {
+          "1": {
+           "id": "FireAtPoint",
+           "params": {
+            "x": -135825.89003778202,
+            "y": -31096.79856797075,
+            "zoneRadius": 400,
+            "expendQty": 60,
+            "expendQtyEnabled": true,
+            "weaponType": 1073741822,
+            "alt_type": 0,
+            "counterbattaryRadius": 0
+           },
+           "enabled": true,
+           "auto": false,
+           "number": 1
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Gun1",
+   "sistema": "artiglieria",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "SAU Gvozdika",
+      "avanti": 0.0,
+      "destra": -90.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "SAU Gvozdika",
+      "avanti": 0.0,
+      "destra": -30.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "SAU Gvozdika",
+      "avanti": 0.0,
+      "destra": 30.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "SAU Gvozdika",
+      "avanti": 0.0,
+      "destra": 90.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "Ural-375",
+      "avanti": -120.0,
+      "destra": -40.0,
+      "rotta": 0.0
+     },
+     "6": {
+      "tipo": "Ural-375",
+      "avanti": -120.0,
+      "destra": 40.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -136646.40000000002,
+      "y": -35668.100000000006,
+      "rotta": 330.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "Gun1",
+    "sistema": "artiglieria",
+    "missione": "fuoco",
+    "lat_lon": [
+     33.78125,
+     35.561
+    ],
+    "dettagli": {
+     "visibilita": 0.75,
+     "rilievo_m": 100,
+     "dist_obiettivo_km": 6.5,
+     "pendenza": 13,
+     "strada_m": 10,
+     "vegetazione": 3,
+     "quota": 788,
+     "candidati_validi": 1,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 1,
+     "raggio_usato_km": 6.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 21,
+    "name": "Gun1",
+    "x": -136646.40000000002,
+    "y": -35668.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "SAU Gvozdika",
+      "x": -136691.40000000002,
+      "y": -35746.042286340606,
+      "name": "Gun1-1",
+      "heading": 5.759586531581287,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 89
+     },
+     "2": {
+      "type": "SAU Gvozdika",
+      "x": -136661.40000000002,
+      "y": -35694.08076211354,
+      "name": "Gun1-2",
+      "heading": 5.759586531581287,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 90
+     },
+     "3": {
+      "type": "SAU Gvozdika",
+      "x": -136631.40000000002,
+      "y": -35642.11923788647,
+      "name": "Gun1-3",
+      "heading": 5.759586531581287,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 91
+     },
+     "4": {
+      "type": "SAU Gvozdika",
+      "x": -136601.40000000002,
+      "y": -35590.157713659406,
+      "name": "Gun1-4",
+      "heading": 5.759586531581287,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 92
+     },
+     "5": {
+      "type": "Ural-375",
+      "x": -136770.32304845416,
+      "y": -35642.74101615138,
+      "name": "Gun1-5",
+      "heading": 5.759586531581287,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 93
+     },
+     "6": {
+      "type": "Ural-375",
+      "x": -136730.32304845416,
+      "y": -35573.45898384863,
+      "name": "Gun1-6",
+      "heading": 5.759586531581287,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 94
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 788.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -136646.40000000002,
+       "y": -35668.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {
+          "1": {
+           "id": "FireAtPoint",
+           "params": {
+            "x": -130124.60276610078,
+            "y": -35543.0962607672,
+            "zoneRadius": 400,
+            "expendQty": 60,
+            "expendQtyEnabled": true,
+            "weaponType": 1073741822,
+            "alt_type": 0,
+            "counterbattaryRadius": 0
+           },
+           "enabled": true,
+           "auto": false,
+           "number": 1
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Gun2",
+   "sistema": "artiglieria",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "SAU Gvozdika",
+      "avanti": 0.0,
+      "destra": -90.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "SAU Gvozdika",
+      "avanti": 0.0,
+      "destra": -30.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "SAU Gvozdika",
+      "avanti": 0.0,
+      "destra": 30.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "SAU Gvozdika",
+      "avanti": 0.0,
+      "destra": 90.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "Ural-375",
+      "avanti": -120.0,
+      "destra": -40.0,
+      "rotta": 0.0
+     },
+     "6": {
+      "tipo": "Ural-375",
+      "avanti": -120.0,
+      "destra": 40.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -133646.40000000002,
+      "y": -16668.100000000006,
+      "rotta": 320.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "Gun2",
+    "sistema": "artiglieria",
+    "missione": "fuoco",
+    "lat_lon": [
+     33.81381,
+     35.76486
+    ],
+    "dettagli": {
+     "visibilita": 0.04,
+     "rilievo_m": 60,
+     "dist_obiettivo_km": 15.3,
+     "pendenza": 10,
+     "strada_m": 280,
+     "vegetazione": 16,
+     "quota": 1574,
+     "candidati_validi": 1,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 6.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 22,
+    "name": "Gun2",
+    "x": -133646.40000000002,
+    "y": -16668.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "SAU Gvozdika",
+      "x": -133704.2508848718,
+      "y": -16737.043999880712,
+      "name": "Gun2-1",
+      "heading": 5.585053606381854,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 95
+     },
+     "2": {
+      "type": "SAU Gvozdika",
+      "x": -133665.68362829063,
+      "y": -16691.081333293576,
+      "name": "Gun2-2",
+      "heading": 5.585053606381854,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 96
+     },
+     "3": {
+      "type": "SAU Gvozdika",
+      "x": -133627.11637170942,
+      "y": -16645.118666706436,
+      "name": "Gun2-3",
+      "heading": 5.585053606381854,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 97
+     },
+     "4": {
+      "type": "SAU Gvozdika",
+      "x": -133588.54911512823,
+      "y": -16599.1560001193,
+      "name": "Gun2-4",
+      "heading": 5.585053606381854,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 98
+     },
+     "5": {
+      "type": "Ural-375",
+      "x": -133764.03683756175,
+      "y": -16621.60726456238,
+      "name": "Gun2-5",
+      "heading": 5.585053606381854,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 99
+     },
+     "6": {
+      "type": "Ural-375",
+      "x": -133712.61382878682,
+      "y": -16560.32370911286,
+      "name": "Gun2-6",
+      "heading": 5.585053606381854,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 100
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 1574.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -133646.40000000002,
+       "y": -16668.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {
+          "1": {
+           "id": "FireAtPoint",
+           "params": {
+            "x": -125870.9640395171,
+            "y": -29842.058154742932,
+            "zoneRadius": 400,
+            "expendQty": 60,
+            "expendQtyEnabled": true,
+            "weaponType": 1073741822,
+            "alt_type": 0,
+            "counterbattaryRadius": 0
+           },
+           "enabled": true,
+           "auto": false,
+           "number": 1
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Gun3",
+   "sistema": "artiglieria",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "SAU Gvozdika",
+      "avanti": 0.0,
+      "destra": -90.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "SAU Gvozdika",
+      "avanti": 0.0,
+      "destra": -30.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "SAU Gvozdika",
+      "avanti": 0.0,
+      "destra": 30.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "SAU Gvozdika",
+      "avanti": 0.0,
+      "destra": 90.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "Ural-375",
+      "avanti": -120.0,
+      "destra": -40.0,
+      "rotta": 0.0
+     },
+     "6": {
+      "tipo": "Ural-375",
+      "avanti": -120.0,
+      "destra": 40.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -108646.40000000002,
+      "y": 2331.899999999994,
+      "rotta": 270.0
+     },
+     "2": {
+      "x": -109646.40000000002,
+      "y": 331.8999999999942,
+      "rotta": 270.0
+     },
+     "3": {
+      "x": -110646.40000000002,
+      "y": -1668.1000000000058,
+      "rotta": 270.0
+     },
+     "4": {
+      "x": -111446.40000000002,
+      "y": 1331.8999999999942,
+      "rotta": 270.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "Gun3",
+    "sistema": "artiglieria",
+    "missione": "fuoco",
+    "lat_lon": [
+     34.04418,
+     35.96187
+    ],
+    "dettagli": {
+     "visibilita": 0.06,
+     "rilievo_m": 65,
+     "dist_obiettivo_km": 10.6,
+     "pendenza": 6,
+     "strada_m": 120,
+     "vegetazione": 0,
+     "quota": 1906,
+     "candidati_validi": 11,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 3.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 23,
+    "name": "Gun3",
+    "x": -108646.40000000002,
+    "y": 2331.899999999994,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "SAU Gvozdika",
+      "x": -108736.40000000002,
+      "y": 2331.899999999994,
+      "name": "Gun3-1",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 101
+     },
+     "2": {
+      "type": "SAU Gvozdika",
+      "x": -108676.40000000002,
+      "y": 2331.899999999994,
+      "name": "Gun3-2",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 102
+     },
+     "3": {
+      "type": "SAU Gvozdika",
+      "x": -108616.40000000002,
+      "y": 2331.899999999994,
+      "name": "Gun3-3",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 103
+     },
+     "4": {
+      "type": "SAU Gvozdika",
+      "x": -108556.40000000002,
+      "y": 2331.899999999994,
+      "name": "Gun3-4",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 104
+     },
+     "5": {
+      "type": "Ural-375",
+      "x": -108686.40000000002,
+      "y": 2451.899999999994,
+      "name": "Gun3-5",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 105
+     },
+     "6": {
+      "type": "Ural-375",
+      "x": -108606.40000000002,
+      "y": 2451.899999999994,
+      "name": "Gun3-6",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 106
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 1906.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -108646.40000000002,
+       "y": 2331.899999999994,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {
+          "1": {
+           "id": "FireAtPoint",
+           "params": {
+            "x": -113263.32325921254,
+            "y": -7225.998297687853,
+            "zoneRadius": 400,
+            "expendQty": 60,
+            "expendQtyEnabled": true,
+            "weaponType": 1073741822,
+            "alt_type": 0,
+            "counterbattaryRadius": 0
+           },
+           "enabled": true,
+           "auto": false,
+           "number": 1
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Grad1",
+   "sistema": "lanciarazzi",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "Grad-URAL",
+      "avanti": 0.0,
+      "destra": -105.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "Grad-URAL",
+      "avanti": 0.0,
+      "destra": -35.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "Grad-URAL",
+      "avanti": 0.0,
+      "destra": 35.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "Grad-URAL",
+      "avanti": 0.0,
+      "destra": 105.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "Ural-375",
+      "avanti": -120.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -136446.40000000002,
+      "y": -35668.100000000006,
+      "rotta": 355.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "Grad1",
+    "sistema": "lanciarazzi",
+    "missione": "fuoco",
+    "lat_lon": [
+     33.78305,
+     35.56093
+    ],
+    "dettagli": {
+     "visibilita": 0.6,
+     "rilievo_m": 100,
+     "dist_obiettivo_km": 12.7,
+     "pendenza": 13,
+     "strada_m": 10,
+     "vegetazione": 3,
+     "quota": 788,
+     "candidati_validi": 1,
+     "scorrimento_m": 200,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 1,
+     "raggio_usato_km": 6.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 24,
+    "name": "Grad1",
+    "x": -136446.40000000002,
+    "y": -35668.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "Grad-URAL",
+      "x": -136455.55135298852,
+      "y": -35772.70044329964,
+      "name": "Grad1-1",
+      "heading": 6.19591884457987,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 107
+     },
+     "2": {
+      "type": "Grad-URAL",
+      "x": -136449.4504509962,
+      "y": -35702.96681443322,
+      "name": "Grad1-2",
+      "heading": 6.19591884457987,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 108
+     },
+     "3": {
+      "type": "Grad-URAL",
+      "x": -136443.34954900385,
+      "y": -35633.233185566794,
+      "name": "Grad1-3",
+      "heading": 6.19591884457987,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 109
+     },
+     "4": {
+      "type": "Grad-URAL",
+      "x": -136437.24864701153,
+      "y": -35563.49955670037,
+      "name": "Grad1-4",
+      "heading": 6.19591884457987,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 110
+     },
+     "5": {
+      "type": "Ural-375",
+      "x": -136565.94336377105,
+      "y": -35657.64131087028,
+      "name": "Grad1-5",
+      "heading": 6.19591884457987,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 111
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 774.4000000000008,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -136446.40000000002,
+       "y": -35668.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {
+          "1": {
+           "id": "FireAtPoint",
+           "params": {
+            "x": -124452.22585574957,
+            "y": -39058.50639091007,
+            "zoneRadius": 400,
+            "expendQty": 60,
+            "expendQtyEnabled": true,
+            "weaponType": 1073741822,
+            "alt_type": 0,
+            "counterbattaryRadius": 0
+           },
+           "enabled": true,
+           "auto": false,
+           "number": 1
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Grad2",
+   "sistema": "lanciarazzi",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "Grad-URAL",
+      "avanti": 0.0,
+      "destra": -105.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "Grad-URAL",
+      "avanti": 0.0,
+      "destra": -35.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "Grad-URAL",
+      "avanti": 0.0,
+      "destra": 35.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "Grad-URAL",
+      "avanti": 0.0,
+      "destra": 105.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "Ural-375",
+      "avanti": -120.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -132646.40000000002,
+      "y": -8668.100000000006,
+      "rotta": 310.0
+     },
+     "2": {
+      "x": -134575.68932188136,
+      "y": -9597.389321881352,
+      "rotta": 310.0
+     },
+     "3": {
+      "x": -133787.82135623734,
+      "y": -16526.678643762698,
+      "rotta": 310.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "Grad2",
+    "sistema": "lanciarazzi",
+    "missione": "fuoco",
+    "lat_lon": [
+     33.82505,
+     35.85084
+    ],
+    "dettagli": {
+     "visibilita": 0.25,
+     "rilievo_m": -64,
+     "dist_obiettivo_km": 22.5,
+     "pendenza": 6,
+     "strada_m": 40,
+     "vegetazione": 6,
+     "quota": 955,
+     "candidati_validi": 7,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 6.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 25,
+    "name": "Grad2",
+    "x": -132646.40000000002,
+    "y": -8668.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "Grad-URAL",
+      "x": -132726.83466652752,
+      "y": -8735.592699017092,
+      "name": "Grad2-1",
+      "heading": 5.410520681182422,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 112
+     },
+     "2": {
+      "type": "Grad-URAL",
+      "x": -132673.2115555092,
+      "y": -8690.597566339035,
+      "name": "Grad2-2",
+      "heading": 5.410520681182422,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 113
+     },
+     "3": {
+      "type": "Grad-URAL",
+      "x": -132619.58844449086,
+      "y": -8645.602433660977,
+      "name": "Grad2-3",
+      "heading": 5.410520681182422,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 114
+     },
+     "4": {
+      "type": "Grad-URAL",
+      "x": -132565.96533347253,
+      "y": -8600.60730098292,
+      "name": "Grad2-4",
+      "heading": 5.410520681182422,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 115
+     },
+     "5": {
+      "type": "Ural-375",
+      "x": -132723.53451316242,
+      "y": -8576.17466682573,
+      "name": "Grad2-5",
+      "heading": 5.410520681182422,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 116
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 955.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -132646.40000000002,
+       "y": -8668.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {
+          "1": {
+           "id": "FireAtPoint",
+           "params": {
+            "x": -118225.74345219554,
+            "y": -25887.63645188301,
+            "zoneRadius": 400,
+            "expendQty": 60,
+            "expendQtyEnabled": true,
+            "weaponType": 1073741822,
+            "alt_type": 0,
+            "counterbattaryRadius": 0
+           },
+           "enabled": true,
+           "auto": false,
+           "number": 1
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Mech1",
+   "sistema": "meccanizzata",
+   "lua": {
+    "paese": 2,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "LAV-25",
+      "avanti": 40.0,
+      "destra": -80.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "LAV-25",
+      "avanti": 40.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "LAV-25",
+      "avanti": 40.0,
+      "destra": 80.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "AAV7",
+      "avanti": -40.0,
+      "destra": -80.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "AAV7",
+      "avanti": -40.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "6": {
+      "tipo": "AAV7",
+      "avanti": -40.0,
+      "destra": 80.0,
+      "rotta": 0.0
+     },
+     "7": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": -22.5,
+      "rotta": 0.0
+     },
+     "8": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": -7.5,
+      "rotta": 0.0
+     },
+     "9": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": 7.5,
+      "rotta": 0.0
+     },
+     "10": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": 22.5,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -127746.40000000002,
+      "y": -35668.100000000006,
+      "rotta": 170.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "blue",
+    "nome": "Mech1",
+    "sistema": "meccanizzata",
+    "missione": "difesa",
+    "lat_lon": [
+     33.86137,
+     35.55779
+    ],
+    "dettagli": {
+     "visibilita": 0.5,
+     "rilievo_m": 5,
+     "dist_obiettivo_km": 2.0,
+     "pendenza": 10,
+     "strada_m": 70,
+     "vegetazione": 37,
+     "quota": 144,
+     "candidati_validi": 1,
+     "scorrimento_m": 100,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 4.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 26,
+    "name": "Mech1",
+    "x": -127746.40000000002,
+    "y": -35668.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "LAV-25",
+      "x": -127771.90045590715,
+      "y": -35582.36945265235,
+      "name": "Mech1-1",
+      "heading": 2.9670597283903604,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 117
+     },
+     "2": {
+      "type": "LAV-25",
+      "x": -127785.79231012051,
+      "y": -35661.154072893325,
+      "name": "Mech1-2",
+      "heading": 2.9670597283903604,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 118
+     },
+     "3": {
+      "type": "LAV-25",
+      "x": -127799.68416433387,
+      "y": -35739.9386931343,
+      "name": "Mech1-3",
+      "heading": 2.9670597283903604,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 119
+     },
+     "4": {
+      "type": "AAV7",
+      "x": -127693.11583566618,
+      "y": -35596.26130686571,
+      "name": "Mech1-4",
+      "heading": 2.9670597283903604,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 120
+     },
+     "5": {
+      "type": "AAV7",
+      "x": -127707.00768987954,
+      "y": -35675.04592710669,
+      "name": "Mech1-5",
+      "heading": 2.9670597283903604,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 121
+     },
+     "6": {
+      "type": "AAV7",
+      "x": -127720.8995440929,
+      "y": -35753.830547347665,
+      "name": "Mech1-6",
+      "heading": 2.9670597283903604,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 122
+     },
+     "7": {
+      "type": "Soldier M4",
+      "x": -127811.42945871338,
+      "y": -35633.78645312055,
+      "name": "Mech1-7",
+      "heading": 2.9670597283903604,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 123
+     },
+     "8": {
+      "type": "Soldier M4",
+      "x": -127814.03418137837,
+      "y": -35648.558569415734,
+      "name": "Mech1-8",
+      "heading": 2.9670597283903604,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 124
+     },
+     "9": {
+      "type": "Soldier M4",
+      "x": -127816.63890404339,
+      "y": -35663.33068571091,
+      "name": "Mech1-9",
+      "heading": 2.9670597283903604,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 125
+     },
+     "10": {
+      "type": "Soldier M4",
+      "x": -127819.24362670838,
+      "y": -35678.1028020061,
+      "name": "Mech1-10",
+      "heading": 2.9670597283903604,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 126
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 135.80000000000047,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -127746.40000000002,
+       "y": -35668.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Mech2",
+   "sistema": "meccanizzata",
+   "lua": {
+    "paese": 2,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "LAV-25",
+      "avanti": 40.0,
+      "destra": -80.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "LAV-25",
+      "avanti": 40.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "LAV-25",
+      "avanti": 40.0,
+      "destra": 80.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "AAV7",
+      "avanti": -40.0,
+      "destra": -80.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "AAV7",
+      "avanti": -40.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "6": {
+      "tipo": "AAV7",
+      "avanti": -40.0,
+      "destra": 80.0,
+      "rotta": 0.0
+     },
+     "7": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": -22.5,
+      "rotta": 0.0
+     },
+     "8": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": -7.5,
+      "rotta": 0.0
+     },
+     "9": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": 7.5,
+      "rotta": 0.0
+     },
+     "10": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": 22.5,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -133646.40000000002,
+      "y": -27568.100000000006,
+      "rotta": 185.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "blue",
+    "nome": "Mech2",
+    "sistema": "meccanizzata",
+    "missione": "difesa",
+    "lat_lon": [
+     33.81066,
+     35.64729
+    ],
+    "dettagli": {
+     "visibilita": 1.0,
+     "rilievo_m": 100,
+     "dist_obiettivo_km": 2.9,
+     "pendenza": 4,
+     "strada_m": 230,
+     "vegetazione": 27,
+     "quota": 1074,
+     "candidati_validi": 1,
+     "scorrimento_m": 100,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 2,
+     "raggio_usato_km": 3.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 27,
+    "name": "Mech2",
+    "x": -133646.40000000002,
+    "y": -27568.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "LAV-25",
+      "x": -133693.2202473435,
+      "y": -27491.89065386257,
+      "name": "Mech2-1",
+      "heading": 3.2288591161895095,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 127
+     },
+     "2": {
+      "type": "LAV-25",
+      "x": -133686.2477879237,
+      "y": -27571.586229709912,
+      "name": "Mech2-2",
+      "heading": 3.2288591161895095,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 128
+     },
+     "3": {
+      "type": "LAV-25",
+      "x": -133679.2753285039,
+      "y": -27651.281805557253,
+      "name": "Mech2-3",
+      "heading": 3.2288591161895095,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 129
+     },
+     "4": {
+      "type": "AAV7",
+      "x": -133613.52467149615,
+      "y": -27484.91819444276,
+      "name": "Mech2-4",
+      "heading": 3.2288591161895095,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 130
+     },
+     "5": {
+      "type": "AAV7",
+      "x": -133606.55221207635,
+      "y": -27564.6137702901,
+      "name": "Mech2-5",
+      "heading": 3.2288591161895095,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 131
+     },
+     "6": {
+      "type": "AAV7",
+      "x": -133599.57975265654,
+      "y": -27644.30934613744,
+      "name": "Mech2-6",
+      "heading": 3.2288591161895095,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 132
+     },
+     "7": {
+      "type": "Soldier M4",
+      "x": -133718.09463307826,
+      "y": -27551.786521285278,
+      "name": "Mech2-7",
+      "heading": 3.2288591161895095,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 133
+     },
+     "8": {
+      "type": "Soldier M4",
+      "x": -133716.78729693705,
+      "y": -27566.729441756655,
+      "name": "Mech2-8",
+      "heading": 3.2288591161895095,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 134
+     },
+     "9": {
+      "type": "Soldier M4",
+      "x": -133715.4799607958,
+      "y": -27581.67236222803,
+      "name": "Mech2-9",
+      "heading": 3.2288591161895095,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 135
+     },
+     "10": {
+      "type": "Soldier M4",
+      "x": -133714.1726246546,
+      "y": -27596.615282699408,
+      "name": "Mech2-10",
+      "heading": 3.2288591161895095,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 136
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 1069.6000000000001,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -133646.40000000002,
+       "y": -27568.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Mech3",
+   "sistema": "meccanizzata",
+   "lua": {
+    "paese": 2,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "LAV-25",
+      "avanti": 40.0,
+      "destra": -80.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "LAV-25",
+      "avanti": 40.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "LAV-25",
+      "avanti": 40.0,
+      "destra": 80.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "AAV7",
+      "avanti": -40.0,
+      "destra": -80.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "AAV7",
+      "avanti": -40.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "6": {
+      "tipo": "AAV7",
+      "avanti": -40.0,
+      "destra": 80.0,
+      "rotta": 0.0
+     },
+     "7": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": -22.5,
+      "rotta": 0.0
+     },
+     "8": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": -7.5,
+      "rotta": 0.0
+     },
+     "9": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": 7.5,
+      "rotta": 0.0
+     },
+     "10": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": 22.5,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -123246.40000000002,
+      "y": -17668.100000000006,
+      "rotta": 160.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "blue",
+    "nome": "Mech3",
+    "sistema": "meccanizzata",
+    "missione": "difesa",
+    "lat_lon": [
+     33.90717,
+     35.75053
+    ],
+    "dettagli": {
+     "visibilita": 0.0,
+     "rilievo_m": -27,
+     "dist_obiettivo_km": 3.9,
+     "pendenza": 18,
+     "strada_m": 140,
+     "vegetazione": 14,
+     "quota": 1104,
+     "candidati_validi": 1,
+     "scorrimento_m": 400,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 1,
+     "raggio_usato_km": 4.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 28,
+    "name": "Mech3",
+    "x": -123246.40000000002,
+    "y": -17668.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "LAV-25",
+      "x": -123256.62609336541,
+      "y": -17579.243784604107,
+      "name": "Mech3-1",
+      "heading": 2.792526803190927,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 137
+     },
+     "2": {
+      "type": "LAV-25",
+      "x": -123283.98770483147,
+      "y": -17654.41919426698,
+      "name": "Mech3-2",
+      "heading": 2.792526803190927,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 138
+     },
+     "3": {
+      "type": "LAV-25",
+      "x": -123311.34931629752,
+      "y": -17729.59460392985,
+      "name": "Mech3-3",
+      "heading": 2.792526803190927,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 139
+     },
+     "4": {
+      "type": "AAV7",
+      "x": -123181.45068370253,
+      "y": -17606.60539607016,
+      "name": "Mech3-4",
+      "heading": 2.792526803190927,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 140
+     },
+     "5": {
+      "type": "AAV7",
+      "x": -123208.81229516858,
+      "y": -17681.780805733033,
+      "name": "Mech3-5",
+      "heading": 2.792526803190927,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 141
+     },
+     "6": {
+      "type": "AAV7",
+      "x": -123236.17390663463,
+      "y": -17756.956215395905,
+      "name": "Mech3-6",
+      "heading": 2.792526803190927,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 142
+     },
+     "7": {
+      "type": "Soldier M4",
+      "x": -123304.4830302302,
+      "y": -17623.015505999527,
+      "name": "Mech3-7",
+      "heading": 2.792526803190927,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 143
+     },
+     "8": {
+      "type": "Soldier M4",
+      "x": -123309.61333238009,
+      "y": -17637.110895311314,
+      "name": "Mech3-8",
+      "heading": 2.792526803190927,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 144
+     },
+     "9": {
+      "type": "Soldier M4",
+      "x": -123314.74363452998,
+      "y": -17651.206284623106,
+      "name": "Mech3-9",
+      "heading": 2.792526803190927,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 145
+     },
+     "10": {
+      "type": "Soldier M4",
+      "x": -123319.87393667987,
+      "y": -17665.301673934893,
+      "name": "Mech3-10",
+      "heading": 2.792526803190927,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 146
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 1152.4000000000005,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -123246.40000000002,
+       "y": -17668.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Armor1",
+   "sistema": "carri",
+   "lua": {
+    "paese": 2,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "M-60",
+      "avanti": 60.0,
+      "destra": -105.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "M-60",
+      "avanti": 60.0,
+      "destra": -35.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "M-60",
+      "avanti": 60.0,
+      "destra": 35.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "M-60",
+      "avanti": 60.0,
+      "destra": 105.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "M-113",
+      "avanti": -60.0,
+      "destra": -60.0,
+      "rotta": 0.0
+     },
+     "6": {
+      "tipo": "M-113",
+      "avanti": -60.0,
+      "destra": 60.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -121646.40000000002,
+      "y": -27668.100000000006,
+      "rotta": 180.0
+     },
+     "2": {
+      "x": -123646.40000000002,
+      "y": -31468.100000000006,
+      "rotta": 180.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "blue",
+    "nome": "Armor1",
+    "sistema": "carri",
+    "missione": "difesa",
+    "lat_lon": [
+     33.91868,
+     35.64197
+    ],
+    "dettagli": {
+     "visibilita": 0.67,
+     "rilievo_m": 100,
+     "dist_obiettivo_km": 5.3,
+     "pendenza": 8,
+     "strada_m": 160,
+     "vegetazione": 12,
+     "quota": 661,
+     "candidati_validi": 3,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 1,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 6.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 29,
+    "name": "Armor1",
+    "x": -121646.40000000002,
+    "y": -27668.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "M-60",
+      "x": -121706.40000000002,
+      "y": -27563.100000000006,
+      "name": "Armor1-1",
+      "heading": 3.141592653589793,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 147
+     },
+     "2": {
+      "type": "M-60",
+      "x": -121706.40000000002,
+      "y": -27633.100000000006,
+      "name": "Armor1-2",
+      "heading": 3.141592653589793,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 148
+     },
+     "3": {
+      "type": "M-60",
+      "x": -121706.40000000002,
+      "y": -27703.100000000006,
+      "name": "Armor1-3",
+      "heading": 3.141592653589793,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 149
+     },
+     "4": {
+      "type": "M-60",
+      "x": -121706.40000000002,
+      "y": -27773.100000000006,
+      "name": "Armor1-4",
+      "heading": 3.141592653589793,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 150
+     },
+     "5": {
+      "type": "M-113",
+      "x": -121586.40000000002,
+      "y": -27608.100000000006,
+      "name": "Armor1-5",
+      "heading": 3.141592653589793,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 151
+     },
+     "6": {
+      "type": "M-113",
+      "x": -121586.40000000002,
+      "y": -27728.100000000006,
+      "name": "Armor1-6",
+      "heading": 3.141592653589793,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 152
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 661.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -121646.40000000002,
+       "y": -27668.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Armor2",
+   "sistema": "carri",
+   "lua": {
+    "paese": 2,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "M-60",
+      "avanti": 60.0,
+      "destra": -105.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "M-60",
+      "avanti": 60.0,
+      "destra": -35.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "M-60",
+      "avanti": 60.0,
+      "destra": 35.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "M-60",
+      "avanti": 60.0,
+      "destra": 105.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "M-113",
+      "avanti": -60.0,
+      "destra": -60.0,
+      "rotta": 0.0
+     },
+     "6": {
+      "tipo": "M-113",
+      "avanti": -60.0,
+      "destra": 60.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -123787.82135623733,
+      "y": -31526.678643762698,
+      "rotta": 195.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "blue",
+    "nome": "Armor2",
+    "sistema": "carri",
+    "missione": "difesa",
+    "lat_lon": [
+     33.89825,
+     35.60107
+    ],
+    "dettagli": {
+     "visibilita": 0.5,
+     "rilievo_m": 19,
+     "dist_obiettivo_km": 3.7,
+     "pendenza": 11,
+     "strada_m": 40,
+     "vegetazione": 5,
+     "quota": 289,
+     "candidati_validi": 2,
+     "scorrimento_m": 200,
+     "siti_scartati_vegetazione": 1,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 4.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 30,
+    "name": "Armor2",
+    "x": -123787.82135623733,
+    "y": -31526.678643762698,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "M-60",
+      "x": -123872.95290555042,
+      "y": -31440.785574708498,
+      "name": "Armor2-1",
+      "heading": 3.4033920413889427,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 153
+     },
+     "2": {
+      "type": "M-60",
+      "x": -123854.83557239325,
+      "y": -31508.400382548734,
+      "name": "Armor2-2",
+      "heading": 3.4033920413889427,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 154
+     },
+     "3": {
+      "type": "M-60",
+      "x": -123836.71823923608,
+      "y": -31576.015190388967,
+      "name": "Armor2-3",
+      "heading": 3.4033920413889427,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 155
+     },
+     "4": {
+      "type": "M-60",
+      "x": -123818.60090607891,
+      "y": -31643.629998229204,
+      "name": "Armor2-4",
+      "heading": 3.4033920413889427,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 156
+     },
+     "5": {
+      "type": "M-113",
+      "x": -123745.39494936613,
+      "y": -31453.1939514792,
+      "name": "Armor2-5",
+      "heading": 3.4033920413889427,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 157
+     },
+     "6": {
+      "type": "M-113",
+      "x": -123714.33666395384,
+      "y": -31569.10505063389,
+      "name": "Armor2-6",
+      "heading": 3.4033920413889427,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 158
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 298.83380951166237,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -123787.82135623733,
+       "y": -31526.678643762698,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Cedar1",
+   "sistema": "meccanizzata",
+   "lua": {
+    "paese": 2,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "LAV-25",
+      "avanti": 40.0,
+      "destra": -80.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "LAV-25",
+      "avanti": 40.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "LAV-25",
+      "avanti": 40.0,
+      "destra": 80.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "AAV7",
+      "avanti": -40.0,
+      "destra": -80.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "AAV7",
+      "avanti": -40.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "6": {
+      "tipo": "AAV7",
+      "avanti": -40.0,
+      "destra": 80.0,
+      "rotta": 0.0
+     },
+     "7": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": -22.5,
+      "rotta": 0.0
+     },
+     "8": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": -7.5,
+      "rotta": 0.0
+     },
+     "9": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": 7.5,
+      "rotta": 0.0
+     },
+     "10": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": 22.5,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -108646.40000000002,
+      "y": -10868.100000000006,
+      "rotta": 105.0
+     },
+     "2": {
+      "x": -111646.40000000002,
+      "y": -12668.100000000006,
+      "rotta": 105.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "blue",
+    "nome": "Cedar1",
+    "sistema": "meccanizzata",
+    "missione": "difesa",
+    "lat_lon": [
+     34.04056,
+     35.81907
+    ],
+    "dettagli": {
+     "visibilita": 0.58,
+     "rilievo_m": 100,
+     "dist_obiettivo_km": 2.0,
+     "pendenza": 13,
+     "strada_m": 530,
+     "vegetazione": 3,
+     "quota": 1792,
+     "candidati_validi": 2,
+     "scorrimento_m": 200,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 4.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 31,
+    "name": "Cedar1",
+    "x": -108646.40000000002,
+    "y": -10868.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "LAV-25",
+      "x": -108579.478695701,
+      "y": -10808.757443340242,
+      "name": "Cedar1-1",
+      "heading": 1.8325957145940461,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 159
+     },
+     "2": {
+      "type": "LAV-25",
+      "x": -108656.75276180412,
+      "y": -10829.462966948444,
+      "name": "Cedar1-2",
+      "heading": 1.8325957145940461,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 160
+     },
+     "3": {
+      "type": "LAV-25",
+      "x": -108734.02682790725,
+      "y": -10850.168490556645,
+      "name": "Cedar1-3",
+      "heading": 1.8325957145940461,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 161
+     },
+     "4": {
+      "type": "AAV7",
+      "x": -108558.7731720928,
+      "y": -10886.031509443366,
+      "name": "Cedar1-4",
+      "heading": 1.8325957145940461,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 162
+     },
+     "5": {
+      "type": "AAV7",
+      "x": -108636.04723819593,
+      "y": -10906.737033051568,
+      "name": "Cedar1-5",
+      "heading": 1.8325957145940461,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 163
+     },
+     "6": {
+      "type": "AAV7",
+      "x": -108713.32130429905,
+      "y": -10927.44255665977,
+      "name": "Cedar1-6",
+      "heading": 1.8325957145940461,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 164
+     },
+     "7": {
+      "type": "Soldier M4",
+      "x": -108642.7840020657,
+      "y": -10794.661763644965,
+      "name": "Cedar1-7",
+      "heading": 1.8325957145940461,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 165
+     },
+     "8": {
+      "type": "Soldier M4",
+      "x": -108657.27288946003,
+      "y": -10798.544049321503,
+      "name": "Cedar1-8",
+      "heading": 1.8325957145940461,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 166
+     },
+     "9": {
+      "type": "Soldier M4",
+      "x": -108671.76177685437,
+      "y": -10802.42633499804,
+      "name": "Cedar1-9",
+      "heading": 1.8325957145940461,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 167
+     },
+     "10": {
+      "type": "Soldier M4",
+      "x": -108686.2506642487,
+      "y": -10806.308620674577,
+      "name": "Cedar1-10",
+      "heading": 1.8325957145940461,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 168
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 1772.5999999999997,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -108646.40000000002,
+       "y": -10868.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Cedar2",
+   "sistema": "meccanizzata",
+   "lua": {
+    "paese": 2,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "LAV-25",
+      "avanti": 40.0,
+      "destra": -80.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "LAV-25",
+      "avanti": 40.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "LAV-25",
+      "avanti": 40.0,
+      "destra": 80.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "AAV7",
+      "avanti": -40.0,
+      "destra": -80.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "AAV7",
+      "avanti": -40.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "6": {
+      "tipo": "AAV7",
+      "avanti": -40.0,
+      "destra": 80.0,
+      "rotta": 0.0
+     },
+     "7": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": -22.5,
+      "rotta": 0.0
+     },
+     "8": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": -7.5,
+      "rotta": 0.0
+     },
+     "9": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": 7.5,
+      "rotta": 0.0
+     },
+     "10": {
+      "tipo": "Soldier M4",
+      "avanti": 70.0,
+      "destra": 22.5,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -124646.40000000002,
+      "y": -38668.100000000006,
+      "rotta": 225.0
+     },
+     "2": {
+      "x": -126646.40000000002,
+      "y": -37668.100000000006,
+      "rotta": 225.0
+     },
+     "3": {
+      "x": -125646.40000000002,
+      "y": -40668.100000000006,
+      "rotta": 225.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "blue",
+    "nome": "Cedar2",
+    "sistema": "meccanizzata",
+    "missione": "difesa",
+    "lat_lon": [
+     33.88837,
+     35.52429
+    ],
+    "dettagli": {
+     "visibilita": 1.0,
+     "rilievo_m": 63,
+     "dist_obiettivo_km": 0.4,
+     "pendenza": 10,
+     "strada_m": 60,
+     "vegetazione": 0,
+     "quota": 90,
+     "candidati_validi": 14,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 3,
+     "raggio_usato_km": 2.2
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 32,
+    "name": "Cedar2",
+    "x": -124646.40000000002,
+    "y": -38668.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "LAV-25",
+      "x": -124731.25281374241,
+      "y": -38639.81572875254,
+      "name": "Cedar2-1",
+      "heading": 3.9269908169872414,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 169
+     },
+     "2": {
+      "type": "LAV-25",
+      "x": -124674.68427124749,
+      "y": -38696.384271247465,
+      "name": "Cedar2-2",
+      "heading": 3.9269908169872414,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 170
+     },
+     "3": {
+      "type": "LAV-25",
+      "x": -124618.11572875257,
+      "y": -38752.95281374239,
+      "name": "Cedar2-3",
+      "heading": 3.9269908169872414,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 171
+     },
+     "4": {
+      "type": "AAV7",
+      "x": -124674.68427124748,
+      "y": -38583.24718625762,
+      "name": "Cedar2-4",
+      "heading": 3.9269908169872414,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 172
+     },
+     "5": {
+      "type": "AAV7",
+      "x": -124618.11572875256,
+      "y": -38639.81572875255,
+      "name": "Cedar2-5",
+      "heading": 3.9269908169872414,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 173
+     },
+     "6": {
+      "type": "AAV7",
+      "x": -124561.54718625764,
+      "y": -38696.38427124747,
+      "name": "Cedar2-6",
+      "heading": 3.9269908169872414,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 174
+     },
+     "7": {
+      "type": "Soldier M4",
+      "x": -124711.80737725977,
+      "y": -38701.68757210636,
+      "name": "Cedar2-7",
+      "heading": 3.9269908169872414,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 175
+     },
+     "8": {
+      "type": "Soldier M4",
+      "x": -124701.20077554198,
+      "y": -38712.294173824164,
+      "name": "Cedar2-8",
+      "heading": 3.9269908169872414,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 176
+     },
+     "9": {
+      "type": "Soldier M4",
+      "x": -124690.59417382418,
+      "y": -38722.90077554196,
+      "name": "Cedar2-9",
+      "heading": 3.9269908169872414,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 177
+     },
+     "10": {
+      "type": "Soldier M4",
+      "x": -124679.98757210639,
+      "y": -38733.50737725976,
+      "name": "Cedar2-10",
+      "heading": 3.9269908169872414,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 178
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 90.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -124646.40000000002,
+       "y": -38668.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Wall (SY)",
+   "sistema": "carri",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "T-72B",
+      "avanti": 60.0,
+      "destra": -105.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "T-72B",
+      "avanti": 60.0,
+      "destra": -35.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "T-72B",
+      "avanti": 60.0,
+      "destra": 35.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "T-72B",
+      "avanti": 60.0,
+      "destra": 105.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "BMP-1",
+      "avanti": -60.0,
+      "destra": -60.0,
+      "rotta": 0.0
+     },
+     "6": {
+      "tipo": "BMP-1",
+      "avanti": -60.0,
+      "destra": 60.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -135646.40000000002,
+      "y": -21768.100000000006,
+      "rotta": 315.0
+     },
+     "2": {
+      "x": -133646.40000000002,
+      "y": -16868.100000000006,
+      "rotta": 315.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "Wall (SY)",
+    "sistema": "carri",
+    "missione": "difesa",
+    "lat_lon": [
+     33.79434,
+     35.71054
+    ],
+    "dettagli": {
+     "visibilita": 0.0,
+     "rilievo_m": 100,
+     "dist_obiettivo_km": 4.0,
+     "pendenza": 7,
+     "strada_m": 580,
+     "vegetazione": 10,
+     "quota": 1368,
+     "candidati_validi": 4,
+     "scorrimento_m": 100,
+     "siti_scartati_vegetazione": 1,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 6.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 33,
+    "name": "Wall (SY)",
+    "x": -135646.40000000002,
+    "y": -21768.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "T-72B",
+      "x": -135678.2198051534,
+      "y": -21884.772618895786,
+      "name": "Wall (SY)-1",
+      "heading": 5.497787143782138,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 179
+     },
+     "2": {
+      "type": "T-72B",
+      "x": -135628.72233047034,
+      "y": -21835.275144212726,
+      "name": "Wall (SY)-2",
+      "heading": 5.497787143782138,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 180
+     },
+     "3": {
+      "type": "T-72B",
+      "x": -135579.2248557873,
+      "y": -21785.77766952967,
+      "name": "Wall (SY)-3",
+      "heading": 5.497787143782138,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 181
+     },
+     "4": {
+      "type": "T-72B",
+      "x": -135529.72738110423,
+      "y": -21736.28019484661,
+      "name": "Wall (SY)-4",
+      "heading": 5.497787143782138,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 182
+     },
+     "5": {
+      "type": "BMP-1",
+      "x": -135731.25281374244,
+      "y": -21768.100000000006,
+      "name": "Wall (SY)-5",
+      "heading": 5.497787143782138,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 183
+     },
+     "6": {
+      "type": "BMP-1",
+      "x": -135646.40000000002,
+      "y": -21683.24718625762,
+      "name": "Wall (SY)-6",
+      "heading": 5.497787143782138,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 184
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 1365.7,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -135646.40000000002,
+       "y": -21768.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Line",
+   "sistema": "meccanizzata",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "BMP-1",
+      "avanti": 40.0,
+      "destra": -105.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "BMP-1",
+      "avanti": 40.0,
+      "destra": -35.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "BMP-1",
+      "avanti": 40.0,
+      "destra": 35.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "BMP-1",
+      "avanti": 40.0,
+      "destra": 105.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "BTR-70",
+      "avanti": -50.0,
+      "destra": -50.0,
+      "rotta": 0.0
+     },
+     "6": {
+      "tipo": "BTR-70",
+      "avanti": -50.0,
+      "destra": 50.0,
+      "rotta": 0.0
+     },
+     "7": {
+      "tipo": "Infantry AK",
+      "avanti": 70.0,
+      "destra": -22.5,
+      "rotta": 0.0
+     },
+     "8": {
+      "tipo": "Infantry AK",
+      "avanti": 70.0,
+      "destra": -7.5,
+      "rotta": 0.0
+     },
+     "9": {
+      "tipo": "Infantry AK",
+      "avanti": 70.0,
+      "destra": 7.5,
+      "rotta": 0.0
+     },
+     "10": {
+      "tipo": "Infantry AK",
+      "avanti": 70.0,
+      "destra": 22.5,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -135646.40000000002,
+      "y": -26268.100000000006,
+      "rotta": 320.0
+     },
+     "2": {
+      "x": -137575.68932188136,
+      "y": -24738.81067811866,
+      "rotta": 320.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "Line",
+    "sistema": "meccanizzata",
+    "missione": "difesa",
+    "lat_lon": [
+     33.79304,
+     35.66201
+    ],
+    "dettagli": {
+     "visibilita": 0.75,
+     "rilievo_m": 100,
+     "dist_obiettivo_km": 1.7,
+     "pendenza": 23,
+     "strada_m": 180,
+     "vegetazione": 33,
+     "quota": 1182,
+     "candidati_validi": 10,
+     "scorrimento_m": 400,
+     "siti_scartati_vegetazione": 4,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 2,
+     "raggio_usato_km": 4.5
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 34,
+    "name": "Line",
+    "x": -135646.40000000002,
+    "y": -26268.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "BMP-1",
+      "x": -135683.25092129235,
+      "y": -26374.24617091496,
+      "name": "Line-1",
+      "heading": 5.585053606381854,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 185
+     },
+     "2": {
+      "type": "BMP-1",
+      "x": -135638.2557886143,
+      "y": -26320.623059896632,
+      "name": "Line-2",
+      "heading": 5.585053606381854,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 186
+     },
+     "3": {
+      "type": "BMP-1",
+      "x": -135593.26065593623,
+      "y": -26266.999948878303,
+      "name": "Line-3",
+      "heading": 5.585053606381854,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 187
+     },
+     "4": {
+      "type": "BMP-1",
+      "x": -135548.2655232582,
+      "y": -26213.376837859974,
+      "name": "Line-4",
+      "heading": 5.585053606381854,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 188
+     },
+     "5": {
+      "type": "BTR-70",
+      "x": -135716.84160264028,
+      "y": -26274.262841671625,
+      "name": "Line-5",
+      "heading": 5.585053606381854,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 189
+     },
+     "6": {
+      "type": "BTR-70",
+      "x": -135652.56284167164,
+      "y": -26197.65839735973,
+      "name": "Line-6",
+      "heading": 5.585053606381854,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 190
+     },
+     "7": {
+      "type": "Infantry AK",
+      "x": -135607.23961019964,
+      "y": -26330.33113264824,
+      "name": "Line-7",
+      "heading": 5.585053606381854,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 191
+     },
+     "8": {
+      "type": "Infantry AK",
+      "x": -135597.59779605435,
+      "y": -26318.840466001457,
+      "name": "Line-8",
+      "heading": 5.585053606381854,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 192
+     },
+     "9": {
+      "type": "Infantry AK",
+      "x": -135587.95598190904,
+      "y": -26307.34979935467,
+      "name": "Line-9",
+      "heading": 5.585053606381854,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 193
+     },
+     "10": {
+      "type": "Infantry AK",
+      "x": -135578.31416776375,
+      "y": -26295.859132707887,
+      "name": "Line-10",
+      "heading": 5.585053606381854,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 194
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 1165.1999999999998,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -135646.40000000002,
+       "y": -26268.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "Spear",
+   "sistema": "meccanizzata",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "BMP-1",
+      "avanti": 40.0,
+      "destra": -105.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "BMP-1",
+      "avanti": 40.0,
+      "destra": -35.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "BMP-1",
+      "avanti": 40.0,
+      "destra": 35.0,
+      "rotta": 0.0
+     },
+     "4": {
+      "tipo": "BMP-1",
+      "avanti": 40.0,
+      "destra": 105.0,
+      "rotta": 0.0
+     },
+     "5": {
+      "tipo": "BTR-70",
+      "avanti": -50.0,
+      "destra": -50.0,
+      "rotta": 0.0
+     },
+     "6": {
+      "tipo": "BTR-70",
+      "avanti": -50.0,
+      "destra": 50.0,
+      "rotta": 0.0
+     },
+     "7": {
+      "tipo": "Infantry AK",
+      "avanti": 70.0,
+      "destra": -22.5,
+      "rotta": 0.0
+     },
+     "8": {
+      "tipo": "Infantry AK",
+      "avanti": 70.0,
+      "destra": -7.5,
+      "rotta": 0.0
+     },
+     "9": {
+      "tipo": "Infantry AK",
+      "avanti": 70.0,
+      "destra": 7.5,
+      "rotta": 0.0
+     },
+     "10": {
+      "tipo": "Infantry AK",
+      "avanti": 70.0,
+      "destra": 22.5,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -111787.82135623733,
+      "y": -526.6786437626963,
+      "rotta": 270.0
+     },
+     "2": {
+      "x": -110646.40000000002,
+      "y": -2668.100000000006,
+      "rotta": 270.0
+     },
+     "3": {
+      "x": -108646.40000000002,
+      "y": 331.8999999999942,
+      "rotta": 270.0
+     },
+     "4": {
+      "x": -108846.40000000002,
+      "y": -3668.100000000006,
+      "rotta": 270.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "Spear",
+    "sistema": "meccanizzata",
+    "missione": "attacco",
+    "lat_lon": [
+     34.01512,
+     35.93196
+    ],
+    "dettagli": {
+     "visibilita": 1.0,
+     "rilievo_m": 38,
+     "dist_obiettivo_km": 5.0,
+     "pendenza": 14,
+     "strada_m": 20,
+     "vegetazione": 30,
+     "quota": 2079,
+     "candidati_validi": 18,
+     "scorrimento_m": 200,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 3.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 35,
+    "name": "Spear",
+    "x": -111787.82135623733,
+    "y": -526.6786437626963,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "BMP-1",
+      "x": -111892.82135623733,
+      "y": -566.6786437626963,
+      "name": "Spear-1",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 195
+     },
+     "2": {
+      "type": "BMP-1",
+      "x": -111822.82135623733,
+      "y": -566.6786437626963,
+      "name": "Spear-2",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 196
+     },
+     "3": {
+      "type": "BMP-1",
+      "x": -111752.82135623733,
+      "y": -566.6786437626963,
+      "name": "Spear-3",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 197
+     },
+     "4": {
+      "type": "BMP-1",
+      "x": -111682.82135623733,
+      "y": -566.6786437626963,
+      "name": "Spear-4",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 198
+     },
+     "5": {
+      "type": "BTR-70",
+      "x": -111837.82135623733,
+      "y": -476.6786437626963,
+      "name": "Spear-5",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 199
+     },
+     "6": {
+      "type": "BTR-70",
+      "x": -111737.82135623733,
+      "y": -476.6786437626963,
+      "name": "Spear-6",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 200
+     },
+     "7": {
+      "type": "Infantry AK",
+      "x": -111810.32135623733,
+      "y": -596.6786437626963,
+      "name": "Spear-7",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 201
+     },
+     "8": {
+      "type": "Infantry AK",
+      "x": -111795.32135623733,
+      "y": -596.6786437626963,
+      "name": "Spear-8",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 202
+     },
+     "9": {
+      "type": "Infantry AK",
+      "x": -111780.32135623733,
+      "y": -596.6786437626963,
+      "name": "Spear-9",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 203
+     },
+     "10": {
+      "type": "Infantry AK",
+      "x": -111765.32135623733,
+      "y": -596.6786437626963,
+      "name": "Spear-10",
+      "heading": 4.71238898038469,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 204
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 2072.0318759132874,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -111787.82135623733,
+       "y": -526.6786437626963,
+       "ETA_locked": true,
+       "speed": 5.5,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      },
+      "2": {
+       "alt": 2091.8316981485623,
+       "alt_type": "BARO",
+       "type": "Turning Point",
+       "action": "Off Road",
+       "x": -113319.83270539157,
+       "y": -5378.0014664144255,
+       "speed": 5.5,
+       "speed_locked": true,
+       "ETA": 0,
+       "ETA_locked": false,
+       "formation_template": "",
+       "name": "",
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Stinger1",
+   "sistema": "contraerea_mobile",
+   "lua": {
+    "paese": 2,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "Soldier stinger",
+      "avanti": 0.0,
+      "destra": -30.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "Soldier stinger",
+      "avanti": 0.0,
+      "destra": 30.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "Stinger comm",
+      "avanti": -30.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -131646.40000000002,
+      "y": -32668.100000000006,
+      "rotta": 155.0
+     },
+     "2": {
+      "x": -130746.40000000002,
+      "y": -28668.100000000006,
+      "rotta": 155.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "blue",
+    "nome": "Stinger1",
+    "sistema": "contraerea_mobile",
+    "missione": "difesa",
+    "lat_lon": [
+     33.82716,
+     35.59156
+    ],
+    "dettagli": {
+     "visibilita": 1.0,
+     "rilievo_m": 100,
+     "dist_obiettivo_km": 2.8,
+     "pendenza": 18,
+     "strada_m": 130,
+     "vegetazione": 9,
+     "quota": 618,
+     "candidati_validi": 7,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 2,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 3,
+     "raggio_usato_km": 3.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 36,
+    "name": "Stinger1",
+    "x": -131646.40000000002,
+    "y": -32668.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "Soldier stinger",
+      "x": -131633.72145214782,
+      "y": -32640.910766388908,
+      "name": "Stinger1-1",
+      "heading": 2.705260340591211,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 205
+     },
+     "2": {
+      "type": "Soldier stinger",
+      "x": -131659.07854785223,
+      "y": -32695.289233611104,
+      "name": "Stinger1-2",
+      "heading": 2.705260340591211,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 206
+     },
+     "3": {
+      "type": "Stinger comm",
+      "x": -131619.21076638892,
+      "y": -32680.778547852227,
+      "name": "Stinger1-3",
+      "heading": 2.705260340591211,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 207
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 618.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -131646.40000000002,
+       "y": -32668.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Stinger2",
+   "sistema": "contraerea_mobile",
+   "lua": {
+    "paese": 2,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "Soldier stinger",
+      "avanti": 0.0,
+      "destra": -30.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "Soldier stinger",
+      "avanti": 0.0,
+      "destra": 30.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "Stinger comm",
+      "avanti": -30.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -123434.26796564406,
+      "y": -17455.967965644042,
+      "rotta": 120.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "blue",
+    "nome": "Stinger2",
+    "sistema": "contraerea_mobile",
+    "missione": "difesa",
+    "lat_lon": [
+     33.90554,
+     35.75288
+    ],
+    "dettagli": {
+     "visibilita": 0.0,
+     "rilievo_m": -27,
+     "dist_obiettivo_km": 3.5,
+     "pendenza": 18,
+     "strada_m": 140,
+     "vegetazione": 14,
+     "quota": 1104,
+     "candidati_validi": 1,
+     "scorrimento_m": 300,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 1,
+     "raggio_usato_km": 4.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 37,
+    "name": "Stinger2",
+    "x": -123434.26796564406,
+    "y": -17455.967965644042,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "Soldier stinger",
+      "x": -123408.28720353053,
+      "y": -17440.967965644042,
+      "name": "Stinger2-1",
+      "heading": 2.0943951023931953,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 208
+     },
+     "2": {
+      "type": "Soldier stinger",
+      "x": -123460.24872775759,
+      "y": -17470.967965644042,
+      "name": "Stinger2-2",
+      "heading": 2.0943951023931953,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 209
+     },
+     "3": {
+      "type": "Stinger comm",
+      "x": -123419.26796564406,
+      "y": -17481.948727757575,
+      "name": "Stinger2-3",
+      "heading": 2.0943951023931953,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 210
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 1162.5995345472802,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -123434.26796564406,
+       "y": -17455.967965644042,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "blue",
+   "nome": "Stinger3",
+   "sistema": "contraerea_mobile",
+   "lua": {
+    "paese": 2,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "Soldier stinger",
+      "avanti": 0.0,
+      "destra": -30.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "Soldier stinger",
+      "avanti": 0.0,
+      "destra": 30.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "Stinger comm",
+      "avanti": -30.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -117646.40000000002,
+      "y": -31668.100000000006,
+      "rotta": 105.0
+     },
+     "2": {
+      "x": -117646.40000000002,
+      "y": -27668.100000000006,
+      "rotta": 105.0
+     },
+     "3": {
+      "x": -116646.40000000002,
+      "y": -29668.100000000006,
+      "rotta": 105.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "blue",
+    "nome": "Stinger3",
+    "sistema": "contraerea_mobile",
+    "missione": "difesa",
+    "lat_lon": [
+     33.9535,
+     35.59734
+    ],
+    "dettagli": {
+     "visibilita": 0.83,
+     "rilievo_m": 17,
+     "dist_obiettivo_km": 2.8,
+     "pendenza": 15,
+     "strada_m": 250,
+     "vegetazione": 0,
+     "quota": 80,
+     "candidati_validi": 5,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 4.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 38,
+    "name": "Stinger3",
+    "x": -117646.40000000002,
+    "y": -31668.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "Soldier stinger",
+      "x": -117617.42222521135,
+      "y": -31660.33542864693,
+      "name": "Stinger3-1",
+      "heading": 1.8325957145940461,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 211
+     },
+     "2": {
+      "type": "Soldier stinger",
+      "x": -117675.37777478869,
+      "y": -31675.864571353082,
+      "name": "Stinger3-2",
+      "heading": 1.8325957145940461,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 212
+     },
+     "3": {
+      "type": "Stinger comm",
+      "x": -117638.63542864694,
+      "y": -31697.07777478868,
+      "name": "Stinger3-3",
+      "heading": 1.8325957145940461,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 213
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 80.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -117646.40000000002,
+       "y": -31668.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "AleyAA",
+   "sistema": "contraerea_mobile",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "ZSU-23-4 Shilka",
+      "avanti": 0.0,
+      "destra": -75.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "ZSU-23-4 Shilka",
+      "avanti": 0.0,
+      "destra": 75.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "Strela-1 9P31",
+      "avanti": -80.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -136646.40000000002,
+      "y": -35468.100000000006,
+      "rotta": 315.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "AleyAA",
+    "sistema": "contraerea_mobile",
+    "missione": "difesa",
+    "lat_lon": [
+     33.78131,
+     35.56316
+    ],
+    "dettagli": {
+     "visibilita": 0.0,
+     "rilievo_m": 100,
+     "dist_obiettivo_km": 5.6,
+     "pendenza": 13,
+     "strada_m": 10,
+     "vegetazione": 3,
+     "quota": 788,
+     "candidati_validi": 1,
+     "scorrimento_m": 200,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 6.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 39,
+    "name": "AleyAA",
+    "x": -136646.40000000002,
+    "y": -35468.100000000006,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "ZSU-23-4 Shilka",
+      "x": -136699.43300858903,
+      "y": -35521.133008589,
+      "name": "AleyAA-1",
+      "heading": 5.497787143782138,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 214
+     },
+     "2": {
+      "type": "ZSU-23-4 Shilka",
+      "x": -136593.36699141102,
+      "y": -35415.06699141101,
+      "name": "AleyAA-2",
+      "heading": 5.497787143782138,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 215
+     },
+     "3": {
+      "type": "Strela-1 9P31",
+      "x": -136702.96854249496,
+      "y": -35411.53145750508,
+      "name": "AleyAA-3",
+      "heading": 5.497787143782138,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 216
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 765.5999999999997,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -136646.40000000002,
+       "y": -35468.100000000006,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SofarAA",
+   "sistema": "contraerea_mobile",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "ZSU-23-4 Shilka",
+      "avanti": 0.0,
+      "destra": -75.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "ZSU-23-4 Shilka",
+      "avanti": 0.0,
+      "destra": 75.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "Strela-1 9P31",
+      "avanti": -80.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -135363.55728752541,
+      "y": -20385.257287525386,
+      "rotta": 315.0
+     },
+     "2": {
+      "x": -136346.40000000002,
+      "y": -18668.100000000006,
+      "rotta": 315.0
+     },
+     "3": {
+      "x": -133787.82135623734,
+      "y": -16526.678643762698,
+      "rotta": 315.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "SofarAA",
+    "sistema": "contraerea_mobile",
+    "missione": "difesa",
+    "lat_lon": [
+     33.79729,
+     35.72535
+    ],
+    "dettagli": {
+     "visibilita": 0.0,
+     "rilievo_m": -39,
+     "dist_obiettivo_km": 1.7,
+     "pendenza": 7,
+     "strada_m": 30,
+     "vegetazione": 22,
+     "quota": 1238,
+     "candidati_validi": 4,
+     "scorrimento_m": 400,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 6.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 40,
+    "name": "SofarAA",
+    "x": -135363.55728752541,
+    "y": -20385.257287525386,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "ZSU-23-4 Shilka",
+      "x": -135416.59029611442,
+      "y": -20438.290296114377,
+      "name": "SofarAA-1",
+      "heading": 5.497787143782138,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 217
+     },
+     "2": {
+      "type": "ZSU-23-4 Shilka",
+      "x": -135310.5242789364,
+      "y": -20332.224278936395,
+      "name": "SofarAA-2",
+      "heading": 5.497787143782138,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 218
+     },
+     "3": {
+      "type": "Strela-1 9P31",
+      "x": -135420.12583002035,
+      "y": -20328.688745030464,
+      "name": "SofarAA-3",
+      "heading": 5.497787143782138,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 219
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 1286.2345309579048,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -135363.55728752541,
+       "y": -20385.257287525386,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ ],
+ "eliminati": []
+}

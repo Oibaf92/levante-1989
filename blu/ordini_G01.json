@@ -1,0 +1,644 @@
+{
+ "giorno": 1,
+ "intento_generale": "Tenere la testa di ponte e proteggere flotta e Tarawa; ricognizione armata e primi colpi all'artiglieria e ai corazzati siriani attorno ad Aley e al Chouf; cominciare ad accecare la rete radar dal sito del Libano nord. Poche perdite.",
+ "missioni_aeree": [
+  {
+   "nome": "Lantern",
+   "blocco": 1,
+   "tipo": "AWACS",
+   "velivolo": "E-2C",
+   "numero": 1,
+   "carico": "nessuno",
+   "base": "CVN-71",
+   "decollo": "05:50",
+   "obiettivo": [
+    34.0,
+    34.6
+   ],
+   "raggio_km": 30,
+   "quota_ft": 24000,
+   "durata_min": 170,
+   "giocatore": false,
+   "note": "Orbita sul mare, asse verso nord-est; fuori portata SA-2/SA-3 di Tartus e Latakia."
+  },
+  {
+   "nome": "Picket",
+   "blocco": 1,
+   "tipo": "CAP",
+   "velivolo": "F-14A-135-GR-Early",
+   "numero": 2,
+   "carico": "cap 2-3-2",
+   "base": "CVN-71",
+   "decollo": "05:55",
+   "obiettivo": [
+    34.5,
+    34.8
+   ],
+   "raggio_km": 40,
+   "quota_ft": 25000,
+   "durata_min": 150,
+   "giocatore": false,
+   "note": "Barriera tra la flotta e l'asse Latakia-Tartus, oltre 100 km da Tartus. AIM-54 solo contro bombardieri o attacchi antinave."
+  },
+  {
+   "nome": "Colt",
+   "blocco": 1,
+   "tipo": "CAP",
+   "velivolo": "FA-18C_hornet",
+   "numero": 2,
+   "carico": "cap 2-4 serbatoi ali",
+   "base": "CVN-71",
+   "decollo": "06:00",
+   "obiettivo": [
+    33.92,
+    35.6
+   ],
+   "raggio_km": 15,
+   "quota_ft": 14000,
+   "durata_min": 90,
+   "rotta": [
+    [
+     33.95,
+     35.3
+    ]
+   ],
+   "giocatore": false,
+   "note": "CAP sulla testa di ponte e sulla Tarawa, sotto i 15.000 ft; ingaggi sopra l'enclave o il mare, mai sopra la Bekaa."
+  },
+  {
+   "nome": "Weasel",
+   "blocco": 1,
+   "tipo": "SEAD",
+   "velivolo": "FA-18C_hornet",
+   "numero": 2,
+   "carico": "sead",
+   "base": "CVN-71",
+   "decollo": "06:40",
+   "obiettivo": [
+    33.84,
+    35.74
+   ],
+   "raggio_km": 15,
+   "quota_ft": 15000,
+   "durata_min": 45,
+   "rotta": [
+    [
+     33.95,
+     35.3
+    ],
+    [
+     33.9,
+     35.6
+    ]
+   ],
+   "giocatore": false,
+   "note": "Copre la ricognizione Shutter e gli Apache: HARM contro SA-6/SA-8 che si accendono verso Sofar-Dahr el-Baidar."
+  },
+  {
+   "nome": "Shutter",
+   "blocco": 1,
+   "tipo": "STRIKE",
+   "velivolo": "F-14A-135-GR-Early",
+   "numero": 2,
+   "carico": "ricognizione TARPS",
+   "base": "CVN-71",
+   "decollo": "06:45",
+   "obiettivo": [
+    33.82,
+    35.66
+   ],
+   "raggio_km": 5,
+   "quota_ft": 12000,
+   "durata_min": 40,
+   "rotta": [
+    [
+     33.65,
+     35.3
+    ],
+    [
+     33.7,
+     35.55
+    ],
+    [
+     33.79,
+     35.62
+    ],
+    [
+     33.86,
+     35.7
+    ],
+    [
+     34.0,
+     35.76
+    ],
+    [
+     34.15,
+     35.55
+    ]
+   ],
+   "giocatore": false,
+   "note": "Ricognizione TARPS lungo il fronte (Chouf, Aley, Bhamdoun, Mtein, Faraya) sotto i 20.000 ft per trovare artiglieria, corazzati e SAM mobili; restare a ovest di E35.72 (SA-6 Bekaa). Nessun armamento a terra."
+  },
+  {
+   "nome": "Saber",
+   "blocco": 1,
+   "tipo": "CAS",
+   "velivolo": "AH-64D_BLK_II",
+   "numero": 2,
+   "carico": "anticarro",
+   "base": "LHA-1",
+   "decollo": "07:00",
+   "obiettivo": [
+    33.79,
+    35.63
+   ],
+   "raggio_km": 5,
+   "quota_ft": 100,
+   "durata_min": 60,
+   "rotta": [
+    [
+     33.95,
+     35.55
+    ],
+    [
+     33.87,
+     35.6
+    ],
+    [
+     33.83,
+     35.62
+    ]
+   ],
+   "giocatore": true,
+   "note": "Volo del giocatore con gregario IA. Bassa quota, dentro l'enclave fino alla cresta sopra Aley-Bhamdoun, tiro di Hellfire da dietro la cresta contro corazzati e pezzi siriani tra Aley e Bhamdoun. Nessuna batteria SAM nota copre l'obiettivo (SA-6 e SA-8 Bekaa oltre 25 km); attese ZSU-23-4 e spalleggiabili: niente sorvoli della linea. Possibile nebbia sulla costa all'alba."
+  },
+  {
+   "nome": "Beacon",
+   "blocco": 2,
+   "tipo": "AWACS",
+   "velivolo": "E-2C",
+   "numero": 1,
+   "carico": "nessuno",
+   "base": "CVN-71",
+   "decollo": "10:35",
+   "obiettivo": [
+    34.0,
+    34.6
+   ],
+   "raggio_km": 30,
+   "quota_ft": 24000,
+   "durata_min": 170,
+   "giocatore": false
+  },
+  {
+   "nome": "Wall",
+   "blocco": 2,
+   "tipo": "CAP",
+   "velivolo": "F-14A-135-GR-Early",
+   "numero": 2,
+   "carico": "cap 2-3-2",
+   "base": "CVN-71",
+   "decollo": "10:40",
+   "obiettivo": [
+    34.5,
+    34.8
+   ],
+   "raggio_km": 40,
+   "quota_ft": 25000,
+   "durata_min": 150,
+   "giocatore": false,
+   "note": "Barriera della flotta, come Picket."
+  },
+  {
+   "nome": "Mustang",
+   "blocco": 2,
+   "tipo": "CAP",
+   "velivolo": "FA-18C_hornet",
+   "numero": 2,
+   "carico": "cap 2-4 serbatoi ali",
+   "base": "CVN-71",
+   "decollo": "11:00",
+   "obiettivo": [
+    34.05,
+    35.7
+   ],
+   "raggio_km": 20,
+   "quota_ft": 15000,
+   "durata_min": 90,
+   "rotta": [
+    [
+     34.1,
+     35.3
+    ]
+   ],
+   "giocatore": false,
+   "note": "Copre il pacchetto Viper/Hammer e la testa di ponte; non oltre E35.85."
+  },
+  {
+   "nome": "Viper",
+   "blocco": 2,
+   "tipo": "SEAD",
+   "velivolo": "FA-18C_hornet",
+   "numero": 2,
+   "carico": "sead",
+   "base": "CVN-71",
+   "decollo": "11:30",
+   "obiettivo": [
+    34.3,
+    36.08
+   ],
+   "raggio_km": 20,
+   "quota_ft": 14000,
+   "durata_min": 40,
+   "rotta": [
+    [
+     34.45,
+     35.5
+    ],
+    [
+     34.3,
+     35.85
+    ]
+   ],
+   "giocatore": false,
+   "note": "Contro il radar di scoperta fisso del Libano nord (posizione stimata sulle alture di Qurnat as Sawda, da correggere con l'intel del blocco 1). Entrata bassa dal mare a nord di Tripoli lungo le valli; HARM 2-4 minuti prima di Hammer. Una batteria nota (SA-2 Baalbek, al margine)."
+  },
+  {
+   "nome": "Hammer",
+   "blocco": 2,
+   "tipo": "STRIKE",
+   "velivolo": "FA-18C_hornet",
+   "numero": 2,
+   "carico": "strike Mk-83",
+   "base": "CVN-71",
+   "decollo": "11:33",
+   "obiettivo": [
+    34.3,
+    36.08
+   ],
+   "raggio_km": 3,
+   "quota_ft": 14000,
+   "durata_min": 40,
+   "rotta": [
+    [
+     34.45,
+     35.5
+    ],
+    [
+     34.3,
+     35.85
+    ]
+   ],
+   "giocatore": false,
+   "note": "Strike sul radar del Libano nord dopo Viper, un solo passaggio; se Viper o la scorta mancano, rientra."
+  },
+  {
+   "nome": "Anvil",
+   "blocco": 2,
+   "tipo": "STRIKE",
+   "velivolo": "A6E",
+   "numero": 2,
+   "carico": "attacco",
+   "base": "CVN-71",
+   "decollo": "12:00",
+   "obiettivo": [
+    33.7,
+    35.6
+   ],
+   "raggio_km": 3,
+   "quota_ft": 12000,
+   "durata_min": 45,
+   "rotta": [
+    [
+     33.6,
+     35.3
+    ]
+   ],
+   "giocatore": false,
+   "note": "Artiglieria siriana sulle alture del Chouf che batte l'enclave; bersaglio da aggiornare con le foto di Shutter e il radar contro-artiglieria. Un SAM rivelato al blocco 1 vicino al fronte ha la precedenza."
+  },
+  {
+   "nome": "Torch",
+   "blocco": 3,
+   "tipo": "AWACS",
+   "velivolo": "E-2C",
+   "numero": 1,
+   "carico": "nessuno",
+   "base": "CVN-71",
+   "decollo": "14:35",
+   "obiettivo": [
+    34.0,
+    34.6
+   ],
+   "raggio_km": 30,
+   "quota_ft": 24000,
+   "durata_min": 170,
+   "giocatore": false
+  },
+  {
+   "nome": "Fence",
+   "blocco": 3,
+   "tipo": "CAP",
+   "velivolo": "F-14A-135-GR-Early",
+   "numero": 2,
+   "carico": "cap 2-3-2",
+   "base": "CVN-71",
+   "decollo": "14:40",
+   "obiettivo": [
+    34.5,
+    34.8
+   ],
+   "raggio_km": 40,
+   "quota_ft": 25000,
+   "durata_min": 150,
+   "giocatore": false,
+   "note": "Barriera della flotta, come Picket."
+  },
+  {
+   "nome": "Bronco",
+   "blocco": 3,
+   "tipo": "CAP",
+   "velivolo": "FA-18C_hornet",
+   "numero": 2,
+   "carico": "cap 2-4 serbatoi ali",
+   "base": "CVN-71",
+   "decollo": "15:00",
+   "obiettivo": [
+    33.85,
+    35.62
+   ],
+   "raggio_km": 15,
+   "quota_ft": 14000,
+   "durata_min": 90,
+   "rotta": [
+    [
+     33.95,
+     35.3
+    ]
+   ],
+   "giocatore": false,
+   "note": "CAP sulla testa di ponte durante l'attacco di Thunder e Lance."
+  },
+  {
+   "nome": "Shell",
+   "blocco": 3,
+   "tipo": "TANKER",
+   "velivolo": "KC135MPRS",
+   "numero": 1,
+   "carico": "nessuno",
+   "base": "Incirlik",
+   "decollo": "14:30",
+   "obiettivo": [
+    34.9,
+    34.5
+   ],
+   "raggio_km": 30,
+   "quota_ft": 22000,
+   "durata_min": 170,
+   "rotta": [
+    [
+     36.2,
+     34.9
+    ]
+   ],
+   "giocatore": false,
+   "note": "Orbita sul mare tra Cipro e il Libano, lontano da Latakia e Tartus; rifornisce Thunder."
+  },
+  {
+   "nome": "Thunder",
+   "blocco": 3,
+   "tipo": "CAS",
+   "velivolo": "F-4E-45MC",
+   "numero": 2,
+   "carico": "cas cbu",
+   "base": "Incirlik",
+   "decollo": "14:45",
+   "obiettivo": [
+    33.74,
+    35.6
+   ],
+   "raggio_km": 8,
+   "quota_ft": 12000,
+   "durata_min": 40,
+   "rotta": [
+    [
+     36.2,
+     34.9
+    ],
+    [
+     34.9,
+     34.5
+    ],
+    [
+     33.95,
+     35.3
+    ]
+   ],
+   "giocatore": false,
+   "note": "Artiglieria e lanciarazzi siriani tra Aley e il Chouf (bersagli da foto TARPS e AN/TPQ-37); entrata dal mare con il sole alle spalle, sopra i 10.000 ft."
+  },
+  {
+   "nome": "Lance",
+   "blocco": 3,
+   "tipo": "CAS",
+   "velivolo": "AH-64D_BLK_II",
+   "numero": 2,
+   "carico": "appoggio",
+   "base": "LHA-1",
+   "decollo": "15:30",
+   "obiettivo": [
+    33.8,
+    35.65
+   ],
+   "raggio_km": 5,
+   "quota_ft": 100,
+   "durata_min": 60,
+   "rotta": [
+    [
+     33.95,
+     35.55
+    ],
+    [
+     33.87,
+     35.62
+    ]
+   ],
+   "giocatore": false,
+   "note": "Appoggio ai Marines sulla cresta di Aley-Bhamdoun dopo Thunder, tiro da dietro la cresta; nessuna batteria SAM nota sull'obiettivo."
+  }
+ ],
+ "unita_terra": [
+  {
+   "nome": "Mech1",
+   "tipo": "meccanizzata",
+   "centro": [
+    33.845,
+    35.565
+   ],
+   "raggio_km": 2,
+   "settore": [
+    120,
+    220
+   ],
+   "missione": "difesa"
+  },
+  {
+   "nome": "Mech2",
+   "tipo": "meccanizzata",
+   "centro": [
+    33.83,
+    35.625
+   ],
+   "raggio_km": 1.5,
+   "settore": [
+    150,
+    220
+   ],
+   "missione": "difesa"
+  },
+  {
+   "nome": "Mech3",
+   "tipo": "meccanizzata",
+   "centro": [
+    33.88,
+    35.72
+   ],
+   "raggio_km": 2,
+   "settore": [
+    120,
+    200
+   ],
+   "missione": "difesa"
+  },
+  {
+   "nome": "Armor1",
+   "tipo": "carri",
+   "centro": [
+    33.875,
+    35.62
+   ],
+   "raggio_km": 3,
+   "settore": [
+    150,
+    210
+   ],
+   "missione": "difesa"
+  },
+  {
+   "nome": "Armor2",
+   "tipo": "carri",
+   "centro": [
+    33.87,
+    35.58
+   ],
+   "raggio_km": 2,
+   "settore": [
+    160,
+    230
+   ],
+   "missione": "difesa"
+  },
+  {
+   "nome": "Guns",
+   "tipo": "artiglieria",
+   "centro": [
+    33.885,
+    35.57
+   ],
+   "raggio_km": 2,
+   "settore": [
+    150,
+    200
+   ],
+   "missione": "fuoco",
+   "bersaglio_fuoco": [
+    33.79,
+    35.61
+   ]
+  },
+  {
+   "nome": "Hawk",
+   "tipo": "hawk",
+   "centro": [
+    33.95,
+    35.58
+   ],
+   "raggio_km": 3,
+   "settore": [
+    60,
+    200
+   ],
+   "missione": "difesa"
+  },
+  {
+   "nome": "Stinger1",
+   "tipo": "contraerea_mobile",
+   "centro": [
+    33.835,
+    35.62
+   ],
+   "raggio_km": 1.5,
+   "settore": [
+    90,
+    220
+   ],
+   "missione": "difesa"
+  },
+  {
+   "nome": "Stinger2",
+   "tipo": "contraerea_mobile",
+   "centro": [
+    33.885,
+    35.72
+   ],
+   "raggio_km": 2,
+   "settore": [
+    60,
+    180
+   ],
+   "missione": "difesa"
+  },
+  {
+   "nome": "Stinger3",
+   "tipo": "contraerea_mobile",
+   "centro": [
+    33.97,
+    35.62
+   ],
+   "raggio_km": 2,
+   "settore": [
+    30,
+    180
+   ],
+   "missione": "difesa"
+  },
+  {
+   "nome": "Cedar1",
+   "tipo": "meccanizzata",
+   "centro": [
+    34.04,
+    35.8
+   ],
+   "raggio_km": 2,
+   "settore": [
+    60,
+    150
+   ],
+   "missione": "difesa"
+  },
+  {
+   "nome": "Cedar2",
+   "tipo": "meccanizzata",
+   "centro": [
+    33.885,
+    35.525
+   ],
+   "raggio_km": 1.5,
+   "settore": [
+    180,
+    270
+   ],
+   "missione": "difesa"
+  }
+ ]
+}
