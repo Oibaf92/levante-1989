@@ -65,6 +65,36 @@ Regole che ne derivano:
 - Riferimento: G15 di prova aveva 325 unita' e circa 60 aerei in volo insieme alle 08:00 —
   troppo per questo PC.
 
+## Catalogo dei carichi (approvato dal giocatore; definizione esatta in `script/tools/carichi.py`)
+
+Notazione: tra parentesi il nome del carico in `carichi.py`. Piloni fissati a mano e verificati
+contro `script/dati/piloni.json`; "(AR)" = autonomia ridotta (avviso `AUTONOMIA:` del costruttore).
+
+- **F-14A/B**: CAP 2-3-2 (`cap 2-3-2`, anche scorta), CAP 0-6-2 (`cap 0-6-2`); **aria-terra per
+  eccezione voluta dal giocatore** (nella realta' dal 1990-92): 4 Mk-84 (`strike Mk-84`),
+  14 Mk-82 su MAK-79 (`strike Mk-82`), sempre con 2 AIM-7, 2 AIM-9, 2 serbatoi. Niente pod di puntamento.
+- **F/A-18C**: CAP 2-4 (`cap 2-4 serbatoi ali`), CAP 2-6 (`cap 2-6 serbatoio centrale`, AR);
+  SEAD 2 HARM (`sead`), SEAD 4 HARM (`sead pesante`, AR); strike 2 Mk-84 (`strike Mk-84`),
+  4 Mk-83 (`strike Mk-83`); CAS 4 Rockeye + 2 Maverick F (`cas`, AR); antinave 2 Harpoon
+  (`antinave`). Autodifesa sempre 2 AIM-9 + 2 AIM-7. AGM-88C accettato al posto degli AGM-88A/B.
+- **F-4E**: CAP 4 AIM-7 + 4 AIM-9 + ALQ-131 (`cap`); strike 6 Mk-82 con serbatoi (`strike Mk-82`),
+  12 Mk-82 senza serbatoi (`strike Mk-82 pesante`, AR); CAS 6 Maverick B (`cas maverick`),
+  8 CBU-87 (`cas cbu`); SEAD 2 Shrike + 4 CBU-87 (`sead`); **bombe laser con Pave Spike approvate
+  dal giocatore**: 4 GBU-12 (`strike laser GBU-12`), 2 GBU-10 (`strike laser GBU-10`).
+  Autodifesa 3 AIM-7 + 2 AIM-9 + ALQ-131 (nel pozzetto anteriore, o il Pave Spike).
+- **AH-64D**: 16 Hellfire (`anticarro`), 8 Hellfire + 38 Hydra (`appoggio`), 4 Hellfire + 57 Hydra (`fanteria`).
+- **CH-47F**: nessun carico.
+- **MiG-29**: CAP 2 R-27R + 4 R-60M (verificato dalla missione del giocatore). **Da fare**: carico
+  d'attacco e scelta R-73/R-60M, servono una missione salvata dal giocatore con il modulo MiG-29.
+- **Su-25**: CAS 4 B-8 + 4 FAB-250 (`appoggio`), anticarro 4 RBK-250 PTAB + 2 B-8 + 2 SPPU-22
+  (`anticarro`), 6 FAB-500 (`strike`), 2 Kh-29L + 2 Kh-25ML (`precisione`); sempre 2 R-60M.
+  Niente SEAD (la fanno i Su-24M IA con Kh-58).
+- **Mi-24P**: 8 Shturm + 2 B-8V20 (`anticarro`), 4 Shturm + 4 B-8V20 (`appoggio`),
+  4 Shturm + 2 GUV + 2 B-8V20 (`fanteria`).
+- **Mi-8MT**: nessun carico (`trasporto`), 4 B-8V20 + 2 GUV (`armato`).
+- Tutti i carichi (tranne CAP F-14/F-18 e MiG-29 CAP) sono da confermare in DCS: se il Mission
+  Editor ne rifiuta uno, correggerlo e annotarlo qui.
+
 ## Errori tecnici gia' commessi (e come si evitano)
 
 | Errore | Effetto in DCS | Correzione / prevenzione |
@@ -75,6 +105,7 @@ Regole che ne derivano:
 | `luatable.dump` con una lista Python | Lua non valido (sintassi `[...]`) | Usare dizionari con chiavi 1, 2, 3... (le liste non sono supportate). Il test Lua lo rileva. |
 | Stesso nome di gruppo per le due parti | gruppi sovrascritti | `_rinomina_doppi` aggiunge (USA)/(SY). |
 | Gruppi di terra sovrapposti | veicoli uno dentro l'altro | Il piazzatore tiene almeno 60 m tra veicoli di gruppi diversi (`DIST_VEICOLI`). |
+| `piloni.json` incompleto (estratto da una vecchia lettura di pydcs) | mancavano le bombe sul ventre dell'F-14 | Rigenerarlo con `script/tools/estrai_piloni.py <pydcs>`: nuovo elenco superset del vecchio (0 differenze). |
 | Risolutore automatico dei piloni per l'F-14 | in G15 i due AIM-54 di scorta erano finiti sulle spalle invece che sui pallet anteriori | Per i carichi indicati dal giocatore usare dizionari {pilone: CLSID} fissati a mano, non il risolutore. |
 | Carichi con CLSID inventati / piloni sbagliati | carico rifiutato o vuoto | `script/tools/carichi.py` (CLSID verificati o risolti su `piloni.json`); `python3 script/tools/carichi.py` deve dare 0 errori. |
 | Poligoni non chiusi, riempimento concavo errato | disegni strani | Linee chiuse, poligoni scomposti in pezzi convessi. |

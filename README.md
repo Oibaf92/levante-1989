@@ -37,8 +37,9 @@ il giocatore vola a scelta con una delle due parti.
 **Le risorse sono limitate**: ogni perdita è permanente; i rinforzi arrivano col contagocce.
 
 ## ⚖️ Regole del 1989
-- **Blu**: niente AIM-120, armi GPS o pod di puntamento. Bombe a guida laser solo
-  con A-6E/TRAM. Ammessi AIM-54, AIM-7, HARM, Harpoon, Maverick, Shrike.
+- **Blu**: niente AIM-120, armi GPS o pod di puntamento moderni (LANTIRN, LITENING...). Bombe
+  a guida laser con A-6E/TRAM e con F-4E/Pave Spike. Ammessi AIM-54, AIM-7, HARM, Harpoon,
+  Maverick, Shrike. L'F-14 puo' portare bombe a caduta libera (eccezione voluta dal giocatore).
 - **Rosso**: niente R-77 né SA-10/11/15 all'inizio. Possono arrivare come rinforzo
   sovietico più avanti.
 - **Eccezioni accettate**: AH-64D e CH-47F (e il loro armamento), anche se successivi al 1989.

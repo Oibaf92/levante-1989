@@ -49,19 +49,31 @@
   "F-14A-135-GR-Early": [
    "cap 2-3-2",
    "cap 0-6-2",
-   "scorta"
+   "strike Mk-84",
+   "strike Mk-82"
   ],
   "FA-18C_hornet": [
    "cap 2-4 serbatoi ali",
    "cap 2-6 serbatoio centrale",
    "sead",
-   "attacco"
+   "sead pesante",
+   "strike Mk-84",
+   "strike Mk-83",
+   "cas",
+   "antinave"
   ],
   "A6E": [
    "attacco"
   ],
   "F-4E-45MC": [
-   "attacco"
+   "cap",
+   "strike Mk-82",
+   "strike Mk-82 pesante",
+   "cas maverick",
+   "cas cbu",
+   "sead",
+   "strike laser GBU-12",
+   "strike laser GBU-10"
   ],
   "AV8BNA": [
    "appoggio"
@@ -79,7 +91,9 @@
    "nessuno"
   ],
   "AH-64D_BLK_II": [
-   "appoggio"
+   "anticarro",
+   "appoggio",
+   "fanteria"
   ],
   "CH-47Fbl1": [
    "nessuno"
@@ -134,7 +148,10 @@
    "antiradar"
   ],
   "Su-25": [
-   "appoggio"
+   "appoggio",
+   "anticarro",
+   "strike",
+   "precisione"
   ],
   "Tu-22M3": [
    "antinave",
@@ -147,7 +164,13 @@
    "appoggio"
   ],
   "Mi-8MT": [
-   "nessuno"
+   "trasporto",
+   "armato"
+  ],
+  "Mi-24P": [
+   "anticarro",
+   "appoggio",
+   "fanteria"
   ]
  },
  "basi_rosse": [
@@ -171,6 +194,10 @@
  ],
  "partenza_giocatore": "freddo",
  "note_carichi": {
-  "FA-18C_hornet cap 2-6 serbatoio centrale": "autonomia ridotta: CAP brevi o vicino a una cisterna"
+  "FA-18C_hornet cap 2-6 serbatoio centrale": "autonomia ridotta: missioni brevi o con cisterna",
+  "FA-18C_hornet sead pesante": "autonomia ridotta: missioni brevi o con cisterna",
+  "FA-18C_hornet cas": "autonomia ridotta: missioni brevi o con cisterna",
+  "F-4E-45MC strike Mk-82 pesante": "autonomia ridotta: missioni brevi o con cisterna",
+  "F-4E-45MC attacco": "autonomia ridotta: missioni brevi o con cisterna"
  }
 }
