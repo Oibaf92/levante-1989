@@ -44,6 +44,7 @@ Campagna dinamica DCS World (mappa Syria), giocatore singolo. Lingua: italiano.
 - Ogni correzione del giocatore o errore trovato in DCS va registrato in `docs/lezioni.md`.
 - Portaerei lontana dalla Siria; CVN e LHA contro vento (`script/lua/levante_navi.lua`).
 - Voli del giocatore: decollo immediato, posti 5-8 della Supercarrier solo con avvio >= 5 s.
+- Tipo di partenza del giocatore (freddo/caldo/pista/aria): chiederlo a OGNI missione, non deciderlo.
 - Nominativi radio: numerici solo per i paesi orientali (Russia...); Siria e occidentali nome+numeri,
   altrimenti il Mission Editor si pianta al caricamento.
 - `luatable.dump` non accetta liste Python: usare dizionari con chiavi 1..n.

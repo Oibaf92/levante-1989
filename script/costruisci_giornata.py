@@ -62,6 +62,10 @@ NOMI_CHIAMATA_SPECIALI = {'AWACS': {1: 'Overlord', 2: 'Magic', 3: 'Wizard', 4: '
 # un numero dove l'editor si aspetta una tabella blocca il caricamento della missione)
 PAESI_NOMINATIVO_NUMERICO = {0}          # Russia
 
+# tipi di partenza del giocatore -> (tipo, azione) del primo punto di rotta
+PARTENZE = {'freddo': ('TakeOffParking', 'From Parking Area'), 'caldo': ('TakeOffParkingHot', 'From Parking Area Hot'),
+            'pista': ('TakeOff', 'From Runway')}
+
 # Bilancio delle unita' per il PC del giocatore (i7-7700K 4 core / 8 thread, 64 GB, DCS MT).
 # Il collo di bottiglia e' la simulazione (CPU), non la grafica: vedi docs/lezioni.md.
 BILANCIO = {'unita_totali': 300, 'unita_terra': 220, 'aerei_in_volo': 28, 'terra_vicino_giocatore': 120, 'navi': 12}
@@ -389,14 +393,26 @@ class Costruttore:
         alt_tipo = 'RADIO' if cat == 'helicopter' else 'BARO'
 
         # partenza
-        if tb == 'nave':
+        partenza = self.partenza_giocatore(o['nome']) if (o.get('giocatore') and lato == 'blue') else None
+        if partenza == 'aria':
+            bx, by = dati_base[-2], dati_base[-1]
+            r = math.atan2(oy - by, ox - bx)
+            p0 = wpt(bx + 20000 * math.cos(r), by + 20000 * math.sin(r), quota, vel, ETA=decollo, ETA_locked=True)
+            if tb == 'nave':
+                fine = wpt(bx, by, 0, 0, tipo='Land', azione='Landing', linkUnit=dati_base[0], helipadId=dati_base[0])
+            elif tb == 'aeroporto':
+                fine = wpt(bx, by, 0, 0, tipo='Land', azione='Landing', airdromeId=dati_base[0])
+            else:
+                fine = wpt(bx, by, quota, vel, nome='uscita')
+        elif tb == 'nave':
             uid, bx, by = dati_base
-            p0 = wpt(bx, by, 0, 0, tipo='TakeOffParking', azione='From Parking Area', linkUnit=uid, helipadId=uid,
-                     ETA=decollo, ETA_locked=True)
+            tipo_p, azione_p = PARTENZE.get(partenza, PARTENZE['freddo'])
+            p0 = wpt(bx, by, 0, 0, tipo=tipo_p, azione=azione_p, linkUnit=uid, helipadId=uid, ETA=decollo, ETA_locked=True)
             fine = wpt(bx, by, 0, 0, tipo='Land', azione='Landing', linkUnit=uid, helipadId=uid)
         elif tb == 'aeroporto':
             aid, bx, by = dati_base
-            p0 = wpt(bx, by, 0, 0, tipo='TakeOff', azione='From Runway', airdromeId=aid, ETA=decollo, ETA_locked=True)
+            tipo_p, azione_p = PARTENZE.get(partenza, PARTENZE['pista'])
+            p0 = wpt(bx, by, 0, 0, tipo=tipo_p, azione=azione_p, airdromeId=aid, ETA=decollo, ETA_locked=True)
             fine = wpt(bx, by, 0, 0, tipo='Land', azione='Landing', airdromeId=aid)
         else:
             bx, by = dati_base
@@ -568,6 +584,18 @@ class Costruttore:
         self.disegni()
         self.verifica_prestazioni()
         return self
+
+    def partenza_giocatore(self, volo):
+        """Tipo di partenza dei voli del giocatore: lo decide il giocatore a ogni missione
+        (parametri.json, "partenza_giocatore": "freddo" | "caldo" | "pista" | "aria", oppure
+        {nome volo: tipo}). Se manca la missione non si costruisce: va chiesto."""
+        p = self.par.get('partenza_giocatore')
+        if isinstance(p, dict):
+            p = p.get(volo, p.get('*'))
+        if p not in ('freddo', 'caldo', 'pista', 'aria'):
+            raise SystemExit('Partenza del volo giocatore "%s" non indicata (freddo/caldo/pista/aria): '
+                             'chiederla al giocatore e scriverla in parametri.json -> partenza_giocatore' % volo)
+        return p
 
     def verifica_prestazioni(self):
         """Controlla il bilancio delle unita' (docs/lezioni.md, PC del giocatore: i7-7700K 4 core)."""
