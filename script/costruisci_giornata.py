@@ -27,6 +27,7 @@ import luatable as lt  # noqa: E402
 from geo import ll_to_xy, xy_to_ll, dms, dist_brg  # noqa: E402
 import piazzatore as pz  # noqa: E402
 import carichi  # noqa: E402
+import verifica_miz  # noqa: E402
 import confini  # noqa: E402
 import intel  # noqa: E402
 import legenda  # noqa: E402  (usata da confini)
@@ -288,7 +289,7 @@ class Costruttore:
                         'heading': math.radians(270), 'skill': self.abilita('red'), 'modulation': 0, 'frequency': 127500000}
         g = {'visible': False, 'tasks': {}, 'uncontrollable': False, 'groupId': self.cnt.g(), 'hidden': False,
              'name': 'Squadra sovietica Tartus', 'x': tx, 'y': ty, 'start_time': 0, 'units': unita,
-             'route': {'points': {1: wpt(tx, ty, 0, 0)}}}
+             'route': {'points': {1: wpt(tx, ty, 0, 0, ETA_locked=True)}}}
         self.aggiungi_gruppo('red', 'ship', RUSSIA, 'Russia', g)
 
     # ----------------------------------------------------------------- terra
@@ -668,6 +669,7 @@ class Costruttore:
         self.forze_terra()
         self.tutti_i_voli()
         self.disegni()
+        self.avvisi += ['ERRORE: ' + e for e in verifica_miz.verifica(self.m)]
         self.verifica_prestazioni()
         self.verifica_orario()
         self.verifica_intensita()

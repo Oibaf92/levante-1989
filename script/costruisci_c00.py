@@ -22,6 +22,7 @@ sys.path.insert(0, QUI)
 import luatable as lt  # noqa: E402
 from geo import ll_to_xy  # noqa: E402
 import carichi  # noqa: E402
+import verifica_miz  # noqa: E402
 from costruisci_giornata import wpt, NOMI_CHIAMATA_TESTO  # noqa: E402
 
 NOME = 'C00_prova_carichi'
@@ -101,7 +102,7 @@ def costruisci():
              'start_time': 0, 'hidden': False, 'uncontrolled': False, 'uncontrollable': False, 'communication': True,
              'frequency': 251 if lato == 'blue' else 124, 'modulation': 0, 'radioSet': False, 'tasks': {},
              'units': {1: u},
-             'route': {'points': {1: wpt(x, y, alt, vel), 2: wpt(x + 20000, y, alt, vel)}}}
+             'route': {'points': {1: wpt(x, y, alt, vel, ETA_locked=True), 2: wpt(x + 20000, y, alt, vel)}}}
         cat = 'helicopter' if eli else 'plane'
         gr = paesi[lato][cat]['group']
         gr[len(gr) + 1] = g
@@ -120,6 +121,9 @@ def costruisci():
     m['sortie'] = 'DictKey_sortie_5'
     m['maxDictId'] = 5
     m['forcedOptions'] = {'optionsView': 'optview_all', 'labels': 1}
+    errori = verifica_miz.verifica(m)
+    if errori:
+        raise SystemExit('missione non valida:\n' + '\n'.join(errori))
     out = os.path.join(RADICE, 'missioni', NOME + '.miz')
     with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED) as z:
         z.writestr('mission', lt.dump('mission', m))

@@ -117,6 +117,7 @@ contro `script/dati/piloni.json`; "(AR)" = autonomia ridotta (avviso `AUTONOMIA:
 | Gruppi di terra sovrapposti | veicoli uno dentro l'altro | Il piazzatore tiene almeno 60 m tra veicoli di gruppi diversi (`DIST_VEICOLI`). |
 | `piloni.json` incompleto (estratto da una vecchia lettura di pydcs) | mancavano le bombe sul ventre dell'F-14 | Rigenerarlo con `script/tools/estrai_piloni.py <pydcs>`: nuovo elenco superset del vecchio (0 differenze). |
 | Risolutore automatico dei piloni per l'F-14 | in G15 i due AIM-54 di scorta erano finiti sulle spalle invece che sui pallet anteriori | Per i carichi indicati dal giocatore usare dizionari {pilone: CLSID} fissati a mano, non il risolutore. |
+| Rotta senza punti con orario bloccato (`ETA_locked`) | **il Mission Editor rifiuta di salvare** ("Route has no waypoints with locked time!") | Primo punto di ogni rotta con `ETA_locked=True`. Controllo automatico in `script/tools/verifica_miz.py` (chiamato da C00 e dal costruttore delle giornate: `ERRORE:`), che verifica anche ID e nomi duplicati e nominativi radio per paese. |
 | Carichi con CLSID inventati / piloni sbagliati | carico rifiutato o vuoto | `script/tools/carichi.py` (CLSID verificati o risolti su `piloni.json`); `python3 script/tools/carichi.py` deve dare 0 errori. |
 | Poligoni non chiusi, riempimento concavo errato | disegni strani | Linee chiuse, poligoni scomposti in pezzi convessi. |
 | Poligono di tiro in una foresta | bersagli invisibili | Banca dati della vegetazione (R01) + verifica ravvicinata. |
@@ -140,6 +141,7 @@ contro `script/dati/piloni.json`; "(AR)" = autonomia ridotta (avviso `AUTONOMIA:
 
 ## Controlli prima di consegnare una missione
 
+0. `python3 script/tools/verifica_miz.py <missione.miz>` senza errori.
 1. Test Lua simulati: `script/test/prova_piazzatore.py`, `script/test/prova_navi.py` (e gli altri pertinenti).
 2. `python3 script/tools/carichi.py` senza errori.
 3. ID di gruppi e unita' unici; nomi di gruppo unici; nominativi radio validi per paese.
