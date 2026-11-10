@@ -29,6 +29,8 @@ X.csar = X.csar or {}
 
 local function log(msg) env.info("[LEVANTE REGOLE] " .. msg) end
 local function ora() return LEVANTE.orologio and LEVANTE.orologio() or "" end
+local function dbg(m) if LEVANTE.debug then LEVANTE.debug(m) end end
+
 
 local gestore = {}
 function gestore:onEvent(e)
@@ -41,11 +43,13 @@ function gestore:onEvent(e)
         gruppo = u:getGroup() and u:getGroup():getName() or "", x = p.x, y = p.z, ora = ora(),
         mare = (s == land.SurfaceType.WATER or s == land.SurfaceType.SHALLOW_WATER),
         giocatore = u:getPlayerName() }
+      dbg(u:getName() .. ": eiezione" .. ((s == land.SurfaceType.WATER or s == land.SurfaceType.SHALLOW_WATER) and " in mare" or " a terra"))
     elseif e.id == world.event.S_EVENT_SHOT and e.weapon then
       local arma = e.weapon:getTypeName() or ""
       if string.find(arma, "AIM_54", 1, true) and u then
         local c = u:getCoalition()
         X.aim54[c] = (X.aim54[c] or 0) + 1
+        dbg(u:getName() .. ": lancio AIM-54 (" .. X.aim54[c] .. " nel blocco)")
       end
       local g = u and u.getGroup and u:getGroup()
       if g and ART[g:getName()] then

@@ -88,8 +88,10 @@ local function pianifica(nome, cfg)
   -- TACAN/ICLS/Link4/ACLS: si riattivano dopo il cambio di rotta
   for _, c in ipairs(cfg.comandi or {}) do pcall(function() g:getController():setCommand(c) end) end
   local gradi = math.floor((math.deg(migliore) % 360) + 0.5)
-  log(string.format("%s: prua %03d, %d nodi, vento da %s a %.0f nodi, tratta %.0f nm", nome, gradi, math.floor(vel_kt + 0.5),
-    da and string.format("%03d", math.floor((math.deg(da) % 360) + 0.5)) or "---", vel / KT, lunga / NM))
+  local testo = string.format("%s: prua %03d, %d nodi, vento da %s a %.0f nodi, tratta %.0f nm", nome, gradi, math.floor(vel_kt + 0.5),
+    da and string.format("%03d", math.floor((math.deg(da) % 360) + 0.5)) or "---", vel / KT, lunga / NM)
+  log(testo)
+  if LEVANTE.debug then LEVANTE.debug(testo) end
   LEVANTE.extra = LEVANTE.extra or {}
   LEVANTE.extra.navi = LEVANTE.extra.navi or {}
   LEVANTE.extra.navi[nome] = { prua = gradi, nodi = math.floor(vel_kt + 0.5), tratta_nm = math.floor(lunga / NM) }

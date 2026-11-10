@@ -212,9 +212,10 @@ def t_azione(ident, params):
 
 # ---------------------------------------------------------------------------
 class Costruttore:
-    def __init__(self, giorno, blocco=None):
+    def __init__(self, giorno, blocco=None, osservatore=False):
         self.giorno = giorno
         self.blocco = blocco
+        self.osservatore = osservatore      # missione da osservare: tutti i voli all'IA, vista libera
         self.cartella = os.path.join(RADICE, 'campagna', 'G%02d' % giorno)
         self.par = json.load(open(os.path.join(self.cartella, 'parametri.json'), encoding='utf-8'))
         self.ordini = {lato: json.load(open(os.path.join(RADICE, d, 'ordini_G%02d.json' % giorno), encoding='utf-8'))
@@ -233,6 +234,10 @@ class Costruttore:
             self.nome = 'G%02d_%s' % (giorno, self.par['data'])
             self.esiti_prec = {}
         self.t0 = hm(self.inizio)
+        if osservatore:
+            self.nome += '_OSSERVATORE'
+            for o in self.ordini['blue'].get('missioni_aeree', []) + self.ordini['red'].get('missioni_aeree', []):
+                o['giocatore'] = False
         carica = lambda n: lt.parse(open(os.path.join(QUI, 'base', n), encoding='utf-8').read())[1]  # noqa: E731
         self.m, self.w, self.o = carica('mission'), carica('warehouses'), carica('options')
         self.terreno = pz.Terreno()
@@ -930,6 +935,8 @@ class Costruttore:
         cx, cy = ll_to_xy(34.2, 35.3)
         m['map'] = {'centerX': cx, 'centerY': cy, 'zoom': 400000}
         m['forcedOptions'] = {'optionsView': 'optview_allies', 'labels': 0}
+        if self.osservatore:
+            m['forcedOptions'] = {'optionsView': 'optview_all', 'labels': 1, 'externalViews': True}
         m['coalition']['blue']['bullseye'] = dict(zip(('x', 'y'), ll_to_xy(34.0, 35.4)))
         m['coalition']['red']['bullseye'] = dict(zip(('x', 'y'), ll_to_xy(33.8, 36.2)))
         self.modello_magazzino = self.w['warehouses'][0]
@@ -1060,7 +1067,8 @@ class Costruttore:
         m['descriptionNeutralsTask'] = 'DictKey_descriptionNeutralsTask_4'
         m['sortie'] = 'DictKey_sortie_5'
         m['maxDictId'] = 5
-        init = ('LEVANTE = { missione = "%s" }\n' % nome + lt.dump('LEVANTE_PIAZZAMENTI', self.piazzamenti_lua)
+        init = ('LEVANTE = { missione = "%s" }\n' % nome
+                + ('LEVANTE_DEBUG = true\n' if self.osservatore else '') + lt.dump('LEVANTE_PIAZZAMENTI', self.piazzamenti_lua)
                 + '\n' + lt.dump('LEVANTE_NAVI', self.navi_vento)
                 + '\n' + lt.dump('LEVANTE_IADS', self.dati_iads())
                 + '\n' + lt.dump('LEVANTE_ARTIGLIERIA', {p['nome']: True for p in self.resoconto['piazzamenti']
@@ -1112,12 +1120,30 @@ class Costruttore:
         return out
 
 
+GUIDA_OSSERVATORE = """MISSIONE DA OSSERVARE (nessun volo del giocatore, tutto all'IA, carte scoperte)
+
+Si entra come spettatore: mappa F10 con tutte le unita' ed etichette, viste esterne libere
+(F2 aerei, F7 unita' di terra, F9 navi; CTRL+Z/Z per accelerare o rallentare il tempo).
+Gli script scrivono a schermo cosa fanno (righe con l'ora):
+- rete di difesa aerea: radar dei SAM accesi/spenti, silenzio dopo un antiradar, spostamenti dopo il tiro,
+  ricerca autonoma quando la rete e' cieca;
+- navi: rotta contro vento (prua, nodi, vento);
+- aerei IA rientrati e rimossi; eiezioni; lanci di AIM-54.
+A fine prova mandare dcs.log e i file di Saved Games\\DCS\\Levante1989\\."""
+
+
 if __name__ == '__main__':
     import briefing_giornata
     giorno = int(sys.argv[1])
-    blocco = int(sys.argv[2]) if len(sys.argv) > 2 else None
-    c = Costruttore(giorno, blocco).costruisci()
+    argomenti = [a for a in sys.argv[2:] if not a.startswith('--')]
+    blocco = int(argomenti[0]) if argomenti else None
+    osservatore = '--osservatore' in sys.argv
+    c = Costruttore(giorno, blocco, osservatore).costruisci()
     bb, br, tav = briefing_giornata.prepara(c)
+    if osservatore:
+        bb['testo'] = (GUIDA_OSSERVATORE + '\n\n========== BRIEFING BLU ==========\n\n' + bb['testo']
+                       + '\n\n========== BRIEFING ROSSO ==========\n\n' + br)
+        bb['titolo'] += ' [OSSERVATORE]'
     out = c.scrivi(bb, br, tav)
     print('scritto', out)
     print('gruppi di terra: %d, voli: %d' % (len(c.resoconto['piazzamenti']), len(c.resoconto['voli'])))

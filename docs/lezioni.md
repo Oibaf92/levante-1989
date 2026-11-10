@@ -232,6 +232,13 @@ tolleranza piu' alta; SA-5 da non sottovalutare (riducono l'area operativa e cos
 - Da verificare in DCS: che le basi delle nubi scelte stiano nei limiti dei preset (l'editor potrebbe
   correggerle).
 
+## Missione da osservare
+
+`python3 script/costruisci_giornata.py <giorno> <blocco> --osservatore` -> `..._OSSERVATORE.miz`: tutti i
+voli all'IA (nessuno slot), mappa e viste esterne libere con etichette, briefing di entrambe le parti, e
+`LEVANTE_DEBUG = true`: gli script scrivono a schermo cosa fanno (`LEVANTE.debug`). Solo su richiesta
+del giocatore, come le missioni di test a carte scoperte.
+
 ## Diagnosi dei problemi in DCS
 
 - Chiedere `Saved Games\DCS\Logs\dcs.log` **prima di riavviare DCS** (al riavvio diventa `dcs.log.old`).

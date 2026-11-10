@@ -35,6 +35,8 @@ local RICERCA_OGNI, RICERCA_DURATA = 300, 30   -- batteria cieca: ricerca autono
 local ANTIRADAR = { "AGM_88", "AGM_45", "AGM_122", "Kh-58", "Kh-25MP", "X_58", "X_25MP", "AGM-88", "AGM-45" }
 
 local S = {}   -- stato per coalizione: batterie, tracce
+local function dbg(m) if LEVANTE.debug then LEVANTE.debug(m) end end
+
 local function log(msg) env.info("[LEVANTE IADS] " .. msg) end
 
 local function gruppoVivo(nome)
@@ -148,13 +150,15 @@ local function ciclo(coal, ora)
       end
       if inPortata then
         b.ultimoBersaglio = ora
-        if not b.acceso then radar(nome, true); b.acceso = true end
+        if not b.acceso then radar(nome, true); b.acceso = true; dbg(nome .. ": radar ACCESO (bersaglio segnalato dalla rete)") end
       elseif b.acceso and ora - (b.ultimoBersaglio or 0) > TENUTA and ora >= (b.ricercaFino or 0) then
         radar(nome, false); b.acceso = false
+        dbg(nome .. ": radar spento (nessun bersaglio in portata)")
       elseif not b.acceso and st.sensoriVivi == 0 and ora - (b.ultimaRicerca or -1e9) > RICERCA_OGNI then
         -- rete cieca: breve ricerca con il proprio radar
         b.ultimaRicerca, b.ricercaFino = ora, ora + RICERCA_DURATA
         radar(nome, true); b.acceso = true
+        dbg(nome .. ": rete cieca, breve ricerca con il proprio radar")
       end
     end
   end
@@ -198,6 +202,7 @@ local function reazioneHarm(e)
         if p > 0 and math.random() < p then
           silenzio(nome, b, ora)
           LEVANTE.annota("iads_silenzio_harm", { gruppo = nome })
+          dbg(nome .. ": missile antiradar rilevato, radar in silenzio")
         end
       end
     end
@@ -222,6 +227,7 @@ local function spostaDopoTiro(nome, b)
       } } } })
       timer.scheduleFunction(function() b.inMovimento = false end, nil, timer.getTime() + d / 8 + 60)
       LEVANTE.annota("iads_spostamento", { gruppo = nome, metri = math.floor(d) })
+      dbg(string.format("%s: si sposta di %d m dopo il tiro", nome, math.floor(d)))
       return
     end
   end

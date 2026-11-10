@@ -176,6 +176,12 @@ local SOLO_GIOCATORE = {
   rifornimento_inizio = true, rifornimento_fine = true,
 }
 
+-- messaggi a schermo per le missioni da osservare (LEVANTE_DEBUG = true nell'init)
+function LEVANTE.debug(msg)
+  env.info("[LEVANTE DEBUG] " .. msg)
+  if LEVANTE_DEBUG then trigger.action.outText(orologio() .. "  " .. msg, 12) end
+end
+
 function LEVANTE.annota(tipo, dati)
   dati = dati or {}
   dati.evento = tipo

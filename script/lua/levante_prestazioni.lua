@@ -35,6 +35,7 @@ local function rimuovi(nome)
   RIENTRATI[nome] = LEVANTE.orologio and LEVANTE.orologio() or true
   u:destroy()
   log("rimosso (rientrato): " .. nome)
+  if LEVANTE.debug then LEVANTE.debug(nome .. ": rientrato, rimosso dalla missione") end
 end
 
 local gestore = {}
