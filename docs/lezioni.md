@@ -152,7 +152,11 @@ tolleranza piu' alta; SA-5 da non sottovalutare (riducono l'area operativa e cos
 
 ## Lavori sul motore e regole proposte (da fare)
 
-- **Script dei radar SAM** (approvato dal giocatore, con questo progetto):
+- **Script dei radar SAM** — FATTO: `script/lua/levante_iads.lua` (tabella `LEVANTE_IADS` dal costruttore,
+  `Costruttore.dati_iads()`; test `script/test/prova_iads.py`). Parametri in testa allo script
+  (ciclo 10 s, ritardo rete 8 s, AWACS +20 s e 70%, HARM 65%/30%, silenzio 60-120 s, ricerca da cieca
+  30 s ogni 300 s, spostamento 0,8-1,5 km 90 s dopo il tiro). Sensori: gruppi `ewr` (radar), AWACS,
+  `aaa`/`contraerea_mobile`/`carri`/`meccanizzata` (a vista). Da verificare in volo. Progetto:
   - radar di tiro spenti finche' il bersaglio non e' vicino; spostamento dopo il tiro;
   - **niente onniscienza**: la rete reagisce solo a cio' che i suoi sensori rilevano davvero
     (`getDetectedTargets` di radar di sorveglianza P-19/P-14, A-50, SAM gia' accesi, osservatori a

@@ -69,6 +69,10 @@ PAESI_NOMINATIVO_NUMERICO = {0}          # Russia
 SAM_PERICOLOSI = ('sa2', 'sa3', 'sa6', 'sa8', 'hawk')
 MAX_SAM_SU_OBIETTIVO = 3
 
+# rete di difesa aerea (levante_iads.lua): batterie gestite e unita' che fanno da osservatori a vista
+SAM_IADS = ('sa2', 'sa3', 'sa5', 'sa6', 'sa8', 'hawk')
+OSSERVATORI = ('aaa', 'contraerea_mobile', 'carri', 'meccanizzata')
+
 # livello dell'IA in base al logoramento (frazione persa): sotto la soglia -> livello
 LOGORAMENTO_ABILITA = ((0.20, 'High'), (0.40, 'Good'), (9.99, 'Average'))
 
@@ -848,6 +852,23 @@ class Costruttore:
                             'name': 'Linea del fronte G%d' % self.giorno, 'layerName': 'Common'})
                 strato['objects'] = {k: o for k, o in enumerate(ogg, 1)}
 
+    def dati_iads(self):
+        """Tabella LEVANTE_IADS per levante_iads.lua: batterie SAM e sensori di ogni rete (rossa = 1, blu = 2)."""
+        dati = {1: {'sam': {}, 'sensori': {}}, 2: {'sam': {}, 'sensori': {}}}
+        for p in self.resoconto['piazzamenti']:
+            coal = 2 if p['lato'] == 'blue' else 1
+            if p['sistema'] in SAM_IADS:
+                dati[coal]['sam'][p['nome']] = {'tipo': p['sistema'], 'portata': pz.SISTEMI[p['sistema']]['portata_km'] * 1000,
+                                                'mobile': p['sistema'] in ('sa6', 'sa8', 'hawk')}
+            elif p['sistema'] == 'ewr':
+                dati[coal]['sensori'][p['nome']] = 'radar'
+            elif p['sistema'] in OSSERVATORI:
+                dati[coal]['sensori'][p['nome']] = 'vista'
+        for nome, (lato, g, o) in self.gruppi_aerei.items():
+            if o['tipo'] == 'AWACS':
+                dati[2 if lato == 'blue' else 1]['sensori'][nome] = 'awacs'
+        return dati
+
     def rapporto(self, parte):
         """Rapporto intel della parte per questo blocco (o il piu' recente); in mancanza, la stima
         iniziale senza i siti gia' distrutti."""
@@ -1001,12 +1022,14 @@ class Costruttore:
         m['maxDictId'] = 5
         init = ('LEVANTE = { missione = "%s" }\n' % nome + lt.dump('LEVANTE_PIAZZAMENTI', self.piazzamenti_lua)
                 + '\n' + lt.dump('LEVANTE_NAVI', self.navi_vento)
+                + '\n' + lt.dump('LEVANTE_IADS', self.dati_iads())
                 + '\n' + lt.dump('LEVANTE_GIOCATORE', {n: True for n, (_, _, o) in self.gruppi_aerei.items() if o.get('giocatore')}))
         risorse = {'ResKey_Action_1': 'init.lua', 'ResKey_Action_2': 'levante_core.lua', 'ResKey_Action_3': 'levante_piazzatore.lua',
-                   'ResKey_Action_4': 'levante_navi.lua', 'ResKey_Action_5': 'levante_prestazioni.lua'}
+                   'ResKey_Action_4': 'levante_navi.lua', 'ResKey_Action_5': 'levante_prestazioni.lua',
+                   'ResKey_Action_6': 'levante_iads.lua'}
         for i, (commento, chiave) in enumerate((('INIT', 'ResKey_Action_1'), ('NUCLEO', 'ResKey_Action_2'),
                                                 ('PIAZZATORE', 'ResKey_Action_3'), ('NAVI', 'ResKey_Action_4'),
-                                                ('PRESTAZIONI', 'ResKey_Action_5')), 1):
+                                                ('PRESTAZIONI', 'ResKey_Action_5'), ('IADS', 'ResKey_Action_6')), 1):
             m['trig']['actions'][i] = 'a_do_script_file(getValueResourceByKey("%s"));' % chiave
             m['trig']['conditions'][i] = 'return(true)'
             m['trig']['flag'][i] = True
@@ -1026,6 +1049,7 @@ class Costruttore:
             z.write(os.path.join(QUI, 'lua', 'levante_piazzatore.lua'), 'l10n/DEFAULT/levante_piazzatore.lua')
             z.write(os.path.join(QUI, 'lua', 'levante_navi.lua'), 'l10n/DEFAULT/levante_navi.lua')
             z.write(os.path.join(QUI, 'lua', 'levante_prestazioni.lua'), 'l10n/DEFAULT/levante_prestazioni.lua')
+            z.write(os.path.join(QUI, 'lua', 'levante_iads.lua'), 'l10n/DEFAULT/levante_iads.lua')
             for k, png in enumerate(tavolette, 1):
                 z.writestr('KNEEBOARD/IMAGES/G%02d_%02d.png' % (self.giorno, k), png)
         for lato, co in self.m['coalition'].items():
