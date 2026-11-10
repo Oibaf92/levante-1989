@@ -10,7 +10,7 @@ carichi, basi, tipi di unità, limiti) sono in `campagna/G15/parametri.json`.
   "intento_generale": "frase breve: cosa vuoi ottenere oggi",
   "missioni_aeree": [
     {
-      "nome": "nome breve univoco, es. 'CAP Libano 1'",
+      "nome": "nome del volo in inglese, breve e univoco, es. 'Hammer', 'Viper', 'Sledge'",
       "tipo": "CAP | GCI | SCORTA | STRIKE | CAS | SEAD | ANTINAVE | AWACS | TANKER | TRASPORTO",
       "velivolo": "tipo DCS dalla lista della tua parte",
       "numero": 2,

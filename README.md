@@ -49,6 +49,9 @@ il giocatore vola a scelta con una delle due parti.
 - **Qualità dell'IA**: equipaggi *High* all'inizio; con le perdite il livello cala
   (logoramento oltre 20% → *Good*, oltre 40% → *Average*).
 
+- **Nomi dei voli**: in inglese, una parola breve e univoca (es. *Hammer*, *Viper*, *Anvil*,
+  *Sledge*). Il nominativo radio in DCS è separato (es. Chevy 1-1) ed è riportato su briefing e tavolette.
+
 ## 🏆 Condizioni di vittoria
 - **Blu**: l'enclave resiste e la difesa aerea siriana è smantellata, fino al cessate il
   fuoco imposto dalle perdite siriane.

@@ -57,6 +57,7 @@ Campagna dinamica DCS World (mappa Syria), giocatore singolo. Lingua: italiano.
   in gradi e minuti decimali, NM/ft/kt, QNH inHg (hPa).
 - Solo F-14A (VF-84/VF-41), niente F-14B. Livree scelte dal giocatore in `LIVREE` (costruttore); modelli
   delle radio in `script/dati/radio_modelli.json`.
+- Nomi dei voli in inglese (es. Hammer); F/A-18C solo VFA-87.
 - Missili: AIM-54C Mk47, AIM-7MH (F-4E: AIM-7M), AIM-9M; siriani R-60M, sovietici R-73. Catalogo carichi in
   `docs/lezioni.md`, definizione in `script/tools/carichi.py` (piloni fissati per nome).
 - Nominativi radio: numerici solo per i paesi orientali (Russia...); Siria e occidentali nome+numeri,

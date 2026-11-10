@@ -85,8 +85,7 @@ RADIO_MODELLI = {k: v for k, v in json.load(open(os.path.join(QUI, 'dati', 'radi
 LIVREE = {   # (paese, tipo): [(livrea, base del numero di bordo o None, carichi a cui si applica o None)]
     (USA, 'F-14A-135-GR-Early'): [('vf-84 ghost by reflected', 200, None), ('vf-41 aj100 1989 by reflected', 100, None),
                                   ('vf-84 jaws by reflected', 200, None), ('vf-41 aj105 1989 by reflected', 100, None)],
-    (USA, 'FA-18C_hornet'): [('vfa-37', 300, ('cap', 'sead', 'aria-aria', 'scorta')),        # aria-aria e SEAD
-                             ('vfa-87', 400, ('strike', 'cas', 'antinave', 'attacco'))],    # attacco al suolo e antinave
+    (USA, 'FA-18C_hornet'): [('vfa-87', 400, None)],              # solo VFA-87 (scelta del giocatore)
     (USA, 'F-4E-45MC'): [('rs68-381_e1_526tfs', None, None)],
     (USA, 'AH-64D_BLK_II'): [('12th combat aviation brigade griffins', None, None)],
     (USA, 'CH-47Fbl1'): [('us army dark green', None, None)],

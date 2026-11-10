@@ -23,6 +23,17 @@ FREQ = [('251.000', 'Pacchetto / interno di volo'), ('258.000', 'CVN-71 torre / 
         ('270.000', 'Tanker'), ('243.000', 'Guardia')]
 
 
+def nominativo(c, volo):
+    """Nominativo radio del capo-formazione, es. 'Chevy 1-1' (il nome del volo e' solo il nome di missione)."""
+    g = c.gruppi_aerei.get(volo, (None, None))[1]
+    if not g:
+        return '-'
+    cs = g['units'][1].get('callsign')
+    if isinstance(cs, dict):
+        return '%s %s-%s' % (cs['name'][:-2], cs[2], cs[3])
+    return str(cs)
+
+
 def _testo_volo(o):
     v = NOMI_VELIVOLO.get(o['velivolo'], o['velivolo'])
     righe = ['%s — %s, %d x %s, decollo previsto %s da %s' % (o['nome'].upper(), o['tipo'], o['numero'], v, o['decollo'],
@@ -49,7 +60,8 @@ def prepara(c):
              + 'METEO\n' + c.meteo() + '\n\n'
              + 'LINEA DEL FRONTE\n' + fronte.replace('**', '') + '\n\n'
              + 'INTENTO DEL COMANDANTE\n' + ob.get('intento_generale', '') + '\n\n'
-             + 'I TUOI VOLI (scegli lo slot)\n' + '\n\n'.join(_testo_volo(o) for o in giocatore) + '\n\n'
+             + 'I TUOI VOLI (scegli lo slot)\n' + '\n\n'.join(_testo_volo(o) + '\n  Nominativo radio: ' + nominativo(c, o['nome'])
+                                                               for o in giocatore) + '\n\n'
              + 'VOLI AMICI IN AREA\n' + '\n'.join('- %s: %s, %d x %s, decollo %s'
                                                    % (o['nome'], o['tipo'], o['numero'], NOMI_VELIVOLO.get(o['velivolo'], o['velivolo']),
                                                       o['decollo']) for o in altri) + '\n\n'
@@ -112,7 +124,8 @@ def _pagina_volo(c, o):
     img = Image.new('RGB', (kb.W, kb.H), kb.CARTA)
     d = ImageDraw.Draw(img)
     v = NOMI_VELIVOLO.get(o['velivolo'], o['velivolo'])
-    kb._testata(d, '%s - %s' % (o['nome'].upper(), o['tipo']), '%d x %s  |  decollo %s  |  %s' % (o['numero'], v, o['decollo'], o['base']))
+    kb._testata(d, '%s - %s' % (o['nome'].upper(), o['tipo']), '%d x %s  |  decollo %s  |  %s  |  radio: %s'
+                % (o['numero'], v, o['decollo'], o['base'], nominativo(c, o['nome'])))
     y = kb._sezione(d, 104, 'COMPITO')
     fn = kb.font(15)
     parole = (o.get('note') or '').split()
