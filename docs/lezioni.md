@@ -19,6 +19,44 @@ costruire o modificare una missione. Le regole piu' importanti sono riassunte in
 | Informazioni | Campagna: separazione rigida (CLAUDE.md). **Missione di test**: se il giocatore lo chiede, versione a carte scoperte con `script/tools/apri_test.py <giorno>` (mappa F10 completa, briefing di entrambe le parti, dossier, mappa). | G15 |
 | Lingua | Italiano. | sempre |
 
+## Moduli del giocatore
+
+| Parte | Moduli pilotabili | Tipo DCS da usare per lo slot |
+|---|---|---|
+| Blu | F-14 (A/B), F/A-18C, F-4E, AH-64D, CH-47F | `F-14A-135-GR-Early` / `F-14B`, `FA-18C_hornet`, `F-4E-45MC`, `AH-64D_BLK_II`, `CH-47Fbl1` |
+| Rosso | MiG-29, Su-25, Mi-24, Mi-8 | `MiG-29 Fulcrum`, `Su-25`, `Mi-24P` (il modulo e' il P, non il V), `Mi-8MT` |
+
+- Gli slot del giocatore (`Client`) si creano solo per questi moduli; tutti gli altri velivoli sono IA.
+- Volando con i rossi servono carichi verificati anche per `Mi-24P` e `Mi-8MT` (da aggiungere a
+  `carichi.py` alla prima missione rossa, ricavandoli da una missione salvata dal giocatore).
+- Nessuna unita' che richieda mod o asset pack non base, salvo accordo esplicito.
+
+## Prestazioni (PC del giocatore: i7-7700K 4 core / 8 thread, 64 GB, DCS 2.9 MT)
+
+In DCS il limite e' la CPU della simulazione (IA, sensori, radar, balistica), non la RAM ne' la
+grafica: con 4 core il thread principale si satura presto. Ogni aereo IA costa molto piu' di un
+veicolo; i radar SAM attivi, l'artiglieria che spara e la fanteria in gran numero pesano piu' dei
+veicoli fermi. Bilancio per missione (costante `BILANCIO` in `script/costruisci_giornata.py`, il
+costruttore avvisa con `PRESTAZIONI:` se lo si supera):
+
+| Voce | Limite | Note |
+|---|---|---|
+| Aerei in volo contemporaneamente (entrambe le parti, supporto incluso) | **28** | circa 14 per parte; scaglionare i decolli |
+| Unita' di terra totali | **220** | fanteria solo dove serve (ogni soldato e' un'unita') |
+| Unita' di terra entro 30 km dagli obiettivi del giocatore | **120** | e' dove si vola basso e si guarda |
+| Navi | **12** | |
+| Unita' totali | **300** | |
+
+Regole che ne derivano:
+- Ai comandanti va dato un tetto di **aerei in volo contemporaneamente** (non solo di voli),
+  compresi AWACS e cisterne, che restano in aria per tutta la missione.
+- Le unita' lontane dall'azione del giorno (siti SAM di Aleppo, Hama... oltre ~150 km da rotte e
+  obiettivi) restano nello stato della campagna ma non vanno messe nella missione, o vanno
+  messe "dormienti" (IA spenta finche' un nemico non si avvicina).
+- Aerei IA che atterrano: da rimuovere dopo lo spegnimento, non devono restare attivi.
+- Riferimento: G15 di prova aveva 325 unita' e circa 60 aerei in volo insieme alle 08:00 —
+  troppo per questo PC.
+
 ## Errori tecnici gia' commessi (e come si evitano)
 
 | Errore | Effetto in DCS | Correzione / prevenzione |
@@ -50,4 +88,5 @@ costruire o modificare una missione. Le regole piu' importanti sono riassunte in
 3. ID di gruppi e unita' unici; nomi di gruppo unici; nominativi radio validi per paese.
 4. Nessuna coppia di gruppi di terra con veicoli sotto 60 m (salvo protezioni volute).
 5. Navi da aviazione con mare aperto contro vento; portaerei nella zona navale USA.
-6. Rileggere questo file.
+6. Nessun avviso `PRESTAZIONI:` dal costruttore (o motivato al giocatore).
+7. Rileggere questo file.

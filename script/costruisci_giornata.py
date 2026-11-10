@@ -62,6 +62,10 @@ NOMI_CHIAMATA_SPECIALI = {'AWACS': {1: 'Overlord', 2: 'Magic', 3: 'Wizard', 4: '
 # un numero dove l'editor si aspetta una tabella blocca il caricamento della missione)
 PAESI_NOMINATIVO_NUMERICO = {0}          # Russia
 
+# Bilancio delle unita' per il PC del giocatore (i7-7700K 4 core / 8 thread, 64 GB, DCS MT).
+# Il collo di bottiglia e' la simulazione (CPU), non la grafica: vedi docs/lezioni.md.
+BILANCIO = {'unita_totali': 300, 'unita_terra': 220, 'aerei_in_volo': 28, 'terra_vicino_giocatore': 120, 'navi': 12}
+
 # posizione delle navi
 CVN_POS = (35.75, 33.95)     # a nord di Cipro, ~160 km dalla Siria; a ovest c'e' mare aperto per la tratta contro vento
 CVN_SCARTO = 9          # ponte angolato: il vento deve arrivare ~9 gradi a sinistra della prua
@@ -562,7 +566,43 @@ class Costruttore:
         self.forze_terra()
         self.tutti_i_voli()
         self.disegni()
+        self.verifica_prestazioni()
         return self
+
+    def verifica_prestazioni(self):
+        """Controlla il bilancio delle unita' (docs/lezioni.md, PC del giocatore: i7-7700K 4 core)."""
+        conta = {'plane': 0, 'helicopter': 0, 'vehicle': 0, 'ship': 0, 'static': 0}
+        terra = []
+        for co in self.m['coalition'].values():
+            for c in co['country'].values():
+                for cat in conta:
+                    for g in c.get(cat, {}).get('group', {}).values():
+                        conta[cat] += len(g['units'])
+                        if cat == 'vehicle':
+                            terra += [(u['x'], u['y']) for u in g['units'].values()]
+        # aerei in volo nello stesso momento: decollo -> decollo + durata + 40 min di transito
+        finestre = []
+        for ordini in self.ordini.values():
+            for a in ordini.get('missioni_aeree', []):
+                t = hm(a.get('decollo', self.par['inizio']))
+                finestre.append((t, t + (int(a.get('durata_min', 60)) + 40) * 60, max(1, min(4, int(a.get('numero', 2))))))
+        picco = max([sum(n for s, e, n in finestre if s <= t < e) for t, _, _ in finestre] or [0])
+        # unita' di terra vicino agli obiettivi del giocatore
+        vicine = 0
+        obiettivi = [ll_to_xy(*a['obiettivo']) for a in self.ordini['blue'].get('missioni_aeree', [])
+                     if a.get('giocatore') and a.get('obiettivo')]
+        for x, y in terra:
+            if any(math.hypot(x - ox, y - oy) < 30000 for ox, oy in obiettivi):
+                vicine += 1
+        totale = sum(conta.values())
+        self.resoconto['prestazioni'] = dict(conta, totale=totale, aerei_in_volo_picco=picco, terra_vicino_giocatore=vicine)
+        for valore, limite, cosa in ((totale, BILANCIO['unita_totali'], "unita' totali"),
+                                     (conta['vehicle'], BILANCIO['unita_terra'], "unita' di terra"),
+                                     (picco, BILANCIO['aerei_in_volo'], 'aerei in volo contemporaneamente (stima)'),
+                                     (vicine, BILANCIO['terra_vicino_giocatore'], "unita' di terra entro 30 km dagli obiettivi del giocatore"),
+                                     (conta['ship'], BILANCIO['navi'], 'navi')):
+            if valore > limite:
+                self.avvisi.append('PRESTAZIONI: %d %s, oltre il limite di %d' % (valore, cosa, limite))
 
     def scrivi(self, briefing_blu, briefing_rosso, tavolette):
         nome = 'G%02d_%s' % (self.giorno, self.par['data'])

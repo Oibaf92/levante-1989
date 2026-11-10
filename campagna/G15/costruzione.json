@@ -1262,6 +1262,20 @@
  "avvisi": [
   "nome 'Carri Bhamdoun' usato da entrambe le parti: diventa 'Carri Bhamdoun (USA)'",
   "nome 'Carri Bhamdoun' usato da entrambe le parti: diventa 'Carri Bhamdoun (SY)'",
-  "Grad Sofar: bersaglio a 27.6 km, oltre la portata (20 km): sparera' solo se si avvicina"
- ]
+  "Grad Sofar: bersaglio a 27.6 km, oltre la portata (20 km): sparera' solo se si avvicina",
+  "PRESTAZIONI: 325 unita' totali, oltre il limite di 300",
+  "PRESTAZIONI: 247 unita' di terra, oltre il limite di 220",
+  "PRESTAZIONI: 67 aerei in volo contemporaneamente (stima), oltre il limite di 28",
+  "PRESTAZIONI: 158 unita' di terra entro 30 km dagli obiettivi del giocatore, oltre il limite di 120"
+ ],
+ "prestazioni": {
+  "plane": 65,
+  "helicopter": 4,
+  "vehicle": 247,
+  "ship": 9,
+  "static": 0,
+  "totale": 325,
+  "aerei_in_volo_picco": 67,
+  "terra_vicino_giocatore": 158
+ }
 }

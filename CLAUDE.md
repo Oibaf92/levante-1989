@@ -49,3 +49,5 @@ Campagna dinamica DCS World (mappa Syria), giocatore singolo. Lingua: italiano.
 - `luatable.dump` non accetta liste Python: usare dizionari con chiavi 1..n.
 - Missione di test a carte scoperte solo se il giocatore la chiede: `script/tools/apri_test.py <giorno>`.
 - Per i problemi in DCS: `dcs.log` preso prima di riavviare DCS.
+- Prestazioni (i7-7700K): max ~28 aerei in volo insieme, 220 unita' di terra, 120 vicino al giocatore;
+  il costruttore avvisa con `PRESTAZIONI:`. Moduli pilotabili e tipi DCS in `docs/lezioni.md`.
