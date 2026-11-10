@@ -55,6 +55,12 @@ COMPITO_DCS = {'CAP': 'CAP', 'GCI': 'Intercept', 'SCORTA': 'Escort', 'STRIKE': '
 NOMI_CHIAMATA = {'CAP': 1, 'GCI': 1, 'SCORTA': 4, 'STRIKE': 5, 'CAS': 6, 'SEAD': 7, 'ANTINAVE': 5,
                  'TRASPORTO': 8, 'AWACS': 1, 'TANKER': 1}
 NOMI_CHIAMATA_TESTO = {1: 'Enfield', 2: 'Springfield', 3: 'Uzi', 4: 'Colt', 5: 'Dodge', 6: 'Ford', 7: 'Chevy', 8: 'Pontiac'}
+# AWACS e cisterne hanno liste proprie (l'indice 1 e' Overlord / Texaco)
+NOMI_CHIAMATA_SPECIALI = {'AWACS': {1: 'Overlord', 2: 'Magic', 3: 'Wizard', 4: 'Focus', 5: 'Darkstar'},
+                          'TANKER': {1: 'Texaco', 2: 'Arco', 3: 'Shell'}}
+# Paesi con nominativi numerici nel Mission Editor (gli altri, Siria compresa, usano nome+numeri:
+# un numero dove l'editor si aspetta una tabella blocca il caricamento della missione)
+PAESI_NOMINATIVO_NUMERICO = {0}          # Russia
 
 # posizione delle navi
 CVN_POS = (35.95, 33.70)
@@ -155,6 +161,8 @@ class Costruttore:
         self.terreno = pz.Terreno()
         self.gruppi_aerei = {}            # nome missione -> (lato, gruppo)
         self.decolli_nave = {}
+        self.conta_speciali = {}          # AWACS/TANKER -> ultimo nome usato
+        self.numeri_chiamata = {}         # (paese, nome) -> ultimo numero di gruppo (1-9)
         self._rinomina_doppi()
         self.navi = {}
 
@@ -421,19 +429,27 @@ class Costruttore:
         carico = carichi.risolvi(tipo, o.get('carico', '')) if o.get('carico') not in (None, 'nessuno') else {}
         carb = carichi.PILONI.get(tipo, {}).get('carburante') or 3000
         unita = {}
-        nome_ch = NOMI_CHIAMATA.get(mis, 1)
+        paese_id = USA if lato == 'blue' else (RUSSIA if tipo in ('Su-25', 'Tu-22M3', 'A-50') else SIRIA)
+        speciali = NOMI_CHIAMATA_SPECIALI.get(mis)
+        if speciali:
+            self.conta_speciali[mis] = self.conta_speciali.get(mis, 0) % len(speciali) + 1
+            nome_ch, testo_ch = self.conta_speciali[mis], speciali[self.conta_speciali[mis]]
+        else:
+            nome_ch = NOMI_CHIAMATA.get(mis, 1)
+            testo_ch = NOMI_CHIAMATA_TESTO[nome_ch]
+        num_ch = self.numeri_chiamata.get((paese_id, testo_ch), 0) % 9 + 1
+        self.numeri_chiamata[(paese_id, testo_ch)] = num_ch
         for k in range(n):
             u = {'type': tipo, 'unitId': self.cnt.u(), 'name': '%s-%d' % (o['nome'], k + 1),
                  'skill': ('Client' if (giocatore and k == 0) else ('High' if lato == 'blue' else 'Good')),
                  'x': p0['x'] + 40 * k, 'y': p0['y'] + 40 * k, 'alt': p0['alt'], 'alt_type': p0['alt_type'],
                  'heading': 0, 'psi': 0, 'speed': p0['speed'],
                  'payload': {'pylons': copy.deepcopy(carico), 'fuel': carb, 'flare': 60, 'chaff': 60, 'gun': 100}}
-            if lato == 'blue':
-                u['callsign'] = {1: nome_ch, 2: idx, 3: k + 1, 'name': '%s%d%d' % (NOMI_CHIAMATA_TESTO[nome_ch], idx, k + 1)}
-                u['onboard_num'] = '%03d' % (100 + idx * 10 + k)
-            else:
+            if paese_id in PAESI_NOMINATIVO_NUMERICO:
                 u['callsign'] = 100 + idx * 10 + k
-                u['onboard_num'] = '%02d' % (10 + idx * 2 + k)
+            else:
+                u['callsign'] = {1: nome_ch, 2: num_ch, 3: k + 1, 'name': '%s%d%d' % (testo_ch, num_ch, k + 1)}
+            u['onboard_num'] = '%03d' % (100 + idx * 10 + k) if lato == 'blue' else '%02d' % (10 + idx * 2 + k)
             unita[k + 1] = u
         g = {'name': o['nome'], 'groupId': gid, 'task': COMPITO_DCS.get(mis, 'CAP'), 'taskSelected': True,
              'x': p0['x'], 'y': p0['y'], 'start_time': decollo, 'hidden': lato == 'red', 'uncontrolled': False,
@@ -441,7 +457,6 @@ class Costruttore:
              'modulation': 0, 'radioSet': False, 'tasks': {}, 'units': unita,
              'route': {'points': {k + 1: p for k, p in enumerate(punti)}}}
         self.gruppi_aerei[o['nome']] = (lato, g, o)
-        paese_id = USA if lato == 'blue' else (RUSSIA if tipo in ('Su-25', 'Tu-22M3', 'A-50') else SIRIA)
         self.aggiungi_gruppo(lato, cat, paese_id, {USA: 'USA', SIRIA: 'Syria', RUSSIA: 'Russia'}[paese_id], g)
         self.resoconto['voli'].append({'lato': lato, 'nome': o['nome'], 'tipo': mis, 'velivolo': tipo, 'numero': n,
                                        'base': o['base'], 'decollo': o.get('decollo'), 'giocatore': giocatore})
