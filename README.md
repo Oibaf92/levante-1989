@@ -52,6 +52,18 @@ il giocatore vola a scelta con una delle due parti.
 - **Nomi dei voli**: in inglese, una parola breve e univoca (es. *Hammer*, *Viper*, *Anvil*,
   *Sledge*). Il nominativo radio in DCS è separato (es. Chevy 1-1) ed è riportato su briefing e tavolette.
 
+## 🎯 Risorse e intelligence speciali
+- **AIM-54 contati**: la CVN-71 ha una scorta limitata di Phoenix (all'inizio 48). Ogni AIM-54
+  lanciato in missione la riduce; arrivano 4 missili al giorno con i rifornimenti. Un volo di F-14
+  puo' imbarcare AIM-54 solo se la scorta li copre (2 per aereo con il carico 2-3-2); il magazzino
+  della portaerei nella missione riflette la scorta.
+- **Radar contro-artiglieria (AN/TPQ-37)**: i Marines nella testa di ponte localizzano l'artiglieria
+  e i lanciarazzi nemici che sparano entro circa 30 km: la loro posizione (con un errore di qualche
+  centinaio di metri) compare nell'intel blu del blocco successivo.
+- **Ricognizione TARPS**: un F-14 con il pod TARPS (VF-84) fotografa le unita' di terra entro circa
+  5 km dalla sua rotta, se vola sotto i 20.000 ft; se rientra a bordo, le loro posizioni vere
+  entrano nell'intel blu del blocco successivo. Se viene abbattuto, le foto sono perse.
+
 ## 🏆 Condizioni di vittoria
 - **Blu**: l'enclave resiste e la difesa aerea siriana è smantellata, fino al cessate il
   fuoco imposto dalle perdite siriane.

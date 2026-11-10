@@ -94,6 +94,7 @@ F4E = {
 # aria-terra: eccezione voluta dal giocatore (nella realta' dal 1990-92); niente pod di puntamento
 _F_BASE = {(1, 10): _F9, (2, 9): _F7, (3, 8): _FT}
 F14_AT = {
+    'ricognizione TARPS': {**_F_BASE, (6,): 'Tactical Airborne Reconnaissance Pod System'},   # VF-84
     'strike Mk-84': {**_F_BASE, (4, 5, 6, 7): 'Mk-84'},
     'strike Mk-82': {**_F_BASE, (4, 7): 'MAK79 4 Mk-82', (5, 6): 'MAK79 3 Mk-82'},   # 14 Mk-82
 }

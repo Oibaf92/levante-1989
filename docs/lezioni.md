@@ -83,7 +83,8 @@ Regole che ne derivano:
 Notazione: tra parentesi il nome del carico in `carichi.py`. Piloni fissati a mano e verificati
 contro `script/dati/piloni.json`; "(AR)" = autonomia ridotta (avviso `AUTONOMIA:` del costruttore).
 
-- **F-14A** (solo A): CAP 2-3-2 (`cap 2-3-2`, anche scorta), CAP 0-6-2 (`cap 0-6-2`); **aria-terra per
+- **F-14A** (solo A): CAP 2-3-2 (`cap 2-3-2`, anche scorta), CAP 0-6-2 (`cap 0-6-2`), ricognizione con
+  pod TARPS + 2 AIM-7 + 2 AIM-9 (`ricognizione TARPS`); **aria-terra per
   eccezione voluta dal giocatore** (nella realta' dal 1990-92): 4 Mk-84 (`strike Mk-84`),
   14 Mk-82 su MAK-79 (`strike Mk-82`), sempre con 2 AIM-7, 2 AIM-9, 2 serbatoi. Niente pod di puntamento.
 - **F/A-18C**: CAP 2-4 (`cap 2-4 serbatoi ali`), CAP 2-6 (`cap 2-6 serbatoio centrale`, AR);
@@ -145,10 +146,16 @@ tolleranza piu' alta; SA-5 da non sottovalutare (riducono l'area operativa e cos
 
 - **Script dei radar SAM**: accensione e spegnimento dei radar di tiro (radar spenti finche' il
   bersaglio non e' vicino, reazione ai lanci di HARM, spostamento dopo il tiro). Approvato dal giocatore.
-- Proposte ancora da decidere con il giocatore:
-  - scorta limitata di AIM-54 sulla portaerei, che cala a ogni lancio e si ricostituisce lentamente;
-  - radar contro-artiglieria (AN/TPQ-37): un pezzo nemico che spara compare nell'intel blu del blocco dopo;
-  - ricognizione F-14 TARPS: un volo riuscito aggiorna l'intel blu con le posizioni delle unita' fotografate.
+- **Regole approvate dal giocatore** (scritte nel README, sezione "Risorse e intelligence speciali"),
+  da implementare:
+  - **AIM-54 contati**: scorta iniziale 48 sulla CVN-71, -1 per ogni lancio (evento `lancio` del
+    registro), +4 al giorno; i carichi con AIM-54 solo se la scorta li copre; magazzino della
+    portaerei nella missione = scorta (cosi' anche il riarmo in gioco e' limitato);
+  - **AN/TPQ-37**: artiglieria e lanciarazzi rossi che sparano entro ~30 km dalla testa di ponte ->
+    posizione (errore ~100-300 m) nell'intel blu del blocco dopo;
+  - **TARPS**: F-14 con carico `ricognizione TARPS` sotto i 20.000 ft fotografa le unita' entro ~5 km
+    dalla rotta; se atterra, posizioni vere nell'intel blu del blocco dopo; se abbattuto, niente.
+    Serve uno script che registri la traccia del volo TARPS.
 - Costruttore a blocchi, carta intel per blocco dal rapporto del comandante, CSAR, unita' lontane
   fuori dalla missione o dormienti, aerei IA rimossi dopo l'atterraggio, tetto agli aerei in volo
   negli ordini.
