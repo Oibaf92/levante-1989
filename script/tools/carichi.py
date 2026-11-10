@@ -152,7 +152,10 @@ CARICHI = {
         'aria-aria': {1: '{MISSILE_R-60M_APU-60}', 2: '{MISSILE_R-60M_APU-60}', 3: '{MISSILE_R-27R_APU-470}',
                                      4: '{PTB_1500_MIG29A}', 5: '{MISSILE_R-27R_APU-470}', 6: '{MISSILE_R-60M_APU-60}',
                                      7: '{MISSILE_R-60M_APU-60}'}},
-    'MiG-23MLD': {'aria-aria': {2: '{CCF898C9-5BC7-49A4-9D1E-C3ED3D5166A1}', 3: '{B0DBC591-0F52-4F7D-AD7B-51E67725FB81}',
+    'MiG-23MLD': {'attacco razzi': {2: '{F72F47E5-C83A-4B85-96ED-D3E46671EE9A}', 3: '{APU-60-1_R_60M}',
+                                    4: '{A5BAEAB7-6FAF-4236-AF72-0FD900F493F9}', 5: '{APU-60-1_R_60M}',
+                                    6: '{F72F47E5-C83A-4B85-96ED-D3E46671EE9A}'},   # 2 B-8M1, 2 R-60M (dal giocatore)
+                  'aria-aria': {2: '{CCF898C9-5BC7-49A4-9D1E-C3ED3D5166A1}', 3: '{B0DBC591-0F52-4F7D-AD7B-51E67725FB81}',
                                 4: '{A5BAEAB7-6FAF-4236-AF72-0FD900F493F9}', 5: '{275A2855-4A79-4B2D-B082-91EA2ADF4691}',
                                 6: '{CCF898C9-5BC7-49A4-9D1E-C3ED3D5166A1}'}},
     'MiG-21Bis': {'aria-aria': {1: '{R-60 2L}', 2: '{R-3R}', 3: '{PTB_800_MIG21}', 4: '{R-3R}', 5: '{R-60 2R}', 6: '{ASO-2}'},

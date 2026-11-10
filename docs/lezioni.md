@@ -32,8 +32,8 @@ costruire o modificare una missione. Le regole piu' importanti sono riassunte in
 | Parte con cui vola | **A scelta del giocatore, blocco per blocco**: chiederla a ogni missione insieme al tipo di partenza. Il briefing e le tavolette sono solo della parte scelta (separazione delle informazioni). | punto 5 |
 | Fine campagna | Condizioni di vittoria del README; **limite 30 giornate**, poi esito ai punti deciso dall'arbitro (territorio, perdite, difesa aerea siriana, gruppo navale). | punto 5 |
 | Mappa F10 | Va bene cosi': `optview_allies` (solo forze amiche), **nessun contatto nemico in tempo reale**, niente etichette delle unita'. Le forze nemiche compaiono solo come **stima del comandante** della parte con cui si vola (carta intel nello strato della parte), costruita dal suo rapporto intel di quel blocco, mai dalle posizioni vere. | punto 6 |
-| Livree | Scelte dal giocatore (C00): **F-14A** VF-84 (`vf-84 ghost by reflected`, `vf-84 jaws by reflected`, numeri 2xx) e VF-41 (`vf-41 aj100 1989 by reflected`, `vf-41 aj105 1989 by reflected`, numeri 1xx); **F/A-18C** `vfa-37` (3xx) e `vfa-87` (4xx); **F-4E** `rs68-381_e1_526tfs`; **AH-64D** `12th combat aviation brigade griffins`; **CH-47F** `us army dark green`; **Su-25** `field camo scheme #1 (native)`; **MiG-29 sovietici** `rf standard grey`, `rf splintered scheme`; **Mi-24P** siriani `iriaf`, sovietici `af 440 ovp`; **Mi-8** `Russia_VVS_Standard`. Stessa squadriglia per tutto un volo, a rotazione tra i voli (`LIVREE` nel costruttore). Le livree "by reflected" sono un mod installato dal giocatore. | C00 |
-| Radio (modelli) | Struttura delle radio dei moduli in `script/dati/radio_modelli.json`, ricavata dalla C00 salvata dal giocatore: F-14A (2 UHF: 20+30 canali), F/A-18C (2x20), F-4E (18+20), AH-64D (VHF 10, **UHF 10**, 2 FM), Mi-24P e Mi-8 (VHF 20, FM 10). Il piano blu va sulle radio UHF; se i canali non bastano (Apache) si tolgono interni degli altri voli, Incirlik, cisterne, e la tavoletta del volo mostra la lista ridotta. | C00 |
+| Livree | Scelte dal giocatore (C00, seconda revisione): **F-14A** VF-84 (`vf-84 ghost by reflected`, `vf-84 jaws by reflected`, numeri 2xx) e VF-41 (`vf-41 aj100 1989 by reflected`, `vf-41 aj105 1989 by reflected`, numeri 1xx), a rotazione; **F/A-18C** `vfa-37` (3xx) per CAP e SEAD, `vfa-87` (4xx) per strike, CAS e antinave; **F-4E** `rs68-381_e1_526tfs`; **AH-64D** `12th combat aviation brigade griffins`; **CH-47F** `us army dark green`; **Su-25** `field camo scheme #1 (native)`; **MiG-29** siriani `syria af`, sovietici `air force standard`; **MiG-23MLD** siriani `Syria_2`; **Mi-24P** siriani `syaaf`, sovietici `af 440 ovp`; **Mi-8** `Russia_VVS_Standard` da trasporto, `Russia_VVS_Standard_2` armato. Stessa livrea per tutto un volo (`LIVREE` nel costruttore, con filtro per carico). Le livree "by reflected" sono un mod del giocatore. | C00 |
+| Radio (modelli) | Struttura delle radio dei moduli in `script/dati/radio_modelli.json`, ricavata dalla C00 salvata dal giocatore: F-14A (2 UHF: 20+30 canali), F/A-18C (2x20), F-4E (18+20), AH-64D (VHF 10, **UHF 10**, 2 FM), CH-47F (FM 20, UHF 20, FM 10), Mi-24P e Mi-8 (VHF 20, FM 10). Il piano blu va sulle radio UHF; se i canali non bastano (Apache) si tolgono interni degli altri voli, Incirlik, cisterne, e la tavoletta del volo mostra la lista ridotta. | C00 |
 | Livello dell'IA | Nemici **High** all'inizio; il livello **cala con le perdite**: logoramento (frazione persa dell'ordine di battaglia, `parametri.json` -> `logoramento`) oltre 20% -> Good, oltre 40% -> Average (`LOGORAMENTO_ABILITA`). Stessa regola per l'IA blu. | punto 3 |
 | Intensita' | Conflitto di **media intensita'** (anche per le prestazioni); missioni del giocatore **abbastanza sopravvivibili**: l'obiettivo di un suo volo non deve essere coperto da piu' di 3 batterie SAM nemiche (SA-2/3/6/8/Hawk; SA-5 escluso, i SEAD esclusi). Il costruttore avvisa con `INTENSITA:`. | punto 3 |
 | Era 1989 | **Niente GPS, niente AIM-120** (ne' AIM-9X, R-77, JSOW, SLAM, pod di puntamento moderni). `carichi.py` rifiuta i carichi fuori era (`ERA_VIETATE`). **Eccezioni**: AH-64D e CH-47F con il loro armamento. Nel menu di riarmo in gioco il rispetto dell'era e' affidato al giocatore. | punto 3 |
@@ -96,6 +96,8 @@ contro `script/dati/piloni.json`; "(AR)" = autonomia ridotta (avviso `AUTONOMIA:
   Autodifesa 3 AIM-7 + 2 AIM-9 + ALQ-131 (nel pozzetto anteriore, o il Pave Spike).
 - **AH-64D**: 16 Hellfire (`anticarro`), 8 Hellfire + 38 Hydra (`appoggio`), 4 Hellfire + 57 Hydra (`fanteria`).
 - **CH-47F**: nessun carico.
+- **MiG-23MLD** (solo IA, siriani): aria-aria 2 R-24R + 4 R-60M (`aria-aria`), 2 B-8M1 + 2 R-60M
+  (`attacco razzi`), entrambi indicati dal giocatore in C00.
 - **MiG-29** (CLSID del modulo del giocatore, da C00): CAP siriano 2 R-27R + 4 R-60M (`cap siriano R-60M`),
   CAP sovietico 2 R-27R + 4 R-73 (`cap sovietico R-73`), attacco 4 FAB-500 + 2 R-60M (`attacco FAB-500`),
   sempre con serbatoio centrale.
@@ -131,8 +133,7 @@ contro `script/dati/piloni.json`; "(AR)" = autonomia ridotta (avviso `AUTONOMIA:
 
 ## In attesa dal giocatore
 
-- Livrea per i **MiG-29 siriani** (in C00 c'erano solo livree russe).
-- Modelli delle radio di **CH-47F, MiG-29, Su-25** (il Mission Editor scrive la tabella `Radio` solo
+- Modelli delle radio di **MiG-29, Su-25** (il Mission Editor scrive la tabella `Radio` solo
   per le unita' di cui si apre la pagina radio): servono per preimpostare i canali quando si vola con
   questi moduli.
 - Esito del controllo dei carichi in C00 (l'editor ha salvato senza modificarne nessuno).

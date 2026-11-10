@@ -82,19 +82,22 @@ RADIO_MODELLI = {k: v for k, v in json.load(open(os.path.join(QUI, 'dati', 'radi
 # Livree scelte dal giocatore (C00 salvata dal suo Mission Editor). Per tipo e paese: lista di
 # squadriglie, assegnate a rotazione volo per volo (stesso volo = stessa squadriglia).
 # CVW-8 sulla Roosevelt nel 1989: F-14A di VF-84 e VF-41.
-LIVREE = {
-    (USA, 'F-14A-135-GR-Early'): [('vf-84 ghost by reflected', 200), ('vf-41 aj100 1989 by reflected', 100),
-                                  ('vf-84 jaws by reflected', 200), ('vf-41 aj105 1989 by reflected', 100)],
-    (USA, 'FA-18C_hornet'): [('vfa-37', 300), ('vfa-87', 400)],
-    (USA, 'F-4E-45MC'): [('rs68-381_e1_526tfs', None)],
-    (USA, 'AH-64D_BLK_II'): [('12th combat aviation brigade griffins', None)],
-    (USA, 'CH-47Fbl1'): [('us army dark green', None)],
-    (RUSSIA, 'Su-25'): [('field camo scheme #1 (native)', None)],
-    (RUSSIA, 'MiG-29 Fulcrum'): [('rf standard grey', None), ('rf splintered scheme', None)],
-    (SIRIA, 'Mi-24P'): [('iriaf', None)],
-    (RUSSIA, 'Mi-24P'): [('af 440 ovp', None)],
-    (SIRIA, 'Mi-8MT'): [('Russia_VVS_Standard', None)],
-    (RUSSIA, 'Mi-8MT'): [('Russia_VVS_Standard', None)],
+LIVREE = {   # (paese, tipo): [(livrea, base del numero di bordo o None, carichi a cui si applica o None)]
+    (USA, 'F-14A-135-GR-Early'): [('vf-84 ghost by reflected', 200, None), ('vf-41 aj100 1989 by reflected', 100, None),
+                                  ('vf-84 jaws by reflected', 200, None), ('vf-41 aj105 1989 by reflected', 100, None)],
+    (USA, 'FA-18C_hornet'): [('vfa-37', 300, ('cap', 'sead', 'aria-aria', 'scorta')),        # aria-aria e SEAD
+                             ('vfa-87', 400, ('strike', 'cas', 'antinave', 'attacco'))],    # attacco al suolo e antinave
+    (USA, 'F-4E-45MC'): [('rs68-381_e1_526tfs', None, None)],
+    (USA, 'AH-64D_BLK_II'): [('12th combat aviation brigade griffins', None, None)],
+    (USA, 'CH-47Fbl1'): [('us army dark green', None, None)],
+    (RUSSIA, 'Su-25'): [('field camo scheme #1 (native)', None, None)],
+    (SIRIA, 'MiG-29 Fulcrum'): [('syria af', None, None)],
+    (RUSSIA, 'MiG-29 Fulcrum'): [('air force standard', None, None)],
+    (SIRIA, 'MiG-23MLD'): [('Syria_2', None, None)],
+    (SIRIA, 'Mi-24P'): [('syaaf', None, None)],
+    (RUSSIA, 'Mi-24P'): [('af 440 ovp', None, None)],
+    (SIRIA, 'Mi-8MT'): [('Russia_VVS_Standard', None, ('trasporto', 'nessuno')), ('Russia_VVS_Standard_2', None, ('armato',))],
+    (RUSSIA, 'Mi-8MT'): [('Russia_VVS_Standard', None, ('trasporto', 'nessuno')), ('Russia_VVS_Standard_2', None, ('armato',))],
 }
 
 # tipi di partenza del giocatore -> (tipo, azione) del primo punto di rotta
@@ -506,7 +509,9 @@ class Costruttore:
         carb = carichi.PILONI.get(tipo, {}).get('carburante') or 3000
         unita = {}
         paese_id = USA if lato == 'blue' else (RUSSIA if tipo in ('Su-25', 'Tu-22M3', 'A-50') else SIRIA)
-        scelte = LIVREE.get((paese_id, tipo))
+        carico_nome = o.get('carico') or 'nessuno'
+        scelte = [x for x in LIVREE.get((paese_id, tipo), [])
+                  if x[2] is None or any(carico_nome.startswith(r) for r in x[2])] or LIVREE.get((paese_id, tipo))
         livrea = None
         if scelte:
             n_liv = self.conta_livree.get((paese_id, tipo), 0)
