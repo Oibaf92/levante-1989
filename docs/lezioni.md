@@ -16,6 +16,7 @@ costruire o modificare una missione. Le regole piu' importanti sono riassunte in
 | Formazione standard | Il giocatore vola **con un gregario IA** (2 aerei). Formazioni diverse solo se le chiede lui (`parametri.json` -> `aerei_giocatore`: `{"nome volo": n}`); il costruttore impone 2 ai voli del giocatore. | punto 2 delle lezioni |
 | Orario | Di **giorno**, di solito **mattina**; vanno bene anche l'alba e il tardo pomeriggio verso il tramonto. **Notte solo su sua richiesta** (`parametri.json` -> `"notte": true`); il costruttore avvisa con `ORARIO:` se la missione esce dal giorno. | punto 2 delle lezioni |
 | Gregario | Il giocatore vola con un gregario IA di scorta (aria-aria). F-14 di scorta: 2 AIM-9, 3 AIM-7, 2 AIM-54 sui primi due pallet. (2 AIM-54 + 4 AIM-7 non e' un carico valido.) | G00 |
+| Carichi F-14 (CAP) | I due carichi tipici, in notazione AIM-54 - AIM-7 - AIM-9: **2-3-2** (AIM-54 sui due pallet anteriori, AIM-7 su spalle e ventre, AIM-9 alle punte; e' anche il carico di scorta) e **0-6-2** (sei AIM-7: spalle + quattro sul ventre). Sempre con 2 serbatoi da 300 gal. In `carichi.py`: `cap 2-3-2`, `cap 0-6-2` (piloni fissati a mano). | punto 4 |
 | Ponte della portaerei | Aerei statici sul ponte per realismo. | G00 |
 | Mappa F10 | Confini con poligoni chiusi; niente scritte sulla mappa ma una **legenda** con forme diverse; simboli nella posizione **esatta** anche se si sovrappongono; simboli diversi per SA-2, SA-3, SA-5, SA-6, SA-8. Le tavolette vanno aggiornate insieme alla mappa. | G00 |
 | Piazzamento | Niente unita' in boschi, frutteti, edifici o pendii; poligono di tiro fuori dalle foreste; per le batterie in zona agricola/costiera chiedere lo screenshot ravvicinato. | G00, P00 |
@@ -73,6 +74,7 @@ Regole che ne derivano:
 | `luatable.dump` con una lista Python | Lua non valido (sintassi `[...]`) | Usare dizionari con chiavi 1, 2, 3... (le liste non sono supportate). Il test Lua lo rileva. |
 | Stesso nome di gruppo per le due parti | gruppi sovrascritti | `_rinomina_doppi` aggiunge (USA)/(SY). |
 | Gruppi di terra sovrapposti | veicoli uno dentro l'altro | Il piazzatore tiene almeno 60 m tra veicoli di gruppi diversi (`DIST_VEICOLI`). |
+| Risolutore automatico dei piloni per l'F-14 | in G15 i due AIM-54 di scorta erano finiti sulle spalle invece che sui pallet anteriori | Per i carichi indicati dal giocatore usare dizionari {pilone: CLSID} fissati a mano, non il risolutore. |
 | Carichi con CLSID inventati / piloni sbagliati | carico rifiutato o vuoto | `script/tools/carichi.py` (CLSID verificati o risolti su `piloni.json`); `python3 script/tools/carichi.py` deve dare 0 errori. |
 | Poligoni non chiusi, riempimento concavo errato | disegni strani | Linee chiuse, poligoni scomposti in pezzi convessi. |
 | Poligono di tiro in una foresta | bersagli invisibili | Banca dati della vegetazione (R01) + verifica ravvicinata. |

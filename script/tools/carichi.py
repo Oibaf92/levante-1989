@@ -16,6 +16,16 @@ PILONI = json.load(open(os.path.join(QUI, '..', 'dati', 'piloni.json'), encoding
 #   - lista di (espressione regolare sul nome dell'arma, quantita' di piloni), in ordine di
 #     assegnazione: il risolutore trova piloni e CLSID;
 #   - dizionario {pilone: CLSID} gia' verificato in DCS (es. dalla missione del giocatore).
+# F-14 (stazioni DCS: 1/10 punte ala, 2/9 spalle, 3/8 serbatoi, 4-7 ventre; 4 e 7 = pallet anteriori)
+F14_232 = {1: '{LAU-7 wtip - AIM-9L}', 2: '{SHOULDER AIM-7M}', 3: '{F14-300gal}', 4: '{AIM_54A_Mk60}',
+           5: '{BELLY AIM-7M}', 7: '{AIM_54A_Mk60}', 8: '{F14-300gal}', 9: '{SHOULDER AIM-7M}',
+           10: '{LAU-7 wtip - AIM-9L}'}          # 2 AIM-54 sui pallet anteriori, 3 AIM-7, 2 AIM-9 (verificato in G00)
+F14_062 = {1: '{LAU-7 wtip - AIM-9L}', 2: '{SHOULDER AIM-7M}', 3: '{F14-300gal}', 4: '{BELLY AIM-7M}',
+           5: '{BELLY AIM-7M}', 6: '{BELLY AIM-7M}', 7: '{BELLY AIM-7M}', 8: '{F14-300gal}',
+           9: '{SHOULDER AIM-7M}', 10: '{LAU-7 wtip - AIM-9L}'}   # 0 AIM-54, 6 AIM-7, 2 AIM-9
+F14_CARICHI = {'cap 2-3-2': F14_232, 'cap 0-6-2': F14_062,
+               'aria-aria': F14_232, 'scorta': F14_232}   # nomi storici = 2-3-2
+
 CARICHI = {
     # ------------------------------------------------------------------ rosso
     'MiG-29 Fulcrum': {'aria-aria': {1: '{MISSILE_R-60M_APU-60}', 2: '{MISSILE_R-60M_APU-60}', 3: '{MISSILE_R-27R_APU-470}',
@@ -35,10 +45,9 @@ CARICHI = {
     'Tu-22M3': {'antinave': [(r'^Kh-22', 2)], 'bombe': [(r'OFAB-250', 2)]},
     'Mi-24V': {'appoggio': [(r'9M114', 2), (r'^B-8V20A|^UB-32', 4)]},
     # ------------------------------------------------------------------ blu
-    'F-14A-135-GR-Early': {
-        'aria-aria': [(r'^LAU-7 AIM-9L', 2), (r'^AIM-54A-Mk60', 4), (r'^AIM-7M$', 2), (r'^Fuel tank 300 gal$', 2)],
-        'scorta': [(r'^LAU-7 AIM-9L', 2), (r'^AIM-54A-Mk60', 2), (r'^AIM-7M$', 3), (r'^Fuel tank 300 gal$', 2)],
-    },
+    # F-14: carichi CAP tipici indicati dal giocatore (AIM-54 - AIM-7 - AIM-9), piloni fissati a mano.
+    'F-14A-135-GR-Early': F14_CARICHI,
+    'F-14B': F14_CARICHI,
     'FA-18C_hornet': {
         'aria-aria': [(r'^AIM-9M Sidewinder', 2), (r'AIM-7M Sparrow', 6), (r'FPU-8A', 1)],
         'sead': [(r'^AIM-9M Sidewinder', 2), (r'^AGM-88C', 4), (r'^AIM-7M Sparrow', 2), (r'FPU-8A', 1)],
