@@ -52,6 +52,26 @@ CARICHI = {
 
 SERBATOI = r'Fuel|FPU|PTB|300 gal|370|800L|1400L|1500|2000L|490 L'
 
+# Era 1989 (docs/lezioni.md): niente GPS, niente AIM-120 / R-77, niente pod di puntamento moderni,
+# niente armi entrate in servizio dopo il 1989. Eccezione voluta dal giocatore: AH-64D e CH-47F
+# (velivoli e loro armamento).
+ERA_VIETATE = (r'AIM-120|AMRAAM|AIM-9X|R-77|RVV-AE|GBU-3[12]|GBU-38|GBU-54|JDAM|AGM-154|JSOW|CBU-97|CBU-10[345]'
+               r'|WCMD|SLAM|AGM-84[EHK]|LITENING|AAQ-28|ATFLIR|ASQ-228|GPS')
+ERA_ECCEZIONI = ('AH-64D_BLK_II', 'CH-47Fbl1')
+
+
+def fuori_era(tipo, pyloni):
+    """Elenco delle armi non ammesse nel 1989 in un carico {pilone: {'CLSID': ...}}."""
+    if tipo in ERA_ECCEZIONI:
+        return []
+    inv = {c: k for opz in PILONI.get(tipo, {}).get('pilastri', {}).values() for k, c in opz.items()}
+    out = []
+    for n, v in pyloni.items():
+        nome = inv.get(v['CLSID'], '') + ' ' + v['CLSID']
+        if re.search(ERA_VIETATE, nome):
+            out.append('%s (pilone %s)' % (nome.strip(), n))
+    return out
+
 
 def risolvi(tipo, nome):
     """{pilone: {'CLSID': ...}} per il carico 'nome' del velivolo 'tipo'."""
@@ -59,7 +79,9 @@ def risolvi(tipo, nome):
         return {}
     spec = CARICHI[tipo][nome]
     if isinstance(spec, dict):
-        return {n: {'CLSID': c} for n, c in sorted(spec.items())}
+        out = {n: {'CLSID': c} for n, c in sorted(spec.items())}
+        _controlla_era(tipo, nome, out)
+        return out
     pil = {int(k): v for k, v in PILONI[tipo]['pilastri'].items()}
     centro = (min(pil) + max(pil)) / 2
     out = {}
@@ -73,7 +95,15 @@ def risolvi(tipo, nome):
         ordine = sorted(compat, key=lambda n: (abs(n - centro) if verso_centro else -abs(n - centro), n))
         for n in ordine[:quanti]:
             out[n] = {'CLSID': compat[n]}
-    return dict(sorted(out.items()))
+    out = dict(sorted(out.items()))
+    _controlla_era(tipo, nome, out)
+    return out
+
+
+def _controlla_era(tipo, nome, pyloni):
+    vietate = fuori_era(tipo, pyloni)
+    if vietate:
+        raise ValueError('%s/%s: armi fuori era 1989: %s' % (tipo, nome, '; '.join(vietate)))
 
 
 def nomi_armi(tipo, nome):

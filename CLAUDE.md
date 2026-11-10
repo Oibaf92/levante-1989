@@ -47,6 +47,8 @@ Campagna dinamica DCS World (mappa Syria), giocatore singolo. Lingua: italiano.
 - Tipo di partenza del giocatore (freddo/caldo/pista/aria): chiederlo a OGNI missione, non deciderlo.
 - Standard: giocatore + 1 gregario IA, volo di giorno (mattina; alba/tramonto ok). Notte e formazioni
   diverse solo se le chiede il giocatore.
+- IA High che cala con il logoramento; media intensita' (max 3 SAM sull'obiettivo del giocatore);
+  era 1989: niente GPS ne' AIM-120, eccezione AH-64D e CH-47F.
 - Nominativi radio: numerici solo per i paesi orientali (Russia...); Siria e occidentali nome+numeri,
   altrimenti il Mission Editor si pianta al caricamento.
 - `luatable.dump` non accetta liste Python: usare dizionari con chiavi 1..n.

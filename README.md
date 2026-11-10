@@ -41,6 +41,12 @@ il giocatore vola a scelta con una delle due parti.
   con A-6E/TRAM. Ammessi AIM-54, AIM-7, HARM, Harpoon, Maverick, Shrike.
 - **Rosso**: niente R-77 né SA-10/11/15 all'inizio. Possono arrivare come rinforzo
   sovietico più avanti.
+- **Eccezioni accettate**: AH-64D e CH-47F (e il loro armamento), anche se successivi al 1989.
+- **Intensità**: conflitto di **media intensità**. Ogni parte ha un tetto di aerei in volo
+  contemporaneamente (circa 14, AWACS e cisterne compresi) e di gruppi di terra; l'obiettivo di un
+  volo del giocatore non deve essere coperto da più di 3 batterie SAM nemiche (SA-5 escluso).
+- **Qualità dell'IA**: equipaggi *High* all'inizio; con le perdite il livello cala
+  (logoramento oltre 20% → *Good*, oltre 40% → *Average*).
 
 ## 🏆 Condizioni di vittoria
 - **Blu**: l'enclave resiste e la difesa aerea siriana è smantellata, fino al cessate il

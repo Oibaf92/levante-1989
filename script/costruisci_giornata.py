@@ -62,6 +62,13 @@ NOMI_CHIAMATA_SPECIALI = {'AWACS': {1: 'Overlord', 2: 'Magic', 3: 'Wizard', 4: '
 # un numero dove l'editor si aspetta una tabella blocca il caricamento della missione)
 PAESI_NOMINATIVO_NUMERICO = {0}          # Russia
 
+# media intensita': batterie SAM nemiche che possono coprire l'obiettivo di un volo del giocatore
+SAM_PERICOLOSI = ('sa2', 'sa3', 'sa6', 'sa8', 'hawk')
+MAX_SAM_SU_OBIETTIVO = 3
+
+# livello dell'IA in base al logoramento (frazione persa): sotto la soglia -> livello
+LOGORAMENTO_ABILITA = ((0.20, 'High'), (0.40, 'Good'), (9.99, 'Average'))
+
 # tipi di partenza del giocatore -> (tipo, azione) del primo punto di rotta
 PARTENZE = {'freddo': ('TakeOffParking', 'From Parking Area'), 'caldo': ('TakeOffParkingHot', 'From Parking Area Hot'),
             'pista': ('TakeOff', 'From Runway')}
@@ -268,7 +275,7 @@ class Costruttore:
         for k, (tipo, nome, dx, dy) in enumerate([('MOSCOW', 'Slava (Tartus)', 0, 0), ('REZKY', 'Krivak II (Tartus)', 500, 400),
                                                   ('MOLNIYA', 'Molniya (Tartus)', -400, 300)], 1):
             unita[k] = {'type': tipo, 'name': nome, 'unitId': self.cnt.u(), 'x': tx + dx, 'y': ty + dy,
-                        'heading': math.radians(270), 'skill': 'Good', 'modulation': 0, 'frequency': 127500000}
+                        'heading': math.radians(270), 'skill': self.abilita('red'), 'modulation': 0, 'frequency': 127500000}
         g = {'visible': False, 'tasks': {}, 'uncontrollable': False, 'groupId': self.cnt.g(), 'hidden': False,
              'name': 'Squadra sovietica Tartus', 'x': tx, 'y': ty, 'start_time': 0, 'units': unita,
              'route': {'points': {1: wpt(tx, ty, 0, 0)}}}
@@ -289,7 +296,7 @@ class Costruttore:
                 it = pz.Intenzione(tipo, u['nome'], tuple(u['centro']), float(u.get('raggio_km', 5)),
                                    tuple(u.get('settore', (0, 360))), tuple(obiettivo),
                                    coalizione=lato, paese=USA if lato == 'blue' else SIRIA,
-                                   abilita='High' if lato == 'blue' else 'Good',
+                                   abilita=self.abilita(lato),
                                    dentro=TESTA_DI_PONTE if lato == 'blue' else None,
                                    fuori=TESTA_DI_PONTE if lato == 'red' else None)
                 out.append((it, u))
@@ -299,7 +306,7 @@ class Costruttore:
             if tipo in ('sa5', 'sa2', 'sa3') and nome not in SITI_DISTRUTTI and nome not in nomi:
                 sett = (180, 330)
                 it = pz.Intenzione(tipo, nome, (lat, lon), 6 if tipo != 'sa5' else 12, sett, (lat, lon),
-                                   coalizione='red', paese=SIRIA, abilita='Good')
+                                   coalizione='red', paese=SIRIA, abilita=self.abilita('red'))
                 out.append((it, {'missione': 'difesa'}))
         return out
 
@@ -477,7 +484,7 @@ class Costruttore:
         self.numeri_chiamata[(paese_id, testo_ch)] = num_ch
         for k in range(n):
             u = {'type': tipo, 'unitId': self.cnt.u(), 'name': '%s-%d' % (o['nome'], k + 1),
-                 'skill': ('Client' if (giocatore and k == 0) else ('High' if lato == 'blue' else 'Good')),
+                 'skill': ('Client' if (giocatore and k == 0) else self.abilita(lato)),
                  'x': p0['x'] + 40 * k, 'y': p0['y'] + 40 * k, 'alt': p0['alt'], 'alt_type': p0['alt_type'],
                  'heading': 0, 'psi': 0, 'speed': p0['speed'],
                  'payload': {'pylons': copy.deepcopy(carico), 'fuel': carb, 'flare': 60, 'chaff': 60, 'gun': 100}}
@@ -587,7 +594,35 @@ class Costruttore:
         self.disegni()
         self.verifica_prestazioni()
         self.verifica_orario()
+        self.verifica_intensita()
         return self
+
+    def verifica_intensita(self):
+        """Conflitto di media intensita', missioni del giocatore sopravvivibili: avvisa se l'obiettivo
+        di un volo del giocatore e' coperto da troppe batterie SAM nemiche (SA-5 escluso: si
+        evita volando bassi). I voli SEAD sono esclusi: le batterie sono il loro bersaglio."""
+        lato_g = 'blue'
+        nemici = [(ll_to_xy(*p['lat_lon']), pz.SISTEMI[p['sistema']]['portata_km'] * 1000, p['nome'])
+                  for p in self.resoconto['piazzamenti']
+                  if p['lato'] != lato_g and p['sistema'] in SAM_PERICOLOSI]
+        for a in self.ordini['blue'].get('missioni_aeree', []):
+            if not a.get('giocatore') or a['tipo'] == 'SEAD' or not a.get('obiettivo'):
+                continue
+            ox, oy = ll_to_xy(*a['obiettivo'])
+            coprono = [n for (x, y), r, n in nemici if math.hypot(x - ox, y - oy) < r]
+            if len(coprono) > MAX_SAM_SU_OBIETTIVO:
+                self.avvisi.append('INTENSITA: obiettivo di %s coperto da %d batterie SAM nemiche (max %d)'
+                                   % (a['nome'], len(coprono), MAX_SAM_SU_OBIETTIVO))
+
+    def abilita(self, lato):
+        """Livello dell'IA: High di partenza, cala con il logoramento della parte (frazione di
+        aerei/equipaggi persi rispetto all'ordine di battaglia iniziale, che l'arbitro scrive in
+        parametri.json -> "logoramento": {"blu": 0.1, "rosso": 0.3})."""
+        perso = float((self.par.get('logoramento') or {}).get('blu' if lato == 'blue' else 'rosso', 0))
+        for soglia, livello in LOGORAMENTO_ABILITA:
+            if perso < soglia:
+                return livello
+        return LOGORAMENTO_ABILITA[-1][1]
 
     def partenza_giocatore(self, volo):
         """Tipo di partenza dei voli del giocatore: lo decide il giocatore a ogni missione
