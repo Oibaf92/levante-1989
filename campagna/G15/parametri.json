@@ -52,7 +52,8 @@
    "scorta"
   ],
   "FA-18C_hornet": [
-   "aria-aria",
+   "cap 2-4 serbatoi ali",
+   "cap 2-6 serbatoio centrale",
    "sead",
    "attacco"
   ],
@@ -168,5 +169,8 @@
   "An Nasiriyah",
   "aria (solo Tu-22M3 e A-50: arrivano da est in volo)"
  ],
- "partenza_giocatore": "freddo"
+ "partenza_giocatore": "freddo",
+ "note_carichi": {
+  "FA-18C_hornet cap 2-6 serbatoio centrale": "autonomia ridotta: CAP brevi o vicino a una cisterna"
+ }
 }

@@ -23,6 +23,14 @@ F14_232 = {1: '{LAU-7 wtip - AIM-9L}', 2: '{SHOULDER AIM-7M}', 3: '{F14-300gal}'
 F14_062 = {1: '{LAU-7 wtip - AIM-9L}', 2: '{SHOULDER AIM-7M}', 3: '{F14-300gal}', 4: '{BELLY AIM-7M}',
            5: '{BELLY AIM-7M}', 6: '{BELLY AIM-7M}', 7: '{BELLY AIM-7M}', 8: '{F14-300gal}',
            9: '{SHOULDER AIM-7M}', 10: '{LAU-7 wtip - AIM-9L}'}   # 0 AIM-54, 6 AIM-7, 2 AIM-9
+# F/A-18C (stazioni 1/9 punte ala, 2/8 ala esterne, 3/7 ala interne, 4/6 fusoliera, 5 centrale)
+_A7_ALA, _A7_FUS, _A9, _FPU = '{LAU-115 - AIM-7M}', '{8D399DDA-FF81-4F14-904D-099B34FE7918}', '{AIM-9L}', '{FPU_8A_FUEL_TANK}'
+FA18_CAP_4 = {1: _A9, 2: _A7_ALA, 3: _FPU, 4: _A7_FUS, 6: _A7_FUS, 7: _FPU, 8: _A7_ALA, 9: _A9}   # 2 AIM-9, 4 AIM-7, 2 serbatoi alari
+FA18_CAP_6 = {1: _A9, 2: _A7_ALA, 3: _A7_ALA, 4: _A7_FUS, 5: _FPU, 6: _A7_FUS, 7: _A7_ALA, 8: _A7_ALA, 9: _A9}  # 6 AIM-7, 1 serbatoio: AUTONOMIA RIDOTTA
+
+# carichi con autonomia ridotta: minuti massimi sull'obiettivo senza rifornimento (oltre -> avviso)
+AUTONOMIA_RIDOTTA = {'FA-18C_hornet': {'cap 2-6 serbatoio centrale': 40}}
+
 F14_CARICHI = {'cap 2-3-2': F14_232, 'cap 0-6-2': F14_062,
                'aria-aria': F14_232, 'scorta': F14_232}   # nomi storici = 2-3-2
 
@@ -49,7 +57,9 @@ CARICHI = {
     'F-14A-135-GR-Early': F14_CARICHI,
     'F-14B': F14_CARICHI,
     'FA-18C_hornet': {
-        'aria-aria': [(r'^AIM-9M Sidewinder', 2), (r'AIM-7M Sparrow', 6), (r'FPU-8A', 1)],
+        'cap 2-4 serbatoi ali': FA18_CAP_4,
+        'cap 2-6 serbatoio centrale': FA18_CAP_6,
+        'aria-aria': FA18_CAP_4,
         'sead': [(r'^AIM-9M Sidewinder', 2), (r'^AGM-88C', 4), (r'^AIM-7M Sparrow', 2), (r'FPU-8A', 1)],
         'attacco': [(r'^AIM-9M Sidewinder', 2), (r'^Mk-83 - 1000lb', 4), (r'^AIM-7M Sparrow', 2), (r'FPU-8A', 1)],
     },

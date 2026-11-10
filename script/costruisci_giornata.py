@@ -470,6 +470,9 @@ class Costruttore:
         # unita'
         giocatore = bool(o.get('giocatore')) and lato == 'blue'
         carico = carichi.risolvi(tipo, o.get('carico', '')) if o.get('carico') not in (None, 'nessuno') else {}
+        if o.get('carico') in carichi.AUTONOMIA_RIDOTTA.get(tipo, {}) and int(o.get('durata_min', 40)) > carichi.AUTONOMIA_RIDOTTA[tipo][o['carico']]:
+            self.avvisi.append('AUTONOMIA: %s (%s, carico "%s") resta %s min sull\'obiettivo, oltre i %d consigliati: serve una cisterna'
+                               % (o['nome'], tipo, o['carico'], o.get('durata_min'), carichi.AUTONOMIA_RIDOTTA[tipo][o['carico']]))
         carb = carichi.PILONI.get(tipo, {}).get('carburante') or 3000
         unita = {}
         paese_id = USA if lato == 'blue' else (RUSSIA if tipo in ('Su-25', 'Tu-22M3', 'A-50') else SIRIA)
