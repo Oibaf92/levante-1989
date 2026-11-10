@@ -702,8 +702,8 @@
    "sistema": "meccanizzata",
    "missione": "difesa",
    "lat_lon": [
-    33.87339,
-    35.61057
+    33.87014,
+    35.60841
    ],
    "dettagli": {
     "visibilita": 0.42,
@@ -714,7 +714,7 @@
     "vegetazione": 18,
     "quota": 689,
     "candidati_validi": 1,
-    "scorrimento_m": 100,
+    "scorrimento_m": 400,
     "siti_scartati_vegetazione": 0,
     "veicoli_spostati_alberi": [],
     "vincoli_allentati": 1,
@@ -802,8 +802,8 @@
    "sistema": "carri",
    "missione": "attacco",
    "lat_lon": [
-    33.79371,
-    35.71088
+    33.79252,
+    35.71398
    ],
    "dettagli": {
     "visibilita": 0.0,
@@ -814,7 +814,7 @@
     "vegetazione": 10,
     "quota": 1368,
     "candidati_validi": 3,
-    "scorrimento_m": 100,
+    "scorrimento_m": 300,
     "siti_scartati_vegetazione": 2,
     "veicoli_spostati_alberi": [],
     "vincoli_allentati": 0,
@@ -840,7 +840,7 @@
     "quota": 1021,
     "candidati_validi": 6,
     "scorrimento_m": 300,
-    "siti_scartati_vegetazione": 2,
+    "siti_scartati_vegetazione": 3,
     "veicoli_spostati_alberi": [],
     "vincoli_allentati": 0,
     "raggio_usato_km": 6.0
@@ -877,8 +877,8 @@
    "sistema": "contraerea_mobile",
    "missione": "difesa",
    "lat_lon": [
-    33.86166,
-    35.55854
+    33.86043,
+    35.56012
    ],
    "dettagli": {
     "visibilita": 0.83,
@@ -889,7 +889,7 @@
     "vegetazione": 37,
     "quota": 144,
     "candidati_validi": 1,
-    "scorrimento_m": 100,
+    "scorrimento_m": 300,
     "siti_scartati_vegetazione": 0,
     "veicoli_spostati_alberi": [],
     "vincoli_allentati": 0,

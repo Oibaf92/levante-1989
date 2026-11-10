@@ -390,6 +390,9 @@ def _nel_poligono(xs, ys, poligono_ll):
     return dentro
 
 
+DIST_VEICOLI = 60      # m minimi tra veicoli di gruppi diversi
+
+
 def piazza(terreno, intenzione, gia_piazzati=(), seme=1989, evitare=()):
     """Piazza un'intenzione. Se i candidati validi sono pochi allarga la ricerca (fino al doppio
     del raggio); se non ce ne sono affatto allenta i vincoli per gradi (annotato nei dettagli)."""
@@ -457,8 +460,15 @@ def _piazza(terreno, intenzione, gia_piazzati, seme, evitare, fattore):
     a_, b_ = intenzione.settore
     rotta0 = (a_ + ((b_ - a_) % 360 or 360) / 2) % 360
 
+    # veicoli dei gruppi gia' piazzati: nessun veicolo nuovo entro DIST_VEICOLI (niente gruppi sovrapposti)
+    occupati = np.array([(ux, uy) for g in gia_piazzati for _, ux, uy, _ in g.unita]) if gia_piazzati else np.zeros((0, 2))
+
+    def lontano_dagli_altri(ux, uy):
+        return not len(occupati) or np.hypot(occupati[:, 0] - ux, occupati[:, 1] - uy).min() > DIST_VEICOLI
+
     def sito_pulito(x, y):
-        """Fa scorrere la batteria fino a 400 m finche' nessun veicolo cade nella vegetazione."""
+        """Fa scorrere la batteria fino a 400 m finche' nessun veicolo cade nella vegetazione
+        o vicino ai veicoli di un altro gruppo."""
         for d in (0, 100, 200, 300, 400):
             for k in range(1 if d == 0 else 8):
                 ang = math.radians(45 * k)
@@ -467,7 +477,8 @@ def _piazza(terreno, intenzione, gia_piazzati, seme, evitare, fattore):
                     continue
                 if intenzione.fuori and _nel_poligono(np.array([px]), np.array([py]), intenzione.fuori)[0]:
                     continue
-                if all(terreno.veicolo_libero(ux, uy) for _, ux, uy, _ in _orienta(schema(cfg, intenzione.coalizione), px, py, rotta0)):
+                if all(terreno.veicolo_libero(ux, uy) and lontano_dagli_altri(ux, uy)
+                       for _, ux, uy, _ in _orienta(schema(cfg, intenzione.coalizione), px, py, rotta0)):
                     return px, py, d
         return None
     scelti = []                                               # (indice, x, y, scorrimento)
