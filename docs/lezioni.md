@@ -8,8 +8,12 @@ ogni nuova correzione in una riga. La storia completa e' nella cronologia git.
   `pista`/`aria`, in `parametri.json` -> `partenza_giocatore`; senza, il costruttore si ferma).
 - Giocatore + 1 gregario IA (`aerei_giocatore` solo se chiede altro); decollo immediato (orario solo nel
   briefing); di giorno, notte solo su richiesta (`"notte": true`).
-- Portaerei a nord di Cipro, >= 150 km dalla Siria; CVN e LHA contro vento (`levante_navi.lua`; con
-  vento < 3 m/s a ovest). Supercarrier: posti 5-8 solo con avvio >= 5 s.
+- Portaerei: fino a G16 a nord di Cipro; da G17 (`RIVISTE_DAL_GIORNO`) parte a N33.35 E33.30 e resta
+  ad almeno 150 nm da Tartus (`minacce` in `levante_navi.lua`: tratta accorciata o riposizionamento). CVN e
+  LHA contro vento (con vento < 3 m/s a ovest). Motivo: in G16 B1 lo Slava ha lanciato 16 P-500 a 86 nm.
+- Da G17 niente Slava (Tartus: Krivak II, 3 Molniya, 2 Grisha, `FLOTTA_TARTUS`), niente A-50 (volo scartato
+  con avviso; toglierlo da `parametri.json` di G17), 3 EWR fissi rossi (`EWR_FISSI`). ALBATROS (Grisha) e'
+  sostituito dal Currenthill Assets Pack: controllare in DCS modello e armi. Supercarrier: posti 5-8 solo con avvio >= 5 s.
 - Navi con ROE difensive (rispondono solo se attaccate, `ROE_NAVI_DIFENSIVE`); attacchi navali solo come
   missioni ANTINAVE. **Niente SA-5**: piu' SA-2 (citta' + Dumayr, Al Qusayr, Baalbek, Tartus).
 - Mappa F10: solo forze amiche + stima intel della propria parte (`rapporto_intel.py`), niente

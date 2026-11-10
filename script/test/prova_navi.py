@@ -46,4 +46,20 @@ cvn2 = esito('CVN-71 Roosevelt')
 fine_x = L.eval('COMPITI["CVN-71 Roosevelt"].params.route.points[2].x')
 print('con terra a 30 km a nord:', cvn2, 'fine tratta x = %.0f m' % fine_x)
 assert fine_x < 30000 - 2000, 'la tratta finisce sulla terra'
+# distanza minima da una minaccia (regole riviste: CVN ad almeno 150 nm da Tartus)
+L.execute('''TERRA_X = nil
+LEVANTE_NAVI["CVN-71 Roosevelt"].minacce = { { nome = "Tartus", x = 0, z = 300000, min_m = 280000 } }
+atmosphere.getWind = function(p) return { x = 0, y = 0, z = -6 } end   -- vento da est: contro vento = verso la minaccia
+POS["CVN-71 Roosevelt"] = { x = 0, y = 0, z = 0 }''')
+L.execute('MOCK.avanza(1900)')
+cvn3 = esito('CVN-71 Roosevelt')
+fz = L.eval('COMPITI["CVN-71 Roosevelt"].params.route.points[2].y')
+print('margine 20 km, vento da est:', cvn3, 'distanza finale %.0f m' % (300000 - fz))
+assert 59 <= cvn3[0] <= 139 and 300000 - fz >= 280000, 'la tratta entra nella distanza minima'
+# gia' dentro la distanza minima: tratta di riposizionamento lontano dalla minaccia
+L.execute('POS["CVN-71 Roosevelt"] = { x = 0, y = 0, z = 30000 }')
+L.execute('MOCK.avanza(1900)')
+cvn4 = esito('CVN-71 Roosevelt')
+print('dentro di 10 km:', cvn4)
+assert 250 <= cvn4[0] <= 290 and cvn4[1] == 30, 'la nave non si allontana dalla minaccia'
 print('OK')

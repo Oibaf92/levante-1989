@@ -28,9 +28,9 @@ il giocatore vola a scelta con una delle due parti.
 | Componente | Mezzi |
 |---|---|
 | Aviazione siriana | ✈️ MiG-29A ×16, MiG-21bis ×24, MiG-23MLD ×24, MiG-25PD ×8, Su-22M4 ×16, Su-24 ×8, 🚁 Mi-24 ×12, 🚁 Mi-8 ×16 |
-| Contingente aereo sovietico | ✈️ MiG-29A ×12, ✈️ Su-25 ×12, Tu-22M3 ×8 (da est, fuori mappa), A-50 ×1 |
-| Flotta sovietica a Tartus | 1 Slava, 2 Krivak II, 1 Molniya, 1 sottomarino Kilo |
-| Difesa aerea integrata | SA-2 ×10, SA-3 ×6, SA-6 ×8, SA-8 ×6, SA-9/13, ZSU-23-4, radar di scoperta |
+| Contingente aereo sovietico | ✈️ MiG-29A ×12, ✈️ Su-25 ×12, Tu-22M3 ×8 (da est, fuori mappa) |
+| Flotta sovietica a Tartus | 1 Krivak II, 3 Molniya (Tarantul III), 2 Grisha V, 1 sottomarino Kilo |
+| Difesa aerea integrata | SA-2 ×10, SA-3 ×6, SA-6 ×8, SA-8 ×6, SA-9/13, ZSU-23-4, radar di scoperta (3 siti fissi sulle alture: Jabal Ansariya, Libano nord, Hermon) |
 | Forze di terra (Bekaa e Libano) | 2 divisioni corazzate (T-72, T-62, BMP), artiglieria, BM-21, brigata Scud-B |
 
 ✈️🚁 = postazioni pilotabili dal giocatore.
@@ -49,6 +49,11 @@ il giocatore vola a scelta con una delle due parti.
 - **Niente SA-5** (scelta del giocatore): la difesa a lungo raggio è affidata a una rete più fitta di SA-2.
 - **Navi**: regole d'ingaggio difensive, rispondono solo se attaccate; gli attacchi alle navi si
   ordinano come missioni ANTINAVE.
+- **Portaerei ad almeno 150 nm da Tartus** (dalla giornata G17): parte tra Cipro e il Libano e le tratte
+  contro vento non scendono sotto questa distanza; se il vento la spingerebbe verso Tartus fa una tratta
+  di riposizionamento, senza operazioni di volo.
+- **Niente A-50 e niente Slava** (dalla giornata G17, scelta del giocatore): la squadra di Tartus e' fatta
+  di navi piccole; la scoperta rossa si affida ai radar a terra.
 - **Qualità dell'IA**: equipaggi *High* all'inizio; con le perdite il livello cala
   (logoramento oltre 20% → *Good*, oltre 40% → *Average*).
 
