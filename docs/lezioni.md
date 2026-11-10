@@ -132,6 +132,27 @@ contro `script/dati/piloni.json`; "(AR)" = autonomia ridotta (avviso `AUTONOMIA:
 | `zipfile.writestr(ZipInfo)` riusato | CRC errato alla rilettura | Scrivere per nome o rileggere tutto prima. |
 | Bersaglio d'artiglieria oltre la portata | il pezzo non spara | Il costruttore lo segnala come AVVISO (va riferito al comandante interessato, non all'altro). |
 
+## Logica dei comandanti (sessione di test, novembre 2026)
+
+Il giocatore ha verificato le logiche dei due comandanti con una serie di domande; le risposte
+confermate e le sue correzioni sono diventate le dottrine riservate `blu/dottrina.md` e
+`rosso/dottrina.md`, che ogni comandante legge per prima (procedura in `docs/comandanti.md`).
+Correzioni del giocatore: portaerei a distanza di sicurezza e squadra navale russa come priorita'
+assoluta; AIM-54 da usare con parsimonia (deterrente antinave); blu con poche perdite, rossi con
+tolleranza piu' alta; SA-5 da non sottovalutare (riducono l'area operativa e costringono a volare bassi).
+
+## Lavori sul motore e regole proposte (da fare)
+
+- **Script dei radar SAM**: accensione e spegnimento dei radar di tiro (radar spenti finche' il
+  bersaglio non e' vicino, reazione ai lanci di HARM, spostamento dopo il tiro). Approvato dal giocatore.
+- Proposte ancora da decidere con il giocatore:
+  - scorta limitata di AIM-54 sulla portaerei, che cala a ogni lancio e si ricostituisce lentamente;
+  - radar contro-artiglieria (AN/TPQ-37): un pezzo nemico che spara compare nell'intel blu del blocco dopo;
+  - ricognizione F-14 TARPS: un volo riuscito aggiorna l'intel blu con le posizioni delle unita' fotografate.
+- Costruttore a blocchi, carta intel per blocco dal rapporto del comandante, CSAR, unita' lontane
+  fuori dalla missione o dormienti, aerei IA rimossi dopo l'atterraggio, tetto agli aerei in volo
+  negli ordini.
+
 ## In attesa dal giocatore
 
 - Modelli delle radio di **MiG-29, Su-25** (il Mission Editor scrive la tabella `Radio` solo

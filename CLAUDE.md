@@ -9,6 +9,8 @@ Campagna dinamica DCS World (mappa Syria), giocatore singolo. Lingua: italiano.
 - **Comandante BLU** e **comandante ROSSO** lavorano ciascuno in un agente/contesto
   separato, che riceve SOLO: il README, lo stato pubblico, il proprio rapporto intel
   e la propria cartella (`blu/` oppure `rosso/`).
+- Ogni comandante legge per prima la propria **dottrina** (`blu/dottrina.md`, `rosso/dottrina.md`),
+  concordata con il giocatore. Procedura per preparare gli agenti: `docs/comandanti.md`.
 
 ## Regola di separazione delle informazioni (inviolabile)
 - L'arbitro non riassume e non rivela mai a un comandante il contenuto della cartella
