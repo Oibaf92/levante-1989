@@ -16,6 +16,7 @@ costruire o modificare una missione. Le regole piu' importanti sono riassunte in
 | Formazione standard | Il giocatore vola **con un gregario IA** (2 aerei). Formazioni diverse solo se le chiede lui (`parametri.json` -> `aerei_giocatore`: `{"nome volo": n}`); il costruttore impone 2 ai voli del giocatore. | punto 2 delle lezioni |
 | Orario | Di **giorno**, di solito **mattina**; vanno bene anche l'alba e il tardo pomeriggio verso il tramonto. **Notte solo su sua richiesta** (`parametri.json` -> `"notte": true`); il costruttore avvisa con `ORARIO:` se la missione esce dal giorno. | punto 2 delle lezioni |
 | Gregario | Il giocatore vola con un gregario IA di scorta (aria-aria). F-14 di scorta: 2 AIM-9, 3 AIM-7, 2 AIM-54 sui primi due pallet. (2 AIM-54 + 4 AIM-7 non e' un carico valido.) | G00 |
+| Versioni dei missili (autunno 1989) | **AIM-54C Mk47, AIM-7MH, AIM-9M** su F-14 e F/A-18C; l'F-4E usa AIM-7M (in DCS non ha il 7MH) e AIM-9M. Niente AIM-54C Mk60/C+, AIM-7P, AIM-9X. Rossi: **siriani R-27R + R-60M**, **contingente sovietico R-27R + R-73** (quest'ultimo da verificare sul modulo MiG-29 del giocatore: CLSID ignoti). | punto 4 |
 | Carichi F-14 (CAP) | I due carichi tipici, in notazione AIM-54 - AIM-7 - AIM-9: **2-3-2** (AIM-54 sui due pallet anteriori, AIM-7 su spalle e ventre, AIM-9 alle punte; e' anche il carico di scorta) e **0-6-2** (sei AIM-7: spalle + quattro sul ventre). Sempre con 2 serbatoi da 300 gal. In `carichi.py`: `cap 2-3-2`, `cap 0-6-2` (piloni fissati a mano). | punto 4 |
 | Carichi F/A-18C (CAP) | **2 AIM-9 + 4 AIM-7 con i due serbatoi sotto le ali** (`cap 2-4 serbatoi ali`, carico CAP normale) oppure **2 AIM-9 + 6 AIM-7 con il serbatoio sul pilone centrale** (`cap 2-6 serbatoio centrale`): **autonomia ridotta**, solo CAP brevi o vicino a una cisterna; il costruttore avvisa con `AUTONOMIA:` oltre 40 min sull'obiettivo. | punto 4 |
 | Ponte della portaerei | Aerei statici sul ponte per realismo. | G00 |
@@ -84,8 +85,8 @@ contro `script/dati/piloni.json`; "(AR)" = autonomia ridotta (avviso `AUTONOMIA:
   Autodifesa 3 AIM-7 + 2 AIM-9 + ALQ-131 (nel pozzetto anteriore, o il Pave Spike).
 - **AH-64D**: 16 Hellfire (`anticarro`), 8 Hellfire + 38 Hydra (`appoggio`), 4 Hellfire + 57 Hydra (`fanteria`).
 - **CH-47F**: nessun carico.
-- **MiG-29**: CAP 2 R-27R + 4 R-60M (verificato dalla missione del giocatore). **Da fare**: carico
-  d'attacco e scelta R-73/R-60M, servono una missione salvata dal giocatore con il modulo MiG-29.
+- **MiG-29**: CAP siriano 2 R-27R + 4 R-60M (verificato dalla missione del giocatore). **Da fare**: CAP
+  sovietico con R-73 e carico d'attacco: servono una missione salvata dal giocatore con il modulo MiG-29.
 - **Su-25**: CAS 4 B-8 + 4 FAB-250 (`appoggio`), anticarro 4 RBK-250 PTAB + 2 B-8 + 2 SPPU-22
   (`anticarro`), 6 FAB-500 (`strike`), 2 Kh-29L + 2 Kh-25ML (`precisione`); sempre 2 R-60M.
   Niente SEAD (la fanno i Su-24M IA con Kh-58).

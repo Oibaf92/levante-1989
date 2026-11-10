@@ -16,24 +16,24 @@ PILONI = json.load(open(os.path.join(QUI, '..', 'dati', 'piloni.json'), encoding
 #   - lista di (espressione regolare sul nome dell'arma, quantita' di piloni), in ordine di
 #     assegnazione: il risolutore trova piloni e CLSID;
 #   - dizionario {pilone: CLSID} gia' verificato in DCS (es. dalla missione del giocatore).
+# Versioni dei missili (autunno 1989, scelte dal giocatore): AIM-54C Mk47, AIM-7MH, AIM-9M.
+# L'F-4E in DCS non ha l'AIM-7MH: usa l'AIM-7M.
 # F-14 (stazioni DCS: 1/10 punte ala, 2/9 spalle, 3/8 serbatoi, 4-7 ventre; 4 e 7 = pallet anteriori)
-F14_232 = {1: '{LAU-7 wtip - AIM-9L}', 2: '{SHOULDER AIM-7M}', 3: '{F14-300gal}', 4: '{AIM_54A_Mk60}',
-           5: '{BELLY AIM-7M}', 7: '{AIM_54A_Mk60}', 8: '{F14-300gal}', 9: '{SHOULDER AIM-7M}',
-           10: '{LAU-7 wtip - AIM-9L}'}          # 2 AIM-54 sui pallet anteriori, 3 AIM-7, 2 AIM-9 (verificato in G00)
-F14_062 = {1: '{LAU-7 wtip - AIM-9L}', 2: '{SHOULDER AIM-7M}', 3: '{F14-300gal}', 4: '{BELLY AIM-7M}',
-           5: '{BELLY AIM-7M}', 6: '{BELLY AIM-7M}', 7: '{BELLY AIM-7M}', 8: '{F14-300gal}',
-           9: '{SHOULDER AIM-7M}', 10: '{LAU-7 wtip - AIM-9L}'}   # 0 AIM-54, 6 AIM-7, 2 AIM-9
+_F54, _F7, _F9, _FT = 'AIM-54C-Mk47', 'AIM-7MH', 'LAU-7 AIM-9M', 'Fuel tank 300 gal'
+F14_232 = {(1, 10): _F9, (2, 9, 5): _F7, (3, 8): _FT, (4, 7): _F54}       # 2 AIM-54 sui pallet anteriori, 3 AIM-7, 2 AIM-9
+F14_062 = {(1, 10): _F9, (2, 9, 4, 5, 6, 7): _F7, (3, 8): _FT}            # 0 AIM-54, 6 AIM-7, 2 AIM-9
 # F/A-18C (stazioni 1/9 punte ala, 2/8 ala esterne, 3/7 ala interne, 4/6 fusoliera, 5 centrale)
-_A7_ALA, _A7_FUS, _A9, _FPU = '{LAU-115 - AIM-7M}', '{8D399DDA-FF81-4F14-904D-099B34FE7918}', '{AIM-9L}', '{FPU_8A_FUEL_TANK}'
-FA18_CAP_4 = {1: _A9, 2: _A7_ALA, 3: _FPU, 4: _A7_FUS, 6: _A7_FUS, 7: _FPU, 8: _A7_ALA, 9: _A9}   # 2 AIM-9, 4 AIM-7, 2 serbatoi alari
-FA18_CAP_6 = {1: _A9, 2: _A7_ALA, 3: _A7_ALA, 4: _A7_FUS, 5: _FPU, 6: _A7_FUS, 7: _A7_ALA, 8: _A7_ALA, 9: _A9}  # 6 AIM-7, 1 serbatoio: AUTONOMIA RIDOTTA
+_H9, _H7F, _H7A, _HT = 'AIM-9M Sidewinder IR AAM', 'AIM-7MH Sparrow Semi-Active Radar', \
+    'LAU-115C - AIM-7MH Sparrow Semi-Active Radar', 'FPU-8A Fuel Tank 330 gallons'
+FA18_CAP_4 = {(1, 9): _H9, (2, 8): _H7A, (4, 6): _H7F, (3, 7): _HT}               # 2 AIM-9, 4 AIM-7, 2 serbatoi alari
+FA18_CAP_6 = {(1, 9): _H9, (2, 3, 7, 8): _H7A, (4, 6): _H7F, (5,): _HT}           # 6 AIM-7, 1 serbatoio: AUTONOMIA RIDOTTA
 
 # carichi con autonomia ridotta: minuti massimi sull'obiettivo senza rifornimento (oltre -> avviso)
 AUTONOMIA_RIDOTTA = {'FA-18C_hornet': {'cap 2-6 serbatoio centrale': 40, 'sead pesante': 40, 'cas': 40},
                      'F-4E-45MC': {'strike Mk-82 pesante': 20, 'attacco': 20}}
 
 F14_CARICHI = {'cap 2-3-2': F14_232, 'cap 0-6-2': F14_062,
-               'aria-aria': F14_232, 'scorta': F14_232}   # nomi storici = 2-3-2
+               'aria-aria': F14_232, 'scorta': F14_232}   # nomi storici = 2-3-2 (definizioni per nome, vedi _tabella)
 
 def _fisso(tipo, mappa):
     """{pilone: nome esatto dell'arma} -> {pilone: CLSID}, verificando che l'arma esista su quel
@@ -58,8 +58,6 @@ def _simm(sx_dx, **singoli):
 
 
 # ---------------------------------------------------------------------------------- F/A-18C
-_H9, _H7F, _H7A, _HT = 'AIM-9L Sidewinder IR AAM', 'AIM-7M Sparrow Semi-Active Radar', \
-    'LAU-115C - AIM-7M Sparrow Semi-Active Radar', 'FPU-8A Fuel Tank 330 gallons'
 _HARM = 'AGM-88C HARM - High Speed Anti-Radiation Missile'
 _H_BASE = {(1, 9): _H9, (4, 6): _H7F}                     # autodifesa: 2 AIM-9 + 2 AIM-7 in fusoliera
 FA18 = {
@@ -94,7 +92,7 @@ F4E = {
 
 # -------------------------------------------------------------------------------------- F-14
 # aria-terra: eccezione voluta dal giocatore (nella realta' dal 1990-92); niente pod di puntamento
-_F_BASE = {(1, 10): 'LAU-7 AIM-9L', (2, 9): 'AIM-7M', (3, 8): 'Fuel tank 300 gal'}
+_F_BASE = {(1, 10): _F9, (2, 9): _F7, (3, 8): _FT}
 F14_AT = {
     'strike Mk-84': {**_F_BASE, (4, 5, 6, 7): 'Mk-84'},
     'strike Mk-82': {**_F_BASE, (4, 7): 'MAK79 4 Mk-82', (5, 6): 'MAK79 3 Mk-82'},   # 14 Mk-82
@@ -160,13 +158,11 @@ CARICHI = {
     'Mi-8MT': _tabella('Mi-8MT', MI8),
     # ------------------------------------------------------------------ blu
     # F-14: carichi CAP tipici indicati dal giocatore (AIM-54 - AIM-7 - AIM-9), piloni fissati a mano.
-    'F-14A-135-GR-Early': {**F14_CARICHI, **_tabella('F-14A-135-GR-Early', F14_AT)},
-    'F-14B': {**F14_CARICHI, **_tabella('F-14B', F14_AT)},
+    'F-14A-135-GR-Early': _tabella('F-14A-135-GR-Early', {**F14_CARICHI, **F14_AT}),
+    'F-14B': _tabella('F-14B', {**F14_CARICHI, **F14_AT}),
     'FA-18C_hornet': {
-        'cap 2-4 serbatoi ali': FA18_CAP_4,
-        'cap 2-6 serbatoio centrale': FA18_CAP_6,
-        'aria-aria': FA18_CAP_4,
-        **_tabella('FA-18C_hornet', FA18),
+        **_tabella('FA-18C_hornet', {'cap 2-4 serbatoi ali': FA18_CAP_4, 'cap 2-6 serbatoio centrale': FA18_CAP_6,
+                                     'aria-aria': FA18_CAP_4, **FA18}),
         'attacco': _tabella('FA-18C_hornet', FA18)['strike Mk-83'],      # nome storico
     },
     'A6E': {'attacco': {1: '{HB_A6E_MK82_MER_6x}', 2: '{HB_A6E_AERO1D}', 4: '{HB_A6E_AERO1D}', 5: '{HB_A6E_MK82_MER_6x}'}},
