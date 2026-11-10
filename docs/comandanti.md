@@ -6,7 +6,8 @@ Ogni comandante lavora in un agente separato (vedi CLAUDE.md, separazione delle 
 1. `README.md` (scenario, regole, intensita', perdite, CSAR, nomi dei voli in inglese).
 2. Lo stato pubblico del blocco (`campagna/GNN/situazione_pubblica.md`, `parametri.json`,
    `formato_ordini.md`).
-3. Il proprio rapporto intel del blocco.
+3. Il proprio rapporto intel del blocco (`blu/intel_GNN_Bk.json` o `rosso/intel_GNN_Bk.json`, prodotto
+   da `script/tools/rapporto_intel.py`), con le note dell'arbitro.
 4. La propria cartella (`blu/` oppure `rosso/`), **compresa la propria `dottrina.md`, da leggere
    per prima**, il diario e gli ordini precedenti.
 

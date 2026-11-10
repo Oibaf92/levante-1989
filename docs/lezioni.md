@@ -197,7 +197,12 @@ tolleranza piu' alta; SA-5 da non sottovalutare (riducono l'area operativa e cos
    della giornata all'inizio del blocco, compresi i fermi).
 2. Il giocatore vola e manda lo stato; `python3 script/tools/importa_stato.py <stato>` scrive
    `campagna/GNN/esiti_Bk.json` (distrutti, fuori servizio, posizioni finali, perdite aeree).
-3. Blocco k+1: si riparte da `terra_Bk.json` + `esiti_Bk.json`; i gruppi distrutti non si ricreano
+3. `python3 script/tools/rapporto_intel.py <giorno> <k+1>`: rapporti intel riservati
+   `blu/intel_GNN_Bk.json` e `rosso/intel_GNN_Bk.json` (dal rapporto precedente: SAM e unita' mobili
+   invecchiano confermato -> probabile -> vecchio -> cancellato; gruppi distrutti tolti; osservazioni
+   del blocco aggiunte come confermate). Ogni comandante riceve il proprio. La carta intel F10 e la
+   tavoletta INTEL si disegnano da qui (piu' certo = piu' opaco), mai dalle posizioni vere.
+4. Blocco k+1: si riparte da `terra_Bk.json` + `esiti_Bk.json`; i gruppi distrutti non si ricreano
    dagli ordini (lista `eliminati`); le navi ripartono da dove erano. Correzioni dei comandanti in
    `<parte>/ordini_GNN_Bk.json`. I voli vanno nel blocco indicato (`"blocco"`), o in quello in cui
    cade l'orario di decollo. Test: `script/test/prova_blocchi.py`.

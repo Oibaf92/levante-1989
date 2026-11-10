@@ -32,6 +32,19 @@ def data_it(c):
     return '%d %s %d' % (g, MESI[m - 1], a)
 
 
+def minacce(c):
+    """Riassunto delle minacce dal rapporto intel della parte (non dalle posizioni vere)."""
+    r = c.rapporti['blu']
+    righe = []
+    for tipo, testo in (('sa5', 'SA-5'), ('sa2', 'SA-2'), ('sa3', 'SA-3'), ('sa6', 'SA-6'), ('sa8', 'SA-8')):
+        nomi = ['%s%s' % (v['nome'].replace(testo + ' ', ''), '' if v.get('certezza') == 'confermato' else ' (%s)' % v.get('certezza'))
+                for v in r.get('sam', []) if v['tipo'] == tipo]
+        if nomi:
+            righe.append('- %s: %s.' % (testo, ', '.join(nomi)))
+    righe += ['- ' + t for t in r.get('note', [])]
+    return '\n'.join(righe)
+
+
 def nominativo(c, volo):
     """Nominativo radio del capo-formazione, es. 'Chevy 1-1' (il nome del volo e' solo il nome di missione)."""
     g = c.gruppi_aerei.get(volo, (None, None))[1]
@@ -73,11 +86,7 @@ def prepara(c):
              + 'VOLI AMICI IN AREA\n' + '\n'.join('- %s: %s, %d x %s, decollo %s'
                                                    % (o['nome'], o['tipo'], o['numero'], NOMI_VELIVOLO.get(o['velivolo'], o['velivolo']),
                                                       o['decollo']) for o in altri) + '\n\n'
-             + 'MINACCE NOTE (intel di ieri sera)\n'
-             + '- SA-5 Dumayr e Homs: coprono il Libano sopra i 15.000 ft.\n'
-             + '- SA-6 mobili nella Bekaa; uno segnalato il G13 vicino a Sofar. SA-8 attorno ad Aley e Bhamdoun.\n'
-             + '- Artiglieria sulle alture di Aley e del Chouf, Grad tra Sofar e Dahr el-Baidar.\n'
-             + '- MiG-29 da Dumayr e Sayqal, attacchi all\'alba di Su-22/Su-24, Su-25 sul fronte.\n\n'
+             + 'MINACCE NOTE (intel piu\' recente)\n' + minacce(c) + '\n\n'
              + 'NOTE\n- I tuoi voli sono pronti subito: l\'orario di decollo e\' quello previsto dal piano, '
                'regolati sul resto del pacchetto (es. la SEAD prima dello strike).\n- La mappa F10 mostra solo le forze amiche. La carta intel (strato blu) e la tavoletta INTEL '
                'riportano la stima di ieri: i SAM mobili possono essersi spostati.\n'
@@ -193,19 +202,21 @@ def _pagina_intel(c):
     y = kb._sezione(d, 104, 'DIFESA AEREA')
     fn = kb.font(14)
     fb = kb.font(14, True)
-    from costruisci_giornata import SITI_DISTRUTTI
-    for lat, lon, r, tipo, nome in intel.SAM_ROSSI:
-        stato = 'DISTRUTTO' if nome in SITI_DISTRUTTI else 'portata ~%d km' % r
-        kb._simbolo_pil(d, tipo, 42, y + 9, kb.GRIGIO if nome in SITI_DISTRUTTI else kb.ROSSO, 7)
-        d.text((62, y), nome, font=fb, fill=kb.GRIGIO if nome in SITI_DISTRUTTI else kb.INCH)
-        d.text((480, y), stato, font=fn, fill=kb.INCH)
+    r = c.rapporti['blu']
+    for v in r.get('sam', []):
+        vecchio = v.get('certezza') == 'vecchio'
+        kb._simbolo_pil(d, v['tipo'], 42, y + 9, kb.GRIGIO if vecchio else kb.ROSSO, 7)
+        d.text((62, y), v['nome'], font=fb, fill=kb.GRIGIO if vecchio else kb.INCH)
+        d.text((400, y), '%s, ~%d km' % (v.get('certezza', ''), v['raggio_km']), font=fn, fill=kb.INCH)
+        d.text((610, y), str(v.get('visto', '')), font=fn, fill=kb.INCH)
         y += 22
-    y = kb._sezione(d, y + 8, 'AGGIORNAMENTI')
-    for t in ['SA-6 segnalato il G13 vicino a Sofar (N33.79 E35.71); almeno 2 SA-6 tra Zahle e Chtaura.',
-              'SA-8 ad Aley e Bhamdoun a protezione delle artiglierie.',
-              'Artiglieria: alture di Aley (N33.80 E35.60) e Chouf (N33.70 E35.60).',
-              'Grad tra Sofar e Dahr el-Baidar. Brigata corazzata (T-72, BMP) tra Aley e Bhamdoun.',
-              'MiG-29 da Dumayr e Sayqal; MiG-23/21 da Mezzeh, Marj Ruhayyil, Khalkhalah.',
-              'Attacchi all\'alba di Su-22/Su-24; Su-25 sovietici sul fronte; A-50 a est di Homs.']:
-        y = kb._riga(d, y, [(30, '- ' + t)], fn)
+    if r.get('terra'):
+        y = kb._sezione(d, y + 8, 'FORZE DI TERRA')
+        for v in r['terra']:
+            y = kb._riga(d, y, [(30, '%s (%s) - %s, visto %s' % (v['nome'], v['tipo'], v.get('certezza', ''), v.get('visto', '')))], fn)
+    if r.get('note'):
+        y = kb._sezione(d, y + 8, 'AGGIORNAMENTI')
+        for t in r['note']:
+            for k, riga in enumerate(textwrap.wrap(t, 92)):
+                y = kb._riga(d, y, [(30 if k == 0 else 42, ('- ' if k == 0 else '') + riga)], fn)
     return img

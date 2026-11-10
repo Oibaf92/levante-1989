@@ -59,6 +59,12 @@ esiti = json.load(open(os.path.join(CART, 'esiti_B1.json')))
 assert set(sa6) <= set(esiti['distrutti']) and f14 in esiti['distrutti']
 assert esiti['fuori_servizio'][danneggiato] == 3
 
+print(esegui('script/tools/rapporto_intel.py', '15', '2').strip())
+r2 = json.load(open(os.path.join(RADICE, 'blu', 'intel_G15_B2.json')))
+r1 = json.load(open(os.path.join(RADICE, 'blu', 'intel_G15_B1.json')))
+mob1 = [v for v in r1['sam'] if v['tipo'] in ('sa6', 'sa8')]
+assert all(v['certezza'] == 'vecchio' for v in r2['sam'] if v['tipo'] in ('sa6', 'sa8')) and mob1, 'i mobili non invecchiano'
+assert 'SA-6 Chouf' in esiti['gruppi_distrutti']
 esegui('script/costruisci_giornata.py', '15', '2')
 m2, u2 = unita(os.path.join(RADICE, 'missioni', 'G15_B2_1989-10-17.miz'))
 assert not any(n in u2 for n in sa6), 'SA-6 distrutto ancora presente'
@@ -104,5 +110,7 @@ finally:
 
 # pulizia: i file dei blocchi di prova non restano nella campagna
 import glob  # noqa: E402
-for f in glob.glob(os.path.join(CART, '*_B[0-9].json')) + glob.glob(os.path.join(RADICE, 'missioni', 'G15_B[0-9]_*.miz')):
+for f in (glob.glob(os.path.join(CART, '*_B[0-9].json')) + glob.glob(os.path.join(RADICE, 'missioni', 'G15_B[0-9]_*.miz'))
+          + [os.path.join(RADICE, p, 'intel_G15_B%d.json' % b) for p in ('blu', 'rosso') for b in (2, 3)
+             if os.path.exists(os.path.join(RADICE, p, 'intel_G15_B%d.json' % b))]):
     os.remove(f)

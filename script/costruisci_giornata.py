@@ -31,6 +31,7 @@ import carichi  # noqa: E402
 import verifica_miz  # noqa: E402
 import confini  # noqa: E402
 import intel  # noqa: E402
+import rapporto_intel  # noqa: E402
 import legenda  # noqa: E402  (usata da confini)
 
 USA, SIRIA, RUSSIA = 2, 47, 0
@@ -821,12 +822,16 @@ class Costruttore:
     # ----------------------------------------------------------------- mappa
     def disegni(self):
         confini.aggiungi(self.m)
-        intel.aggiungi(self.m)
-        # stima blu: i siti distrutti non ci sono piu'
+        # carta intel di ciascuna parte: dal suo rapporto del blocco (mai dalle posizioni vere)
+        self.rapporti = {p: self.rapporto(p) for p in ('blu', 'rosso')}
+        proprie = {'Blue': intel._basi('Blue', intel.BASI_BLU, intel.B_LINEA, 'Propria')
+                   + intel._sam('Blue', intel.SAM_BLU, intel.B_LINEA, intel.B_TENUE, 'Propria')
+                   + rapporto_intel.disegni(self.rapporti['blu'], 'Blue', intel.R_LINEA, intel.R_TENUE),
+                   'Red': intel._basi('Red', intel.BASI_ROSSE, intel.R_LINEA, 'Propria')
+                   + rapporto_intel.disegni(self.rapporti['rosso'], 'Red', intel.B_LINEA, intel.B_TENUE)}
         for strato in self.m['drawings']['layers'].values():
-            if strato['name'] == 'Blue':
-                strato['objects'] = {k: o for k, o in enumerate(
-                    [o for o in strato['objects'].values() if not any(n in o['name'] for n in SITI_DISTRUTTI)], 1)}
+            if strato['name'] in proprie:
+                strato['objects'] = {k: o for k, o in enumerate(proprie[strato['name']], 1)}
             if strato['name'] == 'Common':
                 ogg = list(strato['objects'].values())
                 xy = [ll_to_xy(*q) for q in TESTA_DI_PONTE]
@@ -842,6 +847,12 @@ class Costruttore:
                             'colorString': '0x000000ff', 'thickness': 6, 'style': 'solid',
                             'name': 'Linea del fronte G%d' % self.giorno, 'layerName': 'Common'})
                 strato['objects'] = {k: o for k, o in enumerate(ogg, 1)}
+
+    def rapporto(self, parte):
+        """Rapporto intel della parte per questo blocco (o il piu' recente); in mancanza, la stima
+        iniziale senza i siti gia' distrutti."""
+        r = rapporto_intel.piu_recente(parte, self.giorno, self.blocco or 1)
+        return r or rapporto_intel.iniziale(parte, self.giorno, self.blocco or 1, SITI_DISTRUTTI)
 
     # ----------------------------------------------------------------- tutto
     def costruisci(self):

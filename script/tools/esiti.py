@@ -6,6 +6,7 @@ salvato in gioco alla fine del volo (stato_<missione>.lua) e scrive campagna/GNN
                    (vita < 70%: fermo nel blocco dopo; < 30%: anche in quello successivo)
   posizioni      : {unita': [x, y]} posizione finale (unita' di terra e navi)
   perdite_aeree  : {lato: {tipo: n}}
+  gruppi_distrutti: gruppi con tutte le unita' distrutte (escono dai rapporti intel delle due parti)
 Gli aerei IA rimossi dopo il rientro (levante_prestazioni.lua, extra.rientrati) non sono perdite.
 Le regole sono nel README (sezione Perdite).
 """
@@ -44,6 +45,12 @@ def esiti(stato, costruzione, blocco):
                     out['fuori_servizio'][u['nome']] = blocco + 2
                 elif r < DANNO_LIEVE:
                     out['fuori_servizio'][u['nome']] = blocco + 1
+    per_gruppo = {}
+    for u in costruzione['unita']:
+        if u['nome'] not in rientrati:
+            per_gruppo.setdefault(u['gruppo'], []).append(u['nome'])
+    morti = set(out['distrutti'])
+    out['gruppi_distrutti'] = sorted(g for g, nomi in per_gruppo.items() if all(n in morti for n in nomi))
     return out
 
 
