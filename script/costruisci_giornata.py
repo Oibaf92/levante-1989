@@ -375,6 +375,9 @@ class Costruttore:
         if cat == 'helicopter':
             quota = min(quota, 300)
         n = max(1, min(4, int(o.get('numero', 2))))
+        if o.get('giocatore') and lato == 'blue':
+            # standard: il giocatore + un gregario IA; diverso solo se il giocatore lo chiede
+            n = int((self.par.get('aerei_giocatore') or {}).get(o['nome'], 2))
         tb, dati_base = self.base(o['base'], lato)
         ox, oy = ll_to_xy(*o['obiettivo']) if o.get('obiettivo') else (dati_base[-2], dati_base[-1])
         r_zona = float(o.get('raggio_km', 20)) * 1000
@@ -583,6 +586,7 @@ class Costruttore:
         self.tutti_i_voli()
         self.disegni()
         self.verifica_prestazioni()
+        self.verifica_orario()
         return self
 
     def partenza_giocatore(self, volo):
@@ -596,6 +600,17 @@ class Costruttore:
             raise SystemExit('Partenza del volo giocatore "%s" non indicata (freddo/caldo/pista/aria): '
                              'chiederla al giocatore e scriverla in parametri.json -> partenza_giocatore' % volo)
         return p
+
+    def verifica_orario(self):
+        """Il giocatore vola di giorno (mattina; alba e tramonto vanno bene). Notte solo se chiesta:
+        parametri.json -> "notte": true."""
+        if self.par.get('notte'):
+            return
+        inizio, fine = hm(self.par['inizio']), hm(self.par.get('fine', self.par['inizio']))
+        # Levante, ora locale: alba ~05:30-06:30, tramonto ~16:45-19:45 secondo la stagione; margine prudente
+        if inizio < 5 * 3600 or fine > 19 * 3600 + 30 * 60:
+            self.avvisi.append('ORARIO: missione %s-%s fuori dal giorno, ma il giocatore non ha chiesto la notte'
+                               % (self.par['inizio'], self.par.get('fine', '?')))
 
     def verifica_prestazioni(self):
         """Controlla il bilancio delle unita' (docs/lezioni.md, PC del giocatore: i7-7700K 4 core)."""
