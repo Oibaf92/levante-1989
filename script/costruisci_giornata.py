@@ -124,22 +124,18 @@ BILANCIO = {'unita_totali': 300, 'unita_terra': 220, 'aerei_in_volo': 28, 'terra
 # come missioni ANTINAVE. Opzione ROE navale: nome 0, valore 3 = RETURN_FIRE.
 ROE_NAVI_DIFENSIVE = {'id': 'WrappedAction', 'params': {'action': {'id': 'Option', 'params': {'name': 0, 'value': 3}}}}
 
-# Regole riviste dal giocatore dopo G16 B1 (salva di P-500 dello Slava sulla CVN a 86 nm da Tartus).
-# Dalla giornata RIVISTE_DAL_GIORNO: portaerei ad almeno CVN_DIST_MIN_NM da Tartus (anche durante le
-# tratte contro vento, levante_navi.lua), squadra di Tartus di sole navi piccole (FLOTTA_TARTUS, niente
-# Slava), niente A-50 (VELIVOLI_RITIRATI); in cambio il rosso ha radar di scoperta fissi (EWR_FISSI).
-RIVISTE_DAL_GIORNO = 17
+# Regole riviste dal giocatore dopo la prova G16 B1 (salva di P-500 dello Slava sulla CVN a 86 nm da
+# Tartus), valide dalla ripartenza della campagna da G1: portaerei ad almeno CVN_DIST_MIN_NM da Tartus
+# (anche durante le tratte contro vento, levante_navi.lua), squadra di Tartus di sole navi piccole
+# (FLOTTA_TARTUS, niente Slava), niente A-50 (VELIVOLI_RITIRATI); radar di scoperta fissi (EWR_FISSI).
 CVN_DIST_MIN_NM = 150
 
 # posizione delle navi
-CVN_POS_FINO_G16 = (35.75, 33.95)   # a nord di Cipro, ~105 nm da Tartus
 CVN_POS = (33.35, 33.30)     # tra Cipro e il Libano: ~158 nm da Tartus, ~115 nm da Beirut, mare aperto a ovest
 CVN_SCARTO = 9          # ponte angolato: il vento deve arrivare ~9 gradi a sinistra della prua
 LHA_POS = (34.05, 35.45)
 TARTUS_FLOTTA = (34.912, 35.840)
 # squadra di Tartus: (tipo DCS, nome, scarto nord m, scarto est m)
-FLOTTA_TARTUS_FINO_G16 = [('MOSCOW', 'Slava (Tartus)', 0, 0), ('REZKY', 'Krivak II (Tartus)', 500, 400),
-                          ('MOLNIYA', 'Molniya (Tartus)', -400, 300)]
 FLOTTA_TARTUS = [('REZKY', 'Krivak II (Tartus)', 0, 0),
                  ('MOLNIYA', 'Molniya-1 (Tartus)', -400, 300), ('MOLNIYA', 'Molniya-2 (Tartus)', -400, 700),
                  ('MOLNIYA', 'Molniya-3 (Tartus)', -400, 1100),
@@ -151,8 +147,9 @@ EWR_FISSI = [(35.58, 36.18, 15, (200, 340), 'EWR Slunfeh'),            # Jabal A
              (33.50, 36.05, 8, (170, 320), 'EWR Hermon')]              # versante siriano: Libano sud e mare
 INGRESSO_EST = (34.60, 40.80)        # da dove arrivano i velivoli "aria" rossi
 
-# siti fissi persi prima del G15 (verita' dell'arbitro)
-SITI_DISTRUTTI = {'SA-2 Damasco nord', 'SA-2 Latakia', 'SA-3 Damasco ovest', 'SA-3 Tartus'}
+# siti fissi persi prima dell'inizio della campagna (ripartita da G1: nessuno); le perdite in guerra
+# arrivano dagli esiti dei blocchi
+SITI_DISTRUTTI = set()
 
 TESTA_DI_PONTE = [(34.15, 35.645), (34.12, 35.80), (34.00, 35.88), (33.88, 35.76), (33.81, 35.66),
                   (33.81, 35.60), (33.83, 35.55), (33.88, 35.50), (33.95, 35.57), (33.98, 35.61), (34.06, 35.63)]
@@ -349,15 +346,9 @@ class Costruttore:
         p = (self.esiti_prec or {}).get('posizioni', {}).get(nome)
         return (p[0], p[1]) if p else ll_to_xy(*predefinita)
 
-    def riviste(self):
-        """True se valgono le regole riviste dopo G16 B1 (vedi RIVISTE_DAL_GIORNO)."""
-        return int(self.giorno) >= RIVISTE_DAL_GIORNO
-
     def _pos_cvn(self):
-        """Posizione di partenza della portaerei. Con le regole riviste, se la posizione precedente e'
-        troppo vicina a Tartus la nave riparte dalla posizione standard (si e' spostata tra i blocchi)."""
-        if not self.riviste():
-            return self._pos_nave('CVN-71 Theodore Roosevelt', CVN_POS_FINO_G16)
+        """Posizione di partenza della portaerei; se la posizione precedente e' troppo vicina a Tartus
+        la nave riparte dalla posizione standard (si e' spostata tra i blocchi)."""
         cx, cy = self._pos_nave('CVN-71 Theodore Roosevelt', CVN_POS)
         tx, ty = ll_to_xy(*TARTUS_FLOTTA)
         if math.hypot(cx - tx, cy - ty) < (CVN_DIST_MIN_NM + 5) * 1852:
@@ -390,9 +381,8 @@ class Costruttore:
                                   2: wpt(*fine, 0, 20 * KT)}}}
         self.navi_vento['CVN-71 Roosevelt'] = {'vento_ponte_kt': 28, 'min_kt': 12, 'max_kt': 30, 'scarto': CVN_SCARTO,
                                                'tratta_nm': 80, 'comandi': {k: c['params']['action'] for k, c in enumerate((tacan, icls, link4, acls), 1)}}
-        if self.riviste():
-            tx, ty = ll_to_xy(*TARTUS_FLOTTA)
-            self.navi_vento['CVN-71 Roosevelt']['minacce'] = {1: {'nome': 'Tartus', 'x': tx, 'z': ty, 'min_m': CVN_DIST_MIN_NM * 1852}}
+        tx, ty = ll_to_xy(*TARTUS_FLOTTA)
+        self.navi_vento['CVN-71 Roosevelt']['minacce'] = {1: {'nome': 'Tartus', 'x': tx, 'z': ty, 'min_m': CVN_DIST_MIN_NM * 1852}}
         self.aggiungi_gruppo('blue', 'ship', USA, 'USA', g)
         self.navi['CVN-71'] = (ids[0], cx, cy)
         # LHA
@@ -421,7 +411,7 @@ class Costruttore:
     def navi_rosse(self):
         tx, ty = ll_to_xy(*TARTUS_FLOTTA)
         unita = {}
-        for k, (tipo, nome, dx, dy) in enumerate(FLOTTA_TARTUS if self.riviste() else FLOTTA_TARTUS_FINO_G16, 1):
+        for k, (tipo, nome, dx, dy) in enumerate(FLOTTA_TARTUS, 1):
             unita[k] = {'type': tipo, 'name': nome, 'unitId': self.cnt.u(), 'x': tx + dx, 'y': ty + dy,
                         'heading': math.radians(270), 'skill': self.abilita('red'), 'modulation': 0, 'frequency': 127500000}
         g = {'visible': False, 'tasks': {}, 'uncontrollable': False, 'groupId': self.cnt.g(), 'hidden': False,
@@ -463,14 +453,13 @@ class Costruttore:
                 it = pz.Intenzione(tipo, nome, (lat, lon), 6 if tipo != 'sa5' else 12, sett, (lat, lon),
                                    coalizione='red', paese=SIRIA, abilita=self.abilita('red'))
                 out.append((it, {'missione': 'difesa'}))
-        # radar di scoperta fissi del rosso (regole riviste): sempre in missione, salvo se gia' negli ordini
-        if self.riviste():
-            for lat, lon, r, sett, nome in EWR_FISSI:
-                if nome in SITI_DISTRUTTI or nome in nomi:
-                    continue
-                it = pz.Intenzione('ewr', nome, (lat, lon), r, sett, (lat, lon), coalizione='red', paese=SIRIA,
-                                   abilita=self.abilita('red'), fuori=TESTA_DI_PONTE)
-                out.append((it, {'missione': 'difesa'}))
+        # radar di scoperta fissi del rosso: sempre in missione, salvo se gia' negli ordini
+        for lat, lon, r, sett, nome in EWR_FISSI:
+            if nome in SITI_DISTRUTTI or nome in nomi:
+                continue
+            it = pz.Intenzione('ewr', nome, (lat, lon), r, sett, (lat, lon), coalizione='red', paese=SIRIA,
+                               abilita=self.abilita('red'), fuori=TESTA_DI_PONTE)
+            out.append((it, {'missione': 'difesa'}))
         return out
 
     ORDINE_PIAZZAMENTO = {'sa5': 0, 'ewr': 1, 'sa2': 2, 'sa3': 3, 'hawk': 3, 'sa6': 4, 'sa8': 5, 'aaa': 6,
@@ -634,7 +623,7 @@ class Costruttore:
 
     def volo(self, lato, o, idx):
         tipo = o['velivolo']
-        if self.riviste() and tipo in VELIVOLI_RITIRATI:
+        if tipo in VELIVOLI_RITIRATI:
             raise ValueError(VELIVOLI_RITIRATI[tipo])
         cat, vel, quota_std = PROFILO.get(tipo, ('plane', 220, 6000))
         mis = o['tipo']

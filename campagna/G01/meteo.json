@@ -1,0 +1,77 @@
+{
+ "giorno": 1,
+ "data": "1989-10-03",
+ "regime": "sereno",
+ "blocchi": {
+  "alba": {
+   "vento_da": [
+    82,
+    1.0
+   ],
+   "vento_2000_da": [
+    82,
+    3.5
+   ],
+   "vento_8000_da": [
+    286,
+    23.6
+   ],
+   "nubi": "Preset1",
+   "base_m": 2445,
+   "visibilita_m": 68846,
+   "nebbia": {
+    "spessore_m": 192,
+    "visibilita_m": 3991
+   },
+   "polvere_m": null,
+   "temperatura": 19,
+   "qnh_hpa": 1019.5,
+   "turbolenza": 0
+  },
+  "mezzogiorno": {
+   "vento_da": [
+    286,
+    5.7
+   ],
+   "vento_2000_da": [
+    281,
+    11.0
+   ],
+   "vento_8000_da": [
+    288,
+    21.1
+   ],
+   "nubi": "Preset2",
+   "base_m": 3048,
+   "visibilita_m": 53126,
+   "nebbia": null,
+   "polvere_m": null,
+   "temperatura": 26,
+   "qnh_hpa": 1018.8,
+   "turbolenza": 8
+  },
+  "pomeriggio": {
+   "vento_da": [
+    261,
+    7.6
+   ],
+   "vento_2000_da": [
+    269,
+    12.9
+   ],
+   "vento_8000_da": [
+    269,
+    14.7
+   ],
+   "nubi": "Preset4",
+   "base_m": 2987,
+   "visibilita_m": 64027,
+   "nebbia": null,
+   "polvere_m": null,
+   "temperatura": 25,
+   "qnh_hpa": 1017.4,
+   "turbolenza": 8
+  }
+ },
+ "previsione": "Situazione: alta pressione, tempo stabile.\nAlba: poche nubi, base circa 2400 m; vento da est 0-5 nodi; 19 gradi sulla costa; possibili banchi di nebbia sulla costa.\nMezzogiorno: poche nubi, base circa 3000 m; vento da ovest 8-14 nodi; 26 gradi sulla costa.\nPomeriggio: nubi sparse, base circa 3000 m; vento da ovest 12-18 nodi; 25 gradi sulla costa."
+}

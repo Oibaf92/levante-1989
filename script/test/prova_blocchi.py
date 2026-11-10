@@ -1,4 +1,5 @@
-"""Prova del ciclo a blocchi (su una copia temporanea del progetto): costruisce G16 blocco 1, simula lo stato salvato in gioco
+"""Prova del ciclo a blocchi (su una copia temporanea del progetto, con gli ordini fissi di script/test/dati_G16):
+costruisce G16 blocco 1, simula lo stato salvato in gioco
 (un SA-6 distrutto, un veicolo danneggiato, carri spostati, un F-14 abbattuto), importa gli
 esiti e costruisce il blocco 2, controllando che le perdite e le posizioni siano applicate."""
 import json
@@ -20,6 +21,8 @@ RADICE = os.path.join(TMP, 'levante')
 shutil.copytree(ORIGINE, RADICE, ignore=shutil.ignore_patterns('.git', 'missioni', 'screenshot_foreste',
                                                                  'verifiche_alberi', '__pycache__', '*.png', '*.webp'))
 os.makedirs(os.path.join(RADICE, 'missioni'), exist_ok=True)
+# dati fissi della prova (G16 della prima versione della campagna, script/test/dati_G16)
+shutil.copytree(os.path.join(QUI, 'dati_G16'), RADICE, dirs_exist_ok=True)
 for f in os.listdir(os.path.join(RADICE, 'campagna', 'G16')):
     if '_B' in f:
         os.remove(os.path.join(RADICE, 'campagna', 'G16', f))

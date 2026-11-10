@@ -85,7 +85,7 @@ BASI_BLU_VISTE_DAL_ROSSO = [
     (34.590, 32.988, 'aerea', 'Akrotiri (UK)', 'possibile dirottamento USA'),
     (34.050, 35.450, 'navale', 'Nave d\'assalto USA', 'al largo di Jounieh'),
     (33.980, 35.630, 'terra', 'Jounieh', 'sbarco dei Marines'),
-    (35.900, 33.900, 'navale', 'Gruppo portaerei USA', 'posizione stimata, in movimento'),
+    (33.500, 33.500, 'navale', 'Gruppo portaerei USA', 'posizione stimata (tra Cipro e il Libano), in movimento'),
 ]
 SAM_BLU_VISTI_DAL_ROSSO = [
     (33.980, 35.630, 35, 'hawk', 'Hawk (stimato) Jounieh'),

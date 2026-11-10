@@ -49,10 +49,10 @@ il giocatore vola a scelta con una delle due parti.
 - **Niente SA-5** (scelta del giocatore): la difesa a lungo raggio è affidata a una rete più fitta di SA-2.
 - **Navi**: regole d'ingaggio difensive, rispondono solo se attaccate; gli attacchi alle navi si
   ordinano come missioni ANTINAVE.
-- **Portaerei ad almeno 150 nm da Tartus** (dalla giornata G17): parte tra Cipro e il Libano e le tratte
+- **Portaerei ad almeno 150 nm da Tartus**: parte tra Cipro e il Libano e le tratte
   contro vento non scendono sotto questa distanza; se il vento la spingerebbe verso Tartus fa una tratta
   di riposizionamento, senza operazioni di volo.
-- **Niente A-50 e niente Slava** (dalla giornata G17, scelta del giocatore): la squadra di Tartus e' fatta
+- **Niente A-50 e niente Slava** (scelta del giocatore): la squadra di Tartus e' fatta
   di navi piccole; la scoperta rossa si affida ai radar a terra.
 - **Qualità dell'IA**: equipaggi *High* all'inizio; con le perdite il livello cala
   (logoramento oltre 20% → *Good*, oltre 40% → *Average*).
