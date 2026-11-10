@@ -56,11 +56,24 @@ il giocatore vola a scelta con una delle due parti.
   USA diventano politicamente insostenibili.
 
 ## 🔄 Ciclo di gioco
-1. L'arbitro consegna il `.miz` della giornata in `missioni/`.
-2. Il giocatore sceglie parte e ruolo e vola la sortita.
-3. A fine missione lo script salva lo stato in `Saved Games\DCS\Levante1989\`.
-4. Il giocatore carica i file di stato (più eventuali `dcs.log` e Tacview).
-5. Ogni comandante riceve **solo il proprio rapporto intel** e decide la giornata seguente.
+Ogni giornata di guerra è divisa in **blocchi** (di norma 3: alba, mezzogiorno, pomeriggio), e
+ogni blocco è una missione `.miz` da volare (`missioni/GNN_Bk_<data>.miz`).
+1. I comandanti danno il piano della giornata, assegnando ogni volo a un blocco.
+2. L'arbitro costruisce il blocco successivo con le forze rimaste.
+3. Il giocatore sceglie parte e ruolo e vola la sortita.
+4. A fine missione lo script salva lo stato in `Saved Games\DCS\Levante1989\`; il giocatore
+   carica i file di stato (più eventuali `dcs.log` e Tacview).
+5. L'arbitro aggiorna perdite e posizioni; prima del blocco seguente ogni comandante riceve
+   **solo il proprio rapporto intel** e può correggere il piano dei blocchi rimanenti.
+6. Un blocco che il giocatore non vola viene risolto dall'arbitro "a tavolino" (esito pesato
+   sulle forze in campo) con un bollettino.
+
+## 🪂 Piloti abbattuti (CSAR)
+- Eiezione sopra il territorio amico o in mare: pilota recuperato in automatico.
+- Eiezione sopra il territorio nemico: la posizione viene registrata; nei blocchi successivi il
+  comandante della parte può lanciare una missione di soccorso (CH-47/AH-64 per i blu,
+  Mi-8/Mi-24 per i rossi), che il giocatore può volare. Se il soccorso non arriva entro la fine
+  della giornata successiva, il pilota è catturato: conta come perdita e pesa sul morale.
 
 ## 🛠️ Preparazione del PC (una volta sola)
 In `<cartella DCS>\Scripts\MissionScripting.lua` commentare solo `io` e `lfs`:
