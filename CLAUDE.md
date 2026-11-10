@@ -46,6 +46,8 @@ Campagna dinamica DCS World (mappa Syria), giocatore singolo. Lingua: italiano.
 - Voli del giocatore: decollo immediato, posti 5-8 della Supercarrier solo con avvio >= 5 s.
 - A OGNI missione chiedere al giocatore: parte con cui vola (blu/rosso, a sua scelta) e tipo di partenza
   (freddo/caldo/pista/aria). Non deciderli.
+- Mappa F10: solo forze amiche + stima intel del comandante della parte del giocatore; niente contatti
+  in tempo reale, niente etichette.
 - Giornata divisa in blocchi (di norma 3), una missione per blocco; CSAR per i piloti abbattuti; limite 30 giornate.
 - Standard: giocatore + 1 gregario IA, volo di giorno (mattina; alba/tramonto ok). Notte e formazioni
   diverse solo se le chiede il giocatore.
