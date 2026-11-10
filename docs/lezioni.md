@@ -173,8 +173,13 @@ tolleranza piu' alta; SA-5 da non sottovalutare (riducono l'area operativa e cos
 - **Script leggeri** (regole): niente controlli a ogni fotogramma (periodici >= 5 s), niente ricerche
   di oggetti in volo (solo all'avvio), file di stato piccoli e scritti di rado, log solo per eventi
   importanti. Il peso vero e' il numero di unita' IA.
-- **Regole approvate dal giocatore** (scritte nel README, sezione "Risorse e intelligence speciali"),
-  da implementare:
+- **Regole approvate dal giocatore** (README, "Risorse e intelligence speciali" e "Piloti abbattuti") —
+  FATTE: registrazione in gioco `script/lua/levante_regole.lua`, conseguenze all'importazione
+  `script/tools/regole_speciali.py` (stato in `campagna/risorse.json` e `campagna/piloti.json`),
+  test `prova_regole.py` e `prova_blocchi.py`. Il magazzino AIM-54 della portaerei si imposta con
+  l'API dei magazzini solo se DCS lo consente (da verificare): il limite sicuro e' quello sui carichi.
+  CSAR: il pilota a terra compare come soldato nella missione del blocco dopo; recuperato se un
+  elicottero amico atterra entro 300 m; catturato dopo la fine della giornata successiva.
   - **AIM-54 contati**: scorta iniziale 48 sulla CVN-71, -1 per ogni lancio (evento `lancio` del
     registro), +4 al giorno; i carichi con AIM-54 solo se la scorta li copre; magazzino della
     portaerei nella missione = scorta (cosi' anche il riarmo in gioco e' limitato);

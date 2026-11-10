@@ -32,6 +32,7 @@ import verifica_miz  # noqa: E402
 import confini  # noqa: E402
 import intel  # noqa: E402
 import rapporto_intel  # noqa: E402
+import regole_speciali  # noqa: E402
 import legenda  # noqa: E402  (usata da confini)
 
 USA, SIRIA, RUSSIA = 2, 47, 0
@@ -68,6 +69,8 @@ PAESI_NOMINATIVO_NUMERICO = {0}          # Russia
 # media intensita': batterie SAM nemiche che possono coprire l'obiettivo di un volo del giocatore
 SAM_PERICOLOSI = ('sa2', 'sa3', 'sa6', 'sa8', 'hawk')
 MAX_SAM_SU_OBIETTIVO = 3
+
+AIM54_PER_CARICO = {'cap 2-3-2': 2, 'aria-aria': 2, 'scorta': 2}
 
 # rete di difesa aerea (levante_iads.lua): batterie gestite e unita' che fanno da osservatori a vista
 SAM_IADS = ('sa2', 'sa3', 'sa5', 'sa6', 'sa8', 'hawk')
@@ -852,6 +855,36 @@ class Costruttore:
                             'name': 'Linea del fronte G%d' % self.giorno, 'layerName': 'Common'})
                 strato['objects'] = {k: o for k, o in enumerate(ogg, 1)}
 
+    def risorse_e_piloti(self):
+        """AIM-54 contati (i voli di F-14 oltre la scorta passano al carico 0-6-2) e piloti a terra da
+        soccorrere (un soldato per pilota nella posizione dell'eiezione, CSAR)."""
+        self.aim54 = regole_speciali.scorta_aim54(self.giorno)
+        resto = self.aim54
+        for o in self.ordini['blue'].get('missioni_aeree', []):
+            if not self.nel_blocco(o) or not o['velivolo'].startswith('F-14'):
+                continue
+            n = 2 if o.get('giocatore') else max(1, min(4, int(o.get('numero', 2))))
+            servono = n * AIM54_PER_CARICO.get(o.get('carico'), 0)
+            if servono > resto:
+                self.avvisi.append('RISORSE: %s: AIM-54 non disponibili (scorta %d), carico cambiato in cap 0-6-2'
+                                   % (o['nome'], resto))
+                o['carico'] = 'cap 0-6-2'
+            else:
+                resto -= servono
+        self.piloti_lua = {}
+        for p in regole_speciali.piloti_a_terra(self.giorno):
+            coal, paese, tipo = (2, USA, 'Soldier M4') if p['lato'] == 'blue' else (1, SIRIA, 'Infantry AK')
+            nome = 'Pilota %s' % p['nome']
+            uid = self.cnt.u()
+            g = {'name': nome, 'groupId': self.cnt.g(), 'x': p['x'], 'y': p['y'], 'start_time': 0, 'hidden': False,
+                 'visible': False, 'tasks': {}, 'task': 'Ground Nothing', 'uncontrollable': False,
+                 'units': {1: {'type': tipo, 'name': nome, 'unitId': uid, 'x': p['x'], 'y': p['y'], 'heading': 0,
+                               'skill': 'Average', 'playerCanDrive': False}},
+                 'route': {'points': {1: wpt(p['x'], p['y'], 0, 0, azione='Off Road', ETA_locked=True)}}}
+            self.aggiungi_gruppo(p['lato'], 'vehicle', paese, 'USA' if p['lato'] == 'blue' else 'Syria', g)
+            self.piloti_lua[p['nome']] = {'x': p['x'], 'y': p['y'], 'coal': coal}
+            self.avvisi.append('CSAR: pilota %s (%s) a terra in %s' % (p['nome'], p['lato'], p.get('lat_lon')))
+
     def dati_iads(self):
         """Tabella LEVANTE_IADS per levante_iads.lua: batterie SAM e sensori di ogni rete (rossa = 1, blu = 2)."""
         dati = {1: {'sam': {}, 'sensori': {}}, 2: {'sam': {}, 'sensori': {}}}
@@ -902,6 +935,7 @@ class Costruttore:
                 self.w['airports'][a['id']]['coalition'] = 'RED'
         self.w['airports'][AEROPORTI['Incirlik']['id']]['coalition'] = 'BLUE'
 
+        self.risorse_e_piloti()
         self.navi_blu()
         self.navi_rosse()
         self.forze_terra()
@@ -1023,13 +1057,20 @@ class Costruttore:
         init = ('LEVANTE = { missione = "%s" }\n' % nome + lt.dump('LEVANTE_PIAZZAMENTI', self.piazzamenti_lua)
                 + '\n' + lt.dump('LEVANTE_NAVI', self.navi_vento)
                 + '\n' + lt.dump('LEVANTE_IADS', self.dati_iads())
+                + '\n' + lt.dump('LEVANTE_ARTIGLIERIA', {p['nome']: True for p in self.resoconto['piazzamenti']
+                                                          if p['sistema'] in ('artiglieria', 'lanciarazzi')})
+                + '\n' + lt.dump('LEVANTE_TARPS', {n: True for n, (_, _, o) in self.gruppi_aerei.items()
+                                                    if o.get('carico') == 'ricognizione TARPS'})
+                + '\n' + lt.dump('LEVANTE_PILOTI', self.piloti_lua)
+                + '\n' + lt.dump('LEVANTE_AIM54', {'nave': 'CVN-71 Theodore Roosevelt', 'scorta': self.aim54})
                 + '\n' + lt.dump('LEVANTE_GIOCATORE', {n: True for n, (_, _, o) in self.gruppi_aerei.items() if o.get('giocatore')}))
         risorse = {'ResKey_Action_1': 'init.lua', 'ResKey_Action_2': 'levante_core.lua', 'ResKey_Action_3': 'levante_piazzatore.lua',
                    'ResKey_Action_4': 'levante_navi.lua', 'ResKey_Action_5': 'levante_prestazioni.lua',
-                   'ResKey_Action_6': 'levante_iads.lua'}
+                   'ResKey_Action_6': 'levante_iads.lua', 'ResKey_Action_7': 'levante_regole.lua'}
         for i, (commento, chiave) in enumerate((('INIT', 'ResKey_Action_1'), ('NUCLEO', 'ResKey_Action_2'),
                                                 ('PIAZZATORE', 'ResKey_Action_3'), ('NAVI', 'ResKey_Action_4'),
-                                                ('PRESTAZIONI', 'ResKey_Action_5'), ('IADS', 'ResKey_Action_6')), 1):
+                                                ('PRESTAZIONI', 'ResKey_Action_5'), ('IADS', 'ResKey_Action_6'),
+                                                ('REGOLE', 'ResKey_Action_7')), 1):
             m['trig']['actions'][i] = 'a_do_script_file(getValueResourceByKey("%s"));' % chiave
             m['trig']['conditions'][i] = 'return(true)'
             m['trig']['flag'][i] = True
@@ -1050,6 +1091,7 @@ class Costruttore:
             z.write(os.path.join(QUI, 'lua', 'levante_navi.lua'), 'l10n/DEFAULT/levante_navi.lua')
             z.write(os.path.join(QUI, 'lua', 'levante_prestazioni.lua'), 'l10n/DEFAULT/levante_prestazioni.lua')
             z.write(os.path.join(QUI, 'lua', 'levante_iads.lua'), 'l10n/DEFAULT/levante_iads.lua')
+            z.write(os.path.join(QUI, 'lua', 'levante_regole.lua'), 'l10n/DEFAULT/levante_regole.lua')
             for k, png in enumerate(tavolette, 1):
                 z.writestr('KNEEBOARD/IMAGES/G%02d_%02d.png' % (self.giorno, k), png)
         for lato, co in self.m['coalition'].items():

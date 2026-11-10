@@ -14,6 +14,7 @@ import json
 import os
 
 import luatable as lt
+import regole_speciali
 
 DANNO_LIEVE, DANNO_GRAVE = 0.70, 0.30
 
@@ -58,5 +59,7 @@ def scrivi(percorso_stato, cartella, blocco):
     _, stato = lt.parse(open(percorso_stato, encoding='utf-8').read())
     costruzione = json.load(open(os.path.join(cartella, 'costruzione_B%d.json' % blocco), encoding='utf-8'))
     e = esiti(stato, costruzione, blocco)
+    giorno = int(os.path.basename(os.path.normpath(cartella))[1:])
+    e['osservazioni'] = regole_speciali.importa(stato.get('extra'), giorno, blocco, costruzione.get('piazzamenti', []), stato)
     json.dump(e, open(os.path.join(cartella, 'esiti_B%d.json' % blocco), 'w'), indent=1, ensure_ascii=False)
     return e

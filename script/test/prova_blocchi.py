@@ -1,6 +1,8 @@
 """Prova del ciclo a blocchi: costruisce G15 blocco 1, simula lo stato salvato in gioco
 (un SA-6 distrutto, un veicolo danneggiato, carri spostati, un F-14 abbattuto), importa gli
 esiti e costruisce il blocco 2, controllando che le perdite e le posizioni siano applicate."""
+import atexit
+import glob
 import json
 import os
 import subprocess
@@ -13,6 +15,22 @@ sys.path.insert(0, os.path.join(QUI, '..', 'tools'))
 import luatable as lt  # noqa: E402
 
 CART = os.path.join(RADICE, 'campagna', 'G15')
+
+
+@atexit.register
+def pulizia():
+    """I file dei blocchi di prova non restano nella campagna (anche se un controllo fallisce)."""
+    for nome_f in ('risorse.json', 'piloti.json'):
+        p = os.path.join(RADICE, 'campagna', nome_f)
+        if os.path.exists(p):
+            os.remove(p)
+        if os.path.exists(p + '.bak'):
+            os.rename(p + '.bak', p)
+    for f in (glob.glob(os.path.join(CART, '*_B[0-9].json')) + glob.glob(os.path.join(RADICE, 'missioni', 'G15_B[0-9]_*.miz'))
+              + [os.path.join(RADICE, p, 'intel_G15_B%d.json' % b) for p in ('blu', 'rosso') for b in (2, 3)
+                 if os.path.exists(os.path.join(RADICE, p, 'intel_G15_B%d.json' % b))]):
+        os.remove(f)
+
 SCR = os.environ.get('SCRATCH', '/tmp')
 
 
@@ -51,7 +69,26 @@ for n, (cat, g, u) in u1.items():
     x = u['x'] + (1000 if n in carri else 0)
     gruppi.setdefault(g, {'nome': g, 'unita': {}})['unita'][len(gruppi.get(g, {'unita': {}})['unita']) + 1] = {
         'nome': n, 'tipo': u['type'], 'vita': vita, 'vita0': 1.0, 'pos': {'x': x, 'y': u['y']}}
-stato = {'missione': 'G15_B1_1989-10-17', 'gruppi': {k: v for k, v in enumerate(gruppi.values(), 1)}, 'extra': {}}
+# regole speciali: eiezione dell'F-14 sopra la Bekaa, 4 AIM-54 lanciati, l'artiglieria di Aley spara,
+# un F-14 TARPS fotografa la zona di Sofar e atterra
+from geo import ll_to_xy  # noqa: E402
+ex, ey = ll_to_xy(33.85, 35.95)
+art = [(g, u) for n, (c, g, u) in u1.items() if g == 'Artiglieria Souk el-Gharb'][0]
+sofar = [u for n, (c, g, u) in u1.items() if g == 'SA-8 Sofar'][0]
+for nome_f in ('risorse.json', 'piloti.json'):
+    p = os.path.join(RADICE, 'campagna', nome_f)
+    if os.path.exists(p):
+        os.rename(p, p + '.bak')
+extra = {'eiezioni': {1: {'nome': f14, 'tipo': 'F-14A-135-GR-Early', 'coal': 2, 'gruppo': 'Cedro 1', 'x': ex, 'y': ey,
+                          'mare': False}},
+         'aim54': {1: 0, 2: 4},
+         'tiri': {1: {'gruppo': art[0], 'x': art[1]['x'], 'y': art[1]['y'], 'ora': '07:10:00'}},
+         'tarps': {'Recce-1': {'atterrato': True, 'punti': {1: {'x': sofar['x'] + 2000, 'y': sofar['y']}}}}}
+stato = {'missione': 'G15_B1_1989-10-17', 'gruppi': {k: v for k, v in enumerate(gruppi.values(), 1)}, 'extra': extra}
+for g in stato['gruppi'].values():
+    g['coalizione'] = 'rosso' if any(g['nome'] == p['nome'] and p['lato'] == 'red'
+                                     for p in json.load(open(os.path.join(CART, 'costruzione_B1.json')))['piazzamenti']) else 'blu'
+    g['categoria'] = 'terra'
 percorso = os.path.join(SCR, 'stato_G15_B1_1989-10-17.lua')
 open(percorso, 'w', encoding='utf-8').write(lt.dump('stato', stato))
 print(esegui('script/tools/importa_stato.py', percorso).strip().splitlines()[-1])
@@ -63,12 +100,20 @@ print(esegui('script/tools/rapporto_intel.py', '15', '2').strip())
 r2 = json.load(open(os.path.join(RADICE, 'blu', 'intel_G15_B2.json')))
 r1 = json.load(open(os.path.join(RADICE, 'blu', 'intel_G15_B1.json')))
 mob1 = [v for v in r1['sam'] if v['tipo'] in ('sa6', 'sa8')]
-assert all(v['certezza'] == 'vecchio' for v in r2['sam'] if v['tipo'] in ('sa6', 'sa8')) and mob1, 'i mobili non invecchiano'
+assert all(v['certezza'] == 'vecchio' for v in r2['sam'] if v['tipo'] in ('sa6', 'sa8') and v.get('fonte') == 'stima iniziale') \
+    and mob1, 'i mobili non invecchiano'
 assert 'SA-6 Chouf' in esiti['gruppi_distrutti']
+fonti = {v.get('fonte') for v in r2['sam'] + r2['terra']}
+assert {'AN/TPQ-37', 'TARPS'} <= fonti, fonti
+assert any(v.get('gruppo') == 'SA-8 Sofar' and v['certezza'] == 'confermato' for v in r2['sam']), 'TARPS non ha visto l\'SA-8'
+assert json.load(open(os.path.join(RADICE, 'campagna', 'risorse.json')))['aim54']['scorta'] == 44
+pil = json.load(open(os.path.join(RADICE, 'campagna', 'piloti.json')))
+assert pil[0]['stato'] == 'a terra', pil
 esegui('script/costruisci_giornata.py', '15', '2')
 m2, u2 = unita(os.path.join(RADICE, 'missioni', 'G15_B2_1989-10-17.miz'))
 assert not any(n in u2 for n in sa6), 'SA-6 distrutto ancora presente'
 assert danneggiato not in u2, 'unita danneggiata non messa fuori servizio'
+assert ('Pilota ' + f14) in u2, 'pilota da soccorrere assente'
 for n in carri:
     assert abs(u2[n][2]['x'] - (u1[n][2]['x'] + 1000)) < 1, 'posizione non aggiornata'
 assert not any(c == 'plane' for c, _, _ in u2.values() if True) or True
@@ -108,9 +153,3 @@ try:
 finally:
     os.remove(corr)
 
-# pulizia: i file dei blocchi di prova non restano nella campagna
-import glob  # noqa: E402
-for f in (glob.glob(os.path.join(CART, '*_B[0-9].json')) + glob.glob(os.path.join(RADICE, 'missioni', 'G15_B[0-9]_*.miz'))
-          + [os.path.join(RADICE, p, 'intel_G15_B%d.json' % b) for p in ('blu', 'rosso') for b in (2, 3)
-             if os.path.exists(os.path.join(RADICE, p, 'intel_G15_B%d.json' % b))]):
-    os.remove(f)
