@@ -63,8 +63,8 @@ NOMI_CHIAMATA_SPECIALI = {'AWACS': {1: 'Overlord', 2: 'Magic', 3: 'Wizard', 4: '
 PAESI_NOMINATIVO_NUMERICO = {0}          # Russia
 
 # posizione delle navi
-CVN_POS = (35.95, 33.70)
-CVN_ROTTA = 250
+CVN_POS = (35.75, 33.95)     # a nord di Cipro, ~160 km dalla Siria; a ovest c'e' mare aperto per la tratta contro vento
+CVN_SCARTO = 9          # ponte angolato: il vento deve arrivare ~9 gradi a sinistra della prua
 LHA_POS = (34.05, 35.45)
 TARTUS_FLOTTA = (34.912, 35.840)
 INGRESSO_EST = (34.60, 40.80)        # da dove arrivano i velivoli "aria" rossi
@@ -198,10 +198,17 @@ class Costruttore:
         gr[len(gr) + 1] = g
 
     # ----------------------------------------------------------------- navi
+    def prua_contro_vento(self, scarto=0):
+        """Prua iniziale stimata contro vento. Nel file di missione wind.dir e' la direzione VERSO
+        cui soffia il vento; in volo levante_navi.lua ricalcola comunque la rotta sul vento reale."""
+        verso = self.m['weather']['wind']['atGround']['dir']
+        return (verso + 180 + scarto) % 360
+
     def navi_blu(self):
-        hdg = math.radians(CVN_ROTTA)
+        self.navi_vento = {}
+        hdg = math.radians(self.prua_contro_vento(CVN_SCARTO))
         cx, cy = ll_to_xy(*CVN_POS)
-        fine = (cx + 25 * KT * 4 * 3600 * math.cos(hdg), cy + 25 * KT * 4 * 3600 * math.sin(hdg))
+        fine = (cx + 20 * KT * 4 * 3600 * math.cos(hdg), cy + 20 * KT * 4 * 3600 * math.sin(hdg))
         ids = [self.cnt.u() for _ in range(4)]
         tacan = t_azione('ActivateBeacon', {'type': 4, 'AA': False, 'callsign': 'TR', 'modeChannel': 'X', 'channel': 71,
                                             'system': 3, 'unitId': ids[0], 'bearing': True, 'frequency': 1158000000})
@@ -218,23 +225,29 @@ class Costruttore:
                             'skill': 'Excellent', 'modulation': 0, 'frequency': f}
         g = {'visible': False, 'tasks': {}, 'uncontrollable': False, 'groupId': self.cnt.g(), 'hidden': False,
              'name': 'CVN-71 Roosevelt', 'x': cx, 'y': cy, 'start_time': 0, 'units': unita,
-             'route': {'points': {1: wpt(cx, cy, 0, 25 * KT, compiti=compiti_combo([tacan, icls, link4, acls]), ETA_locked=True),
-                                  2: wpt(*fine, 0, 25 * KT)}}}
+             'route': {'points': {1: wpt(cx, cy, 0, 20 * KT, compiti=compiti_combo([tacan, icls, link4, acls]), ETA_locked=True),
+                                  2: wpt(*fine, 0, 20 * KT)}}}
+        self.navi_vento['CVN-71 Roosevelt'] = {'vento_ponte_kt': 28, 'min_kt': 12, 'max_kt': 30, 'scarto': CVN_SCARTO,
+                                               'tratta_nm': 80, 'comandi': {k: c['params']['action'] for k, c in enumerate((tacan, icls, link4, acls), 1)}}
         self.aggiungi_gruppo('blue', 'ship', USA, 'USA', g)
         self.navi['CVN-71'] = (ids[0], cx, cy)
         # LHA
         lx, ly = ll_to_xy(*LHA_POS)
         lid = [self.cnt.u(), self.cnt.u()]
+        hl = math.radians(self.prua_contro_vento())
+        fl = (lx + 15 * KT * 4 * 3600 * math.cos(hl), ly + 15 * KT * 4 * 3600 * math.sin(hl))
         tacan2 = t_azione('ActivateBeacon', {'type': 4, 'AA': False, 'callsign': 'TAR', 'modeChannel': 'X', 'channel': 64,
                                              'system': 3, 'unitId': lid[0], 'bearing': True, 'frequency': 1151000000})
         g2 = {'visible': False, 'tasks': {}, 'uncontrollable': False, 'groupId': self.cnt.g(), 'hidden': False,
               'name': 'LHA-1 Tarawa', 'x': lx, 'y': ly, 'start_time': 0,
               'units': {1: {'type': 'LHA_Tarawa', 'name': 'LHA-1 Tarawa', 'unitId': lid[0], 'x': lx, 'y': ly,
-                            'heading': math.radians(200), 'skill': 'Excellent', 'modulation': 0, 'frequency': 127500000},
+                            'heading': hl, 'skill': 'Excellent', 'modulation': 0, 'frequency': 127500000},
                         2: {'type': 'PERRY', 'name': 'FFG-36 Underwood', 'unitId': lid[1], 'x': lx + 1500, 'y': ly - 1500,
-                            'heading': math.radians(200), 'skill': 'Excellent', 'modulation': 0, 'frequency': 127500000}},
-              'route': {'points': {1: wpt(lx, ly, 0, 5 * KT, compiti=compiti_combo([tacan2]), ETA_locked=True),
-                                   2: wpt(lx - 8000, ly - 3000, 0, 5 * KT), 3: wpt(lx, ly, 0, 5 * KT)}}}
+                            'heading': hl, 'skill': 'Excellent', 'modulation': 0, 'frequency': 127500000}},
+              'route': {'points': {1: wpt(lx, ly, 0, 15 * KT, compiti=compiti_combo([tacan2]), ETA_locked=True),
+                                   2: wpt(*fl, 0, 15 * KT)}}}
+        self.navi_vento['LHA-1 Tarawa'] = {'vento_ponte_kt': 25, 'min_kt': 8, 'max_kt': 20, 'scarto': 0,
+                                           'tratta_nm': 50, 'comandi': {1: tacan2['params']['action']}}
         self.aggiungi_gruppo('blue', 'ship', USA, 'USA', g2)
         self.navi['LHA-1'] = (lid[0], lx, ly)
         for uid in ids + lid:
@@ -563,10 +576,12 @@ class Costruttore:
         m['descriptionNeutralsTask'] = 'DictKey_descriptionNeutralsTask_4'
         m['sortie'] = 'DictKey_sortie_5'
         m['maxDictId'] = 5
-        init = 'LEVANTE = { missione = "%s" }\n' % nome + lt.dump('LEVANTE_PIAZZAMENTI', self.piazzamenti_lua)
-        risorse = {'ResKey_Action_1': 'init.lua', 'ResKey_Action_2': 'levante_core.lua', 'ResKey_Action_3': 'levante_piazzatore.lua'}
+        init = ('LEVANTE = { missione = "%s" }\n' % nome + lt.dump('LEVANTE_PIAZZAMENTI', self.piazzamenti_lua)
+                + '\n' + lt.dump('LEVANTE_NAVI', self.navi_vento))
+        risorse = {'ResKey_Action_1': 'init.lua', 'ResKey_Action_2': 'levante_core.lua', 'ResKey_Action_3': 'levante_piazzatore.lua',
+                   'ResKey_Action_4': 'levante_navi.lua'}
         for i, (commento, chiave) in enumerate((('INIT', 'ResKey_Action_1'), ('NUCLEO', 'ResKey_Action_2'),
-                                                ('PIAZZATORE', 'ResKey_Action_3')), 1):
+                                                ('PIAZZATORE', 'ResKey_Action_3'), ('NAVI', 'ResKey_Action_4')), 1):
             m['trig']['actions'][i] = 'a_do_script_file(getValueResourceByKey("%s"));' % chiave
             m['trig']['conditions'][i] = 'return(true)'
             m['trig']['flag'][i] = True
@@ -584,6 +599,7 @@ class Costruttore:
             z.writestr('l10n/DEFAULT/init.lua', init)
             z.write(os.path.join(QUI, 'lua', 'levante_core.lua'), 'l10n/DEFAULT/levante_core.lua')
             z.write(os.path.join(QUI, 'lua', 'levante_piazzatore.lua'), 'l10n/DEFAULT/levante_piazzatore.lua')
+            z.write(os.path.join(QUI, 'lua', 'levante_navi.lua'), 'l10n/DEFAULT/levante_navi.lua')
             for k, png in enumerate(tavolette, 1):
                 z.writestr('KNEEBOARD/IMAGES/G%02d_%02d.png' % (self.giorno, k), png)
         json.dump(self.resoconto, open(os.path.join(self.cartella, 'costruzione.json'), 'w'), indent=1, ensure_ascii=False)

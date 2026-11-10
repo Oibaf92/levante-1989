@@ -39,3 +39,13 @@ Campagna dinamica DCS World (mappa Syria), giocatore singolo. Lingua: italiano.
   aggiunge gli alberi a `campagna/terreno/alberi_noti.npz`, e il piazzatore sposta i veicoli
   di pochi metri fuori dai filari. Dopo ogni volo, `script/tools/importa_stato.py <stato>`
   importa i segni BOSCO/SPOSTA come zone da evitare.
+
+## Lezioni apprese (leggere `docs/lezioni.md` prima di costruire una missione)
+- Ogni correzione del giocatore o errore trovato in DCS va registrato in `docs/lezioni.md`.
+- Portaerei lontana dalla Siria; CVN e LHA contro vento (`script/lua/levante_navi.lua`).
+- Voli del giocatore: decollo immediato, posti 5-8 della Supercarrier solo con avvio >= 5 s.
+- Nominativi radio: numerici solo per i paesi orientali (Russia...); Siria e occidentali nome+numeri,
+  altrimenti il Mission Editor si pianta al caricamento.
+- `luatable.dump` non accetta liste Python: usare dizionari con chiavi 1..n.
+- Missione di test a carte scoperte solo se il giocatore la chiede: `script/tools/apri_test.py <giorno>`.
+- Per i problemi in DCS: `dcs.log` preso prima di riavviare DCS.

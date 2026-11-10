@@ -138,7 +138,7 @@ def _pagina_volo(c, o):
     y = kb._sezione(d, y + 8, 'PARAMETRI')
     for t in ['Raggio d\'azione: %s km   Quota: %s ft   Durata: %s min' % (o.get('raggio_km', '-'), o.get('quota_ft', '-'), o.get('durata_min', '-')),
               'Carico: %s' % o.get('carico', '-'),
-              'La rotta e\' una traccia: la nave si muove per 250 a 25 nodi.' if o['base'] == 'CVN-71' else '']:
+              'La rotta e\' una traccia: la nave naviga contro vento (prua %03d circa).' % round(c.prua_contro_vento(9)) if o['base'] == 'CVN-71' else '']:
         if t:
             y = kb._riga(d, y, [(30, t)], fn)
     return img
