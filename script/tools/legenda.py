@@ -42,7 +42,7 @@ def disegni():
     righe.append(('nota', 'Turchia (NATO): neutrale, attacco VIETATO'))
     righe.append(('nota', 'Cipro: neutrale, Akrotiri per dirottamento'))
     righe.append(('sezione', 'SIMBOLI   (rosso = siro-sovietici, blu = USA)'))
-    for tipo in ('aerea', 'elicotteri', 'navale', 'terra') + simboli.SAM:
+    for tipo in ('aerea', 'elicotteri', 'navale', 'terra') + tuple(t for t in simboli.SAM if t != 'sa5'):
         righe.append(('simbolo', tipo))
     righe.append(('nota', 'SA-6/SA-8 mobili: ultima posizione osservata'))
     righe.append(('nota', 'Forze avversarie: stima intel al 2 ottobre 1989'))

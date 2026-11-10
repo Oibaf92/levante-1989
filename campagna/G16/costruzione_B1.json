@@ -2,77 +2,6 @@
  "piazzamenti": [
   {
    "lato": "red",
-   "nome": "SA-5 Dumayr",
-   "sistema": "sa5",
-   "missione": "difesa",
-   "lat_lon": [
-    33.72773,
-    36.76074
-   ],
-   "dettagli": {
-    "visibilita": 0.97,
-    "rilievo_m": 46,
-    "dist_obiettivo_km": 9.3,
-    "pendenza": 4,
-    "strada_m": 1090,
-    "vegetazione": 0,
-    "quota": 863,
-    "candidati_validi": 183,
-    "scorrimento_m": 0,
-    "siti_scartati_vegetazione": 0,
-    "veicoli_spostati_alberi": [],
-    "vincoli_allentati": 0,
-    "raggio_usato_km": 12.0
-   }
-  },
-  {
-   "lato": "red",
-   "nome": "SA-5 Homs",
-   "sistema": "sa5",
-   "missione": "difesa",
-   "lat_lon": [
-    34.63521,
-    36.62832
-   ],
-   "dettagli": {
-    "visibilita": 0.99,
-    "rilievo_m": 38,
-    "dist_obiettivo_km": 11.1,
-    "pendenza": 1,
-    "strada_m": 190,
-    "vegetazione": 2,
-    "quota": 509,
-    "candidati_validi": 90,
-    "scorrimento_m": 100,
-    "siti_scartati_vegetazione": 0,
-    "veicoli_spostati_alberi": [
-     [
-      "RPC_5N62V",
-      25
-     ],
-     [
-      "P14_SR",
-      30
-     ],
-     [
-      "S-200_Launcher",
-      10
-     ],
-     [
-      "S-200_Launcher",
-      15
-     ],
-     [
-      "S-200_Launcher",
-      40
-     ]
-    ],
-    "vincoli_allentati": 0,
-    "raggio_usato_km": 12.0
-   }
-  },
-  {
-   "lato": "red",
    "nome": "EWR Antilibano",
    "sistema": "ewr",
    "missione": "difesa",
@@ -119,6 +48,31 @@
     "veicoli_spostati_alberi": [],
     "vincoli_allentati": 0,
     "raggio_usato_km": 12.0
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-2 Baalbek",
+   "sistema": "sa2",
+   "missione": "difesa",
+   "lat_lon": [
+    34.02379,
+    36.24408
+   ],
+   "dettagli": {
+    "visibilita": 0.88,
+    "rilievo_m": 2,
+    "dist_obiettivo_km": 3.5,
+    "pendenza": 5,
+    "strada_m": 50,
+    "vegetazione": 4,
+    "quota": 1318,
+    "candidati_validi": 12,
+    "scorrimento_m": 0,
+    "siti_scartati_vegetazione": 0,
+    "veicoli_spostati_alberi": [],
+    "vincoli_allentati": 0,
+    "raggio_usato_km": 6.0
    }
   },
   {
@@ -1851,132 +1805,6 @@
    "categoria": "plane"
   },
   {
-   "nome": "SA-5 Dumayr-1",
-   "gruppo": "SA-5 Dumayr",
-   "tipo": "RPC_5N62V",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
-   "nome": "SA-5 Dumayr-2",
-   "gruppo": "SA-5 Dumayr",
-   "tipo": "RLS_19J6",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
-   "nome": "SA-5 Dumayr-3",
-   "gruppo": "SA-5 Dumayr",
-   "tipo": "P14_SR",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
-   "nome": "SA-5 Dumayr-4",
-   "gruppo": "SA-5 Dumayr",
-   "tipo": "S-200_Launcher",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
-   "nome": "SA-5 Dumayr-5",
-   "gruppo": "SA-5 Dumayr",
-   "tipo": "S-200_Launcher",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
-   "nome": "SA-5 Dumayr-6",
-   "gruppo": "SA-5 Dumayr",
-   "tipo": "S-200_Launcher",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
-   "nome": "SA-5 Dumayr-7",
-   "gruppo": "SA-5 Dumayr",
-   "tipo": "S-200_Launcher",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
-   "nome": "SA-5 Dumayr-8",
-   "gruppo": "SA-5 Dumayr",
-   "tipo": "S-200_Launcher",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
-   "nome": "SA-5 Dumayr-9",
-   "gruppo": "SA-5 Dumayr",
-   "tipo": "S-200_Launcher",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
-   "nome": "SA-5 Homs-1",
-   "gruppo": "SA-5 Homs",
-   "tipo": "RPC_5N62V",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
-   "nome": "SA-5 Homs-2",
-   "gruppo": "SA-5 Homs",
-   "tipo": "RLS_19J6",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
-   "nome": "SA-5 Homs-3",
-   "gruppo": "SA-5 Homs",
-   "tipo": "P14_SR",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
-   "nome": "SA-5 Homs-4",
-   "gruppo": "SA-5 Homs",
-   "tipo": "S-200_Launcher",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
-   "nome": "SA-5 Homs-5",
-   "gruppo": "SA-5 Homs",
-   "tipo": "S-200_Launcher",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
-   "nome": "SA-5 Homs-6",
-   "gruppo": "SA-5 Homs",
-   "tipo": "S-200_Launcher",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
-   "nome": "SA-5 Homs-7",
-   "gruppo": "SA-5 Homs",
-   "tipo": "S-200_Launcher",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
-   "nome": "SA-5 Homs-8",
-   "gruppo": "SA-5 Homs",
-   "tipo": "S-200_Launcher",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
-   "nome": "SA-5 Homs-9",
-   "gruppo": "SA-5 Homs",
-   "tipo": "S-200_Launcher",
-   "lato": "red",
-   "categoria": "vehicle"
-  },
-  {
    "nome": "EWR Antilibano-1",
    "gruppo": "EWR Antilibano",
    "tipo": "55G6 EWR",
@@ -1987,6 +1815,69 @@
    "nome": "EWR Costa-1",
    "gruppo": "EWR Costa",
    "tipo": "55G6 EWR",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-1",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "SNR_75V",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-2",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "p-19 s-125 sr",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-3",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "S_75_ZIL",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-4",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-5",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-6",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-7",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-8",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "S_75M_Volhov",
+   "lato": "red",
+   "categoria": "vehicle"
+  },
+  {
+   "nome": "SA-2 Baalbek-9",
+   "gruppo": "SA-2 Baalbek",
+   "tipo": "S_75M_Volhov",
    "lato": "red",
    "categoria": "vehicle"
   },
@@ -2601,6 +2492,9 @@
   }
  ],
  "fuori_missione": [
+  "SA-2 Dumayr",
+  "SA-2 Al Qusayr",
+  "SA-2 Tartus",
   "SA-3 Damasco est",
   "SA-2 Homs",
   "SA-3 Homs",
@@ -2613,10 +2507,10 @@
  "prestazioni": {
   "plane": 31,
   "helicopter": 0,
-  "vehicle": 190,
+  "vehicle": 181,
   "ship": 9,
   "static": 0,
-  "totale": 230,
+  "totale": 221,
   "aerei_in_volo_picco": 23,
   "terra_vicino_giocatore": 0
  }

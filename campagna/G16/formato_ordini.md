@@ -31,7 +31,7 @@ carichi, basi, tipi di unità, limiti) sono in `campagna/G16/parametri.json`.
   "unita_terra": [
     {
       "nome": "nome breve univoco",
-      "tipo": "carri | meccanizzata | artiglieria | lanciarazzi | contraerea_mobile | sa2 | sa3 | sa5 | sa6 | sa8 | aaa | ewr | hawk",
+      "tipo": "carri | meccanizzata | artiglieria | lanciarazzi | contraerea_mobile | sa2 | sa3 | sa6 | sa8 | aaa | ewr | hawk",
       "centro": [lat, lon],
       "raggio_km": 5,
       "settore": [da_gradi, a_gradi],
@@ -63,7 +63,7 @@ Significato dei campi:
 - **missione**: `difesa` = resta in posizione; `riserva` (solo SAM) = batteria nascosta e spenta,
   entra in azione solo quando la rete perde un'altra batteria; `attacco` = avanza verso `avanza_verso`;
   `fuoco` (solo artiglieria/lanciarazzi) = bombarda `bersaglio_fuoco`.
-- Puoi riusare i siti fissi già esistenti (SA-5, SA-2, SA-3) indicandone il centro: se il centro
+- Puoi riusare i siti fissi già esistenti (SA-2, SA-3) indicandone il centro: se il centro
   coincide con un sito noto, resta lì.
 
 

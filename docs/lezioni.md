@@ -148,7 +148,7 @@ confermate e le sue correzioni sono diventate le dottrine riservate `blu/dottrin
 `rosso/dottrina.md`, che ogni comandante legge per prima (procedura in `docs/comandanti.md`).
 Correzioni del giocatore: portaerei a distanza di sicurezza e squadra navale russa come priorita'
 assoluta; AIM-54 da usare con parsimonia (deterrente antinave); blu con poche perdite, rossi con
-tolleranza piu' alta; SA-5 da non sottovalutare (riducono l'area operativa e costringono a volare bassi).
+tolleranza piu' alta; SA-5 da non sottovalutare (superato: gli SA-5 sono stati tolti dal teatro, vedi sotto).
 
 ## Lavori sul motore e regole proposte (da fare)
 
@@ -250,6 +250,13 @@ nascoste finche' la rete non perde una batteria (richiesta emersa dagli ordini r
   comandante blu ha messo orbite alte dentro portate note (proposta: controllo delle rotte).
 - Con l'accelerazione del tempo DCS va in "ANTIFREEZE" (simulazione in ritardo): le prestazioni vanno
   valutate a velocita' normale.
+
+## Decisioni dopo la prova G16
+- **Navi con regole d'ingaggio difensive** (rispondono solo se attaccate): opzione ROE sul primo punto
+  di rotta di tutti i gruppi navali (`ROE_NAVI_DIFENSIVE`). Gli attacchi alle navi solo come missioni
+  ANTINAVE ordinate dai comandanti. Da verificare in DCS che la flotta si difenda ancora dai missili.
+- **Niente SA-5** (troppo difficili da gestire): tolti da intel, mappa, legenda, OOB e dottrina blu;
+  al loro posto **piu' SA-2**: Dumayr, Al Qusayr, Baalbek (Bekaa), Tartus (oltre a quelli delle citta').
 
 ## Missione da osservare
 

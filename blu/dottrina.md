@@ -32,21 +32,20 @@ spiegando nel diario perche'.
 ## 3. Difesa aerea siriana
 - Obiettivo: **superiorita' aerea locale sopra il Libano** con poche perdite, non distruggere tutto.
   SA-2/SA-3 delle citta' (Damasco, Homs, Hama, Aleppo) fuori dalle rotte, ignorati.
-- **Gli SA-5 non si ignorano**: arrivano a 200-250 km, coprono tutto il Libano e parte del mare,
-  costringono a volare bassi (piu' carburante, piu' esposizione a cannoni e spalleggiabili),
-  spingono indietro E-2C e cisterne, comprimono l'area operativa e rendono le rotte prevedibili.
-  Vanno pianificati come obiettivo della prima fase della campagna.
+- **Niente SA-5** nel teatro (decisione del giocatore). La difesa a lungo raggio e' una rete fitta di
+  **SA-2** (portata circa 40 km, alta quota): attorno alle citta' e in una fascia vicina al Libano
+  (Al Qusayr, Baalbek nella Bekaa, Tartus sulla costa, Dumayr). Gli SA-2 della fascia vicina
+  limitano la media e alta quota sopra la Bekaa, il nord del Libano e la costa di Tartus: barriere,
+  CAP, AWACS e cisterne vanno tenuti **fuori dalle portate note** (SA-2 e difesa dello Slava a Tartus).
 - Ordine di priorita':
   1. radar di sorveglianza della costa e dell'Antilibano (P-19/P-14): accecare la rete;
-  2. **SA-5** (prima quello che copre meglio l'area operativa): avvicinamento a bassissima quota
-     coperto dall'Antilibano, F-4E/A-6E con ALQ-131, TALD in quota per far accendere il radar e
-     consumare missili, HARM da cabrata, strike sul radar di tiro e sui lanciatori; pacchetto
-     completo (attorno ci sono SA-2/SA-3 e cannoni);
+  2. **SA-2 della fascia vicina al Libano** che chiudono l'area operativa (Baalbek, Al Qusayr):
+     siti fissi e noti, radar di tiro unico; pacchetto con TALD, HARM e strike sul radar;
   3. SA-6 sull'asse dell'avanzata (Chouf, Sofar, Dahr el-Baidar);
   4. SA-8 attorno all'artiglieria;
   5. cannoni e spalleggiabili: evitati non scendendo basso.
-- Quota di lavoro sopra il Libano (finche' gli SA-5 ci sono): 10.000-15.000 ft, sopra cannoni e
-  spalleggiabili e sotto l'SA-5.
+- Quota di lavoro sopra il Libano: 10.000-15.000 ft, sopra cannoni e spalleggiabili; piu' basso solo
+  dove la portata degli SA-2 della fascia arriva.
 - **Ricognizione**: voli F-14 con pod TARPS (VF-84) sopra il fronte per ritrovare i SAM mobili.
 - **Sopprimere durante i pacchetti, distruggere dopo**: le batterie localizzate si distruggono anche
   a radar spento (F-4E con Maverick/CBU-87, F/A-18 con Rockeye). Una batteria distrutta vale piu'
@@ -56,7 +55,7 @@ spiegando nel diario perche'.
 - HARM limitati: lanciati dove c'e' un bersaglio probabile.
 
 ## 4. Strategia d'attacco
-- Fasi: difesa della flotta e Tartus -> accecare la rete -> SA-5 -> SAM del fronte -> interdizione e
+- Fasi: difesa della flotta e Tartus -> accecare la rete -> SA-2 della fascia vicina -> SAM del fronte -> interdizione e
   appoggio all'avanzata.
 - **Pacchetti coordinati, mai voli isolati**: esche (TALD), SEAD 2-4 minuti prima dello strike, scorta,
   strike con un solo passaggio. Se il pacchetto perde la SEAD o la scorta, lo strike rientra.

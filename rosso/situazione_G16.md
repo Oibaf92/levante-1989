@@ -11,7 +11,7 @@
 **Flotta sovietica a Tartus**: Slava, 1 Krivak II, 1 Molniya, 1 Kilo (restano in porto oggi)
 
 **Difesa aerea**
-- Siti fissi operativi: SA-5 Dumayr (N33.73 E36.76), SA-5 Homs (N34.64 E36.63);
+- Siti fissi operativi: SA-2 Dumayr, SA-2 Al Qusayr, SA-2 Baalbek (Bekaa), SA-2 Tartus;
   SA-2: Damasco sud, Homs, Hama, Aleppo; SA-3: Damasco est, Homs, Hama, Aleppo, Latakia.
 - Persi: SA-2 Damasco nord, SA-2 Latakia, SA-3 Damasco ovest, SA-3 Tartus.
 - Mobili disponibili: 6 batterie SA-6, 5 sezioni SA-8, artiglieria contraerea a volontà.

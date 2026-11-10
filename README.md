@@ -30,7 +30,7 @@ il giocatore vola a scelta con una delle due parti.
 | Aviazione siriana | ✈️ MiG-29A ×16, MiG-21bis ×24, MiG-23MLD ×24, MiG-25PD ×8, Su-22M4 ×16, Su-24 ×8, 🚁 Mi-24 ×12, 🚁 Mi-8 ×16 |
 | Contingente aereo sovietico | ✈️ MiG-29A ×12, ✈️ Su-25 ×12, Tu-22M3 ×8 (da est, fuori mappa), A-50 ×1 |
 | Flotta sovietica a Tartus | 1 Slava, 2 Krivak II, 1 Molniya, 1 sottomarino Kilo |
-| Difesa aerea integrata | SA-5 ×2, SA-2 ×6, SA-3 ×6, SA-6 ×8, SA-8 ×6, SA-9/13, ZSU-23-4, radar di scoperta |
+| Difesa aerea integrata | SA-2 ×10, SA-3 ×6, SA-6 ×8, SA-8 ×6, SA-9/13, ZSU-23-4, radar di scoperta |
 | Forze di terra (Bekaa e Libano) | 2 divisioni corazzate (T-72, T-62, BMP), artiglieria, BM-21, brigata Scud-B |
 
 ✈️🚁 = postazioni pilotabili dal giocatore.
@@ -45,7 +45,10 @@ il giocatore vola a scelta con una delle due parti.
 - **Eccezioni accettate**: AH-64D e CH-47F (e il loro armamento), anche se successivi al 1989.
 - **Intensità**: conflitto di **media intensità**. Ogni parte ha un tetto di aerei in volo
   contemporaneamente (circa 14, AWACS e cisterne compresi) e di gruppi di terra; l'obiettivo di un
-  volo del giocatore non deve essere coperto da più di 3 batterie SAM nemiche (SA-5 escluso).
+  volo del giocatore non deve essere coperto da più di 3 batterie SAM nemiche.
+- **Niente SA-5** (scelta del giocatore): la difesa a lungo raggio è affidata a una rete più fitta di SA-2.
+- **Navi**: regole d'ingaggio difensive, rispondono solo se attaccate; gli attacchi alle navi si
+  ordinano come missioni ANTINAVE.
 - **Qualità dell'IA**: equipaggi *High* all'inizio; con le perdite il livello cala
   (logoramento oltre 20% → *Good*, oltre 40% → *Average*).
 
@@ -135,7 +138,7 @@ rosso/      🔒 riservato al comandante rosso — non aprire
 ## 🗺️ Mappa e intelligence di partenza
 - **Nessuna scritta sulla mappa**: ogni installazione è un simbolo (quadrato = base aerea,
   quadrato con croce = elicotteri, rombo = navale, pentagono = forze di terra; SAM: doppio
-  triangolo = SA-5, triangolo = SA-2, triangolo rovesciato = SA-3, esagono = SA-6, cerchio con
+  triangolo = SA-2, triangolo rovesciato = SA-3, esagono = SA-6, cerchio con
   croce = SA-8, triangolo con barra = Hawk; il colore indica la fazione). La legenda è disegnata
   in mare a sud di Cipro; nomi e velivoli sono sulla tavoletta INTEL
   (`script/tools/simboli.py`, `legenda.py`).

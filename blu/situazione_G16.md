@@ -24,7 +24,7 @@ a terra circa 6 carri M60, 8 LAV/AAV, 1 batteria Stinger.
 Base: carta intel di pace (strato blu della mappa, tavoletta INTEL), con questi aggiornamenti:
 - **Distrutti (BDA confermato)**: SA-2 Damasco nord (G4), SA-2 Latakia (G9),
   SA-3 Damasco ovest (G7), SA-3 Tartus (G12).
-- **Ancora attivi**: SA-5 Dumayr e SA-5 Homs (tirano su tutto il Libano sopra i 15.000 ft);
+- **Ancora attivi**: SA-2 a Dumayr, Al Qusayr, Baalbek (Bekaa) e Tartus (portata circa 40 km);
   SA-2/SA-3 attorno a Damasco, Homs, Hama, Aleppo; SA-3 Latakia.
 - **SA-6 mobili**: almeno 2 batterie nella Bekaa (zona Zahle–Chtaura), si spostano ogni
   1–2 giorni. Una batteria SA-6 segnalata il G13 vicino a Sofar (N33.79 E35.71), sul fronte.

@@ -119,6 +119,11 @@ MARGINE_SITI_KM = 40      # un sito fisso entra nella missione se un volo nemico
 # Il collo di bottiglia e' la simulazione (CPU), non la grafica: vedi docs/lezioni.md.
 BILANCIO = {'unita_totali': 300, 'unita_terra': 220, 'aerei_in_volo': 28, 'terra_vicino_giocatore': 120, 'navi': 12}
 
+# Regole d'ingaggio delle navi: rispondono solo se attaccate (decisione del giocatore dopo la prova G16:
+# la fregata della Tarawa aveva aperto da sola la guerra navale). Gli attacchi alle navi si ordinano
+# come missioni ANTINAVE. Opzione ROE navale: nome 0, valore 3 = RETURN_FIRE.
+ROE_NAVI_DIFENSIVE = {'id': 'WrappedAction', 'params': {'action': {'id': 'Option', 'params': {'name': 0, 'value': 3}}}}
+
 # posizione delle navi
 CVN_POS = (35.75, 33.95)     # a nord di Cipro, ~160 km dalla Siria; a ovest c'e' mare aperto per la tratta contro vento
 CVN_SCARTO = 9          # ponte angolato: il vento deve arrivare ~9 gradi a sinistra della prua
@@ -345,7 +350,7 @@ class Costruttore:
                             'skill': 'Excellent', 'modulation': 0, 'frequency': f}
         g = {'visible': False, 'tasks': {}, 'uncontrollable': False, 'groupId': self.cnt.g(), 'hidden': False,
              'name': 'CVN-71 Roosevelt', 'x': cx, 'y': cy, 'start_time': 0, 'units': unita,
-             'route': {'points': {1: wpt(cx, cy, 0, 20 * KT, compiti=compiti_combo([tacan, icls, link4, acls]), ETA_locked=True),
+             'route': {'points': {1: wpt(cx, cy, 0, 20 * KT, compiti=compiti_combo([ROE_NAVI_DIFENSIVE, tacan, icls, link4, acls]), ETA_locked=True),
                                   2: wpt(*fine, 0, 20 * KT)}}}
         self.navi_vento['CVN-71 Roosevelt'] = {'vento_ponte_kt': 28, 'min_kt': 12, 'max_kt': 30, 'scarto': CVN_SCARTO,
                                                'tratta_nm': 80, 'comandi': {k: c['params']['action'] for k, c in enumerate((tacan, icls, link4, acls), 1)}}
@@ -364,7 +369,7 @@ class Costruttore:
                             'heading': hl, 'skill': 'Excellent', 'modulation': 0, 'frequency': int(RADIO_BLU['lha'] * 1e6)},
                         2: {'type': 'PERRY', 'name': 'FFG-36 Underwood', 'unitId': lid[1], 'x': lx + 1500, 'y': ly - 1500,
                             'heading': hl, 'skill': 'Excellent', 'modulation': 0, 'frequency': 127500000}},
-              'route': {'points': {1: wpt(lx, ly, 0, 15 * KT, compiti=compiti_combo([tacan2]), ETA_locked=True),
+              'route': {'points': {1: wpt(lx, ly, 0, 15 * KT, compiti=compiti_combo([ROE_NAVI_DIFENSIVE, tacan2]), ETA_locked=True),
                                    2: wpt(*fl, 0, 15 * KT)}}}
         self.navi_vento['LHA-1 Tarawa'] = {'vento_ponte_kt': 25, 'min_kt': 8, 'max_kt': 20, 'scarto': 0,
                                            'tratta_nm': 50, 'comandi': {1: tacan2['params']['action']}}
@@ -383,7 +388,7 @@ class Costruttore:
                         'heading': math.radians(270), 'skill': self.abilita('red'), 'modulation': 0, 'frequency': 127500000}
         g = {'visible': False, 'tasks': {}, 'uncontrollable': False, 'groupId': self.cnt.g(), 'hidden': False,
              'name': 'Squadra sovietica Tartus', 'x': tx, 'y': ty, 'start_time': 0, 'units': unita,
-             'route': {'points': {1: wpt(tx, ty, 0, 0, ETA_locked=True)}}}
+             'route': {'points': {1: wpt(tx, ty, 0, 0, compiti=compiti_combo([ROE_NAVI_DIFENSIVE]), ETA_locked=True)}}}
         self.aggiungi_gruppo('red', 'ship', RUSSIA, 'Russia', g)
 
     # ----------------------------------------------------------------- terra
@@ -963,7 +968,7 @@ class Costruttore:
 
     def verifica_intensita(self):
         """Conflitto di media intensita', missioni del giocatore sopravvivibili: avvisa se l'obiettivo
-        di un volo del giocatore e' coperto da troppe batterie SAM nemiche (SA-5 escluso: si
+        di un volo del giocatore e' coperto da troppe batterie SAM nemiche (gli SA-5 non ci sono piu'; si
         evita volando bassi). I voli SEAD sono esclusi: le batterie sono il loro bersaglio."""
         lato_g = 'blue'
         nemici = [(ll_to_xy(*p['lat_lon']), pz.SISTEMI[p['sistema']]['portata_km'] * 1000, p['nome'])

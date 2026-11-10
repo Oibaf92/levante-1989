@@ -43,8 +43,11 @@ BASI_ROSSE = [
 # siti SAM: (lat, lon, raggio km, tipo, nome)
 # SA-6 e SA-8 sono mobili: la posizione e' l'ultima osservata.
 SAM_ROSSI = [
-    (33.660, 36.820, 150, 'sa5', 'SA-5 Dumayr'),
-    (34.600, 36.740, 150, 'sa5', 'SA-5 Homs'),
+    # niente SA-5 (decisione del giocatore: troppo difficili da gestire); al loro posto piu' SA-2
+    (33.660, 36.820, 40, 'sa2', 'SA-2 Dumayr'),
+    (34.570, 36.600, 40, 'sa2', 'SA-2 Al Qusayr'),
+    (34.010, 36.210, 40, 'sa2', 'SA-2 Baalbek'),
+    (34.850, 35.950, 40, 'sa2', 'SA-2 Tartus'),
     (33.580, 36.250, 40, 'sa2', 'SA-2 Damasco nord'),
     (33.400, 36.400, 40, 'sa2', 'SA-2 Damasco sud'),
     (33.520, 36.380, 22, 'sa3', 'SA-3 Damasco est'),

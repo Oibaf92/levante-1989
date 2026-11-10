@@ -3,513 +3,6 @@
  "gruppi": [
   {
    "lato": "red",
-   "nome": "SA-5 Dumayr",
-   "sistema": "sa5",
-   "lua": {
-    "paese": 47,
-    "abilita": "High",
-    "attuale": 1,
-    "unita": {
-     "1": {
-      "tipo": "RPC_5N62V",
-      "avanti": 0.0,
-      "destra": 0.0,
-      "rotta": 0.0
-     },
-     "2": {
-      "tipo": "RLS_19J6",
-      "avanti": -300.0,
-      "destra": 0.0,
-      "rotta": 0.0
-     },
-     "3": {
-      "tipo": "P14_SR",
-      "avanti": -380.0,
-      "destra": 220.0,
-      "rotta": 0.0
-     },
-     "4": {
-      "tipo": "S-200_Launcher",
-      "avanti": 41.41104721640332,
-      "destra": -154.54813220625093,
-      "rotta": -75.0
-     },
-     "5": {
-      "tipo": "S-200_Launcher",
-      "avanti": 113.13708498984761,
-      "destra": -113.1370849898476,
-      "rotta": -45.0
-     },
-     "6": {
-      "tipo": "S-200_Launcher",
-      "avanti": 154.54813220625093,
-      "destra": -41.41104721640332,
-      "rotta": -15.0
-     },
-     "7": {
-      "tipo": "S-200_Launcher",
-      "avanti": 154.54813220625093,
-      "destra": 41.41104721640332,
-      "rotta": 15.0
-     },
-     "8": {
-      "tipo": "S-200_Launcher",
-      "avanti": 113.13708498984761,
-      "destra": 113.1370849898476,
-      "rotta": 45.0
-     },
-     "9": {
-      "tipo": "S-200_Launcher",
-      "avanti": 41.41104721640332,
-      "destra": 154.54813220625093,
-      "rotta": 75.0
-     }
-    },
-    "posizioni": {
-     "1": {
-      "x": -145646.40000000002,
-      "y": 75331.9,
-      "rotta": 255.0
-     },
-     "2": {
-      "x": -155646.40000000002,
-      "y": 86331.9,
-      "rotta": 255.0
-     },
-     "3": {
-      "x": -159646.40000000002,
-      "y": 77331.9,
-      "rotta": 255.0
-     },
-     "4": {
-      "x": -161646.40000000002,
-      "y": 88331.9,
-      "rotta": 255.0
-     }
-    }
-   },
-   "resoconto": {
-    "lato": "red",
-    "nome": "SA-5 Dumayr",
-    "sistema": "sa5",
-    "missione": "difesa",
-    "lat_lon": [
-     33.72773,
-     36.76074
-    ],
-    "dettagli": {
-     "visibilita": 0.97,
-     "rilievo_m": 46,
-     "dist_obiettivo_km": 9.3,
-     "pendenza": 4,
-     "strada_m": 1090,
-     "vegetazione": 0,
-     "quota": 863,
-     "candidati_validi": 183,
-     "scorrimento_m": 0,
-     "siti_scartati_vegetazione": 0,
-     "veicoli_spostati_alberi": [],
-     "vincoli_allentati": 0,
-     "raggio_usato_km": 12.0
-    }
-   },
-   "gruppo": {
-    "visible": false,
-    "lateActivation": false,
-    "tasks": {},
-    "uncontrollable": false,
-    "task": "Ground Nothing",
-    "taskSelected": true,
-    "hidden": false,
-    "groupId": 4,
-    "name": "SA-5 Dumayr",
-    "x": -145646.40000000002,
-    "y": 75331.9,
-    "start_time": 0,
-    "units": {
-     "1": {
-      "type": "RPC_5N62V",
-      "x": -145646.40000000002,
-      "y": 75331.9,
-      "name": "SA-5 Dumayr-1",
-      "heading": 4.4505895925855405,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 10
-     },
-     "2": {
-      "type": "RLS_19J6",
-      "x": -145568.75428646928,
-      "y": 75621.67774788672,
-      "name": "SA-5 Dumayr-2",
-      "heading": 4.4505895925855405,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 11
-     },
-     "3": {
-      "type": "P14_SR",
-      "x": -145335.54508107746,
-      "y": 75642.0116240673,
-      "name": "SA-5 Dumayr-3",
-      "heading": 4.4505895925855405,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 12
-     },
-     "4": {
-      "type": "S-200_Launcher",
-      "x": -145806.40000000002,
-      "y": 75331.9,
-      "name": "SA-5 Dumayr-4",
-      "heading": 3.141592653589793,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 13
-     },
-     "5": {
-      "type": "S-200_Launcher",
-      "x": -145784.96406460553,
-      "y": 75251.9,
-      "name": "SA-5 Dumayr-5",
-      "heading": 3.6651914291880923,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 14
-     },
-     "6": {
-      "type": "S-200_Launcher",
-      "x": -145726.40000000002,
-      "y": 75193.33593539448,
-      "name": "SA-5 Dumayr-6",
-      "heading": 4.1887902047863905,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 15
-     },
-     "7": {
-      "type": "S-200_Launcher",
-      "x": -145646.40000000002,
-      "y": 75171.9,
-      "name": "SA-5 Dumayr-7",
-      "heading": 4.71238898038469,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 16
-     },
-     "8": {
-      "type": "S-200_Launcher",
-      "x": -145566.40000000002,
-      "y": 75193.33593539448,
-      "name": "SA-5 Dumayr-8",
-      "heading": 5.235987755982989,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 17
-     },
-     "9": {
-      "type": "S-200_Launcher",
-      "x": -145507.8359353945,
-      "y": 75251.9,
-      "name": "SA-5 Dumayr-9",
-      "heading": 5.759586531581287,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 18
-     }
-    },
-    "route": {
-     "spans": {},
-     "points": {
-      "1": {
-       "alt": 863.0,
-       "type": "Turning Point",
-       "ETA": 0,
-       "alt_type": "BARO",
-       "formation_template": "",
-       "x": -145646.40000000002,
-       "y": 75331.9,
-       "ETA_locked": true,
-       "speed": 0,
-       "action": "Off Road",
-       "speed_locked": true,
-       "task": {
-        "id": "ComboTask",
-        "params": {
-         "tasks": {}
-        }
-       }
-      }
-     }
-    }
-   }
-  },
-  {
-   "lato": "red",
-   "nome": "SA-5 Homs",
-   "sistema": "sa5",
-   "lua": {
-    "paese": 47,
-    "abilita": "High",
-    "attuale": 1,
-    "unita": {
-     "1": {
-      "tipo": "RPC_5N62V",
-      "avanti": 0.0,
-      "destra": 0.0,
-      "rotta": 0.0
-     },
-     "2": {
-      "tipo": "RLS_19J6",
-      "avanti": -300.0,
-      "destra": 0.0,
-      "rotta": 0.0
-     },
-     "3": {
-      "tipo": "P14_SR",
-      "avanti": -380.0,
-      "destra": 220.0,
-      "rotta": 0.0
-     },
-     "4": {
-      "tipo": "S-200_Launcher",
-      "avanti": 41.41104721640332,
-      "destra": -154.54813220625093,
-      "rotta": -75.0
-     },
-     "5": {
-      "tipo": "S-200_Launcher",
-      "avanti": 113.13708498984761,
-      "destra": -113.1370849898476,
-      "rotta": -45.0
-     },
-     "6": {
-      "tipo": "S-200_Launcher",
-      "avanti": 154.54813220625093,
-      "destra": -41.41104721640332,
-      "rotta": -15.0
-     },
-     "7": {
-      "tipo": "S-200_Launcher",
-      "avanti": 154.54813220625093,
-      "destra": 41.41104721640332,
-      "rotta": 15.0
-     },
-     "8": {
-      "tipo": "S-200_Launcher",
-      "avanti": 113.13708498984761,
-      "destra": 113.1370849898476,
-      "rotta": 45.0
-     },
-     "9": {
-      "tipo": "S-200_Launcher",
-      "avanti": 41.41104721640332,
-      "destra": 154.54813220625093,
-      "rotta": 75.0
-     }
-    },
-    "posizioni": {
-     "1": {
-      "x": -44717.110678118675,
-      "y": 65402.610678118646,
-      "rotta": 255.0
-     },
-     "2": {
-      "x": -51646.40000000002,
-      "y": 74331.9,
-      "rotta": 255.0
-     },
-     "3": {
-      "x": -54046.40000000002,
-      "y": 86331.9,
-      "rotta": 255.0
-     },
-     "4": {
-      "x": -45646.40000000002,
-      "y": 85331.9,
-      "rotta": 255.0
-     }
-    }
-   },
-   "resoconto": {
-    "lato": "red",
-    "nome": "SA-5 Homs",
-    "sistema": "sa5",
-    "missione": "difesa",
-    "lat_lon": [
-     34.63521,
-     36.62832
-    ],
-    "dettagli": {
-     "visibilita": 0.99,
-     "rilievo_m": 38,
-     "dist_obiettivo_km": 11.1,
-     "pendenza": 1,
-     "strada_m": 190,
-     "vegetazione": 2,
-     "quota": 509,
-     "candidati_validi": 90,
-     "scorrimento_m": 100,
-     "siti_scartati_vegetazione": 0,
-     "veicoli_spostati_alberi": [
-      [
-       "RPC_5N62V",
-       25
-      ],
-      [
-       "P14_SR",
-       30
-      ],
-      [
-       "S-200_Launcher",
-       10
-      ],
-      [
-       "S-200_Launcher",
-       15
-      ],
-      [
-       "S-200_Launcher",
-       40
-      ]
-     ],
-     "vincoli_allentati": 0,
-     "raggio_usato_km": 12.0
-    }
-   },
-   "gruppo": {
-    "visible": false,
-    "lateActivation": false,
-    "tasks": {},
-    "uncontrollable": false,
-    "task": "Ground Nothing",
-    "taskSelected": true,
-    "hidden": false,
-    "groupId": 5,
-    "name": "SA-5 Homs",
-    "x": -44717.110678118675,
-    "y": 65402.610678118646,
-    "start_time": 0,
-    "units": {
-     "1": {
-      "type": "RPC_5N62V",
-      "x": -44732.41332768237,
-      "y": 65382.841284695205,
-      "name": "SA-5 Homs-1",
-      "heading": 4.4505895925855405,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 19
-     },
-     "2": {
-      "type": "RLS_19J6",
-      "x": -44639.46496458792,
-      "y": 65692.38842600536,
-      "name": "SA-5 Homs-2",
-      "heading": 4.4505895925855405,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 20
-     },
-     "3": {
-      "type": "P14_SR",
-      "x": -44380.065335801286,
-      "y": 65727.35315050035,
-      "name": "SA-5 Homs-3",
-      "heading": 4.4505895925855405,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 21
-     },
-     "4": {
-      "type": "S-200_Launcher",
-      "x": -44877.110678118675,
-      "y": 65392.610678118646,
-      "name": "SA-5 Homs-4",
-      "heading": 3.141592653589793,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 22
-     },
-     "5": {
-      "type": "S-200_Launcher",
-      "x": -44855.674742724186,
-      "y": 65322.610678118646,
-      "name": "SA-5 Homs-5",
-      "heading": 3.6651914291880923,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 23
-     },
-     "6": {
-      "type": "S-200_Launcher",
-      "x": -44811.20606743047,
-      "y": 65269.17691566302,
-      "name": "SA-5 Homs-6",
-      "heading": 4.1887902047863905,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 24
-     },
-     "7": {
-      "type": "S-200_Launcher",
-      "x": -44742.60763770862,
-      "y": 65211.790148407614,
-      "name": "SA-5 Homs-7",
-      "heading": 4.71238898038469,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 25
-     },
-     "8": {
-      "type": "S-200_Launcher",
-      "x": -44637.110678118675,
-      "y": 65264.046613513136,
-      "name": "SA-5 Homs-8",
-      "heading": 5.235987755982989,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 26
-     },
-     "9": {
-      "type": "S-200_Launcher",
-      "x": -44578.546613513165,
-      "y": 65322.610678118646,
-      "name": "SA-5 Homs-9",
-      "heading": 5.759586531581287,
-      "skill": "High",
-      "playerCanDrive": false,
-      "unitId": 27
-     }
-    },
-    "route": {
-     "spans": {},
-     "points": {
-      "1": {
-       "alt": 510.11137084989883,
-       "type": "Turning Point",
-       "ETA": 0,
-       "alt_type": "BARO",
-       "formation_template": "",
-       "x": -44717.110678118675,
-       "y": 65402.610678118646,
-       "ETA_locked": true,
-       "speed": 0,
-       "action": "Off Road",
-       "speed_locked": true,
-       "task": {
-        "id": "ComboTask",
-        "params": {
-         "tasks": {}
-        }
-       }
-      }
-     }
-    }
-   }
-  },
-  {
-   "lato": "red",
    "nome": "EWR Antilibano",
    "sistema": "ewr",
    "lua": {
@@ -580,7 +73,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 6,
+    "groupId": 4,
     "name": "EWR Antilibano",
     "x": -147646.40000000002,
     "y": 17331.899999999994,
@@ -594,7 +87,7 @@
       "heading": 5.061454830783556,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 28
+      "unitId": 10
      }
     },
     "route": {
@@ -695,7 +188,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 7,
+    "groupId": 5,
     "name": "EWR Costa",
     "x": -4646.400000000023,
     "y": 10431.899999999994,
@@ -709,7 +202,7 @@
       "heading": 4.625122517784973,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 29
+      "unitId": 11
      }
     },
     "route": {
@@ -723,6 +216,249 @@
        "formation_template": "",
        "x": -4646.400000000023,
        "y": 10431.899999999994,
+       "ETA_locked": true,
+       "speed": 0,
+       "action": "Off Road",
+       "speed_locked": true,
+       "task": {
+        "id": "ComboTask",
+        "params": {
+         "tasks": {}
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "lato": "red",
+   "nome": "SA-2 Baalbek",
+   "sistema": "sa2",
+   "lua": {
+    "paese": 47,
+    "abilita": "High",
+    "attuale": 1,
+    "unita": {
+     "1": {
+      "tipo": "SNR_75V",
+      "avanti": 0.0,
+      "destra": 0.0,
+      "rotta": 0.0
+     },
+     "2": {
+      "tipo": "p-19 s-125 sr",
+      "avanti": -160.0,
+      "destra": 20.0,
+      "rotta": 0.0
+     },
+     "3": {
+      "tipo": "S_75_ZIL",
+      "avanti": -220.0,
+      "destra": -60.0,
+      "rotta": 90.0
+     },
+     "4": {
+      "tipo": "S_75M_Volhov",
+      "avanti": 73.6121593216773,
+      "destra": 42.49999999999999,
+      "rotta": 29.999999999999996
+     },
+     "5": {
+      "tipo": "S_75M_Volhov",
+      "avanti": 5.204748896376251e-15,
+      "destra": 85.0,
+      "rotta": 90.0
+     },
+     "6": {
+      "tipo": "S_75M_Volhov",
+      "avanti": -73.6121593216773,
+      "destra": 42.49999999999999,
+      "rotta": 150.0
+     },
+     "7": {
+      "tipo": "S_75M_Volhov",
+      "avanti": -73.61215932167728,
+      "destra": -42.50000000000001,
+      "rotta": 210.00000000000003
+     },
+     "8": {
+      "tipo": "S_75M_Volhov",
+      "avanti": -1.5614246689128753e-14,
+      "destra": -85.0,
+      "rotta": 270.0
+     },
+     "9": {
+      "tipo": "S_75M_Volhov",
+      "avanti": 73.61215932167727,
+      "destra": -42.500000000000036,
+      "rotta": 330.0
+     }
+    },
+    "posizioni": {
+     "1": {
+      "x": -111646.40000000002,
+      "y": 28331.899999999994,
+      "rotta": 255.0
+     },
+     "2": {
+      "x": -108646.40000000002,
+      "y": 24331.899999999994,
+      "rotta": 255.0
+     },
+     "3": {
+      "x": -109646.40000000002,
+      "y": 20331.899999999994,
+      "rotta": 255.0
+     },
+     "4": {
+      "x": -118646.40000000002,
+      "y": 23331.899999999994,
+      "rotta": 255.0
+     }
+    }
+   },
+   "resoconto": {
+    "lato": "red",
+    "nome": "SA-2 Baalbek",
+    "sistema": "sa2",
+    "missione": "difesa",
+    "lat_lon": [
+     34.02379,
+     36.24408
+    ],
+    "dettagli": {
+     "visibilita": 0.88,
+     "rilievo_m": 2,
+     "dist_obiettivo_km": 3.5,
+     "pendenza": 5,
+     "strada_m": 50,
+     "vegetazione": 4,
+     "quota": 1318,
+     "candidati_validi": 12,
+     "scorrimento_m": 0,
+     "siti_scartati_vegetazione": 0,
+     "veicoli_spostati_alberi": [],
+     "vincoli_allentati": 0,
+     "raggio_usato_km": 6.0
+    }
+   },
+   "gruppo": {
+    "visible": false,
+    "lateActivation": false,
+    "tasks": {},
+    "uncontrollable": false,
+    "task": "Ground Nothing",
+    "taskSelected": true,
+    "hidden": false,
+    "groupId": 6,
+    "name": "SA-2 Baalbek",
+    "x": -111646.40000000002,
+    "y": 28331.899999999994,
+    "start_time": 0,
+    "units": {
+     "1": {
+      "type": "SNR_75V",
+      "x": -111646.40000000002,
+      "y": 28331.899999999994,
+      "name": "SA-2 Baalbek-1",
+      "heading": 4.4505895925855405,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 12
+     },
+     "2": {
+      "type": "p-19 s-125 sr",
+      "x": -111585.67043625785,
+      "y": 28481.271751304193,
+      "name": "SA-2 Baalbek-2",
+      "heading": 4.4505895925855405,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 13
+     },
+     "3": {
+      "type": "S_75_ZIL",
+      "x": -111647.41535965481,
+      "y": 28559.93282448974,
+      "name": "SA-2 Baalbek-3",
+      "heading": 6.021385919380437,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 14
+     },
+     "4": {
+      "type": "S_75M_Volhov",
+      "x": -111624.40038116631,
+      "y": 28249.796304765423,
+      "name": "SA-2 Baalbek-4",
+      "heading": 4.974188368183839,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 15
+     },
+     "5": {
+      "type": "S_75M_Volhov",
+      "x": -111564.29630476545,
+      "y": 28309.90038116628,
+      "name": "SA-2 Baalbek-5",
+      "heading": 6.021385919380437,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 16
+     },
+     "6": {
+      "type": "S_75M_Volhov",
+      "x": -111586.29592359916,
+      "y": 28392.004076400848,
+      "name": "SA-2 Baalbek-6",
+      "heading": 0.7853981633974483,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 17
+     },
+     "7": {
+      "type": "S_75M_Volhov",
+      "x": -111668.39961883373,
+      "y": 28414.003695234565,
+      "name": "SA-2 Baalbek-7",
+      "heading": 1.8325957145940461,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 18
+     },
+     "8": {
+      "type": "S_75M_Volhov",
+      "x": -111728.5036952346,
+      "y": 28353.899618833708,
+      "name": "SA-2 Baalbek-8",
+      "heading": 2.8797932657906435,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 19
+     },
+     "9": {
+      "type": "S_75M_Volhov",
+      "x": -111706.50407640089,
+      "y": 28271.79592359914,
+      "name": "SA-2 Baalbek-9",
+      "heading": 3.9269908169872414,
+      "skill": "High",
+      "playerCanDrive": false,
+      "unitId": 20
+     }
+    },
+    "route": {
+     "spans": {},
+     "points": {
+      "1": {
+       "alt": 1318.0,
+       "type": "Turning Point",
+       "ETA": 0,
+       "alt_type": "BARO",
+       "formation_template": "",
+       "x": -111646.40000000002,
+       "y": 28331.899999999994,
        "ETA_locked": true,
        "speed": 0,
        "action": "Off Road",
@@ -858,7 +594,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 8,
+    "groupId": 7,
     "name": "SA-2 Damasco sud",
     "x": -178575.68932188136,
     "y": 45402.610678118646,
@@ -872,7 +608,7 @@
       "heading": 4.4505895925855405,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 30
+      "unitId": 21
      },
      "2": {
       "type": "p-19 s-125 sr",
@@ -882,7 +618,7 @@
       "heading": 4.4505895925855405,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 31
+      "unitId": 22
      },
      "3": {
       "type": "S_75_ZIL",
@@ -892,7 +628,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 32
+      "unitId": 23
      },
      "4": {
       "type": "S_75M_Volhov",
@@ -902,7 +638,7 @@
       "heading": 4.974188368183839,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 33
+      "unitId": 24
      },
      "5": {
       "type": "S_75M_Volhov",
@@ -912,7 +648,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 34
+      "unitId": 25
      },
      "6": {
       "type": "S_75M_Volhov",
@@ -922,7 +658,7 @@
       "heading": 0.7853981633974483,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 35
+      "unitId": 26
      },
      "7": {
       "type": "S_75M_Volhov",
@@ -932,7 +668,7 @@
       "heading": 1.8325957145940461,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 36
+      "unitId": 27
      },
      "8": {
       "type": "S_75M_Volhov",
@@ -942,7 +678,7 @@
       "heading": 2.8797932657906435,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 37
+      "unitId": 28
      },
      "9": {
       "type": "S_75M_Volhov",
@@ -952,7 +688,7 @@
       "heading": 3.9269908169872414,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 38
+      "unitId": 29
      }
     },
     "route": {
@@ -1068,7 +804,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 9,
+    "groupId": 8,
     "name": "Hawk Ajaltoun",
     "x": -117504.97864376272,
     "y": -29526.678643762698,
@@ -1082,7 +818,7 @@
       "heading": 2.530727415391778,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 39
+      "unitId": 30
      },
      "2": {
       "type": "Hawk sr",
@@ -1092,7 +828,7 @@
       "heading": 2.530727415391778,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 40
+      "unitId": 31
      },
      "3": {
       "type": "Hawk tr",
@@ -1102,7 +838,7 @@
       "heading": 2.530727415391778,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 41
+      "unitId": 32
      },
      "4": {
       "type": "Hawk ln",
@@ -1112,7 +848,7 @@
       "heading": 2.530727415391778,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 42
+      "unitId": 33
      },
      "5": {
       "type": "Hawk ln",
@@ -1122,7 +858,7 @@
       "heading": 2.530727415391778,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 43
+      "unitId": 34
      },
      "6": {
       "type": "Hawk ln",
@@ -1132,7 +868,7 @@
       "heading": 2.530727415391778,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 44
+      "unitId": 35
      }
     },
     "route": {
@@ -1247,7 +983,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 10,
+    "groupId": 9,
     "name": "SA-6 Chouf",
     "x": -149446.40000000002,
     "y": -36668.100000000006,
@@ -1261,7 +997,7 @@
       "heading": 5.759586531581287,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 45
+      "unitId": 36
      },
      "2": {
       "type": "Kub 2P25 ln",
@@ -1271,7 +1007,7 @@
       "heading": 5.759586531581287,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 46
+      "unitId": 37
      },
      "3": {
       "type": "Kub 2P25 ln",
@@ -1281,7 +1017,7 @@
       "heading": 5.759586531581287,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 47
+      "unitId": 38
      },
      "4": {
       "type": "Kub 2P25 ln",
@@ -1291,7 +1027,7 @@
       "heading": 5.759586531581287,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 48
+      "unitId": 39
      },
      "5": {
       "type": "Kub 2P25 ln",
@@ -1301,7 +1037,7 @@
       "heading": 5.759586531581287,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 49
+      "unitId": 40
      }
     },
     "route": {
@@ -1426,7 +1162,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 11,
+    "groupId": 10,
     "name": "SA-6 Passo",
     "x": -141434.26796564405,
     "y": -3455.9679656440417,
@@ -1440,7 +1176,7 @@
       "heading": 5.497787143782138,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 50
+      "unitId": 41
      },
      "2": {
       "type": "Kub 2P25 ln",
@@ -1450,7 +1186,7 @@
       "heading": 5.497787143782138,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 51
+      "unitId": 42
      },
      "3": {
       "type": "Kub 2P25 ln",
@@ -1460,7 +1196,7 @@
       "heading": 5.497787143782138,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 52
+      "unitId": 43
      },
      "4": {
       "type": "Kub 2P25 ln",
@@ -1470,7 +1206,7 @@
       "heading": 5.497787143782138,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 53
+      "unitId": 44
      },
      "5": {
       "type": "Kub 2P25 ln",
@@ -1480,7 +1216,7 @@
       "heading": 5.497787143782138,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 54
+      "unitId": 45
      }
     },
     "route": {
@@ -1605,7 +1341,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 12,
+    "groupId": 11,
     "name": "SA-6 Zahle",
     "x": -119646.40000000002,
     "y": 3331.899999999994,
@@ -1619,7 +1355,7 @@
       "heading": 5.410520681182422,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 55
+      "unitId": 46
      },
      "2": {
       "type": "Kub 2P25 ln",
@@ -1629,7 +1365,7 @@
       "heading": 5.410520681182422,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 56
+      "unitId": 47
      },
      "3": {
       "type": "Kub 2P25 ln",
@@ -1639,7 +1375,7 @@
       "heading": 5.410520681182422,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 57
+      "unitId": 48
      },
      "4": {
       "type": "Kub 2P25 ln",
@@ -1649,7 +1385,7 @@
       "heading": 5.410520681182422,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 58
+      "unitId": 49
      },
      "5": {
       "type": "Kub 2P25 ln",
@@ -1659,7 +1395,7 @@
       "heading": 5.410520681182422,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 59
+      "unitId": 50
      }
     },
     "route": {
@@ -1784,7 +1520,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 13,
+    "groupId": 12,
     "name": "SA-6 Bekaa Nord",
     "x": -109646.40000000002,
     "y": 15931.899999999994,
@@ -1798,7 +1534,7 @@
       "heading": 4.974188368183839,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 60
+      "unitId": 51
      },
      "2": {
       "type": "Kub 2P25 ln",
@@ -1808,7 +1544,7 @@
       "heading": 4.974188368183839,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 61
+      "unitId": 52
      },
      "3": {
       "type": "Kub 2P25 ln",
@@ -1818,7 +1554,7 @@
       "heading": 4.974188368183839,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 62
+      "unitId": 53
      },
      "4": {
       "type": "Kub 2P25 ln",
@@ -1828,7 +1564,7 @@
       "heading": 4.974188368183839,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 63
+      "unitId": 54
      },
      "5": {
       "type": "Kub 2P25 ln",
@@ -1838,7 +1574,7 @@
       "heading": 4.974188368183839,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 64
+      "unitId": 55
      }
     },
     "route": {
@@ -1963,7 +1699,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 14,
+    "groupId": 13,
     "name": "SA-6 Riserva",
     "x": -151246.40000000002,
     "y": -14668.100000000006,
@@ -1977,7 +1713,7 @@
       "heading": 4.886921905584122,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 65
+      "unitId": 56
      },
      "2": {
       "type": "Kub 2P25 ln",
@@ -1987,7 +1723,7 @@
       "heading": 4.886921905584122,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 66
+      "unitId": 57
      },
      "3": {
       "type": "Kub 2P25 ln",
@@ -1997,7 +1733,7 @@
       "heading": 4.886921905584122,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 67
+      "unitId": 58
      },
      "4": {
       "type": "Kub 2P25 ln",
@@ -2007,7 +1743,7 @@
       "heading": 4.886921905584122,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 68
+      "unitId": 59
      },
      "5": {
       "type": "Kub 2P25 ln",
@@ -2017,7 +1753,7 @@
       "heading": 4.886921905584122,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 69
+      "unitId": 60
      }
     },
     "route": {
@@ -2109,7 +1845,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 15,
+    "groupId": 14,
     "name": "SA-8 Aley",
     "x": -146646.40000000002,
     "y": -32668.100000000006,
@@ -2123,7 +1859,7 @@
       "heading": 5.759586531581287,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 70
+      "unitId": 61
      },
      "2": {
       "type": "Osa 9A33 ln",
@@ -2133,7 +1869,7 @@
       "heading": 5.759586531581287,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 71
+      "unitId": 62
      }
     },
     "route": {
@@ -2225,7 +1961,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 16,
+    "groupId": 15,
     "name": "SA-8 Sofar",
     "x": -133717.11067811868,
     "y": -16597.38932188135,
@@ -2239,7 +1975,7 @@
       "heading": 5.846852994181004,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 72
+      "unitId": 63
      },
      "2": {
       "type": "Osa 9A33 ln",
@@ -2249,7 +1985,7 @@
       "heading": 5.846852994181004,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 73
+      "unitId": 64
      }
     },
     "route": {
@@ -2356,7 +2092,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 17,
+    "groupId": 16,
     "name": "SA-8 Faraya",
     "x": -107646.40000000002,
     "y": 3331.899999999994,
@@ -2370,7 +2106,7 @@
       "heading": 4.974188368183839,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 74
+      "unitId": 65
      },
      "2": {
       "type": "Osa 9A33 ln",
@@ -2380,7 +2116,7 @@
       "heading": 4.974188368183839,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 75
+      "unitId": 66
      }
     },
     "route": {
@@ -2506,7 +2242,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 18,
+    "groupId": 17,
     "name": "Batteria M109",
     "x": -126646.40000000002,
     "y": -30768.100000000006,
@@ -2520,7 +2256,7 @@
       "heading": 3.2288591161895095,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 76
+      "unitId": 67
      },
      "2": {
       "type": "M-109",
@@ -2530,7 +2266,7 @@
       "heading": 3.2288591161895095,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 77
+      "unitId": 68
      },
      "3": {
       "type": "M-109",
@@ -2540,7 +2276,7 @@
       "heading": 3.2288591161895095,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 78
+      "unitId": 69
      },
      "4": {
       "type": "M-109",
@@ -2550,7 +2286,7 @@
       "heading": 3.2288591161895095,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 79
+      "unitId": 70
      },
      "5": {
       "type": "M 818",
@@ -2560,7 +2296,7 @@
       "heading": 3.2288591161895095,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 80
+      "unitId": 71
      },
      "6": {
       "type": "M 818",
@@ -2570,7 +2306,7 @@
       "heading": 3.2288591161895095,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 81
+      "unitId": 72
      }
     },
     "route": {
@@ -2703,7 +2439,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 19,
+    "groupId": 18,
     "name": "Artiglieria Aley",
     "x": -136646.40000000002,
     "y": -35668.100000000006,
@@ -2717,7 +2453,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 82
+      "unitId": 73
      },
      "2": {
       "type": "SAU Gvozdika",
@@ -2727,7 +2463,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 83
+      "unitId": 74
      },
      "3": {
       "type": "SAU Gvozdika",
@@ -2737,7 +2473,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 84
+      "unitId": 75
      },
      "4": {
       "type": "SAU Gvozdika",
@@ -2747,7 +2483,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 85
+      "unitId": 76
      },
      "5": {
       "type": "Ural-375",
@@ -2757,7 +2493,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 86
+      "unitId": 77
      },
      "6": {
       "type": "Ural-375",
@@ -2767,7 +2503,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 87
+      "unitId": 78
      }
     },
     "route": {
@@ -2905,7 +2641,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 20,
+    "groupId": 19,
     "name": "Artiglieria Chouf",
     "x": -145446.40000000002,
     "y": -25668.100000000006,
@@ -2919,7 +2655,7 @@
       "heading": 6.19591884457987,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 88
+      "unitId": 79
      },
      "2": {
       "type": "SAU Gvozdika",
@@ -2929,7 +2665,7 @@
       "heading": 6.19591884457987,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 89
+      "unitId": 80
      },
      "3": {
       "type": "SAU Gvozdika",
@@ -2939,7 +2675,7 @@
       "heading": 6.19591884457987,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 90
+      "unitId": 81
      },
      "4": {
       "type": "SAU Gvozdika",
@@ -2949,7 +2685,7 @@
       "heading": 6.19591884457987,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 91
+      "unitId": 82
      },
      "5": {
       "type": "Ural-375",
@@ -2959,7 +2695,7 @@
       "heading": 6.19591884457987,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 92
+      "unitId": 83
      },
      "6": {
       "type": "Ural-375",
@@ -2969,7 +2705,7 @@
       "heading": 6.19591884457987,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 93
+      "unitId": 84
      }
     },
     "route": {
@@ -3117,7 +2853,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 21,
+    "groupId": 20,
     "name": "Artiglieria Passo",
     "x": -139363.55728752541,
     "y": -10950.942712474625,
@@ -3131,7 +2867,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 94
+      "unitId": 85
      },
      "2": {
       "type": "SAU Gvozdika",
@@ -3141,7 +2877,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 95
+      "unitId": 86
      },
      "3": {
       "type": "SAU Gvozdika",
@@ -3151,7 +2887,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 96
+      "unitId": 87
      },
      "4": {
       "type": "SAU Gvozdika",
@@ -3161,7 +2897,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 97
+      "unitId": 88
      },
      "5": {
       "type": "Ural-375",
@@ -3171,7 +2907,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 98
+      "unitId": 89
      },
      "6": {
       "type": "Ural-375",
@@ -3181,7 +2917,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 99
+      "unitId": 90
      }
     },
     "route": {
@@ -3313,7 +3049,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 22,
+    "groupId": 21,
     "name": "Grad Sofar",
     "x": -142434.26796564405,
     "y": -14455.967965644042,
@@ -3327,7 +3063,7 @@
       "heading": 5.410520681182422,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 100
+      "unitId": 91
      },
      "2": {
       "type": "Grad-URAL",
@@ -3337,7 +3073,7 @@
       "heading": 5.410520681182422,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 101
+      "unitId": 92
      },
      "3": {
       "type": "Grad-URAL",
@@ -3347,7 +3083,7 @@
       "heading": 5.410520681182422,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 102
+      "unitId": 93
      },
      "4": {
       "type": "Grad-URAL",
@@ -3357,7 +3093,7 @@
       "heading": 5.410520681182422,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 103
+      "unitId": 94
      },
      "5": {
       "type": "Ural-375",
@@ -3367,7 +3103,7 @@
       "heading": 5.410520681182422,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 104
+      "unitId": 95
      }
     },
     "route": {
@@ -3509,7 +3245,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 23,
+    "groupId": 22,
     "name": "Grad Faraya",
     "x": -111646.40000000002,
     "y": 1331.8999999999942,
@@ -3523,7 +3259,7 @@
       "heading": 4.799655442984406,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 105
+      "unitId": 96
      },
      "2": {
       "type": "Grad-URAL",
@@ -3533,7 +3269,7 @@
       "heading": 4.799655442984406,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 106
+      "unitId": 97
      },
      "3": {
       "type": "Grad-URAL",
@@ -3543,7 +3279,7 @@
       "heading": 4.799655442984406,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 107
+      "unitId": 98
      },
      "4": {
       "type": "Grad-URAL",
@@ -3553,7 +3289,7 @@
       "heading": 4.799655442984406,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 108
+      "unitId": 99
      },
      "5": {
       "type": "Ural-375",
@@ -3563,7 +3299,7 @@
       "heading": 4.799655442984406,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 109
+      "unitId": 100
      }
     },
     "route": {
@@ -3696,7 +3432,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 24,
+    "groupId": 23,
     "name": "Riserva Carri",
     "x": -121646.40000000002,
     "y": -27668.100000000006,
@@ -3710,7 +3446,7 @@
       "heading": 3.4033920413889427,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 110
+      "unitId": 101
      },
      "2": {
       "type": "M-60",
@@ -3720,7 +3456,7 @@
       "heading": 3.4033920413889427,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 111
+      "unitId": 102
      },
      "3": {
       "type": "M-60",
@@ -3730,7 +3466,7 @@
       "heading": 3.4033920413889427,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 112
+      "unitId": 103
      },
      "4": {
       "type": "M-60",
@@ -3740,7 +3476,7 @@
       "heading": 3.4033920413889427,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 113
+      "unitId": 104
      },
      "5": {
       "type": "M-113",
@@ -3750,7 +3486,7 @@
       "heading": 3.4033920413889427,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 114
+      "unitId": 105
      },
      "6": {
       "type": "M-113",
@@ -3760,7 +3496,7 @@
       "heading": 3.4033920413889427,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 115
+      "unitId": 106
      }
     },
     "route": {
@@ -3905,7 +3641,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 25,
+    "groupId": 24,
     "name": "Marines Mtein",
     "x": -123575.68932188136,
     "y": -16738.81067811866,
@@ -3919,7 +3655,7 @@
       "heading": 3.141592653589793,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 116
+      "unitId": 107
      },
      "2": {
       "type": "LAV-25",
@@ -3929,7 +3665,7 @@
       "heading": 3.141592653589793,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 117
+      "unitId": 108
      },
      "3": {
       "type": "LAV-25",
@@ -3939,7 +3675,7 @@
       "heading": 3.141592653589793,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 118
+      "unitId": 109
      },
      "4": {
       "type": "AAV7",
@@ -3949,7 +3685,7 @@
       "heading": 3.141592653589793,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 119
+      "unitId": 110
      },
      "5": {
       "type": "AAV7",
@@ -3959,7 +3695,7 @@
       "heading": 3.141592653589793,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 120
+      "unitId": 111
      },
      "6": {
       "type": "AAV7",
@@ -3969,7 +3705,7 @@
       "heading": 3.141592653589793,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 121
+      "unitId": 112
      },
      "7": {
       "type": "Soldier M4",
@@ -3979,7 +3715,7 @@
       "heading": 3.141592653589793,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 122
+      "unitId": 113
      },
      "8": {
       "type": "Soldier M4",
@@ -3989,7 +3725,7 @@
       "heading": 3.141592653589793,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 123
+      "unitId": 114
      },
      "9": {
       "type": "Soldier M4",
@@ -3999,7 +3735,7 @@
       "heading": 3.141592653589793,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 124
+      "unitId": 115
      },
      "10": {
       "type": "Soldier M4",
@@ -4009,7 +3745,7 @@
       "heading": 3.141592653589793,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 125
+      "unitId": 116
      }
     },
     "route": {
@@ -4125,7 +3861,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 26,
+    "groupId": 25,
     "name": "Carri Bhamdoun",
     "x": -133646.40000000002,
     "y": -27268.100000000006,
@@ -4139,7 +3875,7 @@
       "heading": 3.9269908169872414,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 126
+      "unitId": 117
      },
      "2": {
       "type": "M-60",
@@ -4149,7 +3885,7 @@
       "heading": 3.9269908169872414,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 127
+      "unitId": 118
      },
      "3": {
       "type": "M-60",
@@ -4159,7 +3895,7 @@
       "heading": 3.9269908169872414,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 128
+      "unitId": 119
      },
      "4": {
       "type": "M-60",
@@ -4169,7 +3905,7 @@
       "heading": 3.9269908169872414,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 129
+      "unitId": 120
      },
      "5": {
       "type": "M-113",
@@ -4179,7 +3915,7 @@
       "heading": 3.9269908169872414,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 130
+      "unitId": 121
      },
      "6": {
       "type": "M-113",
@@ -4189,7 +3925,7 @@
       "heading": 3.9269908169872414,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 131
+      "unitId": 122
      }
     },
     "route": {
@@ -4329,7 +4065,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 27,
+    "groupId": 26,
     "name": "Marines Aley",
     "x": -126929.24271247465,
     "y": -30950.942712474625,
@@ -4343,7 +4079,7 @@
       "heading": 3.6651914291880923,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 132
+      "unitId": 123
      },
      "2": {
       "type": "LAV-25",
@@ -4353,7 +4089,7 @@
       "heading": 3.6651914291880923,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 133
+      "unitId": 124
      },
      "3": {
       "type": "LAV-25",
@@ -4363,7 +4099,7 @@
       "heading": 3.6651914291880923,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 134
+      "unitId": 125
      },
      "4": {
       "type": "AAV7",
@@ -4373,7 +4109,7 @@
       "heading": 3.6651914291880923,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 135
+      "unitId": 126
      },
      "5": {
       "type": "AAV7",
@@ -4383,7 +4119,7 @@
       "heading": 3.6651914291880923,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 136
+      "unitId": 127
      },
      "6": {
       "type": "AAV7",
@@ -4393,7 +4129,7 @@
       "heading": 3.6651914291880923,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 137
+      "unitId": 128
      },
      "7": {
       "type": "Soldier M4",
@@ -4403,7 +4139,7 @@
       "heading": 3.6651914291880923,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 138
+      "unitId": 129
      },
      "8": {
       "type": "Soldier M4",
@@ -4413,7 +4149,7 @@
       "heading": 3.6651914291880923,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 139
+      "unitId": 130
      },
      "9": {
       "type": "Soldier M4",
@@ -4423,7 +4159,7 @@
       "heading": 3.6651914291880923,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 140
+      "unitId": 131
      },
      "10": {
       "type": "Soldier M4",
@@ -4433,7 +4169,7 @@
       "heading": 3.6651914291880923,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 141
+      "unitId": 132
      }
     },
     "route": {
@@ -4573,7 +4309,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 28,
+    "groupId": 27,
     "name": "Marines Baabda",
     "x": -127746.40000000002,
     "y": -35668.100000000006,
@@ -4587,7 +4323,7 @@
       "heading": 3.3161255787892263,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 142
+      "unitId": 133
      },
      "2": {
       "type": "LAV-25",
@@ -4597,7 +4333,7 @@
       "heading": 3.3161255787892263,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 143
+      "unitId": 134
      },
      "3": {
       "type": "LAV-25",
@@ -4607,7 +4343,7 @@
       "heading": 3.3161255787892263,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 144
+      "unitId": 135
      },
      "4": {
       "type": "AAV7",
@@ -4617,7 +4353,7 @@
       "heading": 3.3161255787892263,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 145
+      "unitId": 136
      },
      "5": {
       "type": "AAV7",
@@ -4627,7 +4363,7 @@
       "heading": 3.3161255787892263,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 146
+      "unitId": 137
      },
      "6": {
       "type": "AAV7",
@@ -4637,7 +4373,7 @@
       "heading": 3.3161255787892263,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 147
+      "unitId": 138
      },
      "7": {
       "type": "Soldier M4",
@@ -4647,7 +4383,7 @@
       "heading": 3.3161255787892263,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 148
+      "unitId": 139
      },
      "8": {
       "type": "Soldier M4",
@@ -4657,7 +4393,7 @@
       "heading": 3.3161255787892263,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 149
+      "unitId": 140
      },
      "9": {
       "type": "Soldier M4",
@@ -4667,7 +4403,7 @@
       "heading": 3.3161255787892263,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 150
+      "unitId": 141
      },
      "10": {
       "type": "Soldier M4",
@@ -4677,7 +4413,7 @@
       "heading": 3.3161255787892263,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 151
+      "unitId": 142
      }
     },
     "route": {
@@ -4822,7 +4558,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 29,
+    "groupId": 28,
     "name": "Aoun Porto",
     "x": -124646.40000000002,
     "y": -38668.100000000006,
@@ -4836,7 +4572,7 @@
       "heading": 3.9269908169872414,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 152
+      "unitId": 143
      },
      "2": {
       "type": "LAV-25",
@@ -4846,7 +4582,7 @@
       "heading": 3.9269908169872414,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 153
+      "unitId": 144
      },
      "3": {
       "type": "LAV-25",
@@ -4856,7 +4592,7 @@
       "heading": 3.9269908169872414,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 154
+      "unitId": 145
      },
      "4": {
       "type": "AAV7",
@@ -4866,7 +4602,7 @@
       "heading": 3.9269908169872414,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 155
+      "unitId": 146
      },
      "5": {
       "type": "AAV7",
@@ -4876,7 +4612,7 @@
       "heading": 3.9269908169872414,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 156
+      "unitId": 147
      },
      "6": {
       "type": "AAV7",
@@ -4886,7 +4622,7 @@
       "heading": 3.9269908169872414,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 157
+      "unitId": 148
      },
      "7": {
       "type": "Soldier M4",
@@ -4896,7 +4632,7 @@
       "heading": 3.9269908169872414,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 158
+      "unitId": 149
      },
      "8": {
       "type": "Soldier M4",
@@ -4906,7 +4642,7 @@
       "heading": 3.9269908169872414,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 159
+      "unitId": 150
      },
      "9": {
       "type": "Soldier M4",
@@ -4916,7 +4652,7 @@
       "heading": 3.9269908169872414,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 160
+      "unitId": 151
      },
      "10": {
       "type": "Soldier M4",
@@ -4926,7 +4662,7 @@
       "heading": 3.9269908169872414,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 161
+      "unitId": 152
      }
     },
     "route": {
@@ -5081,7 +4817,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 30,
+    "groupId": 29,
     "name": "Aoun Faraya",
     "x": -113646.40000000002,
     "y": -7668.100000000006,
@@ -5095,7 +4831,7 @@
       "heading": 1.3089969389957472,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 162
+      "unitId": 153
      },
      "2": {
       "type": "LAV-25",
@@ -5105,7 +4841,7 @@
       "heading": 1.3089969389957472,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 163
+      "unitId": 154
      },
      "3": {
       "type": "LAV-25",
@@ -5115,7 +4851,7 @@
       "heading": 1.3089969389957472,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 164
+      "unitId": 155
      },
      "4": {
       "type": "AAV7",
@@ -5125,7 +4861,7 @@
       "heading": 1.3089969389957472,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 165
+      "unitId": 156
      },
      "5": {
       "type": "AAV7",
@@ -5135,7 +4871,7 @@
       "heading": 1.3089969389957472,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 166
+      "unitId": 157
      },
      "6": {
       "type": "AAV7",
@@ -5145,7 +4881,7 @@
       "heading": 1.3089969389957472,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 167
+      "unitId": 158
      },
      "7": {
       "type": "Soldier M4",
@@ -5155,7 +4891,7 @@
       "heading": 1.3089969389957472,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 168
+      "unitId": 159
      },
      "8": {
       "type": "Soldier M4",
@@ -5165,7 +4901,7 @@
       "heading": 1.3089969389957472,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 169
+      "unitId": 160
      },
      "9": {
       "type": "Soldier M4",
@@ -5175,7 +4911,7 @@
       "heading": 1.3089969389957472,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 170
+      "unitId": 161
      },
      "10": {
       "type": "Soldier M4",
@@ -5185,7 +4921,7 @@
       "heading": 1.3089969389957472,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 171
+      "unitId": 162
      }
     },
     "route": {
@@ -5316,7 +5052,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 31,
+    "groupId": 30,
     "name": "Carri Passo",
     "x": -137646.40000000002,
     "y": -10868.100000000006,
@@ -5330,7 +5066,7 @@
       "heading": 5.759586531581287,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 172
+      "unitId": 163
      },
      "2": {
       "type": "T-72B",
@@ -5340,7 +5076,7 @@
       "heading": 5.759586531581287,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 173
+      "unitId": 164
      },
      "3": {
       "type": "T-72B",
@@ -5350,7 +5086,7 @@
       "heading": 5.759586531581287,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 174
+      "unitId": 165
      },
      "4": {
       "type": "T-72B",
@@ -5360,7 +5096,7 @@
       "heading": 5.759586531581287,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 175
+      "unitId": 166
      },
      "5": {
       "type": "BMP-1",
@@ -5370,7 +5106,7 @@
       "heading": 5.759586531581287,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 176
+      "unitId": 167
      },
      "6": {
       "type": "BMP-1",
@@ -5380,7 +5116,7 @@
       "heading": 5.759586531581287,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 177
+      "unitId": 168
      }
     },
     "route": {
@@ -5535,7 +5271,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 32,
+    "groupId": 31,
     "name": "Meccanizzata Mtein Sud",
     "x": -133858.532034356,
     "y": -10880.23203435597,
@@ -5549,7 +5285,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 178
+      "unitId": 169
      },
      "2": {
       "type": "BMP-1",
@@ -5559,7 +5295,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 179
+      "unitId": 170
      },
      "3": {
       "type": "BMP-1",
@@ -5569,7 +5305,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 180
+      "unitId": 171
      },
      "4": {
       "type": "BMP-1",
@@ -5579,7 +5315,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 181
+      "unitId": 172
      },
      "5": {
       "type": "BTR-70",
@@ -5589,7 +5325,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 182
+      "unitId": 173
      },
      "6": {
       "type": "BTR-70",
@@ -5599,7 +5335,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 183
+      "unitId": 174
      },
      "7": {
       "type": "Infantry AK",
@@ -5609,7 +5345,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 184
+      "unitId": 175
      },
      "8": {
       "type": "Infantry AK",
@@ -5619,7 +5355,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 185
+      "unitId": 176
      },
      "9": {
       "type": "Infantry AK",
@@ -5629,7 +5365,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 186
+      "unitId": 177
      },
      "10": {
       "type": "Infantry AK",
@@ -5639,7 +5375,7 @@
       "heading": 6.021385919380437,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 187
+      "unitId": 178
      }
     },
     "route": {
@@ -5737,7 +5473,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 33,
+    "groupId": 32,
     "name": "Stinger Baabda",
     "x": -127858.53203435599,
     "y": -35455.96796564404,
@@ -5751,7 +5487,7 @@
       "heading": 2.792526803190927,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 188
+      "unitId": 179
      },
      "2": {
       "type": "Soldier stinger",
@@ -5761,7 +5497,7 @@
       "heading": 2.792526803190927,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 189
+      "unitId": 180
      },
      "3": {
       "type": "Stinger comm",
@@ -5771,7 +5507,7 @@
       "heading": 2.792526803190927,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 190
+      "unitId": 181
      }
     },
     "route": {
@@ -5884,7 +5620,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 34,
+    "groupId": 33,
     "name": "Stinger Hawk",
     "x": -117646.40000000002,
     "y": -27668.100000000006,
@@ -5898,7 +5634,7 @@
       "heading": 2.443460952792061,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 191
+      "unitId": 182
      },
      "2": {
       "type": "Soldier stinger",
@@ -5908,7 +5644,7 @@
       "heading": 2.443460952792061,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 192
+      "unitId": 183
      },
      "3": {
       "type": "Stinger comm",
@@ -5918,7 +5654,7 @@
       "heading": 2.443460952792061,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 193
+      "unitId": 184
      }
     },
     "route": {
@@ -6016,7 +5752,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 35,
+    "groupId": 34,
     "name": "Stinger Mtein",
     "x": -123646.40000000002,
     "y": -15668.100000000006,
@@ -6030,7 +5766,7 @@
       "heading": 2.705260340591211,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 194
+      "unitId": 185
      },
      "2": {
       "type": "Soldier stinger",
@@ -6040,7 +5776,7 @@
       "heading": 2.705260340591211,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 195
+      "unitId": 186
      },
      "3": {
       "type": "Stinger comm",
@@ -6050,7 +5786,7 @@
       "heading": 2.705260340591211,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 196
+      "unitId": 187
      }
     },
     "route": {
@@ -6153,7 +5889,7 @@
     "task": "Ground Nothing",
     "taskSelected": true,
     "hidden": false,
-    "groupId": 36,
+    "groupId": 35,
     "name": "Contraerea Chouf",
     "x": -137575.68932188136,
     "y": -24738.81067811866,
@@ -6167,7 +5903,7 @@
       "heading": 5.759586531581287,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 197
+      "unitId": 188
      },
      "2": {
       "type": "ZSU-23-4 Shilka",
@@ -6177,7 +5913,7 @@
       "heading": 5.759586531581287,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 198
+      "unitId": 189
      },
      "3": {
       "type": "Strela-1 9P31",
@@ -6187,7 +5923,7 @@
       "heading": 5.759586531581287,
       "skill": "High",
       "playerCanDrive": false,
-      "unitId": 199
+      "unitId": 190
      }
     },
     "route": {

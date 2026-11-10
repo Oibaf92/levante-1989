@@ -120,21 +120,43 @@
   {
    "lat": 33.66,
    "lon": 36.82,
-   "raggio_km": 150,
-   "tipo": "sa5",
-   "nome": "SA-5 Dumayr",
-   "gruppo": "SA-5 Dumayr",
+   "raggio_km": 40,
+   "tipo": "sa2",
+   "nome": "SA-2 Dumayr",
+   "gruppo": "SA-2 Dumayr",
    "certezza": "confermato",
    "fonte": "stima iniziale",
    "visto": "-"
   },
   {
-   "lat": 34.6,
-   "lon": 36.74,
-   "raggio_km": 150,
-   "tipo": "sa5",
-   "nome": "SA-5 Homs",
-   "gruppo": "SA-5 Homs",
+   "lat": 34.57,
+   "lon": 36.6,
+   "raggio_km": 40,
+   "tipo": "sa2",
+   "nome": "SA-2 Al Qusayr",
+   "gruppo": "SA-2 Al Qusayr",
+   "certezza": "confermato",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  },
+  {
+   "lat": 34.01,
+   "lon": 36.21,
+   "raggio_km": 40,
+   "tipo": "sa2",
+   "nome": "SA-2 Baalbek",
+   "gruppo": "SA-2 Baalbek",
+   "certezza": "confermato",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  },
+  {
+   "lat": 34.85,
+   "lon": 35.95,
+   "raggio_km": 40,
+   "tipo": "sa2",
+   "nome": "SA-2 Tartus",
+   "gruppo": "SA-2 Tartus",
    "certezza": "confermato",
    "fonte": "stima iniziale",
    "visto": "-"
@@ -245,7 +267,7 @@
    "tipo": "sa6",
    "nome": "SA-6 Bekaa",
    "gruppo": "SA-6 Bekaa",
-   "certezza": "vecchio",
+   "certezza": "probabile",
    "fonte": "stima iniziale",
    "visto": "-"
   },
@@ -256,7 +278,7 @@
    "tipo": "sa6",
    "nome": "SA-6 fronte del Golan",
    "gruppo": "SA-6 fronte del Golan",
-   "certezza": "vecchio",
+   "certezza": "probabile",
    "fonte": "stima iniziale",
    "visto": "-"
   },
@@ -267,7 +289,7 @@
    "tipo": "sa8",
    "nome": "SA-8 Bekaa",
    "gruppo": "SA-8 Bekaa",
-   "certezza": "vecchio",
+   "certezza": "probabile",
    "fonte": "stima iniziale",
    "visto": "-"
   },
@@ -278,7 +300,7 @@
    "tipo": "sa8",
    "nome": "SA-8 fronte del Golan",
    "gruppo": "SA-8 fronte del Golan",
-   "certezza": "vecchio",
+   "certezza": "probabile",
    "fonte": "stima iniziale",
    "visto": "-"
   },
@@ -289,7 +311,7 @@
    "tipo": "sa8",
    "nome": "SA-8 Damasco",
    "gruppo": "SA-8 Damasco",
-   "certezza": "vecchio",
+   "certezza": "probabile",
    "fonte": "stima iniziale",
    "visto": "-"
   }
