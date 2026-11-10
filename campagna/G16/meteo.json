@@ -1,0 +1,74 @@
+{
+ "giorno": 16,
+ "data": "1989-10-18",
+ "regime": "sereno",
+ "blocchi": {
+  "alba": {
+   "vento_da": [
+    80,
+    2.7
+   ],
+   "vento_2000_da": [
+    103,
+    7.4
+   ],
+   "vento_8000_da": [
+    260,
+    22.5
+   ],
+   "nubi": "Preset1",
+   "base_m": 2620,
+   "visibilita_m": 70831,
+   "nebbia": null,
+   "polvere_m": null,
+   "temperatura": 19,
+   "qnh_hpa": 1021.7,
+   "turbolenza": 0
+  },
+  "mezzogiorno": {
+   "vento_da": [
+    285,
+    4.5
+   ],
+   "vento_2000_da": [
+    300,
+    9.3
+   ],
+   "vento_8000_da": [
+    282,
+    15.6
+   ],
+   "nubi": "Preset2",
+   "base_m": 2771,
+   "visibilita_m": 63714,
+   "nebbia": null,
+   "polvere_m": null,
+   "temperatura": 26,
+   "qnh_hpa": 1020.3,
+   "turbolenza": 8
+  },
+  "pomeriggio": {
+   "vento_da": [
+    279,
+    6.4
+   ],
+   "vento_2000_da": [
+    291,
+    11.3
+   ],
+   "vento_8000_da": [
+    256,
+    18.7
+   ],
+   "nubi": "Preset4",
+   "base_m": 2931,
+   "visibilita_m": 51819,
+   "nebbia": null,
+   "polvere_m": null,
+   "temperatura": 25,
+   "qnh_hpa": 1019.9,
+   "turbolenza": 8
+  }
+ },
+ "previsione": "Situazione: alta pressione, tempo stabile.\nAlba: poche nubi, base circa 2600 m; vento da est 2-8 nodi; 19 gradi sulla costa.\nMezzogiorno: poche nubi, base circa 2800 m; vento da ovest 6-12 nodi; 26 gradi sulla costa.\nPomeriggio: nubi sparse, base circa 2900 m; vento da ovest 9-15 nodi; 25 gradi sulla costa."
+}

@@ -1,0 +1,225 @@
+{
+ "data": "1989-10-18",
+ "inizio": "05:45",
+ "fine": "17:30",
+ "limiti": {
+  "blu": {
+   "voli_max": 18,
+   "gruppi_terra_max": 14,
+   "voli_giocatore_max": 4,
+   "aerei_in_volo_max": 14
+  },
+  "rosso": {
+   "voli_max": 20,
+   "gruppi_terra_max": 18,
+   "aerei_in_volo_max": 14
+  }
+ },
+ "tipi_missione_aerea": [
+  "CAP",
+  "GCI",
+  "SCORTA",
+  "STRIKE",
+  "CAS",
+  "SEAD",
+  "ANTINAVE",
+  "AWACS",
+  "TANKER",
+  "TRASPORTO"
+ ],
+ "tipi_terra": [
+  "carri",
+  "meccanizzata",
+  "artiglieria",
+  "lanciarazzi",
+  "contraerea_mobile",
+  "sa2",
+  "sa3",
+  "sa5",
+  "sa6",
+  "sa8",
+  "aaa",
+  "ewr",
+  "hawk"
+ ],
+ "missioni_terra": [
+  "difesa",
+  "attacco",
+  "fuoco"
+ ],
+ "velivoli_blu": {
+  "F-14A-135-GR-Early": [
+   "cap 2-3-2",
+   "cap 0-6-2",
+   "ricognizione TARPS",
+   "strike Mk-84",
+   "strike Mk-82"
+  ],
+  "FA-18C_hornet": [
+   "cap 2-4 serbatoi ali",
+   "cap 2-6 serbatoio centrale",
+   "sead",
+   "sead pesante",
+   "strike Mk-84",
+   "strike Mk-83",
+   "cas",
+   "antinave"
+  ],
+  "A6E": [
+   "attacco"
+  ],
+  "F-4E-45MC": [
+   "cap",
+   "strike Mk-82",
+   "strike Mk-82 pesante",
+   "cas maverick",
+   "cas cbu",
+   "sead",
+   "strike laser GBU-12",
+   "strike laser GBU-10"
+  ],
+  "AV8BNA": [
+   "appoggio"
+  ],
+  "E-2C": [
+   "nessuno"
+  ],
+  "S-3B Tanker": [
+   "nessuno"
+  ],
+  "KC135MPRS": [
+   "nessuno"
+  ],
+  "E-3A": [
+   "nessuno"
+  ],
+  "AH-64D_BLK_II": [
+   "anticarro",
+   "appoggio",
+   "fanteria"
+  ],
+  "CH-47Fbl1": [
+   "nessuno"
+  ]
+ },
+ "velivoli_giocatore_blu": [
+  "F-14A-135-GR-Early",
+  "FA-18C_hornet",
+  "F-4E-45MC",
+  "AH-64D_BLK_II",
+  "CH-47Fbl1"
+ ],
+ "basi_blu": {
+  "CVN-71": [
+   "F-14A-135-GR-Early",
+   "FA-18C_hornet",
+   "A6E",
+   "E-2C",
+   "S-3B Tanker"
+  ],
+  "LHA-1": [
+   "AV8BNA",
+   "AH-64D_BLK_II",
+   "CH-47Fbl1"
+  ],
+  "Incirlik": [
+   "F-4E-45MC",
+   "KC135MPRS",
+   "E-3A"
+  ]
+ },
+ "velivoli_rossi": {
+  "MiG-29 Fulcrum": [
+   "cap siriano R-60M",
+   "cap sovietico R-73",
+   "attacco FAB-500"
+  ],
+  "MiG-23MLD": [
+   "aria-aria",
+   "attacco razzi"
+  ],
+  "MiG-21Bis": [
+   "aria-aria",
+   "attacco"
+  ],
+  "MiG-25PD": [
+   "aria-aria"
+  ],
+  "Su-17M4": [
+   "bombe",
+   "razzi"
+  ],
+  "Su-24M": [
+   "bombe",
+   "antiradar"
+  ],
+  "Su-25": [
+   "appoggio",
+   "anticarro",
+   "strike",
+   "precisione"
+  ],
+  "Tu-22M3": [
+   "antinave",
+   "bombe"
+  ],
+  "A-50": [
+   "nessuno"
+  ],
+  "Mi-24V": [
+   "appoggio"
+  ],
+  "Mi-8MT": [
+   "trasporto",
+   "armato"
+  ],
+  "Mi-24P": [
+   "anticarro",
+   "appoggio",
+   "fanteria"
+  ]
+ },
+ "basi_rosse": [
+  "Al-Dumayr",
+  "Sayqal",
+  "Shayrat",
+  "Tiyas",
+  "Hama",
+  "Bassel Al-Assad",
+  "Mezzeh",
+  "Marj Ruhayyil",
+  "Khalkhalah",
+  "Al Qusayr",
+  "Palmyra",
+  "Damascus",
+  "Rayak",
+  "Abu al-Duhur",
+  "Kuweires",
+  "An Nasiriyah",
+  "aria (solo Tu-22M3 e A-50: arrivano da est in volo)"
+ ],
+ "note_carichi": {
+  "FA-18C_hornet cap 2-6 serbatoio centrale": "autonomia ridotta: missioni brevi o con cisterna",
+  "FA-18C_hornet sead pesante": "autonomia ridotta: missioni brevi o con cisterna",
+  "FA-18C_hornet cas": "autonomia ridotta: missioni brevi o con cisterna",
+  "F-4E-45MC strike Mk-82 pesante": "autonomia ridotta: missioni brevi o con cisterna",
+  "F-4E-45MC attacco": "autonomia ridotta: missioni brevi o con cisterna"
+ },
+ "blocchi": [
+  {
+   "nome": "alba",
+   "inizio": "05:45",
+   "fine": "08:45"
+  },
+  {
+   "nome": "mezzogiorno",
+   "inizio": "10:30",
+   "fine": "13:30"
+  },
+  {
+   "nome": "pomeriggio",
+   "inizio": "14:30",
+   "fine": "17:30"
+  }
+ ]
+}

@@ -1,0 +1,299 @@
+{
+ "parte": "blu",
+ "giorno": 16,
+ "blocco": 1,
+ "basi": [
+  {
+   "lat": 35.404,
+   "lon": 35.95,
+   "tipo": "aerea",
+   "nome": "Latakia",
+   "dettaglio": "MiG-21, elicotteri"
+  },
+  {
+   "lat": 35.118,
+   "lon": 36.712,
+   "tipo": "aerea",
+   "nome": "Hama",
+   "dettaglio": "MiG-21"
+  },
+  {
+   "lat": 34.49,
+   "lon": 36.908,
+   "tipo": "aerea",
+   "nome": "Shayrat",
+   "dettaglio": "MiG-23, Su-22"
+  },
+  {
+   "lat": 34.523,
+   "lon": 37.63,
+   "tipo": "aerea",
+   "nome": "Tiyas (T4)",
+   "dettaglio": "MiG-23, MiG-25"
+  },
+  {
+   "lat": 33.61,
+   "lon": 36.749,
+   "tipo": "aerea",
+   "nome": "Al-Dumayr",
+   "dettaglio": "MiG-23, MiG-29"
+  },
+  {
+   "lat": 33.68,
+   "lon": 37.217,
+   "tipo": "aerea",
+   "nome": "Sayqal",
+   "dettaglio": "MiG-23"
+  },
+  {
+   "lat": 34.557,
+   "lon": 38.317,
+   "tipo": "aerea",
+   "nome": "Palmyra",
+   "dettaglio": "MiG-25"
+  },
+  {
+   "lat": 33.478,
+   "lon": 36.224,
+   "tipo": "elicotteri",
+   "nome": "Mezzeh",
+   "dettaglio": "elicotteri, ricognizione"
+  },
+  {
+   "lat": 33.289,
+   "lon": 36.455,
+   "tipo": "aerea",
+   "nome": "Marj Ruhayyil",
+   "dettaglio": "MiG-21, MiG-23"
+  },
+  {
+   "lat": 33.078,
+   "lon": 36.541,
+   "tipo": "aerea",
+   "nome": "Khalkhalah",
+   "dettaglio": "MiG-21"
+  },
+  {
+   "lat": 34.569,
+   "lon": 36.571,
+   "tipo": "aerea",
+   "nome": "Al Qusayr",
+   "dettaglio": "MiG-21"
+  },
+  {
+   "lat": 33.426,
+   "lon": 36.519,
+   "tipo": "aerea",
+   "nome": "Damasco",
+   "dettaglio": "trasporti"
+  },
+  {
+   "lat": 33.851,
+   "lon": 35.987,
+   "tipo": "elicotteri",
+   "nome": "Rayak (Bekaa)",
+   "dettaglio": "Mi-24, Mi-8"
+  },
+  {
+   "lat": 35.732,
+   "lon": 37.104,
+   "tipo": "aerea",
+   "nome": "Abu al-Duhur",
+   "dettaglio": "MiG-21"
+  },
+  {
+   "lat": 36.187,
+   "lon": 37.581,
+   "tipo": "aerea",
+   "nome": "Kuweires",
+   "dettaglio": "scuola di volo"
+  },
+  {
+   "lat": 34.905,
+   "lon": 35.865,
+   "tipo": "navale",
+   "nome": "Tartus",
+   "dettaglio": "punto d'appoggio della flotta sovietica"
+  }
+ ],
+ "sam": [
+  {
+   "lat": 33.66,
+   "lon": 36.82,
+   "raggio_km": 150,
+   "tipo": "sa5",
+   "nome": "SA-5 Dumayr",
+   "gruppo": "SA-5 Dumayr",
+   "certezza": "confermato",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  },
+  {
+   "lat": 34.6,
+   "lon": 36.74,
+   "raggio_km": 150,
+   "tipo": "sa5",
+   "nome": "SA-5 Homs",
+   "gruppo": "SA-5 Homs",
+   "certezza": "confermato",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  },
+  {
+   "lat": 33.4,
+   "lon": 36.4,
+   "raggio_km": 40,
+   "tipo": "sa2",
+   "nome": "SA-2 Damasco sud",
+   "gruppo": "SA-2 Damasco sud",
+   "certezza": "confermato",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  },
+  {
+   "lat": 33.52,
+   "lon": 36.38,
+   "raggio_km": 22,
+   "tipo": "sa3",
+   "nome": "SA-3 Damasco est",
+   "gruppo": "SA-3 Damasco est",
+   "certezza": "confermato",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  },
+  {
+   "lat": 34.76,
+   "lon": 36.66,
+   "raggio_km": 40,
+   "tipo": "sa2",
+   "nome": "SA-2 Homs",
+   "gruppo": "SA-2 Homs",
+   "certezza": "confermato",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  },
+  {
+   "lat": 34.7,
+   "lon": 36.8,
+   "raggio_km": 22,
+   "tipo": "sa3",
+   "nome": "SA-3 Homs",
+   "gruppo": "SA-3 Homs",
+   "certezza": "confermato",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  },
+  {
+   "lat": 35.16,
+   "lon": 36.78,
+   "raggio_km": 40,
+   "tipo": "sa2",
+   "nome": "SA-2 Hama",
+   "gruppo": "SA-2 Hama",
+   "certezza": "confermato",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  },
+  {
+   "lat": 35.1,
+   "lon": 36.68,
+   "raggio_km": 22,
+   "tipo": "sa3",
+   "nome": "SA-3 Hama",
+   "gruppo": "SA-3 Hama",
+   "certezza": "confermato",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  },
+  {
+   "lat": 36.24,
+   "lon": 37.12,
+   "raggio_km": 40,
+   "tipo": "sa2",
+   "nome": "SA-2 Aleppo",
+   "gruppo": "SA-2 Aleppo",
+   "certezza": "confermato",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  },
+  {
+   "lat": 36.16,
+   "lon": 37.22,
+   "raggio_km": 22,
+   "tipo": "sa3",
+   "nome": "SA-3 Aleppo",
+   "gruppo": "SA-3 Aleppo",
+   "certezza": "confermato",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  },
+  {
+   "lat": 35.52,
+   "lon": 35.85,
+   "raggio_km": 22,
+   "tipo": "sa3",
+   "nome": "SA-3 Latakia",
+   "gruppo": "SA-3 Latakia",
+   "certezza": "confermato",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  },
+  {
+   "lat": 33.85,
+   "lon": 35.98,
+   "raggio_km": 25,
+   "tipo": "sa6",
+   "nome": "SA-6 Bekaa",
+   "gruppo": "SA-6 Bekaa",
+   "certezza": "vecchio",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  },
+  {
+   "lat": 33.15,
+   "lon": 36.05,
+   "raggio_km": 25,
+   "tipo": "sa6",
+   "nome": "SA-6 fronte del Golan",
+   "gruppo": "SA-6 fronte del Golan",
+   "certezza": "vecchio",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  },
+  {
+   "lat": 33.78,
+   "lon": 35.92,
+   "raggio_km": 10,
+   "tipo": "sa8",
+   "nome": "SA-8 Bekaa",
+   "gruppo": "SA-8 Bekaa",
+   "certezza": "vecchio",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  },
+  {
+   "lat": 33.22,
+   "lon": 36.12,
+   "raggio_km": 10,
+   "tipo": "sa8",
+   "nome": "SA-8 fronte del Golan",
+   "gruppo": "SA-8 fronte del Golan",
+   "certezza": "vecchio",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  },
+  {
+   "lat": 33.48,
+   "lon": 36.3,
+   "raggio_km": 10,
+   "tipo": "sa8",
+   "nome": "SA-8 Damasco",
+   "gruppo": "SA-8 Damasco",
+   "certezza": "vecchio",
+   "fonte": "stima iniziale",
+   "visto": "-"
+  }
+ ],
+ "terra": [],
+ "note": []
+}
