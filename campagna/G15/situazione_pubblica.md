@@ -34,9 +34,11 @@ Tutto il resto del Libano (Beirut Ovest, Chouf, Bekaa, nord) è in mano siro-sov
 - Washington: "41 aerei siriani abbattuti, 9 siti SAM distrutti". Ammette la perdita di 19 velivoli.
 - Damasco: "64 aerei americani abbattuti, una portaerei danneggiata". Ammette 22 velivoli persi.
 
-## Meteo previsto per il 17 ottobre
-Nuvole sparse a 2.500 m, vento da ovest 5 m/s, visibilità buona, 22 °C sulla costa.
-Inizio delle operazioni alle 06:30, finestra fino alle 09:30.
+## Meteo previsto
+Situazione: alta pressione, tempo stabile.
+Alba: poche nubi, base circa 2500 m; vento da sud-est 2-8 nodi; 19 gradi sulla costa; possibili banchi di nebbia sulla costa.
+Mezzogiorno: poche nubi, base circa 3000 m; vento da ovest 7-13 nodi; 26 gradi sulla costa.
+Pomeriggio: nubi sparse, base circa 2500 m; vento da sud-ovest 9-15 nodi; 25 gradi sulla costa.
 
 ## Regole confermate
 - Spazio aereo israeliano e territorio turco: inviolabili (Incirlik resta usabile dal blu).

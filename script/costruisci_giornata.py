@@ -33,6 +33,7 @@ import confini  # noqa: E402
 import intel  # noqa: E402
 import rapporto_intel  # noqa: E402
 import regole_speciali  # noqa: E402
+import meteo  # noqa: E402
 import legenda  # noqa: E402  (usata da confini)
 
 USA, SIRIA, RUSSIA = 2, 47, 0
@@ -772,14 +773,21 @@ class Costruttore:
     def meteo(self):
         """Riga meteo per briefing e tavolette (unita' USA: nodi, piedi, inHg; anche hPa)."""
         w = self.m['weather']
+        b = self.meteo_blocco
         verso = w['wind']['atGround']['dir']
         kt = w['wind']['atGround']['speed'] / KT
         mmhg = w.get('qnh', 760)
-        return ('Vento al suolo da %03d/%d kt (2000 m: da %03d/%d kt). QNH %.2f inHg (%d hPa). Nubi %d/10, base %d ft. '
-                'Visibilita\' %d km.' % ((verso + 180) % 360, round(kt), (w['wind']['at2000']['dir'] + 180) % 360,
-                                         round(w['wind']['at2000']['speed'] / KT), mmhg / 25.4, round(mmhg * 1.33322),
-                                         w['clouds'].get('density', 0), round(w['clouds'].get('base', 0) / FT, -2),
-                                         w['visibility']['distance'] // 1000))
+        extra = ''
+        if b.get('nebbia'):
+            extra += ' Nebbia sulla costa (visibilita\' %.1f km).' % (b['nebbia']['visibilita_m'] / 1000)
+        if b.get('polvere_m'):
+            extra += ' Foschia e polvere.'
+        return ('Vento al suolo da %03d/%d kt (2000 m: da %03d/%d kt). QNH %.2f inHg (%d hPa). %s, base %d ft. '
+                'Visibilita\' %d km. %d C.%s' % ((verso + 180) % 360, round(kt), (w['wind']['at2000']['dir'] + 180) % 360,
+                                               round(w['wind']['at2000']['speed'] / KT), mmhg / 25.4, round(mmhg * 1.33322),
+                                               meteo.DESCRIZIONE_NUBI.get(b['nubi'], b['nubi']).capitalize(),
+                                               round(b['base_m'] / FT, -2), w['visibility']['distance'] // 1000,
+                                               b['temperatura'], extra))
 
     def canali(self):
         """Canali preimpostati uguali per tutti i velivoli del giocatore: [(canale, MHz, descrizione)]."""
@@ -914,13 +922,11 @@ class Costruttore:
         anno, mese, giorno = (int(v) for v in self.par['data'].split('-'))
         m['date'] = {'Year': anno, 'Month': mese, 'Day': giorno}
         m['start_time'] = self.t0
-        m['weather'].update({
-            'name': 'Levante G%d' % self.giorno, 'enable_fog': False, 'enable_dust': False, 'dust_density': 0,
-            'season': {'temperature': 22}, 'qnh': 760, 'groundTurbulence': 2, 'type_weather': 0,
-            'visibility': {'distance': 60000}, 'fog': {'visibility': 0, 'thickness': 0},
-            'wind': {'atGround': {'speed': 5, 'dir': 90}, 'at2000': {'speed': 8, 'dir': 95}, 'at8000': {'speed': 15, 'dir': 100}},
-            'clouds': {'thickness': 600, 'density': 4, 'base': 2500, 'iprecptns': 0},
-        })
+        # meteo della giornata (campagna/GNN/meteo.json), nel momento del blocco
+        self.meteo_giornata = meteo.della_giornata(self.giorno, self.par['data'])
+        self.meteo_blocco = self.meteo_giornata['blocchi'][meteo.momento_blocco(self.nome_blocco, self.inizio)]
+        m['weather'].update(meteo.tempo_dcs(self.meteo_blocco))
+        m['weather']['name'] = 'Levante G%d' % self.giorno
         cx, cy = ll_to_xy(34.2, 35.3)
         m['map'] = {'centerX': cx, 'centerY': cy, 'zoom': 400000}
         m['forcedOptions'] = {'optionsView': 'optview_allies', 'labels': 0}

@@ -219,6 +219,19 @@ tolleranza piu' alta; SA-5 da non sottovalutare (riducono l'area operativa e cos
 - JSON trasforma le chiavi intere delle tabelle della missione in stringhe: ricaricarle con
   `chiavi_int` prima di rimetterle in una missione.
 
+## Meteo
+
+- `script/tools/meteo.py`: regimi (sereno, variabile, perturbazione, foschia) con passaggi da un giorno
+  all'altro (perturbazioni piu' frequenti con l'avanzare dell'autunno), evoluzione alba / mezzogiorno /
+  pomeriggio, preset di nubi DCS 2.9 (Preset1-27, RainyPreset1-3), nebbia all'alba, polvere con vento
+  dal deserto, QNH e temperatura plausibili. Una volta per giornata in `campagna/GNN/meteo.json`.
+- Preparando una giornata: `python3 script/tools/meteo.py <giorno>` genera il meteo e scrive la
+  previsione nella situazione pubblica (la leggono i comandanti). Il costruttore usa il momento del blocco.
+- Con vento quasi assente (< 3 m/s) le navi non inseguono il vento: navigano a ovest, lontano dalla
+  minaccia (`levante_navi.lua`).
+- Da verificare in DCS: che le basi delle nubi scelte stiano nei limiti dei preset (l'editor potrebbe
+  correggerle).
+
 ## Diagnosi dei problemi in DCS
 
 - Chiedere `Saved Games\DCS\Logs\dcs.log` **prima di riavviare DCS** (al riavvio diventa `dcs.log.old`).

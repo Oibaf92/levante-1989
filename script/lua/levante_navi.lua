@@ -19,6 +19,7 @@ local NAVI = LEVANTE_NAVI or {}
 local KT = 0.514444
 local NM = 1852
 local RIPIANIFICA = 1800       -- s
+local CALMA = 3                -- m/s: sotto, la prua non segue il vento ma va lontano dalla minaccia
 
 local function log(msg) env.info("[LEVANTE NAVI] " .. msg) end
 
@@ -54,7 +55,10 @@ local function pianifica(nome, cfg)
   local p = capo:getPoint()
   local da, vel = ventoDa(p.x, p.z)
   local prua
-  if da then
+  if da and vel < CALMA then
+    -- vento quasi assente: la nave crea da se' il vento sul ponte, quindi naviga lontano dalla minaccia
+    prua = math.rad(cfg.prua_calma or 270)
+  elseif da then
     prua = da + math.rad(cfg.scarto or 0)
   else
     local pos = capo:getPosition()                        -- calma: si mantiene la prua attuale

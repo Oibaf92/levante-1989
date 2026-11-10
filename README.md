@@ -74,6 +74,16 @@ il giocatore vola a scelta con una delle due parti.
   (avanzata della testa di ponte verso Dahr el-Baidar), rapporto delle perdite, stato della difesa
   aerea siriana, stato del gruppo navale USA.
 
+## 🌦️ Meteo
+- Il tempo segue l'autunno del Levante e cambia da un giorno all'altro con continuità: alta
+  pressione stabile, tempo variabile, perturbazioni da ovest (pioggia, nubi basse, vento forte;
+  più frequenti da fine ottobre), vento dal deserto con foschia e polvere.
+- Nella giornata evolve: brezza debole da terra all'alba (a volte nebbia sulla costa), brezza di
+  mare da ovest a mezzogiorno, cumuli e vento più forte al pomeriggio.
+- La **previsione** è pubblica (situazione della giornata) e vale per entrambe le parti; il tempo
+  reale può discostarsene un po'. Nubi basse, pioggia e foschia limitano attacchi e ricognizione:
+  i comandanti ne tengono conto.
+
 ## 💥 Perdite
 - Ciò che viene distrutto in volo sparisce dalla campagna; i rinforzi arrivano solo secondo le regole.
 - Danni parziali (aereo che rientra colpito, SAM o veicolo danneggiato): fuori servizio per 1-2 blocchi.
