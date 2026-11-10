@@ -6,11 +6,13 @@
   "blu": {
    "voli_max": 12,
    "gruppi_terra_max": 12,
-   "voli_giocatore_max": 4
+   "voli_giocatore_max": 4,
+   "aerei_in_volo_max": 14
   },
   "rosso": {
    "voli_max": 14,
-   "gruppi_terra_max": 16
+   "gruppi_terra_max": 16,
+   "aerei_in_volo_max": 14
   }
  },
  "tipi_missione_aerea": [

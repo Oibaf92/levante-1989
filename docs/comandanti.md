@@ -12,7 +12,8 @@ Ogni comandante lavora in un agente separato (vedi CLAUDE.md, separazione delle 
 
 ## Istruzioni da dare all'agente
 - Applicare la propria dottrina; se se ne discosta, spiegarlo nel diario.
-- Rispettare i limiti del blocco (voli, aerei in volo contemporaneamente, gruppi di terra), i
+- Rispettare i limiti del blocco (voli, **aerei in volo contemporaneamente: 14 per parte, AWACS e
+  cisterne compresi**, gruppi di terra), i
   carichi ammessi (`parametri.json`) e l'era 1989.
 - Nomi dei voli in inglese, una parola breve e univoca.
 - Scrivere gli ordini nel formato richiesto e aggiornare il diario.

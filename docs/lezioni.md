@@ -74,7 +74,15 @@ Regole che ne derivano:
 - Le unita' lontane dall'azione del giorno (siti SAM di Aleppo, Hama... oltre ~150 km da rotte e
   obiettivi) restano nello stato della campagna ma non vanno messe nella missione, o vanno
   messe "dormienti" (IA spenta finche' un nemico non si avvicina).
-- Aerei IA che atterrano: da rimuovere dopo lo spegnimento, non devono restare attivi.
+- Aerei IA che atterrano: rimossi 10 s dopo lo spegnimento dei motori (o 180 s dopo l'atterraggio)
+  da `script/lua/levante_prestazioni.lua`, tranne i gruppi del giocatore; annotati in
+  `extra.rientrati`, che `esiti.py` NON conta come perdite (test `script/test/prova_prestazioni.py`).
+- Siti SAM fissi rossi lontani: entrano nella missione solo se un volo blu del blocco passa entro
+  portata + 40 km (`MARGINE_SITI_KM`); gli altri restano nella campagna (`fuori_missione` nel
+  resoconto). In G15: 247 -> 190 veicoli.
+- Tetto per parte di **14 aerei in volo contemporaneamente** (`parametri.json` ->
+  `limiti.<parte>.aerei_in_volo_max`): se gli ordini lo superano il costruttore avvisa con `LIMITI:` e
+  gli ordini tornano al comandante.
 - Riferimento: G15 di prova aveva 325 unita' e circa 60 aerei in volo insieme alle 08:00 —
   troppo per questo PC.
 

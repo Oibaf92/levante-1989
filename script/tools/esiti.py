@@ -6,6 +6,7 @@ salvato in gioco alla fine del volo (stato_<missione>.lua) e scrive campagna/GNN
                    (vita < 70%: fermo nel blocco dopo; < 30%: anche in quello successivo)
   posizioni      : {unita': [x, y]} posizione finale (unita' di terra e navi)
   perdite_aeree  : {lato: {tipo: n}}
+Gli aerei IA rimossi dopo il rientro (levante_prestazioni.lua, extra.rientrati) non sono perdite.
 Le regole sono nel README (sezione Perdite).
 """
 import json
@@ -21,10 +22,13 @@ def esiti(stato, costruzione, blocco):
     for g in (stato.get('gruppi') or {}).values():
         for u in (g.get('unita') or {}).values():
             vive[u['nome']] = u
+    rientrati = set(((stato.get('extra') or {}).get('rientrati') or {}).keys())
     out = {'blocco': blocco, 'missione': stato.get('missione'), 'distrutti': [], 'fuori_servizio': {},
            'posizioni': {}, 'perdite_aeree': {}}
     for u in costruzione['unita']:
         s = vive.get(u['nome'])
+        if u['nome'] in rientrati:
+            continue
         if s is None or (s.get('vita') or 0) <= 0:
             out['distrutti'].append(u['nome'])
             if u['categoria'] in ('plane', 'helicopter'):

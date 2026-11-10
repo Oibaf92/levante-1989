@@ -104,6 +104,8 @@ LIVREE = {   # (paese, tipo): [(livrea, base del numero di bordo o None, carichi
 PARTENZE = {'freddo': ('TakeOffParking', 'From Parking Area'), 'caldo': ('TakeOffParkingHot', 'From Parking Area Hot'),
             'pista': ('TakeOff', 'From Runway')}
 
+MARGINE_SITI_KM = 40      # un sito fisso entra nella missione se un volo nemico passa entro portata + margine
+
 # Bilancio delle unita' per il PC del giocatore (i7-7700K 4 core / 8 thread, 64 GB, DCS MT).
 # Il collo di bottiglia e' la simulazione (CPU), non la grafica: vedi docs/lezioni.md.
 BILANCIO = {'unita_totali': 300, 'unita_terra': 220, 'aerei_in_volo': 28, 'terra_vicino_giocatore': 120, 'navi': 12}
@@ -389,10 +391,17 @@ class Costruttore:
                                    dentro=TESTA_DI_PONTE if lato == 'blue' else None,
                                    fuori=TESTA_DI_PONTE if lato == 'red' else None)
                 out.append((it, u))
-        # siti fissi rossi ancora attivi e non ripetuti negli ordini
+        # siti fissi rossi ancora attivi e non ripetuti negli ordini; quelli lontani dai voli blu del
+        # blocco restano nella campagna ma non entrano nella missione (prestazioni)
         nomi = {it.nome for it, _ in out}
+        punti_blu = self.punti_voli('blue')
         for lat, lon, r, tipo, nome in intel.SAM_ROSSI:
             if tipo in ('sa5', 'sa2', 'sa3') and nome not in SITI_DISTRUTTI and nome not in nomi:
+                sx, sy = ll_to_xy(lat, lon)
+                raggio = (pz.SISTEMI[tipo]['portata_km'] + MARGINE_SITI_KM) * 1000
+                if not any(math.hypot(sx - x, sy - y) < raggio for x, y in punti_blu):
+                    self.resoconto.setdefault('fuori_missione', []).append(nome)
+                    continue
                 sett = (180, 330)
                 it = pz.Intenzione(tipo, nome, (lat, lon), 6 if tipo != 'sa5' else 12, sett, (lat, lon),
                                    coalizione='red', paese=SIRIA, abilita=self.abilita('red'))
@@ -401,6 +410,16 @@ class Costruttore:
 
     ORDINE_PIAZZAMENTO = {'sa5': 0, 'ewr': 1, 'sa2': 2, 'sa3': 3, 'hawk': 3, 'sa6': 4, 'sa8': 5, 'aaa': 6,
                           'artiglieria': 7, 'lanciarazzi': 7, 'carri': 8, 'meccanizzata': 8, 'contraerea_mobile': 9}
+
+    def punti_voli(self, lato):
+        """Punti significativi dei voli di una parte nel blocco: obiettivi e punti di rotta."""
+        out = []
+        for o in self.ordini[lato].get('missioni_aeree', []):
+            if not self.nel_blocco(o):
+                continue
+            for p in ([o['obiettivo']] if o.get('obiettivo') else []) + list(o.get('rotta') or []):
+                out.append(ll_to_xy(*p))
+        return out
 
     def forze_terra(self):
         """Unita' di terra. Primo blocco (o missione intera): tutte piazzate dal piazzatore. Blocchi
@@ -932,6 +951,14 @@ class Costruttore:
                 t = hm(a.get('decollo', self.inizio))
                 finestre.append((t, t + (int(a.get('durata_min', 60)) + 40) * 60, max(1, min(4, int(a.get('numero', 2))))))
         picco = max([sum(n for s, e, n in finestre if s <= t < e) for t, _, _ in finestre] or [0])
+        for lato, nome_l in (('blue', 'blu'), ('red', 'rosso')):
+            fin = [(hm(a.get('decollo', self.inizio)), hm(a.get('decollo', self.inizio)) + (int(a.get('durata_min', 60)) + 40) * 60,
+                    max(1, min(4, int(a.get('numero', 2))))) for a in self.ordini[lato].get('missioni_aeree', []) if self.nel_blocco(a)]
+            pl = max([sum(n for s, e, n in fin if s <= t < e) for t, _, _ in fin] or [0])
+            lim = ((self.par.get('limiti') or {}).get(nome_l) or {}).get('aerei_in_volo_max', BILANCIO['aerei_in_volo'] // 2)
+            if pl > lim:
+                self.avvisi.append('LIMITI: %s con %d aerei in volo contemporaneamente (stima), oltre il tetto di %d: '
+                                   'ordini da correggere dal comandante' % (nome_l, pl, lim))
         # unita' di terra vicino agli obiettivi del giocatore
         vicine = 0
         obiettivi = [ll_to_xy(*a['obiettivo']) for a in self.ordini['blue'].get('missioni_aeree', [])
@@ -962,11 +989,13 @@ class Costruttore:
         m['sortie'] = 'DictKey_sortie_5'
         m['maxDictId'] = 5
         init = ('LEVANTE = { missione = "%s" }\n' % nome + lt.dump('LEVANTE_PIAZZAMENTI', self.piazzamenti_lua)
-                + '\n' + lt.dump('LEVANTE_NAVI', self.navi_vento))
+                + '\n' + lt.dump('LEVANTE_NAVI', self.navi_vento)
+                + '\n' + lt.dump('LEVANTE_GIOCATORE', {n: True for n, (_, _, o) in self.gruppi_aerei.items() if o.get('giocatore')}))
         risorse = {'ResKey_Action_1': 'init.lua', 'ResKey_Action_2': 'levante_core.lua', 'ResKey_Action_3': 'levante_piazzatore.lua',
-                   'ResKey_Action_4': 'levante_navi.lua'}
+                   'ResKey_Action_4': 'levante_navi.lua', 'ResKey_Action_5': 'levante_prestazioni.lua'}
         for i, (commento, chiave) in enumerate((('INIT', 'ResKey_Action_1'), ('NUCLEO', 'ResKey_Action_2'),
-                                                ('PIAZZATORE', 'ResKey_Action_3'), ('NAVI', 'ResKey_Action_4')), 1):
+                                                ('PIAZZATORE', 'ResKey_Action_3'), ('NAVI', 'ResKey_Action_4'),
+                                                ('PRESTAZIONI', 'ResKey_Action_5')), 1):
             m['trig']['actions'][i] = 'a_do_script_file(getValueResourceByKey("%s"));' % chiave
             m['trig']['conditions'][i] = 'return(true)'
             m['trig']['flag'][i] = True
@@ -985,6 +1014,7 @@ class Costruttore:
             z.write(os.path.join(QUI, 'lua', 'levante_core.lua'), 'l10n/DEFAULT/levante_core.lua')
             z.write(os.path.join(QUI, 'lua', 'levante_piazzatore.lua'), 'l10n/DEFAULT/levante_piazzatore.lua')
             z.write(os.path.join(QUI, 'lua', 'levante_navi.lua'), 'l10n/DEFAULT/levante_navi.lua')
+            z.write(os.path.join(QUI, 'lua', 'levante_prestazioni.lua'), 'l10n/DEFAULT/levante_prestazioni.lua')
             for k, png in enumerate(tavolette, 1):
                 z.writestr('KNEEBOARD/IMAGES/G%02d_%02d.png' % (self.giorno, k), png)
         for lato, co in self.m['coalition'].items():
