@@ -44,7 +44,9 @@ Campagna dinamica DCS World (mappa Syria), giocatore singolo. Lingua: italiano.
 - Ogni correzione del giocatore o errore trovato in DCS va registrato in `docs/lezioni.md`.
 - Portaerei lontana dalla Siria; CVN e LHA contro vento (`script/lua/levante_navi.lua`).
 - Voli del giocatore: decollo immediato, posti 5-8 della Supercarrier solo con avvio >= 5 s.
-- Tipo di partenza del giocatore (freddo/caldo/pista/aria): chiederlo a OGNI missione, non deciderlo.
+- A OGNI missione chiedere al giocatore: parte con cui vola (blu/rosso, a sua scelta) e tipo di partenza
+  (freddo/caldo/pista/aria). Non deciderli.
+- Giornata divisa in blocchi (di norma 3), una missione per blocco; CSAR per i piloti abbattuti; limite 30 giornate.
 - Standard: giocatore + 1 gregario IA, volo di giorno (mattina; alba/tramonto ok). Notte e formazioni
   diverse solo se le chiede il giocatore.
 - IA High che cala con il logoramento; media intensita' (max 3 SAM sull'obiettivo del giocatore);

@@ -55,6 +55,14 @@ il giocatore vola a scelta con una delle due parti.
 - **Rosso**: l'enclave cade, oppure la portaerei è messa fuori uso, oppure le perdite
   USA diventano politicamente insostenibili.
 
+- **Limite**: 30 giornate. Se nessuno ha vinto, l'arbitro decide l'esito ai punti: territorio
+  (avanzata della testa di ponte verso Dahr el-Baidar), rapporto delle perdite, stato della difesa
+  aerea siriana, stato del gruppo navale USA.
+
+## 💥 Perdite
+- Ciò che viene distrutto in volo sparisce dalla campagna; i rinforzi arrivano solo secondo le regole.
+- Danni parziali (aereo che rientra colpito, SAM o veicolo danneggiato): fuori servizio per 1-2 blocchi.
+
 ## 🔄 Ciclo di gioco
 Ogni giornata di guerra è divisa in **blocchi** (di norma 3: alba, mezzogiorno, pomeriggio), e
 ogni blocco è una missione `.miz` da volare (`missioni/GNN_Bk_<data>.miz`).
