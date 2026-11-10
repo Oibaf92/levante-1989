@@ -12,12 +12,13 @@
   - l'allarme arriva alla batteria con un ritardo; l'AWACS condivide solo in parte, con piu' ritardo;
   - reazione ai missili antiradar incerta: la batteria bersaglio spegne con probabilita' P_HARM dopo
     qualche secondo; le batterie vicine con probabilita' minore;
-  - i SAM mobili (SA-6, SA-8, Hawk) dopo aver sparato si spostano di 0,8-1,5 km a radar spento.
+  - i SAM mobili (SA-6, SA-8, Hawk) dopo aver sparato si spostano di 0,8-1,5 km a radar spento;
+  - le batterie di riserva (missione "riserva") restano spente finche' la rete non perde una batteria.
   Regole per script leggeri: un solo ciclo ogni CICLO secondi, eventi per tiri e lanci.
 
   Dati (dal costruttore):
   LEVANTE_IADS = { [coalizione] = {
-      sam = { ["gruppo"] = { tipo = "sa6", portata = m, mobile = true }, ... },
+      sam = { ["gruppo"] = { tipo = "sa6", portata = m, mobile = true, riserva = false }, ... },
       sensori = { ["gruppo EWR"] = "radar", ["gruppo AWACS"] = "awacs", ["gruppo carri"] = "vista", ... } } }
   Richiede levante_core.lua.
 ]]
@@ -137,6 +138,14 @@ local function ciclo(coal, ora)
     local g = gruppoVivo(nome)
     if not g then
       st.batterie[nome] = nil
+      if not st.batteriaPersa then
+        st.batteriaPersa = true
+        for n2, b2 in pairs(st.batterie) do
+          if b2.riserva then dbg(n2 .. ": la rete ha perso " .. nome .. ", la riserva entra in azione") end
+        end
+      end
+    elseif b.riserva and not st.batteriaPersa then
+      -- riserva: resta spenta e nascosta finche' la rete non perde una batteria
     elseif ora >= (b.silenzioFino or 0) and not b.inMovimento then
       local c = centro(g)
       local inPortata = false
@@ -261,7 +270,7 @@ for coal, d in pairs(DATI) do
   S[coal] = { batterie = {}, tracce = {}, sensoriVivi = 0 }
   local n = 0
   for nome, cfg in pairs(d.sam or {}) do
-    S[coal].batterie[nome] = { portata = cfg.portata, mobile = cfg.mobile, acceso = false }
+    S[coal].batterie[nome] = { portata = cfg.portata, mobile = cfg.mobile, riserva = cfg.riserva, acceso = false }
     pcall(radar, nome, false)
     n = n + 1
   end

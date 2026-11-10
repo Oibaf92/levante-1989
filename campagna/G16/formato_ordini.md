@@ -60,7 +60,8 @@ Significato dei campi:
 - **unita_terra**: NON dai coordinate esatte. Dai un **centro di ricerca** e un **raggio**: il
   piazzatore dell'arbitro sceglie il punto preciso sul terreno (pendenza, edifici, vegetazione,
   strade, visibilità radar). **settore** = rotte verso la minaccia da coprire o il fronte.
-- **missione**: `difesa` = resta in posizione; `attacco` = avanza verso `avanza_verso`;
+- **missione**: `difesa` = resta in posizione; `riserva` (solo SAM) = batteria nascosta e spenta,
+  entra in azione solo quando la rete perde un'altra batteria; `attacco` = avanza verso `avanza_verso`;
   `fuoco` (solo artiglieria/lanciarazzi) = bombarda `bersaglio_fuoco`.
 - Puoi riusare i siti fissi già esistenti (SA-5, SA-2, SA-3) indicandone il centro: se il centro
   coincide con un sito noto, resta lì.

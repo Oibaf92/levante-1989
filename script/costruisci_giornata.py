@@ -904,8 +904,9 @@ class Costruttore:
         for p in self.resoconto['piazzamenti']:
             coal = 2 if p['lato'] == 'blue' else 1
             if p['sistema'] in SAM_IADS:
+                riserva = p.get('missione') == 'riserva' or 'riserva' in p['nome'].lower()
                 dati[coal]['sam'][p['nome']] = {'tipo': p['sistema'], 'portata': pz.SISTEMI[p['sistema']]['portata_km'] * 1000,
-                                                'mobile': p['sistema'] in ('sa6', 'sa8', 'hawk')}
+                                                'mobile': p['sistema'] in ('sa6', 'sa8', 'hawk'), 'riserva': riserva}
             elif p['sistema'] == 'ewr':
                 dati[coal]['sensori'][p['nome']] = 'radar'
             elif p['sistema'] in OSSERVATORI:

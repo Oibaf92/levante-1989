@@ -45,3 +45,34 @@ il gruppo navale a tenere F-14 in difesa invece che sopra il Libano.
 SEAD con HARM contro gli SA-6 avanzati (soprattutto Chouf) e F-4E da Incirlik sul nord
 del Libano. Se oggi perdiamo il SA-6 del Chouf, domani lo sostituisce una batteria di
 riserva piu' arretrata.
+
+## Giorno 16 — 18 ottobre 1989
+
+**Valutazione.** Linea del fronte immutata dopo G15: la testa di ponte non e' cresciuta e il
+passo di Dahr el-Baidar e' nostro. Restano 4 SA-6 schierabili piu' 2 di scorta, 5 SA-8, l'A-50
+e un'aviazione logorata ma utile (MiG-29 18 operativi tra siriani e sovietici). Alta pressione
+tutto il giorno: cielo pulito favorisce anche l'aviazione americana, quindi niente esposizioni
+inutili. All'alba vento da est (portaerei che risale verso costa), poi da ovest (si allontana).
+
+**Intento.** Logorare, non sfondare. Una sola finestra d'attacco vera, all'alba (06:15-07:00) con
+il sole alle spalle: antiradar Su-24 sull'Hawk, poi Su-24 sulle M-109 di Ghazir e Su-17 sui
+Marines di Baabda, Su-25 sulle unita' avanzate davanti al passo; Su-25 e Su-17 attaccano in
+picchiata da media quota (Stinger). A mezzogiorno e al pomeriggio solo colpi minori.
+
+**Portaerei.** Tu-22M3 a terra: la posizione e' solo una stima e la dottrina vieta gli attacchi a
+gocce. Invece logoro gli F-14: due diversioni di MiG-23 verso il mare (mezzogiorno e pomeriggio,
+per far lanciare AIM-54) e una puntata di MiG-25PD contro l'orbita dell'E-2C a ovest di Beirut.
+
+**Difesa aerea a rete.** Scoperta affidata ad A-50 (in volo in tutti e tre i blocchi) e a due
+radar di sorveglianza, costa (colline di Jableh) e Antilibano: fanno anche da esca per gli HARM.
+Tutti gli SA-6 cambiano posizione rispetto a ieri (le posizioni note restano vuote), ognuno con un
+SA-8 o cannoni vicini. SA-6 "Riserva" nella Bekaa ovest, spento finche' non serve; un sesto SA-6 e
+due SA-8 restano fuori dal teatro come riserva vera per le perdite.
+
+**Artiglieria.** Tre 2S1 su Baabda, Bhamdoun e Mtein; Grad di Sofar sulle retrovie di Beirut Est,
+Grad di Faraya sull'Hawk di Jounieh per aprire la strada all'attacco dell'alba. Nessun
+contrattacco di carri oggi: con cielo sereno l'aviazione americana li distruggerebbe; carri e BMP
+tengono il passo in difesa.
+
+**Scostamenti.** Rispetto alla dottrina rinuncio alle "posizioni avanzate" con carri e alla quarta
+batteria 2S1 per restare nei 18 gruppi e schierare i radar di sorveglianza.
